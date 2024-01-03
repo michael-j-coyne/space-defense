@@ -29,7 +29,8 @@ func fire() -> void:
 	projectile.setup(
 		velocity_func,
 		_base_damage * _damage_multiplier,
-		projectile_despawn_time)
+		projectile_despawn_time,
+		"player")
 
 	# TEMP, JANKY
 	projectile.global_position = to_global(position)
