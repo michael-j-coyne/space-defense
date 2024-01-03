@@ -26,7 +26,6 @@ func damage() -> float:
 	return damage_val
 
 func destroy():
-	get_parent().remove_child(self)
 	queue_free()
 
 func _physics_process(delta):
