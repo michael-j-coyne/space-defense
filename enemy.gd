@@ -1,4 +1,4 @@
-extends Area2D
+class_name Enemy extends Area2D
 
 const ENEMY_SIZE = Vector2(100, 100)
 
