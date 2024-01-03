@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bklqx28uxc5e5"]
+
+[ext_resource type="Script" path="res://projectile.gd" id="1_e66wm"]
+[ext_resource type="Texture2D" uid="uid://c2jblj87js208" path="res://assets/laserBlue03.png" id="2_vysr7"]
+
+[node name="Projectile" type="Node2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_e66wm")
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("2_vysr7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(4.5, 18.5, -4.5, 18.5, -4.5, -18.5, 4.5, -18.5)
