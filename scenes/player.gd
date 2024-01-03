@@ -22,6 +22,8 @@ func _physics_process(delta):
 		velocity.x += 1
 	if Input.is_action_pressed("ui_left"):
 		velocity.x -= 1
+	if Input.is_action_pressed("ui_accept"):
+		$Weapon.fire()
 
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed

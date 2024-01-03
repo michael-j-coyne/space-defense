@@ -39,8 +39,3 @@ func fire() -> void:
 
 	$Timer.start()
 	_cooling_down = true
-
-# TESTING CODE?
-func _input(_event):
-	if Input.is_action_pressed("ui_accept"):
-		fire()
