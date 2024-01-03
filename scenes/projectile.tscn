@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bklqx28uxc5e5"]
 
 [ext_resource type="Texture2D" uid="uid://c2jblj87js208" path="res://assets/laserBlue03.png" id="1_7yy3i"]
-[ext_resource type="Script" path="res://projectile.gd" id="1_ab8k7"]
+[ext_resource type="Script" path="res://scenes/projectile.gd" id="1_ab8k7"]
 
 [node name="Projectile" type="Area2D"]
 scale = Vector2(2, 2)
