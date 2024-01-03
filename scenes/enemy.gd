@@ -19,5 +19,7 @@ func _take_damage(_damage_amount: float) -> void:
 	queue_free()
 
 func _on_area_entered(area):
-	if area.has_method("damage"):
+	if area.has_method("damage") and\
+	area.has_method("get_origin") and\
+	area.get_origin() == "player":
 		_take_damage(area.damage())
