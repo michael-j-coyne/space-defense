@@ -1,8 +1,8 @@
 class_name Projectile extends Area2D
 
-var velocity_func: Callable
-var damage_val: float
-var despawn_time: float
+var _velocity_callable: Callable
+var _damage_value: float
+var _time_alive: float
 var _origin: String
 
 func setup(
@@ -11,11 +11,10 @@ func setup(
 	time_alive: float,
 	origin: String):
 
-	velocity_func = velocity_callable
-	damage_val = damage_value
-	despawn_time = time_alive
+	_velocity_callable = velocity_callable
+	_damage_value = damage_value
+	_time_alive = time_alive
 	_origin = origin
-
 
 func _ready():
 	_setup_timer()
@@ -23,7 +22,7 @@ func _ready():
 func _setup_timer():
 	var timer := Timer.new()
 	add_child(timer)
-	timer.wait_time = despawn_time
+	timer.wait_time = _time_alive
 	timer.one_shot = true
 	timer.start()
 	timer.connect("timeout", destroy)
@@ -34,13 +33,13 @@ func get_origin() -> String:
 # returns the damage that should be applied when
 # the projectile collides with something that can be damaged
 func damage() -> float:
-	return damage_val
+	return _damage_value
 
 func destroy():
 	queue_free()
 
 func _physics_process(delta):
-	position += velocity_func.call(delta)
+	position += _velocity_callable.call(delta)
 
 func _on_area_entered(area):
 	if area is Enemy:
