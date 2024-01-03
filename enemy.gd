@@ -7,10 +7,10 @@ func _ready():
 	var sprite = get_node("Sprite2D")
 	var collision = get_node("CollisionPolygon2D")
 	var scaling = ENEMY_SIZE / sprite.texture.get_size()
-	
+
 	# if this is not true, the collision shape scaling will behave improperly
 	assert(scaling.x == scaling.y)
-	
+
 	collision.scale = scaling
 	sprite.scale = scaling
 
