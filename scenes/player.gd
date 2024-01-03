@@ -3,6 +3,7 @@ class_name Player extends Area2D
 const PLAYER_SIZE = Vector2(100, 100)
 @export var speed = 400
 var velocity = Vector2.ZERO
+@onready var weapon := $Weapon as Weapon
 
 func _ready():
 	var sprite = get_node("Sprite2D")
@@ -23,7 +24,9 @@ func _physics_process(delta):
 	if Input.is_action_pressed("ui_left"):
 		velocity.x -= 1
 	if Input.is_action_pressed("ui_accept"):
-		$Weapon.fire()
+		# TODO: remove hardcoded velocity func
+		var velocity_func = func(_delta): return Vector2(0, -10)
+		weapon.fire(velocity_func, "player")
 
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed

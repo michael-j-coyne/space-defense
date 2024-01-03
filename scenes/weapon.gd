@@ -4,6 +4,7 @@ var _cooldown := 1.0
 var _base_damage := 1.0
 var _damage_multiplier := 1.0
 var _cooling_down = false
+var _projectile_despawn_time = 1.0
 var _projectile_scene = preload("res://scenes/projectile.tscn")
 
 func _ready():
@@ -16,21 +17,17 @@ func _cooldown_finished():
 func set_cooldown(cd: float):
 	_cooldown = cd
 
-func fire() -> void:
+func fire(velocity_func: Callable, origin: String) -> void:
 	if _cooling_down:
 		return
 
 	var projectile = _projectile_scene.instantiate()
 
-	# TODO: remove harcoded values
-	var velocity_func = func(_delta): return Vector2(0, -5)
-	var projectile_despawn_time = 5.0
-
 	projectile.setup(
 		velocity_func,
 		_base_damage * _damage_multiplier,
-		projectile_despawn_time,
-		"player")
+		_projectile_despawn_time,
+		origin)
 
 	# TEMP, JANKY
 	projectile.global_position = to_global(position)
