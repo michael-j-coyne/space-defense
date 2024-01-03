@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://db8fg8nkj0sgq"]
+[gd_scene load_steps=4 format=3 uid="uid://db8fg8nkj0sgq"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_7s44l"]
 [ext_resource type="Texture2D" uid="uid://c5h1yuqovn8gg" path="res://assets/player.png" id="2_7fiuj"]
+[ext_resource type="PackedScene" uid="uid://cpn6i7f8lsuxh" path="res://weapon.tscn" id="2_84uob"]
 
 [node name="Player" type="Area2D"]
 position = Vector2(947, 898)
 script = ExtResource("1_7s44l")
 metadata/_edit_group_ = true
+
+[node name="Weapon" parent="." instance=ExtResource("2_84uob")]
+position = Vector2(2.08165e-12, -50)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.385, 0.385)
