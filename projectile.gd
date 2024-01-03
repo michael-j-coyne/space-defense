@@ -31,3 +31,7 @@ func destroy():
 
 func _physics_process(delta):
 	position += velocity_func.call(delta)
+
+func _on_area_entered(area):
+	if area is Enemy:
+		destroy()
