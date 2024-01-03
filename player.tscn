@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://db8fg8nkj0sgq"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_7s44l"]
-[ext_resource type="Texture2D" uid="uid://b67gc8c8b32ir" path="res://assets/player.svg" id="1_pexu2"]
+[ext_resource type="Texture2D" uid="uid://c5h1yuqovn8gg" path="res://assets/player.png" id="2_7fiuj"]
 
 [node name="Player" type="Area2D"]
 position = Vector2(947, 898)
@@ -9,7 +9,9 @@ script = ExtResource("1_7s44l")
 metadata/_edit_group_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(25, -22.6, 25, 22, 22.6, 25, -22, 25, -25, 22.6, -25, -22.6, -22, -25, 22, -25)
+scale = Vector2(0.385, 0.385)
+polygon = PackedVector2Array(102, -124.4, 102, -122.9, 120, -107.9, 120, -105.5, 130, -88, 130, 86.6, 119.3, 109, 117.8, 109, 103.8, 123, 101.5, 123, 88.3, 130, -88.6, 130, -105, 122.3, -105, 120.9, -120, 107.9, -120, 105.5, -130, 88, -130, -87.1, -124.4, -102, -122.9, -102, -107.9, -120, -105.8, -120, -100.8, -125, -98.3, -125, -86.7, -130, 87.1, -130)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_pexu2")
+scale = Vector2(0.385, 0.385)
+texture = ExtResource("2_7fiuj")
