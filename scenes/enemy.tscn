@@ -9,9 +9,11 @@ script = ExtResource("1_2600p")
 metadata/_edit_group_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.385, 0.385)
 polygon = PackedVector2Array(102, -124.4, 102, -122.9, 120, -107.9, 120, -105.5, 130, -88, 130, 86.6, 119.3, 109, 117.8, 109, 103.8, 123, 101.5, 123, 88.3, 130, -88.6, 130, -105, 122.3, -105, 120.9, -120, 107.9, -120, 105.5, -130, 88, -130, -87.1, -124.4, -102, -122.9, -102, -107.9, -120, -105.8, -120, -100.8, -125, -98.3, -125, -86.7, -130, 87.1, -130)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.385, 0.385)
 texture = ExtResource("1_6sbci")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
