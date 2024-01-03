@@ -1,4 +1,4 @@
-class_name Projectile extends Node2D
+class_name Projectile extends Area2D
 
 var velocity_func: Callable
 var damage_val: float
