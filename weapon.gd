@@ -4,7 +4,7 @@ var _cooldown := 1.0
 var _base_damage := 1.0
 var _damage_multiplier := 1.0
 var _cooling_down = false
-var _projectile_scene = preload("res://projectile.tscn")
+var _projectile_scene = preload("res://scenes/projectile.tscn")
 
 func _ready():
 	$Timer.wait_time = _cooldown
@@ -22,13 +22,14 @@ func fire() -> void:
 
 	var projectile = _projectile_scene.instantiate()
 
-	# TODO: remove harcoded velocity func
+	# TODO: remove harcoded values
 	var velocity_func = func(_delta): return Vector2(0, -5)
+	var projectile_despawn_time = 5.0
 
 	projectile.setup(
 		velocity_func,
 		_base_damage * _damage_multiplier,
-		_cooldown)
+		projectile_despawn_time)
 
 	# TEMP, JANKY
 	projectile.global_position = to_global(position)
@@ -40,6 +41,6 @@ func fire() -> void:
 	_cooling_down = true
 
 # TESTING CODE?
-func _input(event):
+func _input(_event):
 	if Input.is_action_pressed("ui_accept"):
 		fire()
