@@ -14,3 +14,10 @@ func _ready():
 	collision.scale = scaling
 	sprite.scale = scaling
 
+func _take_damage(_damage_amount: float) -> void:
+	# for now just destroy the node
+	queue_free()
+
+func _on_area_entered(area):
+	if area.has_method("damage"):
+		_take_damage(area.damage())
