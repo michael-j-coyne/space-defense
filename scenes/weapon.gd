@@ -11,6 +11,20 @@ func _ready():
 	$Timer.wait_time = _cooldown
 	$Timer.connect("timeout", _cooldown_finished)
 
+func setup(
+	cooldown: float,
+	base_damage: float,
+	damage_multiplier: float,
+	projectile_despawn_time: float,
+	projectile_scene
+):
+
+	_cooldown = cooldown
+	_base_damage = base_damage
+	_damage_multiplier = damage_multiplier
+	_projectile_despawn_time = projectile_despawn_time
+	_projectile_scene = projectile_scene
+
 func _cooldown_finished():
 	_cooling_down = false
 
