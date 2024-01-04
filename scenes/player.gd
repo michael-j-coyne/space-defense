@@ -35,3 +35,13 @@ func _physics_process(delta):
 		velocity = velocity.normalized() * speed
 
 	position += velocity * delta
+
+func _take_damage(_damage_amount: float) -> void:
+	# for now just destroy the node
+	queue_free()
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.has_method("damage") and\
+	area.has_method("get_damage_source") and\
+	area.get_damage_source() == "enemy":
+		_take_damage(area.damage())
