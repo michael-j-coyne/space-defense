@@ -16,7 +16,8 @@ func setup(
 	base_damage: float,
 	damage_multiplier: float,
 	projectile_despawn_time: float,
-	projectile_scene
+
+	projectile_scene,
 ):
 
 	_cooldown = cooldown
@@ -31,7 +32,7 @@ func _cooldown_finished():
 func set_cooldown(cd: float):
 	_cooldown = cd
 
-func fire(velocity_func: Callable, origin: String) -> void:
+func fire(velocity_func: Callable, damage_source: String) -> void:
 	if _cooling_down:
 		return
 
@@ -41,7 +42,7 @@ func fire(velocity_func: Callable, origin: String) -> void:
 		velocity_func,
 		_base_damage * _damage_multiplier,
 		_projectile_despawn_time,
-		origin)
+		damage_source)
 
 	# TEMP, JANKY
 	projectile.global_position = to_global(position)
