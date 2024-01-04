@@ -2,10 +2,7 @@ class_name EnemyGrid extends Node2D
 
 const enemy_scene = preload("res://scenes/Enemy.tscn")
 
-# TODO: this is not actually connected to the enemy itself,
-# so the enemy could change size and this would be wrong.
-# I need a **single point of control** for the enemy size.
-const ENEMY_SIZE = Vector2(100, 100)
+const ENEMY_SIZE = Enemy.ENEMY_SIZE
 const NUM_ENEMIES = Vector2i(8, 4)
 const NUM_GAPS = Vector2i(NUM_ENEMIES.x - 1, NUM_ENEMIES.y - 1)
 const GAP_SIZE = ENEMY_SIZE / Vector2(2, 4)
