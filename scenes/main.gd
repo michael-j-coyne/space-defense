@@ -31,5 +31,3 @@ static func enemy_position(row_idx: int, col_idx: int) -> Vector2:
 
 func _ready() -> void:
 	create_enemy_grid()
-	$Enemy.fire_weapon()
-
