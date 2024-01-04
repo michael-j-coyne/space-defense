@@ -19,7 +19,7 @@ func _ready():
 	weapon.setup(10.0, 1.0, 1.0, 5.0, "enemy", load("res://scenes/red_laser.tscn"))
 
 func fire_weapon() -> void:
-	var velocity_func = func(_delta): return Vector2(0, 1)
+	var velocity_func = func(_delta): return Vector2(0, 10)
 	weapon.fire(velocity_func, "enemy")
 
 func _take_damage(_damage_amount: float) -> void:
