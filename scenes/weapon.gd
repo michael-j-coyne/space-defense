@@ -50,7 +50,7 @@ func fire(velocity_func: Callable, damage_source: String) -> void:
 	projectile.global_position = to_global(position)
 
 	# careful here...
-	get_tree().root.add_child(projectile)
+	get_tree().root.add_child.call_deferred(projectile)
 
 	$Timer.start()
 	_cooling_down = true
