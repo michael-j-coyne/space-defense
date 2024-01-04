@@ -5,7 +5,8 @@ var _base_damage := 1.0
 var _damage_multiplier := 1.0
 var _cooling_down = false
 var _projectile_despawn_time = 1.0
-var _projectile_scene = preload("res://scenes/projectile.tscn")
+var _damage_source := ""
+var _projectile_scene: PackedScene
 
 func _ready():
 	$Timer.wait_time = _cooldown
@@ -16,8 +17,8 @@ func setup(
 	base_damage: float,
 	damage_multiplier: float,
 	projectile_despawn_time: float,
-
-	projectile_scene,
+	damage_source: String,
+	projectile_scene: PackedScene,
 ):
 
 	_cooldown = cooldown
@@ -25,6 +26,7 @@ func setup(
 	_damage_multiplier = damage_multiplier
 	_projectile_despawn_time = projectile_despawn_time
 	_projectile_scene = projectile_scene
+	_damage_source = damage_source
 
 func _cooldown_finished():
 	_cooling_down = false

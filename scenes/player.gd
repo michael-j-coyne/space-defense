@@ -17,7 +17,7 @@ func _ready():
 	sprite.scale = scaling
 
 	# TODO: fix hardcoded values
-	weapon.setup(1.0, 1.0, 1.0, 5.0, preload("res://scenes/projectile.tscn"))
+	weapon.setup(1.0, 1.0, 1.0, 5.0, "player", null)
 
 func _physics_process(delta):
 	velocity = Vector2.ZERO
