@@ -6,12 +6,12 @@ const enemy_scene = preload("res://scenes/Enemy.tscn")
 # so the enemy could change size and this would be wrong.
 # I need a **single point of control** for the enemy size.
 const ENEMY_SIZE = Vector2(100, 100)
-const ENEMY_GROUP_SIZE = Vector2(1200, 600)
-const NUM_ENEMIES = Vector2i(10, 5)
+const NUM_ENEMIES = Vector2i(8, 4)
 const NUM_GAPS = Vector2i(NUM_ENEMIES.x - 1, NUM_ENEMIES.y - 1)
-const GAP_SIZE = Vector2(
-	(ENEMY_GROUP_SIZE.x - NUM_ENEMIES.x * ENEMY_SIZE.x) / NUM_GAPS.x,
-	(ENEMY_GROUP_SIZE.y - NUM_ENEMIES.y * ENEMY_SIZE.y) / NUM_GAPS.y)
+const GAP_SIZE = ENEMY_SIZE / Vector2(2, 4)
+const ENEMY_GROUP_SIZE = Vector2(
+	ENEMY_SIZE.x * NUM_ENEMIES.x + GAP_SIZE.x * NUM_GAPS.x,
+	ENEMY_SIZE.y * NUM_ENEMIES.y + GAP_SIZE.y * NUM_GAPS.y)
 
 @onready var SCREEN_SIZE = get_tree().root.content_scale_size
 var velocity = Vector2(-100, 0)
