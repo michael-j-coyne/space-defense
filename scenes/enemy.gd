@@ -1,6 +1,7 @@
 class_name Enemy extends Area2D
 
 const ENEMY_SIZE = Vector2(100, 100)
+@onready var weapon := $Weapon as Weapon
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,6 +14,13 @@ func _ready():
 
 	collision.scale = scaling
 	sprite.scale = scaling
+
+	# TODO: fix hardcoded values
+	weapon.setup(10.0, 1.0, 1.0, 5.0, "enemy", load("res://scenes/red_laser.tscn"))
+
+func fire_weapon() -> void:
+	var velocity_func = func(_delta): return Vector2(0, 1)
+	weapon.fire(velocity_func, "enemy")
 
 func _take_damage(_damage_amount: float) -> void:
 	# for now just destroy the node
