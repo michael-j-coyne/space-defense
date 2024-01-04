@@ -14,14 +14,15 @@ const GAP_SIZE = Vector2(
 	(ENEMY_GROUP_SIZE.y - NUM_ENEMIES.y * ENEMY_SIZE.y) / NUM_GAPS.y)
 
 var enemies: Array[Enemy] = []
+@onready var enemy_spawn: Control = get_node("EnemySpawnContainer") as Control
 
 func create_enemy_grid() -> void:
 	for row_idx in range(NUM_ENEMIES.y):
 		for col_idx in range(NUM_ENEMIES.x):
 			var enemy = enemy_scene.instantiate()
-			enemy.set_position(Main.enemy_position(row_idx, col_idx) + $EnemySpawn.position)
+			enemy.set_position(Main.enemy_position(row_idx, col_idx))
 			enemies.append(enemy)
-			add_child(enemy)
+			enemy_spawn.add_child(enemy)
 
 static func enemy_position(row_idx: int, col_idx: int) -> Vector2:
 	var pos_x = 0.5 * ENEMY_SIZE.x + col_idx * (ENEMY_SIZE.x + GAP_SIZE.x)
@@ -30,4 +31,5 @@ static func enemy_position(row_idx: int, col_idx: int) -> Vector2:
 	return Vector2(pos_x, pos_y)
 
 func _ready() -> void:
+	enemy_spawn.set_size(ENEMY_GROUP_SIZE)
 	create_enemy_grid()
