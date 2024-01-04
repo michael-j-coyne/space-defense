@@ -42,5 +42,7 @@ func _physics_process(delta):
 	position += _velocity_callable.call(delta)
 
 func _on_area_entered(area):
-	if area is Enemy:
+	if area is Enemy and _damage_source == "player":
+		destroy()
+	elif area is Player and _damage_source == "enemy":
 		destroy()
