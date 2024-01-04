@@ -16,13 +16,6 @@ const GAP_SIZE = Vector2(
 @onready var SCREEN_SIZE = get_tree().root.content_scale_size
 var velocity = Vector2(-100, 0)
 
-func _create_enemy_grid() -> void:
-	for row_idx in range(NUM_ENEMIES.y):
-		for col_idx in range(NUM_ENEMIES.x):
-			var enemy = enemy_scene.instantiate()
-			enemy.set_position(EnemyGrid._enemy_position(row_idx, col_idx))
-			add_child(enemy)
-
 static func _enemy_position(row_idx: int, col_idx: int) -> Vector2:
 	var pos_x = 0.5 * ENEMY_SIZE.x + col_idx * (ENEMY_SIZE.x + GAP_SIZE.x)
 	var pos_y = 0.5 * ENEMY_SIZE.y + row_idx * (ENEMY_SIZE.y + GAP_SIZE.y)
@@ -30,7 +23,11 @@ static func _enemy_position(row_idx: int, col_idx: int) -> Vector2:
 	return Vector2(pos_x, pos_y)
 
 func spawn_enemies() -> void:
-	_create_enemy_grid()
+	for row_idx in range(NUM_ENEMIES.y):
+		for col_idx in range(NUM_ENEMIES.x):
+			var enemy = enemy_scene.instantiate()
+			enemy.set_position(EnemyGrid._enemy_position(row_idx, col_idx))
+			add_child(enemy)
 
 func _physics_process(delta: float) -> void:
 	if position.x < 0:
