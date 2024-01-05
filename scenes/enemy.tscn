@@ -10,6 +10,7 @@ script = ExtResource("1_2600p")
 metadata/_edit_group_ = true
 
 [node name="Weapon" parent="." instance=ExtResource("2_q78x6")]
+position = Vector2(2.08165e-12, 50)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.385, 0.385)
