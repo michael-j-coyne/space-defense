@@ -28,6 +28,8 @@ func setup(
 	_projectile_scene = projectile_scene
 	_damage_source = damage_source
 
+	$Timer.wait_time = cooldown
+
 func _cooldown_finished():
 	_cooling_down = false
 
