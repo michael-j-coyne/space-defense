@@ -29,6 +29,7 @@ func spawn_enemies() -> void:
 
 func _fire_randomly():
 	for enemy in $Enemies.get_children():
+		# TODO: fix hardcoded value
 		if rng.randf() < 0.02:
 			enemy.fire_weapon()
 
