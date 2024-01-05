@@ -4,6 +4,7 @@ const PLAYER_SIZE = Vector2(100, 100)
 @export var speed = 400
 var velocity = Vector2.ZERO
 @onready var weapon := $Weapon as Weapon
+var state : PlayerState
 
 func _ready():
 	var sprite = get_node("Sprite2D")
@@ -19,29 +20,13 @@ func _ready():
 	# TODO: fix hardcoded values
 	weapon.setup(1.0, 1.0, 1.0, 5.0, "player", load("res://scenes/blue_laser.tscn"))
 
+	state = PlayerState.InitialState.new(self)
+
 func _physics_process(delta):
-	velocity = Vector2.ZERO
-
-	if Input.is_action_pressed("ui_right"):
-		velocity.x += 1
-	if Input.is_action_pressed("ui_left"):
-		velocity.x -= 1
-	if Input.is_action_pressed("ui_accept"):
-		# TODO: remove hardcoded velocity func
-		var velocity_func = func(_delta): return Vector2(0, -10)
-		weapon.fire(velocity_func, "player")
-
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
-
-	position += velocity * delta
-
-func _take_damage(_damage_amount: float) -> void:
-	# for now just destroy the node
-	queue_free()
+	state.physics_process(delta)
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.has_method("damage") and\
 	area.has_method("get_damage_source") and\
 	area.get_damage_source() == "enemy":
-		_take_damage(area.damage())
+		state.take_damage(area.damage())
