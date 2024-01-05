@@ -44,10 +44,8 @@ func fire(velocity_func: Callable, damage_source: String) -> void:
 		velocity_func,
 		_base_damage * _damage_multiplier,
 		_projectile_despawn_time,
-		damage_source)
-
-	# TEMP, JANKY
-	projectile.global_position = to_global(position)
+		damage_source,
+		to_global(position))
 
 	# careful here...
 	get_tree().root.add_child.call_deferred(projectile)
