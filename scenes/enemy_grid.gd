@@ -12,6 +12,7 @@ const ENEMY_GROUP_SIZE = Vector2(
 
 @onready var SCREEN_SIZE = get_tree().root.content_scale_size
 var velocity = Vector2(-100, 0)
+var rng = RandomNumberGenerator.new()
 
 static func _enemy_position(row_idx: int, col_idx: int) -> Vector2:
 	var pos_x = 0.5 * ENEMY_SIZE.x + col_idx * (ENEMY_SIZE.x + GAP_SIZE.x)
@@ -24,7 +25,12 @@ func spawn_enemies() -> void:
 		for col_idx in range(NUM_ENEMIES.x):
 			var enemy = enemy_scene.instantiate()
 			enemy.set_position(EnemyGrid._enemy_position(row_idx, col_idx))
-			add_child(enemy)
+			$Enemies.add_child(enemy)
+
+func _fire_randomly():
+	for enemy in $Enemies.get_children():
+		if rng.randf() < 0.02:
+			enemy.fire_weapon()
 
 func _physics_process(delta: float) -> void:
 	if position.x < 0:
