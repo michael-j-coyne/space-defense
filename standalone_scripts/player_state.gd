@@ -33,7 +33,7 @@ class InitialState:
 
 	func take_damage(_damage_amount: float) -> void:
 		# for now just destroy the node
-		queue_free()
+		_player.queue_free()
 
 class FreeState:
 	extends PlayerState
@@ -64,3 +64,7 @@ class FreeState:
 		velocity = velocity.rotated(_player.rotation)
 
 		_player.position += velocity * delta
+
+	func take_damage(_damage_amount: float) -> void:
+		# for now just destroy the node
+		_player.queue_free()
