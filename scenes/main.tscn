@@ -1,15 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cw6yqb8txc3tr"]
+[gd_scene load_steps=4 format=3 uid="uid://cw6yqb8txc3tr"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_hqko1"]
 [ext_resource type="PackedScene" uid="uid://db8fg8nkj0sgq" path="res://scenes/player.tscn" id="2_kr0qi"]
-[ext_resource type="PackedScene" uid="uid://bvmrysyho501e" path="res://scenes/enemy_grid.tscn" id="2_uiqiv"]
 [ext_resource type="PackedScene" uid="uid://7wx5h7m5w4mb" path="res://scenes/transition_camera.tscn" id="4_os3os"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_hqko1")
-
-[node name="EnemyGrid" parent="." instance=ExtResource("2_uiqiv")]
-position = Vector2(350, 2.08165e-12)
 
 [node name="Player" parent="." instance=ExtResource("2_kr0qi")]
 position = Vector2(917, 1030)
@@ -21,4 +17,8 @@ enabled = false
 [node name="InitialCamera" type="Camera2D" parent="."]
 anchor_mode = 0
 
-[node name="Timer" type="Timer" parent="."]
+[node name="EnemyGridSpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="EnemyGridSpawnTimer" to="." method="_setup_enemy_grid"]

@@ -20,6 +20,7 @@ signal all_enemies_defeated
 
 func _ready() -> void:
 	position = INITIAL_POSITION
+	spawn_enemies()
 
 static func _enemy_position(row_idx: int, col_idx: int) -> Vector2:
 	var pos_x = 0.5 * ENEMY_SIZE.x + col_idx * (ENEMY_SIZE.x + GAP_SIZE.x)
