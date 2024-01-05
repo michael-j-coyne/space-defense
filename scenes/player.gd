@@ -1,5 +1,10 @@
 class_name Player extends Area2D
 
+const states = {
+	"initial": PlayerState.InitialState,
+	"free": PlayerState.FreeState
+}
+
 const PLAYER_SIZE = Vector2(100, 100)
 @export var speed = 400
 var velocity = Vector2.ZERO
@@ -20,7 +25,10 @@ func _ready():
 	# TODO: fix hardcoded values
 	weapon.setup(1.0, 1.0, 1.0, 5.0, "player", load("res://scenes/blue_laser.tscn"))
 
-	state = PlayerState.InitialState.new(self)
+	change_state("initial")
+
+func change_state(state_name: String):
+	state = states[state_name].new(self)
 
 func _physics_process(delta):
 	state.physics_process(delta)
