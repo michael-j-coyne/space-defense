@@ -55,7 +55,8 @@ class FreeState:
 			_player.rotation += 1 * delta
 		if Input.is_action_pressed("ui_accept"):
 			# TODO: remove hardcoded velocity func
-			var velocity_func = func(_delta): return Vector2(0, -10).rotated(_player.rotation)
+			var rotation_amount = _player.rotation
+			var velocity_func = func(_delta): return Vector2(0, -10).rotated(rotation_amount)
 			_player.weapon.fire(velocity_func, "player")
 
 		if velocity.length() > 0:
