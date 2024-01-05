@@ -12,3 +12,7 @@ position = Vector2(350, 2.08165e-12)
 
 [node name="Player" parent="." instance=ExtResource("2_kr0qi")]
 position = Vector2(917, 1030)
+
+[node name="TransitionCamera" type="Camera2D" parent="."]
+process_mode = 3
+anchor_mode = 0
