@@ -20,3 +20,5 @@ enabled = false
 
 [node name="InitialCamera" type="Camera2D" parent="."]
 anchor_mode = 0
+
+[node name="Timer" type="Timer" parent="."]
