@@ -1,7 +1,6 @@
 class_name EnemyGrid extends Node2D
 
 const enemy_scene = preload("res://scenes/Enemy.tscn")
-
 const ENEMY_SIZE = Enemy.ENEMY_SIZE
 const NUM_ENEMIES = Vector2i(8, 4)
 const NUM_GAPS = Vector2i(NUM_ENEMIES.x - 1, NUM_ENEMIES.y - 1)
@@ -10,10 +9,17 @@ const ENEMY_GROUP_SIZE = Vector2(
 	ENEMY_SIZE.x * NUM_ENEMIES.x + GAP_SIZE.x * NUM_GAPS.x,
 	ENEMY_SIZE.y * NUM_ENEMIES.y + GAP_SIZE.y * NUM_GAPS.y)
 const FIRE_CHANCE = 0.04
+const INITIAL_POSITION = Vector2(350, 0)
+const INITIAL_VELOCITY = Vector2(-100, 0)
 
 @onready var SCREEN_SIZE = get_tree().root.content_scale_size
-var velocity = Vector2(-100, 0)
+var velocity = INITIAL_VELOCITY
 var rng = RandomNumberGenerator.new()
+
+signal all_enemies_defeated
+
+func _ready() -> void:
+	position = INITIAL_POSITION
 
 static func _enemy_position(row_idx: int, col_idx: int) -> Vector2:
 	var pos_x = 0.5 * ENEMY_SIZE.x + col_idx * (ENEMY_SIZE.x + GAP_SIZE.x)
@@ -44,3 +50,6 @@ func _physics_process(delta: float) -> void:
 		position.y += ENEMY_SIZE.y
 
 	position += velocity * delta
+
+	if $Enemies.get_child_count() == 0:
+		all_enemies_defeated.emit()
