@@ -9,6 +9,7 @@ const GAP_SIZE = ENEMY_SIZE / Vector2(2, 4)
 const ENEMY_GROUP_SIZE = Vector2(
 	ENEMY_SIZE.x * NUM_ENEMIES.x + GAP_SIZE.x * NUM_GAPS.x,
 	ENEMY_SIZE.y * NUM_ENEMIES.y + GAP_SIZE.y * NUM_GAPS.y)
+const FIRE_CHANCE = 0.04
 
 @onready var SCREEN_SIZE = get_tree().root.content_scale_size
 var velocity = Vector2(-100, 0)
@@ -29,8 +30,7 @@ func spawn_enemies() -> void:
 
 func _fire_randomly():
 	for enemy in $Enemies.get_children():
-		# TODO: fix hardcoded value
-		if rng.randf() < 0.02:
+		if rng.randf() < FIRE_CHANCE:
 			enemy.fire_weapon()
 
 func _physics_process(delta: float) -> void:
