@@ -5,6 +5,7 @@ const ENEMY_SIZE = Vector2(100, 100)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# TODO: extract the sprite and collision object so that they can be swapped out
 	var sprite = get_node("Sprite2D")
 	var collision = get_node("CollisionPolygon2D")
 	var scaling = ENEMY_SIZE / sprite.texture.get_size()
