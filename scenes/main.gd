@@ -17,7 +17,6 @@ func _physics_process(_delta: float) -> void:
 		$Player.change_state("free")
 
 func _on_enemy_grid_all_enemies_defeated() -> void:
-	#enemy_grid.disconnect("all_enemies_defeated", _on_enemy_grid_all_enemies_defeated)
 	enemy_grid.queue_free()
 
 	# TODO, not sure about this Timer.
