@@ -10,7 +10,8 @@ var ENEMY_GROUP_SIZE = Vector2(
 	ENEMY_SIZE.y * NUM_ENEMIES.y + GAP_SIZE.y * NUM_GAPS.y)
 @export var FIRE_CHANCE = 0.04
 @export var INITIAL_POSITION = Vector2(350, 0)
-@export var INITIAL_VELOCITY = Vector2(-100, 0)
+@export var INITIAL_VELOCITY = Vector2(-1, 0)
+@export var SPEED = 100
 
 @onready var SCREEN_SIZE = get_tree().root.content_scale_size
 var velocity = INITIAL_VELOCITY
@@ -55,7 +56,7 @@ func _physics_process(delta: float) -> void:
 		position.x = SCREEN_SIZE.x - ENEMY_GROUP_SIZE.x
 		position.y += ENEMY_SIZE.y
 
-	position += velocity * delta
+	position += velocity * delta * SPEED
 
 	if $Enemies.get_child_count() == 0:
 		all_enemies_defeated.emit()
