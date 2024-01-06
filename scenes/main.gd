@@ -2,6 +2,7 @@ class_name Main extends Node
 const enemy_grid_scene = preload("res://scenes/enemy_grid.tscn")
 const TIME_BETWEEN_ROUNDS = 3.0
 const PAYOUT_STRING = "Payout: $"
+const CAMERA_TRANSITON_TIME_SECONDS = 2.0
 
 var enemy_grid: EnemyGrid
 var score := 0
@@ -17,7 +18,7 @@ func create_enemy_grid():
 
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_released("ui_text_backspace"):
-		$TransitionCamera.pan_to_camera($InitialCamera, get_node("Player/Camera2D"), 2.0)
+		$TransitionCamera.pan_to_camera($InitialCamera, get_node("Player/Camera2D"), CAMERA_TRANSITON_TIME_SECONDS)
 		$Player.change_state("free")
 
 func _on_enemy_killed(enemy_info: Shooter.EnemyInfo) -> void:
