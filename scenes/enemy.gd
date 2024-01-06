@@ -1,7 +1,10 @@
 class_name Enemy extends Area2D
 
 const ENEMY_SIZE = Vector2(100, 100)
+var _value: int = 100
 @onready var weapon := $Weapon as Weapon
+
+signal killed(enemy_info: Shooter.EnemyInfo)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,9 +26,16 @@ func fire_weapon() -> void:
 	var velocity_func = func(_delta): return Vector2(0, 10)
 	weapon.fire(velocity_func, "enemy")
 
+func get_value() -> int:
+	return _value
+
+func _die():
+	killed.emit(Shooter.EnemyInfo.new(_value))
+	queue_free()
+
 func _take_damage(_damage_amount: float) -> void:
 	# for now just destroy the node
-	queue_free()
+	_die()
 
 func _on_area_entered(area):
 	if area.has_method("damage") and\
