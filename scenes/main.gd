@@ -1,6 +1,7 @@
 class_name Main extends Node
 const enemy_grid_scene = preload("res://scenes/enemy_grid.tscn")
 const TIME_BETWEEN_ROUNDS = 3.0
+const PAYOUT_STRING = "Payout: $"
 
 var enemy_grid: EnemyGrid
 var score := 0
@@ -21,6 +22,7 @@ func _physics_process(_delta: float) -> void:
 
 func _on_enemy_killed(enemy_info: Shooter.EnemyInfo) -> void:
 	score += enemy_info.value
+	$ScoreLabel.text = PAYOUT_STRING + str(score)
 
 func _on_enemy_grid_all_enemies_defeated() -> void:
 	enemy_grid.queue_free()
