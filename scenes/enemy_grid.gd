@@ -2,15 +2,15 @@ class_name EnemyGrid extends Node2D
 
 const enemy_scene = preload("res://scenes/Enemy.tscn")
 const ENEMY_SIZE = Enemy.ENEMY_SIZE
-const NUM_ENEMIES = Vector2i(8, 4)
-const NUM_GAPS = Vector2i(NUM_ENEMIES.x - 1, NUM_ENEMIES.y - 1)
+@export var NUM_ENEMIES = Vector2i(8, 4)
+var NUM_GAPS = Vector2i(NUM_ENEMIES.x - 1, NUM_ENEMIES.y - 1)
 const GAP_SIZE = ENEMY_SIZE / Vector2(2, 4)
-const ENEMY_GROUP_SIZE = Vector2(
+var ENEMY_GROUP_SIZE = Vector2(
 	ENEMY_SIZE.x * NUM_ENEMIES.x + GAP_SIZE.x * NUM_GAPS.x,
 	ENEMY_SIZE.y * NUM_ENEMIES.y + GAP_SIZE.y * NUM_GAPS.y)
-const FIRE_CHANCE = 0.04
-const INITIAL_POSITION = Vector2(350, 0)
-const INITIAL_VELOCITY = Vector2(-100, 0)
+@export var FIRE_CHANCE = 0.04
+@export var INITIAL_POSITION = Vector2(350, 0)
+@export var INITIAL_VELOCITY = Vector2(-100, 0)
 
 @onready var SCREEN_SIZE = get_tree().root.content_scale_size
 var velocity = INITIAL_VELOCITY
