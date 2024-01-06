@@ -1,5 +1,6 @@
 class_name Main extends Node
 const enemy_grid_scene = preload("res://scenes/enemy_grid.tscn")
+const TIME_BETWEEN_ROUNDS = 3.0
 
 var enemy_grid: EnemyGrid
 
@@ -18,6 +19,5 @@ func _physics_process(_delta: float) -> void:
 
 func _on_enemy_grid_all_enemies_defeated() -> void:
 	enemy_grid.queue_free()
-
-	# TODO, not sure about this Timer.
-	$EnemyGridSpawnTimer.start()
+	await get_tree().create_timer(TIME_BETWEEN_ROUNDS).timeout
+	_setup_enemy_grid()

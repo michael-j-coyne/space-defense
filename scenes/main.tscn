@@ -16,9 +16,3 @@ enabled = false
 
 [node name="InitialCamera" type="Camera2D" parent="."]
 anchor_mode = 0
-
-[node name="EnemyGridSpawnTimer" type="Timer" parent="."]
-wait_time = 2.0
-one_shot = true
-
-[connection signal="timeout" from="EnemyGridSpawnTimer" to="." method="_setup_enemy_grid"]
