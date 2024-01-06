@@ -10,7 +10,7 @@ func setup(
 	damage_value: float,
 	time_alive: float,
 	damage_source: String,
-	initial_position):
+	initial_position: Vector2):
 
 	_velocity_callable = velocity_callable
 	_damage_value = damage_value
