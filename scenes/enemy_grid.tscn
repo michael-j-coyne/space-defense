@@ -4,6 +4,8 @@
 
 [node name="EnemyGrid" type="Node2D"]
 script = ExtResource("1_dv1ay")
+INITIAL_POSITION = Vector2(350, 100)
+SPEED = 50
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
