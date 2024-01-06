@@ -17,6 +17,7 @@ var velocity = INITIAL_VELOCITY
 var rng = RandomNumberGenerator.new()
 
 signal all_enemies_defeated
+signal enemy_killed(enemy_info: Shooter.EnemyInfo)
 
 func _ready() -> void:
 	position = INITIAL_POSITION
@@ -33,7 +34,11 @@ func spawn_enemies() -> void:
 		for col_idx in range(NUM_ENEMIES.x):
 			var enemy = enemy_scene.instantiate()
 			enemy.set_position(EnemyGrid._enemy_position(row_idx, col_idx))
+			enemy.killed.connect(_on_enemy_killed)
 			$Enemies.add_child(enemy)
+
+func _on_enemy_killed(enemy_info: Shooter.EnemyInfo) -> void:
+	enemy_killed.emit(enemy_info)
 
 func _fire_randomly():
 	for enemy in $Enemies.get_children():
