@@ -5,9 +5,9 @@ const TIME_BETWEEN_ROUNDS = 3.0
 var enemy_grid: EnemyGrid
 
 func _ready() -> void:
-	_setup_enemy_grid()
+	create_enemy_grid()
 
-func _setup_enemy_grid():
+func create_enemy_grid():
 	enemy_grid = enemy_grid_scene.instantiate()
 	enemy_grid.all_enemies_defeated.connect(_on_enemy_grid_all_enemies_defeated)
 	add_child(enemy_grid)
@@ -20,4 +20,4 @@ func _physics_process(_delta: float) -> void:
 func _on_enemy_grid_all_enemies_defeated() -> void:
 	enemy_grid.queue_free()
 	await get_tree().create_timer(TIME_BETWEEN_ROUNDS).timeout
-	_setup_enemy_grid()
+	create_enemy_grid()
