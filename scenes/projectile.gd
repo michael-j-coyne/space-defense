@@ -27,11 +27,7 @@ func _rotate_self(delta: float):
 	rotation = Vector2(0, -1).angle_to(_velocity_callable.call(delta))
 
 func _setup_timer():
-	var timer := Timer.new()
-	add_child(timer)
-	timer.wait_time = _time_alive
-	timer.one_shot = true
-	timer.start()
+	var timer = get_tree().create_timer(_time_alive)
 	timer.connect("timeout", destroy)
 
 func get_damage_source() -> String:
