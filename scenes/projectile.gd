@@ -24,9 +24,7 @@ func _ready():
 	_setup_timer()
 
 func _rotate_self(delta: float):
-	var v1 = _velocity_callable.call(delta).normalized()
-	var v2 = Vector2(0, -1)
-	rotation = atan2(v1.y, v1.x) - atan2(v2.y, v2.x)
+	rotation = Vector2(0, -1).angle_to(_velocity_callable.call(delta))
 
 func _setup_timer():
 	var timer := Timer.new()
