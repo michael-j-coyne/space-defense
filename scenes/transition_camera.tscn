@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://7wx5h7m5w4mb"]
-
-[ext_resource type="Script" path="res://scenes/transition_camera.gd" id="1_ll2wx"]
-
-[node name="TransitionCamera" type="Camera2D"]
-process_mode = 3
-script = ExtResource("1_ll2wx")
