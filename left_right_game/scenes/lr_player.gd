@@ -14,3 +14,6 @@ func _physics_process(delta: float) -> void:
 		velocity = velocity.normalized() * speed
 
 	position += velocity * delta
+
+func die():
+	queue_free()
