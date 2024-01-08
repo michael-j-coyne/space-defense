@@ -25,5 +25,4 @@ health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
 position = Vector2(-1.08991e-06, 1.42857)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_khrbt")
