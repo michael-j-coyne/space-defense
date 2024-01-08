@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbi0jyorwh27f"]
+[gd_scene load_steps=4 format=3 uid="uid://dbi0jyorwh27f"]
 
 [ext_resource type="Script" path="res://left-right-game/scenes/lr_player.gd" id="1_4yin3"]
+[ext_resource type="Script" path="res://left-right-game/components/health_component.gd" id="2_rdlps"]
+[ext_resource type="Texture2D" uid="uid://c5h1yuqovn8gg" path="res://assets/player.png" id="3_ifpjh"]
 
 [node name="Player" type="Node2D"]
+scale = Vector2(0.35, 0.35)
 script = ExtResource("1_4yin3")
+speed = 400.0
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("2_rdlps")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_ifpjh")
