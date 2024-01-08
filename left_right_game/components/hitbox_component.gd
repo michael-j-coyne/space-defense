@@ -4,4 +4,4 @@ class_name HitboxComponent extends Area2D
 
 func damage(attack: Attack):
 	if health_component:
-		health_component.damage(attack)
+		health_component.take_damage(attack)
