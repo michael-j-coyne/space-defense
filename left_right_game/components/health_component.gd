@@ -4,7 +4,7 @@ class_name HealthComponent extends Node
 var health = MAX_HEALTH
 
 func damage(attack: Attack):
-	health -= attack.damage_value
+	health -= attack.damage
 
 	if health <= 0:
 		var parent = get_parent()
