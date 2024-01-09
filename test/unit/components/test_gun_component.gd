@@ -1,9 +1,6 @@
 extends GutTest
 
-# TODO: I think I need to run this test with every single type of ammo...
-func test_shoot():
-	var ammo = load("res://scenes/projectiles/player_projectiles/blue_laser.tscn")
-
+func shoot_ammo(ammo: PackedScene):
 	var direction = Vector2(0, -1)
 
 	var gun = GunComponent.new()
@@ -22,3 +19,9 @@ func test_shoot():
 	assert_eq(projectile in get_node("/root").get_children(), true)
 
 	projectile.free()
+
+func test_shoot_blue_laser():
+	shoot_ammo(load("res://scenes/projectiles/player_projectiles/blue_laser.tscn"))
+
+func test_shoot_basic_red_laser():
+	shoot_ammo(load("res://scenes/projectiles/enemy_projectiles/basic_red_laser.tscn"))
