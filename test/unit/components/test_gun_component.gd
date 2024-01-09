@@ -1,5 +1,6 @@
 extends GutTest
 
+# TODO: I think I need to run this test with every single type of ammo...
 func test_shoot():
 	var ammo = load("res://scenes/projectiles/player_projectiles/blue_laser.tscn")
 
