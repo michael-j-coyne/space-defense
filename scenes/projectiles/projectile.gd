@@ -1,10 +1,5 @@
 class_name Projectile extends Node2D
 
-# TODO: Change directory that this is in. I am unsure what to name
-# the directory, "standalone_scripts" seems ok, but this file is really
-# a "base" script that all projectiles use. I suppose the best word for it
-# is simply a class.
-
 # Note: What exactly is the consequence of not setting defaults? What is the benefit?
 var attack: Attack
 var speed: float
