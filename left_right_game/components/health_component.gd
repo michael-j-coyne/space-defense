@@ -7,5 +7,4 @@ func take_damage(attack: Attack):
 	health -= attack.damage
 
 	if health <= 0:
-		var parent = get_parent()
-		if parent.has_method("die"): parent.die()
+		get_parent().queue_free()
