@@ -1,6 +1,6 @@
 class_name Projectile extends Node2D
 
-# What exactly is the consequence of not setting defaults? What is the benefit?
+# Note: What exactly is the consequence of not setting defaults? What is the benefit?
 var attack: Attack
 var speed: float
 var direction: Vector2
