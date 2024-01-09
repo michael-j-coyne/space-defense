@@ -29,6 +29,7 @@ MAX_HEALTH = 0.01
 texture = ExtResource("3_l53fu")
 
 [node name="GunComponent" type="Node2D" parent="."]
+position = Vector2(2.08165e-12, 130)
 script = ExtResource("4_c20gs")
 ammo = ExtResource("5_4fkuy")
 projectile_speed = 400.0
