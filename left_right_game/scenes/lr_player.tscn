@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dbi0jyorwh27f"]
+[gd_scene load_steps=8 format=3 uid="uid://dbi0jyorwh27f"]
 
 [ext_resource type="Script" path="res://left_right_game/scenes/lr_player.gd" id="1_4yin3"]
 [ext_resource type="Script" path="res://left_right_game/components/health_component.gd" id="2_rdlps"]
 [ext_resource type="Texture2D" uid="uid://c5h1yuqovn8gg" path="res://assets/player.png" id="3_ifpjh"]
 [ext_resource type="Script" path="res://left_right_game/components/hitbox_component.gd" id="4_3hvr4"]
 [ext_resource type="Script" path="res://left_right_game/components/gun_component.gd" id="5_ypcm8"]
+[ext_resource type="PackedScene" uid="uid://dq6hexvixj5ul" path="res://left_right_game/scenes/projectiles/player_projectiles/blue_laser.tscn" id="6_3qtd2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_khrbt"]
 size = Vector2(262.857, 260)
@@ -31,3 +32,6 @@ shape = SubResource("RectangleShape2D_khrbt")
 [node name="GunComponent" type="Node2D" parent="."]
 position = Vector2(2.08165e-12, -130)
 script = ExtResource("5_ypcm8")
+ammo = ExtResource("6_3qtd2")
+projectile_speed = 300.0
+damage = 1.0
