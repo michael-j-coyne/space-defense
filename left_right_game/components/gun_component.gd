@@ -8,8 +8,7 @@ func shoot(direction: Vector2):
 	var attack = Attack.new()
 	attack.damage = damage
 
-	# TODO: once we create the Projectile, do .instantiate() as Projectile
-	var projectile = ammo.instantiate()
+	var projectile: Projectile = ammo.instantiate() as Projectile
 	projectile.attack = attack
 	projectile.speed = projectile_speed
 	projectile.direction = direction
