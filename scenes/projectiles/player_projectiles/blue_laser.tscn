@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dq6hexvixj5ul"]
 
-[ext_resource type="PackedScene" uid="uid://t1m28gtj0sb" path="res://left_right_game/components/attack_hitbox_component.tscn" id="1_5t7dm"]
-[ext_resource type="Script" path="res://left_right_game/standalone-scripts/projectile.gd" id="1_etc38"]
+[ext_resource type="PackedScene" uid="uid://t1m28gtj0sb" path="res://components/attack_hitbox_component.tscn" id="1_5t7dm"]
+[ext_resource type="Script" path="res://standalone-scripts/projectile.gd" id="1_etc38"]
 [ext_resource type="Texture2D" uid="uid://c2jblj87js208" path="res://assets/laserBlue03.png" id="2_oqgkh"]
 
 [node name="BlueLaser" type="Node2D"]
