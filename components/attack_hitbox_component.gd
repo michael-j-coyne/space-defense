@@ -6,7 +6,10 @@ class_name AttackHitboxComponent extends Area2D
 # change the logic later. Or, we could implement getters / setters for
 # the attack property.
 
+signal attack_landed
+
 func _on_area_entered(area: Area2D):
 	var parent = get_parent()
 	if area.has_method("take_damage") and "attack" in parent:
 		area.take_damage(parent.attack)
+		attack_landed.emit()
