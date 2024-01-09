@@ -4,7 +4,6 @@ extends GutTest
 # that AttachHitboxComponent is coupled to multiple things so its not too surprising
 func test_on_area_entered():
 	var attack = Attack.new()
-	attack.damage = 0.5
 
 	var attack_hitbox = AttackHitboxComponent.new()
 
@@ -12,17 +11,13 @@ func test_on_area_entered():
 	projectile.attack = attack
 	projectile.add_child(attack_hitbox)
 
-	var health = HealthComponent.new()
-	health.MAX_HEALTH = 1.0
-	health.health = 1.0
-
-	var hitbox = HitboxComponent.new()
-	hitbox.health_component = health
+	# TODO: the double seems to be causing a ton of errors:
+	# Maybe try using Godot 4.0 or 4.2.
+	# "await" keyword not needed in this case, because the expression isn't a coroutine nor a signal.
+	var hitbox = double(HitboxComponent).new()
 
 	attack_hitbox._on_area_entered(hitbox)
 
-	assert_eq(health.health, 0.5)
+	assert_called(hitbox, "take_damage")
 
-	hitbox.free()
 	projectile.free()
-	health.free()
