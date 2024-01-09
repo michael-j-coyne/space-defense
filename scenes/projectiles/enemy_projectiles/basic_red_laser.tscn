@@ -16,3 +16,5 @@ polygon = PackedVector2Array(6.5, 18.5, -6.5, 18.5, -6.5, -18.5, 6.5, -18.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_palpu")
+
+[connection signal="attack_landed" from="AttackHitboxComponent" to="." method="_on_attack_landed"]
