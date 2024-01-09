@@ -2,6 +2,8 @@ class_name Player extends Node2D
 
 @export var speed: float
 
+# Note: if we are really being sticklers, we could extract the input handling
+# into its own component.
 func _physics_process(delta: float) -> void:
 	var velocity = Vector2.ZERO
 
