@@ -12,3 +12,6 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var velocity = direction * speed
 	position += velocity * delta
+
+func get_size():
+	return $Sprite2D.get_rect().size * scale
