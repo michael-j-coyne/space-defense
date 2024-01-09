@@ -4,7 +4,7 @@ class_name GunComponent extends Node2D
 @export var projectile_speed := 0.0
 @export var damage := 0.0
 
-func shoot(direction: Vector2):
+func shoot(direction: Vector2) -> Projectile:
 	var attack = Attack.new()
 	attack.damage = damage
 
@@ -15,3 +15,6 @@ func shoot(direction: Vector2):
 	projectile.global_position = global_position
 
 	get_node("/root").add_child(projectile)
+
+	return projectile
+
