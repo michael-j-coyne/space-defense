@@ -12,7 +12,9 @@ func shoot(direction: Vector2) -> Projectile:
 	projectile.attack = attack
 	projectile.speed = projectile_speed
 	projectile.direction = direction
-	projectile.global_position = global_position
+
+	var translation_vector = Vector2(0, 0.5) * projectile.get_size()
+	projectile.global_position = global_position - translation_vector
 
 	get_node("/root").add_child(projectile)
 

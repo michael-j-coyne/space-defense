@@ -12,7 +12,11 @@ func shoot_ammo(ammo: PackedScene):
 	gun.position = Vector2(0.0, 500)
 	var projectile = gun.shoot(direction)
 
-	assert_eq(projectile.position, gun.position)
+	# Note: the code in this test is a duplication of the code in GunComponent.
+	# is this okay or is this a bad sign?
+	var translation_vector = Vector2(0, 0.5) * projectile.get_size()
+
+	assert_eq(projectile.position, gun.position - translation_vector)
 	assert_eq(projectile.direction, direction)
 	assert_eq(projectile.speed, gun.projectile_speed)
 	assert_eq(projectile.attack.damage, gun.damage)
