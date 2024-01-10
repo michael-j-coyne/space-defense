@@ -20,12 +20,11 @@ texture = ExtResource("3_53q6e")
 [node name="GunComponent" parent="." instance=ExtResource("4_imcly")]
 position = Vector2(2.08165e-12, -130)
 ammo = ExtResource("6_rysiu")
-projectile_speed = 300.0
+projectile_speed = 500.0
 damage = 1.0
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_frb1s")]
 health_component = NodePath("../HealthComponent")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitboxComponent"]
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(102, -124.4, 102, -122.9, 120, -107.9, 120, -105.5, 130, -88, 130, 86.6, 119.3, 109, 117.8, 109, 103.8, 123, 101.5, 123, 88.3, 130, -88.6, 130, -105, 122.3, -105, 120.9, -120, 107.9, -120, 105.5, -130, 88, -130, -87.1, -124.4, -102, -122.9, -102, -107.9, -120, -105.8, -120, -100.8, -125, -98.3, -125, -86.7, -130, 87.1, -130)
