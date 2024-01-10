@@ -17,3 +17,11 @@ func _ready():
 	)
 	add_child(timer)
 	timer.start()
+
+# UNTESTED.
+# returns the abstract "bounding box" for the node, it is the space that the
+# node occupies on the screen.
+# as of now this is really just for the EnemyGrid to use.
+func get_boundary():
+	# Note: this implementation is likely to change especially if we use animated sprites.
+	return $Sprite2D.get_rect().size * scale
