@@ -6,10 +6,10 @@ class_name EnemyGrid extends Node2D
 @export var gap_size: Vector2 = Vector2(0, 0)
 @export var enemy: PackedScene
 
-# COUPLING: requires that children implement get_boundary()
+# COUPLING: requires that children implement boundary()
 
 # Note: this actually isn't an enemy grid, its a grid that can position any element
-# that implements the "get_boundary" method. Can I add a warning to check if
+# that implements the "boundary" method. Can I add a warning to check if
 # children implement this method?
 
 func _get_configuration_warnings() -> PackedStringArray:
@@ -54,7 +54,7 @@ func set_enemy_initial_positions():
 		var enemy = enemies[idx]
 		var row_idx = EnemyGrid.row_idx(idx, num_cols)
 		var col_idx = EnemyGrid.col_idx(idx, num_cols)
-		var pos = EnemyGrid.enemy_position(row_idx, col_idx, enemy.get_boundary(), gap_size)
+		var pos = EnemyGrid.enemy_position(row_idx, col_idx, enemy.boundary(), gap_size)
 		enemy.position = pos
 
 func _ready():
