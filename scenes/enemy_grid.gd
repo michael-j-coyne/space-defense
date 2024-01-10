@@ -43,7 +43,7 @@ static func col_idx(enemy_idx: int, num_cols: int) -> int:
 	return enemy_idx % num_cols
 
 # This works for positoning the enemies initially but after some enemies are killed their
-# index get_child_count() will change. So we can't re-position the enemies using this method.
+# index will change. So we can't re-position the enemies using this method.
 func set_enemy_initial_positions():
 	# This code only works with grunt right now, we are just messing around.
 	var enemies = get_children()
