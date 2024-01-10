@@ -20,3 +20,27 @@ func test_enemy_position():
 
 	assert_eq(enemy_position, Vector2(18, 18))
 
+func test_row_idx_boundary():
+	const enemy_idx = 3
+	const num_cols = 4
+	var result = EnemyGrid.row_idx(enemy_idx, num_cols)
+	assert_eq(result, 0)
+
+func test_row_idx_just_above_boundary():
+	const enemy_idx = 4
+	const num_cols = 4
+	var result = EnemyGrid.row_idx(enemy_idx, num_cols)
+	assert_eq(result, 1)
+
+func test_row_idx_just_below_boundary():
+	const enemy_idx = 2
+	const num_cols = 4
+	var result = EnemyGrid.row_idx(enemy_idx, num_cols)
+	assert_eq(result, 0)
+
+func test_row_idx_zero():
+	const enemy_idx = 0
+	const num_cols = 4
+	var result = EnemyGrid.row_idx(enemy_idx, num_cols)
+	assert_eq(result, 0)
+

@@ -17,3 +17,7 @@ static func enemy_position(row_idx: int, col_idx: int, enemy_size: Vector2, gap_
 
 	return Vector2(pos_x, pos_y)
 
+static func row_idx(enemy_idx: int, num_cols: int) -> int:
+	assert(num_cols > 0, "num_cols must be positive")
+	assert(enemy_idx >= 0, "enemy_idx must be non-negative")
+	return enemy_idx / num_cols
