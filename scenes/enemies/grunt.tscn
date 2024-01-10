@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://sp4n6hlsqgso"]
 
 [ext_resource type="Script" path="res://scenes/enemies/grunt.gd" id="1_v5n1i"]
-[ext_resource type="Script" path="res://components/hitbox_component.gd" id="1_yiqj6"]
-[ext_resource type="Script" path="res://components/health_component.gd" id="2_vn18k"]
+[ext_resource type="PackedScene" uid="uid://ccns2m0ppd7u1" path="res://components/gun_component.tscn" id="3_bxl82"]
 [ext_resource type="Texture2D" uid="uid://be8oigselkvjl" path="res://assets/enemy.png" id="3_l53fu"]
-[ext_resource type="Script" path="res://components/gun_component.gd" id="4_c20gs"]
+[ext_resource type="PackedScene" uid="uid://ddvxmqonaaa7d" path="res://components/health_component.tscn" id="5_3m56x"]
 [ext_resource type="PackedScene" uid="uid://dsoudow2i0i6r" path="res://scenes/projectiles/enemy_projectiles/basic_red_laser.tscn" id="5_4fkuy"]
+[ext_resource type="PackedScene" uid="uid://r7ndw7tqx7xk" path="res://components/hitbox_component.tscn" id="6_p83i0"]
 
 [node name="Grunt" type="Node2D"]
 scale = Vector2(0.35, 0.35)
@@ -13,24 +13,20 @@ script = ExtResource("1_v5n1i")
 shot_chance_percentage = 0.5
 shot_interval_seconds = 1.0
 
-[node name="HitboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
-collision_layer = 2
-script = ExtResource("1_yiqj6")
-health_component = NodePath("../HealthComponent")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitboxComponent"]
-polygon = PackedVector2Array(102, -124.4, 102, -122.9, 120, -107.9, 120, -105.5, 130, -88, 130, 86.6, 119.3, 109, 117.8, 109, 103.8, 123, 101.5, 123, 88.3, 130, -88.6, 130, -105, 122.3, -105, 120.9, -120, 107.9, -120, 105.5, -130, 88, -130, -87.1, -124.4, -102, -122.9, -102, -107.9, -120, -105.8, -120, -100.8, -125, -98.3, -125, -86.7, -130, 87.1, -130)
-
-[node name="HealthComponent" type="Node" parent="."]
-script = ExtResource("2_vn18k")
-MAX_HEALTH = 0.01
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_l53fu")
 
-[node name="GunComponent" type="Node2D" parent="."]
-position = Vector2(2.08165e-12, 130)
-script = ExtResource("4_c20gs")
+[node name="GunComponent" parent="." instance=ExtResource("3_bxl82")]
 ammo = ExtResource("5_4fkuy")
-projectile_speed = 400.0
-damage = 0.1
+projectile_speed = 300.0
+damage = 0.5
+
+[node name="HealthComponent" parent="." instance=ExtResource("5_3m56x")]
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("6_p83i0")]
+collision_layer = 2
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitboxComponent"]
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(102, -124.4, 102, -122.9, 120, -107.9, 120, -105.5, 130, -88, 130, 86.6, 119.3, 109, 117.8, 109, 103.8, 123, 101.5, 123, 88.3, 130, -88.6, 130, -105, 122.3, -105, 120.9, -120, 107.9, -120, 105.5, -130, 88, -130, -87.1, -124.4, -102, -122.9, -102, -107.9, -120, -105.8, -120, -100.8, -125, -98.3, -125, -86.7, -130, 87.1, -130)
