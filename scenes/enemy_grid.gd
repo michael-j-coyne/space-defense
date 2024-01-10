@@ -6,6 +6,8 @@ class_name EnemyGrid extends Node2D
 @export var gap_size: Vector2 = Vector2(0, 0)
 @export var enemy: PackedScene
 
+# COUPLING: requires that children implement get_boundary()
+
 # Note: this actually isn't an enemy grid, its a grid that can position any element
 # that implements the "get_boundary" method. Can I add a warning to check if
 # children implement this method?
