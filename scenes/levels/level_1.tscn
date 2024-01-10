@@ -15,49 +15,49 @@ num_cols = 8
 metadata/_edit_group_ = true
 
 [node name="Grunt" parent="EnemyGrid" instance=ExtResource("1_rkiph")]
-shot_chance_percentage = 1.0
+shot_chance_percentage = 0.1
 
 [node name="Grunt2" parent="EnemyGrid" instance=ExtResource("1_rkiph")]
-shot_chance_percentage = 1.0
+shot_chance_percentage = 0.1
 
 [node name="Grunt3" parent="EnemyGrid" instance=ExtResource("1_rkiph")]
-shot_chance_percentage = 1.0
+shot_chance_percentage = 0.1
 
 [node name="Grunt4" parent="EnemyGrid" instance=ExtResource("1_rkiph")]
-shot_chance_percentage = 1.0
+shot_chance_percentage = 0.1
 
 [node name="Grunt5" parent="EnemyGrid" instance=ExtResource("1_rkiph")]
-shot_chance_percentage = 1.0
+shot_chance_percentage = 0.1
 
 [node name="Grunt6" parent="EnemyGrid" instance=ExtResource("1_rkiph")]
-shot_chance_percentage = 1.0
+shot_chance_percentage = 0.1
 
 [node name="Grunt7" parent="EnemyGrid" instance=ExtResource("1_rkiph")]
-shot_chance_percentage = 1.0
+shot_chance_percentage = 0.1
 
 [node name="Grunt8" parent="EnemyGrid" instance=ExtResource("1_rkiph")]
-shot_chance_percentage = 1.0
+shot_chance_percentage = 0.1
 
 [node name="Grunt9" parent="EnemyGrid" instance=ExtResource("1_rkiph")]
-shot_chance_percentage = 1.0
+shot_chance_percentage = 0.1
 
 [node name="Grunt10" parent="EnemyGrid" instance=ExtResource("1_rkiph")]
-shot_chance_percentage = 1.0
+shot_chance_percentage = 0.1
 
 [node name="Grunt11" parent="EnemyGrid" instance=ExtResource("1_rkiph")]
-shot_chance_percentage = 1.0
+shot_chance_percentage = 0.1
 
 [node name="Grunt12" parent="EnemyGrid" instance=ExtResource("1_rkiph")]
-shot_chance_percentage = 1.0
+shot_chance_percentage = 0.1
 
 [node name="Grunt13" parent="EnemyGrid" instance=ExtResource("1_rkiph")]
-shot_chance_percentage = 1.0
+shot_chance_percentage = 0.1
 
 [node name="Grunt14" parent="EnemyGrid" instance=ExtResource("1_rkiph")]
-shot_chance_percentage = 1.0
+shot_chance_percentage = 0.1
 
 [node name="Grunt15" parent="EnemyGrid" instance=ExtResource("1_rkiph")]
-shot_chance_percentage = 1.0
+shot_chance_percentage = 0.1
 
 [node name="Grunt16" parent="EnemyGrid" instance=ExtResource("1_rkiph")]
-shot_chance_percentage = 1.0
+shot_chance_percentage = 0.1
