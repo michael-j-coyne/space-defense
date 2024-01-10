@@ -13,10 +13,14 @@ class_name EnemyGrid extends Node2D
 # children implement this method?
 
 func _get_configuration_warnings() -> PackedStringArray:
+	var message = PackedStringArray()
+
 	if get_child_count() == 0:
-		return PackedStringArray(["You should add enemies to the grid"])
-	else:
-		return PackedStringArray([])
+		message.append("You should add enemies to the grid")
+	elif get_child_count() != num_cols * num_rows:
+		message.append("The number of children must equal num_cols * num_rows")
+
+	return message
 
 # Note: I'm not sure this method should actually be exposed, but encapsulating it within another node
 # like "position_calculator" doesn't seem right. I suppose I could create a "library"
