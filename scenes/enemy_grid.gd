@@ -45,7 +45,6 @@ static func col_idx(enemy_idx: int, num_cols: int) -> int:
 # This works for positoning the enemies initially but after some enemies are killed their
 # index will change. So we can't re-position the enemies using this method.
 func set_enemy_initial_positions():
-	# This code only works with grunt right now, we are just messing around.
 	var enemies = get_children()
 	for idx in get_child_count():
 		var enemy = enemies[idx]
@@ -56,3 +55,7 @@ func set_enemy_initial_positions():
 
 func _ready():
 	set_enemy_initial_positions()
+
+func _process(_delta):
+	if Engine.is_editor_hint():
+		set_enemy_initial_positions()

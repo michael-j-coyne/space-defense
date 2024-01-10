@@ -1,4 +1,5 @@
-extends Node2D
+@tool
+class_name Grunt extends Node2D
 
 # Note: This is temporary code, it willl all be tossed later / moved into different
 # places
@@ -8,6 +9,9 @@ extends Node2D
 var rng = RandomNumberGenerator.new()
 
 func _ready():
+	if Engine.is_editor_hint():
+		return
+
 	var timer = Timer.new()
 	timer.wait_time = shot_interval_seconds
 	timer.connect("timeout",
