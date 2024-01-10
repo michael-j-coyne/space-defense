@@ -44,3 +44,26 @@ func test_row_idx_zero():
 	var result = EnemyGrid.row_idx(enemy_idx, num_cols)
 	assert_eq(result, 0)
 
+func test_col_idx_boundary():
+	const enemy_idx = 3
+	const num_cols = 4
+	var result = EnemyGrid.col_idx(enemy_idx, num_cols)
+	assert_eq(result, 3)
+
+func test_col_idx_just_above_boundary():
+	const enemy_idx = 4
+	const num_cols = 4
+	var result = EnemyGrid.col_idx(enemy_idx, num_cols)
+	assert_eq(result, 0)
+
+func test_col_idx_just_below_boundary():
+	const enemy_idx = 2
+	const num_cols = 4
+	var result = EnemyGrid.col_idx(enemy_idx, num_cols)
+	assert_eq(result, 2)
+
+func test_col_idx_zero():
+	const enemy_idx = 0
+	const num_cols = 4
+	var result = EnemyGrid.col_idx(enemy_idx, num_cols)
+	assert_eq(result, 0)
