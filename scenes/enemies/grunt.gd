@@ -1,5 +1,8 @@
 extends Node2D
 
+# Note: This is temporary code, it willl all be tossed later / moved into different
+# places
+
 @export var shot_chance_percentage: float
 @export var shot_interval_seconds: float
 var rng = RandomNumberGenerator.new()
