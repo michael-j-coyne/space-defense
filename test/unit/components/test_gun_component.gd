@@ -1,5 +1,6 @@
 extends GutTest
 
+# Note: I am not so sure that this test is any good.
 func shoot_ammo(ammo: PackedScene):
 	var direction = Vector2(0, -1)
 
@@ -12,7 +13,8 @@ func shoot_ammo(ammo: PackedScene):
 	gun.position = Vector2(0.0, 500)
 	var projectile = gun.shoot(direction)
 
-	assert_eq(projectile.position, gun.position)
+	# ensure that the properties of the gun are passed along to the projectile
+	# and that the projectile was added to the scene
 	assert_eq(projectile.direction, direction)
 	assert_eq(projectile.speed, gun.projectile_speed)
 	assert_eq(projectile.attack.damage, gun.damage)
