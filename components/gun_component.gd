@@ -12,7 +12,14 @@ func shoot(direction: Vector2) -> Projectile:
 	projectile.attack = attack
 	projectile.speed = projectile_speed
 	projectile.direction = direction
-	projectile.global_position = global_position
+
+	# Note: I will also need to rotate the projectile if I decide to make the gun able to shoot
+	# at various angles.
+
+	var translation_direction = position.normalized()
+	var translation_amount = Vector2(0, projectile.get_size().y / 2)
+
+	projectile.global_position = global_position + translation_direction * translation_amount
 
 	get_node("/root").add_child(projectile)
 
