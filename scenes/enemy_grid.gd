@@ -66,6 +66,16 @@ func set_enemy_initial_positions():
 		var pos = EnemyGrid.enemy_position(row_idx, col_idx, enemy.boundary(), gap_size)
 		enemy.position = pos
 
+static func calculate_grid_size(total_num_rows: int, total_num_cols: int, enemy_size: Vector2, gap_size: Vector2) -> Vector2:
+	assert(total_num_rows > 0, "num_rows must be positive")
+	assert(total_num_cols > 0, "num_cols must be positive")
+	assert(enemy_size.x > 0 and enemy_size.y > 0, "enemy_size must be positive")
+	assert(gap_size.x >= 0 and gap_size.y >= 0, "gap_size must be non-negative")
+
+	var grid_width = total_num_cols * enemy_size.x + (total_num_cols - 1) * gap_size.x
+	var grid_height = total_num_rows * enemy_size.y + (total_num_rows - 1) * gap_size.y
+	return Vector2(grid_width, grid_height)
+
 func _ready():
 	set_enemy_initial_positions()
 
