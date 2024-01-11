@@ -1,8 +1,11 @@
 @tool
 class_name GunComponent extends Node2D
 
+## The projectile scene which will be shot from the gun
 @export var ammo: PackedScene
+## How fast the projectile fired from the gun moves in pixels / second
 @export var projectile_speed := 0.0
+## How much damage the projectile fired from the gun will do, before any multipliers
 @export var damage := 0.0
 
 func _get_configuration_warnings() -> PackedStringArray:
