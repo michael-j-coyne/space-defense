@@ -16,6 +16,7 @@ position = Vector2(868, 1030)
 [node name="Enemies" parent="." instance=ExtResource("2_aq8tc")]
 
 [node name="EnemyGrid" parent="Enemies" instance=ExtResource("3_g4qgt")]
+position = Vector2(265, 2.08165e-12)
 num_cols = 8
 metadata/_edit_group_ = true
 
@@ -85,7 +86,7 @@ shot_chance_percentage = 0.1
 
 [node name="LeftRightEntityMover" parent="Enemies" node_paths=PackedStringArray("entity") instance=ExtResource("4_crj5m")]
 entity = NodePath("../EnemyGrid")
-boundary_value = 1920.0
+box_width_percent = 1.0
 vertical_step = 100.0
 speed = 200.0
 

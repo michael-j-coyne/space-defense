@@ -118,7 +118,7 @@ shot_chance_percentage = 0.1
 
 [node name="LeftRightEntityMover" parent="Enemies" node_paths=PackedStringArray("entity") instance=ExtResource("4_03tca")]
 entity = NodePath("../EnemyGrid")
-boundary_value = 1920.0
+box_width_percent = 1.0
 vertical_step = 100.0
 speed = 200.0
 
