@@ -85,10 +85,12 @@ func _physics_process(delta: float) -> void:
 
 	if anchor == anchor_point.upper_left:
 
-		if entity.position.x < 0:
+		var local_pos = to_local(entity.global_position)
+
+		if local_pos.x < 0:
 			direction *= -1
 			entity.position.y += vertical_step
-		elif entity.position.x + entity.boundary().x > box_width_percent * screen_width:
+		elif local_pos.x + entity.boundary().x > box_width_percent * screen_width:
 			direction *= -1
 			entity.position.y += vertical_step
 	else:
