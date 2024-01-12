@@ -92,3 +92,10 @@ func _ready():
 func _process(_delta):
 	if Engine.is_editor_hint():
 		set_enemy_initial_positions()
+		return
+
+	# Note: this works for now but I don't know if its good practice. Also, I don't know if
+	# its guaranteed that the EnemyGrid will free itself before something tries to call
+	# boundary()
+	if get_child_count() < 1:
+		queue_free()
