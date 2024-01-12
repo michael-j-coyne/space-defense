@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3t6m1i7skeq1"]
+
+[ext_resource type="Texture2D" uid="uid://c4bq13gmv3hr2" path="res://assets/black_rectangle.png" id="1_4rl8r"]
+
+[node name="GameOver" type="Sprite2D"]
+scale = Vector2(4, 4)
+texture = ExtResource("1_4rl8r")
+centered = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 124.25
+offset_top = 105.5
+offset_right = 993.25
+offset_bottom = 324.5
+scale = Vector2(0.25, 0.25)
+theme_override_font_sizes/normal_font_size = 160
+text = "Game Over"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
