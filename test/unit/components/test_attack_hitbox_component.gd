@@ -1,6 +1,6 @@
 extends GutTest
 
-# Note: its somewhat concerning how much setup this needs, but I also already knew
+# NOTE: its somewhat concerning how much setup this needs, but I also already knew
 # that AttachHitboxComponent is coupled to multiple things so its not too surprising
 func test_on_area_entered():
 	var attack = Attack.new()

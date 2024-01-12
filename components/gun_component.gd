@@ -38,7 +38,7 @@ func shoot(direction: Vector2) -> Projectile:
 	projectile.speed = projectile_speed
 	projectile.direction = direction
 
-	# Note: I will also need to rotate the projectile if I decide to make the gun able to shoot
+	# NOTE: I will also need to rotate the projectile if I decide to make the gun able to shoot
 	# at various angles.
 
 	var translation_direction = position.normalized()

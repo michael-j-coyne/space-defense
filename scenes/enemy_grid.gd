@@ -7,7 +7,7 @@ class_name EnemyGrid extends Node2D
 
 # COUPLING: requires that children implement boundary()
 
-# Note: this actually isn't an enemy grid, its a grid that can position any element
+# NOTE: this actually isn't an enemy grid, its a grid that can position any element
 # that implements the "boundary" method. Can I add a warning to check if
 # children implement this method?
 
@@ -31,7 +31,7 @@ func _get_configuration_warnings() -> PackedStringArray:
 
 	return message
 
-# Note: I'm not sure this method should actually be exposed, but encapsulating it within another node
+# NOTE: I'm not sure this method should actually be exposed, but encapsulating it within another node
 # like "position_calculator" doesn't seem right. I suppose I could create a "library"
 # but why not just let the "library" functions for the EnemyGrid exist within this class?
 static func enemy_position(row_idx: int, col_idx: int, enemy_size: Vector2, gap_size: Vector2) -> Vector2:
@@ -99,7 +99,7 @@ func _process(_delta):
 		set_enemy_initial_positions()
 		return
 
-	# Note: this works for now but I don't know if its good practice. Also, I don't know if
+	# NOTE: this works for now but I don't know if its good practice. Also, I don't know if
 	# its guaranteed that the EnemyGrid will free itself before something tries to call
 	# boundary()
 	if get_child_count() < 1:

@@ -2,7 +2,7 @@ class_name AttackHitboxComponent extends Area2D
 # This class is coupled to the parent,
 # it relies on the parent having the "attack" member variable
 
-# Note: it may be nice to use something like get_attack so we can
+# NOTE: it may be nice to use something like get_attack so we can
 # change the logic later. Or, we could implement getters / setters for
 # the attack property.
 

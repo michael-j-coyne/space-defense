@@ -1,6 +1,6 @@
 extends GutTest
 
-# Note: I am not so sure that this test is any good.
+# NOTE: I am not so sure that this test is any good.
 func shoot_ammo(ammo: PackedScene):
 	var direction = Vector2(0, -1)
 

@@ -1,7 +1,7 @@
 @tool
 class_name Grunt extends Node2D
 
-# Note: This is temporary code, it willl all be tossed later / moved into different
+# NOTE: This is temporary code, it willl all be tossed later / moved into different
 # places
 
 @export var shot_chance_percentage: float
@@ -27,5 +27,5 @@ func _ready():
 # node occupies on the screen.
 # as of now this is really just for the EnemyGrid to use.
 func boundary():
-	# Note: this implementation is likely to change especially if we use animated sprites.
+	# NOTE: this implementation is likely to change especially if we use animated sprites.
 	return $Sprite2D.get_rect().size * scale

@@ -1,6 +1,6 @@
 class_name Projectile extends Node2D
 
-# Note: What exactly is the consequence of not setting defaults? What is the benefit?
+# NOTE: What exactly is the consequence of not setting defaults? What is the benefit?
 var attack: Attack
 var speed: float
 var direction: Vector2
@@ -12,7 +12,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	# for development, the direction should always be a normalized vector
-	# Note: it may be better to assert this in the "setter" for direction,
+	# NOTE: it may be better to assert this in the "setter" for direction,
 	# but I haven't decided if I want to use properties yet.
 	assert(
 		direction == Vector2(0, 0) or direction.is_normalized(),
