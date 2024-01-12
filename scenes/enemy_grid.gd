@@ -4,7 +4,6 @@ class_name EnemyGrid extends Node2D
 @export var num_cols: int = 1
 @export var num_rows: int = 1
 @export var gap_size: Vector2 = Vector2(0, 0)
-@export var enemy: PackedScene
 
 # COUPLING: requires that children implement boundary()
 
