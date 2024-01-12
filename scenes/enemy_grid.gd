@@ -92,6 +92,10 @@ func _ready():
 
 func _process(_delta):
 	if Engine.is_editor_hint():
+
+		if get_child_count() > num_rows * num_cols:
+			remove_child(get_children()[-1])
+
 		set_enemy_initial_positions()
 		return
 
