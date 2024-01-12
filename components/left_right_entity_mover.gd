@@ -52,6 +52,11 @@ func _get_configuration_warnings() -> PackedStringArray:
 func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		return
+	if not entity:
+		# Note: I'm not sure how this will work if the EntityMover is the child
+		# of an Enemy... What if the EntityMover's parent frees itself?
+		queue_free()
+		return
 
 	entity.position.x += direction * speed * delta
 
