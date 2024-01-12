@@ -1,5 +1,5 @@
 @tool
-class_name LeftRightEntityMover extends Node
+class_name LeftRightEntityMover extends Node2D
 
 enum move_direction { left, right }
 enum anchor_point { upper_left, center }
