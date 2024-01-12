@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cjj1y2mlflunu"]
+[gd_scene load_steps=7 format=3 uid="uid://cjj1y2mlflunu"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_nyp7y"]
 [ext_resource type="PackedScene" uid="uid://dbi0jyorwh27f" path="res://scenes/player.tscn" id="1_otlll"]
 [ext_resource type="PackedScene" uid="uid://bf0pxxqhe06jr" path="res://scenes/enemy_grid.tscn" id="2_sj8op"]
 [ext_resource type="PackedScene" uid="uid://sp4n6hlsqgso" path="res://scenes/enemies/grunt.tscn" id="3_2i80w"]
+[ext_resource type="PackedScene" uid="uid://b8jda34rek6pa" path="res://scenes/empty_notifier_container.tscn" id="3_603ra"]
 [ext_resource type="PackedScene" uid="uid://c6g8jq43tis0q" path="res://components/left_right_entity_mover.tscn" id="4_03tca"]
 
 [node name="Level2" type="Node2D"]
@@ -12,109 +13,113 @@ script = ExtResource("1_nyp7y")
 [node name="Player" parent="." instance=ExtResource("1_otlll")]
 position = Vector2(868, 1030)
 
-[node name="EnemyGrid" parent="." instance=ExtResource("2_sj8op")]
+[node name="Enemies" parent="." instance=ExtResource("3_603ra")]
+
+[node name="EnemyGrid" parent="Enemies" instance=ExtResource("2_sj8op")]
 num_cols = 8
 num_rows = 3
 metadata/_edit_group_ = true
 
-[node name="Grunt" parent="EnemyGrid" instance=ExtResource("3_2i80w")]
+[node name="Grunt" parent="Enemies/EnemyGrid" instance=ExtResource("3_2i80w")]
 position = Vector2(45.5, 45.5)
 shot_chance_percentage = 0.1
 
-[node name="Grunt2" parent="EnemyGrid" instance=ExtResource("3_2i80w")]
+[node name="Grunt2" parent="Enemies/EnemyGrid" instance=ExtResource("3_2i80w")]
 position = Vector2(146.5, 45.5)
 shot_chance_percentage = 0.1
 
-[node name="Grunt3" parent="EnemyGrid" instance=ExtResource("3_2i80w")]
+[node name="Grunt3" parent="Enemies/EnemyGrid" instance=ExtResource("3_2i80w")]
 position = Vector2(247.5, 45.5)
 shot_chance_percentage = 0.1
 
-[node name="Grunt4" parent="EnemyGrid" instance=ExtResource("3_2i80w")]
+[node name="Grunt4" parent="Enemies/EnemyGrid" instance=ExtResource("3_2i80w")]
 position = Vector2(348.5, 45.5)
 shot_chance_percentage = 0.1
 
-[node name="Grunt5" parent="EnemyGrid" instance=ExtResource("3_2i80w")]
+[node name="Grunt5" parent="Enemies/EnemyGrid" instance=ExtResource("3_2i80w")]
 position = Vector2(449.5, 45.5)
 shot_chance_percentage = 0.1
 
-[node name="Grunt6" parent="EnemyGrid" instance=ExtResource("3_2i80w")]
+[node name="Grunt6" parent="Enemies/EnemyGrid" instance=ExtResource("3_2i80w")]
 position = Vector2(550.5, 45.5)
 shot_chance_percentage = 0.1
 
-[node name="Grunt7" parent="EnemyGrid" instance=ExtResource("3_2i80w")]
+[node name="Grunt7" parent="Enemies/EnemyGrid" instance=ExtResource("3_2i80w")]
 position = Vector2(651.5, 45.5)
 shot_chance_percentage = 0.1
 
-[node name="Grunt8" parent="EnemyGrid" instance=ExtResource("3_2i80w")]
+[node name="Grunt8" parent="Enemies/EnemyGrid" instance=ExtResource("3_2i80w")]
 position = Vector2(752.5, 45.5)
 shot_chance_percentage = 0.1
 
-[node name="Grunt9" parent="EnemyGrid" instance=ExtResource("3_2i80w")]
+[node name="Grunt9" parent="Enemies/EnemyGrid" instance=ExtResource("3_2i80w")]
 position = Vector2(45.5, 146.5)
 shot_chance_percentage = 0.1
 
-[node name="Grunt10" parent="EnemyGrid" instance=ExtResource("3_2i80w")]
+[node name="Grunt10" parent="Enemies/EnemyGrid" instance=ExtResource("3_2i80w")]
 position = Vector2(146.5, 146.5)
 shot_chance_percentage = 0.1
 
-[node name="Grunt11" parent="EnemyGrid" instance=ExtResource("3_2i80w")]
+[node name="Grunt11" parent="Enemies/EnemyGrid" instance=ExtResource("3_2i80w")]
 position = Vector2(247.5, 146.5)
 shot_chance_percentage = 0.1
 
-[node name="Grunt12" parent="EnemyGrid" instance=ExtResource("3_2i80w")]
+[node name="Grunt12" parent="Enemies/EnemyGrid" instance=ExtResource("3_2i80w")]
 position = Vector2(348.5, 146.5)
 shot_chance_percentage = 0.1
 
-[node name="Grunt13" parent="EnemyGrid" instance=ExtResource("3_2i80w")]
+[node name="Grunt13" parent="Enemies/EnemyGrid" instance=ExtResource("3_2i80w")]
 position = Vector2(449.5, 146.5)
 shot_chance_percentage = 0.1
 
-[node name="Grunt14" parent="EnemyGrid" instance=ExtResource("3_2i80w")]
+[node name="Grunt14" parent="Enemies/EnemyGrid" instance=ExtResource("3_2i80w")]
 position = Vector2(550.5, 146.5)
 shot_chance_percentage = 0.1
 
-[node name="Grunt15" parent="EnemyGrid" instance=ExtResource("3_2i80w")]
+[node name="Grunt15" parent="Enemies/EnemyGrid" instance=ExtResource("3_2i80w")]
 position = Vector2(651.5, 146.5)
 shot_chance_percentage = 0.1
 
-[node name="Grunt16" parent="EnemyGrid" instance=ExtResource("3_2i80w")]
+[node name="Grunt16" parent="Enemies/EnemyGrid" instance=ExtResource("3_2i80w")]
 position = Vector2(752.5, 146.5)
 shot_chance_percentage = 0.1
 
-[node name="Grunt17" parent="EnemyGrid" instance=ExtResource("3_2i80w")]
+[node name="Grunt17" parent="Enemies/EnemyGrid" instance=ExtResource("3_2i80w")]
 position = Vector2(45.5, 247.5)
 shot_chance_percentage = 0.1
 
-[node name="Grunt18" parent="EnemyGrid" instance=ExtResource("3_2i80w")]
+[node name="Grunt18" parent="Enemies/EnemyGrid" instance=ExtResource("3_2i80w")]
 position = Vector2(146.5, 247.5)
 shot_chance_percentage = 0.1
 
-[node name="Grunt19" parent="EnemyGrid" instance=ExtResource("3_2i80w")]
+[node name="Grunt19" parent="Enemies/EnemyGrid" instance=ExtResource("3_2i80w")]
 position = Vector2(247.5, 247.5)
 shot_chance_percentage = 0.1
 
-[node name="Grunt20" parent="EnemyGrid" instance=ExtResource("3_2i80w")]
+[node name="Grunt20" parent="Enemies/EnemyGrid" instance=ExtResource("3_2i80w")]
 position = Vector2(348.5, 247.5)
 shot_chance_percentage = 0.1
 
-[node name="Grunt21" parent="EnemyGrid" instance=ExtResource("3_2i80w")]
+[node name="Grunt21" parent="Enemies/EnemyGrid" instance=ExtResource("3_2i80w")]
 position = Vector2(449.5, 247.5)
 shot_chance_percentage = 0.1
 
-[node name="Grunt22" parent="EnemyGrid" instance=ExtResource("3_2i80w")]
+[node name="Grunt22" parent="Enemies/EnemyGrid" instance=ExtResource("3_2i80w")]
 position = Vector2(550.5, 247.5)
 shot_chance_percentage = 0.1
 
-[node name="Grunt23" parent="EnemyGrid" instance=ExtResource("3_2i80w")]
+[node name="Grunt23" parent="Enemies/EnemyGrid" instance=ExtResource("3_2i80w")]
 position = Vector2(651.5, 247.5)
 shot_chance_percentage = 0.1
 
-[node name="Grunt24" parent="EnemyGrid" instance=ExtResource("3_2i80w")]
+[node name="Grunt24" parent="Enemies/EnemyGrid" instance=ExtResource("3_2i80w")]
 position = Vector2(752.5, 247.5)
 shot_chance_percentage = 0.1
 
-[node name="LeftRightEntityMover" parent="." node_paths=PackedStringArray("entity") instance=ExtResource("4_03tca")]
+[node name="LeftRightEntityMover" parent="Enemies" node_paths=PackedStringArray("entity") instance=ExtResource("4_03tca")]
 entity = NodePath("../EnemyGrid")
 boundary_value = 1920.0
 vertical_step = 100.0
 speed = 200.0
+
+[connection signal="all_children_freed" from="Enemies" to="." method="_on_all_enemies_defeated"]
