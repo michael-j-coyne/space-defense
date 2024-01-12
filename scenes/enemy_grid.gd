@@ -75,6 +75,17 @@ static func calculate_grid_size(total_num_rows: int, total_num_cols: int, enemy_
 	var grid_height = total_num_rows * enemy_size.y + (total_num_rows - 1) * gap_size.y
 	return Vector2(grid_width, grid_height)
 
+# TODO: think about this more, do I really want to call get_child(0).boundary()?
+# How can I figure out how big the enemies in the grid are?
+# Should the grid actually resize them?
+func boundary() -> Vector2:
+	if get_child_count() < 1:
+		push_error("boundary() should not be called with no children")
+		return Vector2(0, 0)
+
+	var child_boundary = get_child(0).boundary()
+	return EnemyGrid.calculate_grid_size(num_rows, num_cols, child_boundary, gap_size)
+
 func _ready():
 	set_enemy_initial_positions()
 
