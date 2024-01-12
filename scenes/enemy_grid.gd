@@ -87,9 +87,6 @@ func boundary() -> Vector2:
 	var child_boundary = get_child(0).boundary()
 	return EnemyGrid.calculate_grid_size(num_rows, num_cols, child_boundary, gap_size)
 
-func _ready():
-	set_enemy_initial_positions()
-
 func _process(_delta):
 	if Engine.is_editor_hint():
 
