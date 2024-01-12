@@ -2,7 +2,8 @@ extends Node2D
 
 var levels := [
 	load("res://scenes/levels/level_1.tscn"),
-	load("res://scenes/levels/level_2.tscn")
+	load("res://scenes/levels/level_2.tscn"),
+	load("res://scenes/levels/level_3.tscn")
 ]
 
 var current_level_index = 0
