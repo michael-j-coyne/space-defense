@@ -26,6 +26,7 @@ func _get_configuration_warnings() -> PackedStringArray:
 	if get_child_count() == 0:
 		message.append("You should add enemies to the grid")
 	elif get_child_count() != num_cols * num_rows:
+		# TODO: This warning seems a bit buggy. Figure out a fix.
 		message.append("The number of children must equal num_cols * num_rows")
 
 	return message
