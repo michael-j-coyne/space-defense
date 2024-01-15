@@ -40,5 +40,13 @@ func _physics_process(delta: float) -> void:
 
 	position += velocity * delta
 
+	var screen_width = get_node("/root").content_scale_size.x
+
+	# prevent player from leaving viewport
+	if position.x - 0.5 * SIZE.x < 0:
+		position.x = 0 + 0.5 * SIZE.x
+	elif position.x + 0.5 * SIZE.x > screen_width:
+		position.x = screen_width - 0.5 * SIZE.x
+
 func get_current_health():
 	return $HealthComponent.health
