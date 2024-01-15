@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0x5abvly4frh"]
+
+[ext_resource type="Texture2D" uid="uid://btva022o2i1tt" path="res://assets/black_background.png" id="1_klhas"]
+
+[node name="Win" type="Sprite2D"]
+texture = ExtResource("1_klhas")
+centered = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 250.0
+offset_top = 232.0
+offset_right = 1119.0
+offset_bottom = 451.0
+theme_override_font_sizes/normal_font_size = 160
+text = "You win!"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
