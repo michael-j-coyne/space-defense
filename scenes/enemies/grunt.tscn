@@ -20,7 +20,7 @@ texture = ExtResource("3_l53fu")
 position = Vector2(2.08165e-12, 130)
 ammo = ExtResource("5_4fkuy")
 projectile_speed = 500.0
-damage = 0.5
+damage = 1
 
 [node name="HealthComponent" parent="." instance=ExtResource("5_3m56x")]
 
