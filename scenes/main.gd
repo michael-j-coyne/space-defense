@@ -30,5 +30,6 @@ func go_next_level():
 	add_child(level)
 
 func _on_level_failed() -> void:
-	print('you failed')
+	current_level.queue_free()
+	add_child(load("res://screens/game_over.tscn").instantiate())
 
