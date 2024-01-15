@@ -12,8 +12,8 @@ script = ExtResource("1_ecl7u")
 player = NodePath("Player")
 
 [node name="Player" parent="." instance=ExtResource("2_blig7")]
-position = Vector2(644, 682.5)
-scale = Vector2(0.288462, 0.288462)
+position = Vector2(644, 690)
+scale = Vector2(0.230769, 0.230769)
 
 [node name="Enemies" parent="." instance=ExtResource("3_a7idi")]
 
@@ -25,28 +25,36 @@ num_cols = 4
 metadata/_edit_group_ = true
 
 [node name="Grunt" parent="Enemies/Grid1/EnemyGrid" instance=ExtResource("5_jnalm")]
-position = Vector2(45.5, 45.5)
+position = Vector2(30, 30)
+scale = Vector2(0.230769, 0.230769)
 
 [node name="Grunt2" parent="Enemies/Grid1/EnemyGrid" instance=ExtResource("5_jnalm")]
-position = Vector2(146.5, 45.5)
+position = Vector2(100, 30)
+scale = Vector2(0.230769, 0.230769)
 
 [node name="Grunt3" parent="Enemies/Grid1/EnemyGrid" instance=ExtResource("5_jnalm")]
-position = Vector2(247.5, 45.5)
+position = Vector2(170, 30)
+scale = Vector2(0.230769, 0.230769)
 
 [node name="Grunt4" parent="Enemies/Grid1/EnemyGrid" instance=ExtResource("5_jnalm")]
-position = Vector2(348.5, 45.5)
+position = Vector2(240, 30)
+scale = Vector2(0.230769, 0.230769)
 
 [node name="Grunt5" parent="Enemies/Grid1/EnemyGrid" instance=ExtResource("5_jnalm")]
-position = Vector2(45.5, 146.5)
+position = Vector2(30, 100)
+scale = Vector2(0.230769, 0.230769)
 
 [node name="Grunt6" parent="Enemies/Grid1/EnemyGrid" instance=ExtResource("5_jnalm")]
-position = Vector2(146.5, 146.5)
+position = Vector2(100, 100)
+scale = Vector2(0.230769, 0.230769)
 
 [node name="Grunt7" parent="Enemies/Grid1/EnemyGrid" instance=ExtResource("5_jnalm")]
-position = Vector2(247.5, 146.5)
+position = Vector2(170, 100)
+scale = Vector2(0.230769, 0.230769)
 
 [node name="Grunt8" parent="Enemies/Grid1/EnemyGrid" instance=ExtResource("5_jnalm")]
-position = Vector2(348.5, 146.5)
+position = Vector2(240, 100)
+scale = Vector2(0.230769, 0.230769)
 
 [node name="LeftRightEntityMover" parent="Enemies/Grid1" node_paths=PackedStringArray("entity") instance=ExtResource("6_655ur")]
 entity = NodePath("../EnemyGrid")
@@ -62,35 +70,43 @@ num_cols = 4
 metadata/_edit_group_ = true
 
 [node name="Grunt" parent="Enemies/Grid2/EnemyGrid" instance=ExtResource("5_jnalm")]
-position = Vector2(45.5, 45.5)
+position = Vector2(30, 30)
+scale = Vector2(0.230769, 0.230769)
 shot_chance_percentage = 0.2
 
 [node name="Grunt2" parent="Enemies/Grid2/EnemyGrid" instance=ExtResource("5_jnalm")]
-position = Vector2(146.5, 45.5)
+position = Vector2(100, 30)
+scale = Vector2(0.230769, 0.230769)
 shot_chance_percentage = 0.2
 
 [node name="Grunt3" parent="Enemies/Grid2/EnemyGrid" instance=ExtResource("5_jnalm")]
-position = Vector2(247.5, 45.5)
+position = Vector2(170, 30)
+scale = Vector2(0.230769, 0.230769)
 shot_chance_percentage = 0.2
 
 [node name="Grunt4" parent="Enemies/Grid2/EnemyGrid" instance=ExtResource("5_jnalm")]
-position = Vector2(348.5, 45.5)
+position = Vector2(240, 30)
+scale = Vector2(0.230769, 0.230769)
 shot_chance_percentage = 0.2
 
 [node name="Grunt5" parent="Enemies/Grid2/EnemyGrid" instance=ExtResource("5_jnalm")]
-position = Vector2(45.5, 146.5)
+position = Vector2(30, 100)
+scale = Vector2(0.230769, 0.230769)
 shot_chance_percentage = 0.2
 
 [node name="Grunt6" parent="Enemies/Grid2/EnemyGrid" instance=ExtResource("5_jnalm")]
-position = Vector2(146.5, 146.5)
+position = Vector2(100, 100)
+scale = Vector2(0.230769, 0.230769)
 shot_chance_percentage = 0.2
 
 [node name="Grunt7" parent="Enemies/Grid2/EnemyGrid" instance=ExtResource("5_jnalm")]
-position = Vector2(247.5, 146.5)
+position = Vector2(170, 100)
+scale = Vector2(0.230769, 0.230769)
 shot_chance_percentage = 0.2
 
 [node name="Grunt8" parent="Enemies/Grid2/EnemyGrid" instance=ExtResource("5_jnalm")]
-position = Vector2(348.5, 146.5)
+position = Vector2(240, 100)
+scale = Vector2(0.230769, 0.230769)
 shot_chance_percentage = 0.2
 
 [node name="LeftRightEntityMover" parent="Enemies/Grid2" node_paths=PackedStringArray("entity") instance=ExtResource("6_655ur")]
