@@ -13,6 +13,9 @@ func _process(_delta: float) -> void:
 	if not Engine.is_editor_hint():
 		return
 
+	var viewport_height = ProjectSettings.get_setting("display/window/size/viewport_height")
+	position.y = viewport_height - 0.5 * SIZE.y
+
 	scale = SIZE / $Sprite2D.get_rect().size
 
 # NOTE: if we are really being sticklers, we could extract the input handling
