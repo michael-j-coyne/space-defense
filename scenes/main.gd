@@ -22,8 +22,19 @@ func go_next_level():
 		# no more levels
 		return
 
-	current_level.queue_free()
 	current_level_index += 1
+
+	current_level.queue_free()
+	await current_level.tree_exited
+
+	var shop: Shop = load("res://screens/shop.tscn").instantiate()
+	add_child(shop)
+
+	await shop.continue_pressed
+
+	shop.queue_free()
+	await shop.tree_exited
+
 	var level: Level = levels[current_level_index].instantiate() as Level
 	level.completed.connect(go_next_level)
 	current_level = level
@@ -31,5 +42,5 @@ func go_next_level():
 
 func _on_level_failed() -> void:
 	current_level.queue_free()
-	add_child(load("res://screens/game_over.tscn").instantiate())
+	add_child.call_deferred(load("res://screens/game_over.tscn").instantiate())
 
