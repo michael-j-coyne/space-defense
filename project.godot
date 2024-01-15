@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.2", "GL Compatibility")
 [autoload]
 
 PlayerVariables="*res://player_variables.gd"
+Globals="*res://globals.gd"
 
 [debug]
 
