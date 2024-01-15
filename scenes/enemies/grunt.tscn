@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://r7ndw7tqx7xk" path="res://components/hitbox_component.tscn" id="6_p83i0"]
 
 [node name="Grunt" type="Node2D"]
-scale = Vector2(0.35, 0.35)
+scale = Vector2(0.288462, 0.288462)
 script = ExtResource("1_v5n1i")
 shot_chance_percentage = 0.5
 shot_interval_seconds = 1.0
