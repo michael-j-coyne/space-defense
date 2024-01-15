@@ -6,6 +6,7 @@ class_name Grunt extends Enemy
 
 @export var shot_chance_percentage: float
 @export var shot_interval_seconds: float
+const SIZE: Vector2 = Vector2(60, 60)
 var rng = RandomNumberGenerator.new()
 
 signal reached_bottom
@@ -25,6 +26,12 @@ func _ready():
 	timer.start()
 
 	add_to_group("enemies")
+
+func _process(_delta: float) -> void:
+	if not Engine.is_editor_hint():
+		return
+
+	scale = SIZE / $Sprite2D.get_rect().size
 
 func _physics_process(_delta: float) -> void:
 	if Engine.is_editor_hint():
