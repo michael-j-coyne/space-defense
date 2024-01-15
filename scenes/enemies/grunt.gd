@@ -32,10 +32,9 @@ func _physics_process(_delta: float) -> void:
 
 	check_reached_bottom()
 
-# UNTESTED.
 # returns the abstract "bounding box" for the node, it is the space that the
 # node occupies on the screen.
-# as of now this is really just for the EnemyGrid to use.
+# boundary() is used by nodes that position other nodes.
 func boundary():
 	# NOTE: this implementation is likely to change especially if we use animated sprites.
 	return $Sprite2D.get_rect().size * scale
