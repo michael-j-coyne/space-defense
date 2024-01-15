@@ -3,12 +3,14 @@ extends GutTest
 
 func test_damage_no_kill():
 	var hc = HealthComponent.new()
+	hc.MAX_HEALTH = 100
+	hc.health = hc.MAX_HEALTH
 
 	var attack = Attack.new()
-	attack.damage = hc.MAX_HEALTH - 0.5
+	attack.damage = hc.MAX_HEALTH - 1
 	hc.take_damage(attack)
 
-	assert_eq(hc.health, hc.MAX_HEALTH - 0.5)
+	assert_eq(hc.health, 1)
 
 	hc.free()
 
@@ -16,11 +18,11 @@ func test_deadly_damage():
 	var parent = Node.new()
 	var hc = HealthComponent.new()
 	parent.add_child(hc)
-	hc.MAX_HEALTH = 1.0
-	hc.health = 1.0
+	hc.MAX_HEALTH = 1
+	hc.health = hc.MAX_HEALTH
 
 	var attack = Attack.new()
-	attack.damage = hc.health + 0.5
+	attack.damage = hc.health + 1
 	hc.take_damage(attack)
 
 	await wait_frames(2)
@@ -30,8 +32,8 @@ func test_deadly_damage_boundary():
 	var parent = Node.new()
 	var hc = HealthComponent.new()
 	parent.add_child(hc)
-	hc.MAX_HEALTH = 1.0
-	hc.health = 1.0
+	hc.MAX_HEALTH = 1
+	hc.health = 1
 
 	var attack = Attack.new()
 	# boundary is that health should reach 0.0, but not go below
