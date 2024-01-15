@@ -12,7 +12,7 @@ script = ExtResource("1_ecl7u")
 player = NodePath("Player")
 
 [node name="Player" parent="." instance=ExtResource("2_blig7")]
-position = Vector2(868, 1030)
+position = Vector2(644, 670)
 
 [node name="Enemies" parent="." instance=ExtResource("3_a7idi")]
 
@@ -56,7 +56,7 @@ speed = 100.0
 [node name="Grid2" parent="Enemies" instance=ExtResource("3_a7idi")]
 
 [node name="EnemyGrid" parent="Enemies/Grid2" instance=ExtResource("4_5jber")]
-position = Vector2(1336, 2.08165e-12)
+position = Vector2(821, 2.08165e-12)
 num_cols = 4
 metadata/_edit_group_ = true
 
@@ -93,7 +93,7 @@ position = Vector2(348.5, 146.5)
 shot_chance_percentage = 0.2
 
 [node name="LeftRightEntityMover" parent="Enemies/Grid2" node_paths=PackedStringArray("entity") instance=ExtResource("6_655ur")]
-position = Vector2(1152, -1)
+position = Vector2(768, -1)
 entity = NodePath("../EnemyGrid")
 box_width_percent = 0.4
 vertical_step = 100.0

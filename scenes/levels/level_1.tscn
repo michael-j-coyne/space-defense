@@ -12,7 +12,7 @@ script = ExtResource("1_c7fg0")
 player = NodePath("Player")
 
 [node name="Player" parent="." instance=ExtResource("2_hv1iq")]
-position = Vector2(868, 1030)
+position = Vector2(730, 668)
 
 [node name="Enemies" parent="." instance=ExtResource("2_aq8tc")]
 
