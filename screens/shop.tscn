@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://brehrasdkr54o"]
+
+[ext_resource type="Texture2D" uid="uid://c4bq13gmv3hr2" path="res://assets/black_rectangle.png" id="1_hql7w"]
+[ext_resource type="Script" path="res://screens/shop.gd" id="2_ol8q6"]
+
+[node name="Shop" type="Sprite2D"]
+scale = Vector2(4, 4)
+texture = ExtResource("1_hql7w")
+centered = false
+script = ExtResource("2_ol8q6")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 93.75
+offset_top = 102.0
+offset_right = 1293.75
+offset_bottom = 321.0
+scale = Vector2(0.25, 0.25)
+theme_override_font_sizes/normal_font_size = 160
+text = "This is the shop
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Button" type="Button" parent="."]
+offset_left = 378.0
+offset_top = 227.5
+offset_right = 457.0
+offset_bottom = 258.5
+text = "Continue"
+
+[connection signal="pressed" from="Button" to="." method="_on_continue_pressed"]
