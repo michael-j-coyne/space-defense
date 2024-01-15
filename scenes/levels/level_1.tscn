@@ -7,8 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://bf0pxxqhe06jr" path="res://scenes/enemy_grid.tscn" id="3_g4qgt"]
 [ext_resource type="PackedScene" uid="uid://c6g8jq43tis0q" path="res://components/left_right_entity_mover.tscn" id="4_crj5m"]
 
-[node name="Level1" type="Node2D"]
+[node name="Level1" type="Node2D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_c7fg0")
+player = NodePath("Player")
 
 [node name="Player" parent="." instance=ExtResource("2_hv1iq")]
 position = Vector2(868, 1030)
