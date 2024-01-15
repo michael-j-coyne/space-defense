@@ -8,7 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://ddvxmqonaaa7d" path="res://components/health_component.tscn" id="6_v3it2"]
 
 [node name="Player" type="Node2D"]
-scale = Vector2(0.384615, 0.384615)
+position = Vector2(0, 690)
+scale = Vector2(0.230769, 0.230769)
 script = ExtResource("1_wxi1e")
 speed = 1000.0
 
