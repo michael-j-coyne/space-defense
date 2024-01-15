@@ -1,15 +1,26 @@
+@tool
+
 class_name Player extends Node2D
 
-const SIZE = Vector2(100, 100)
+const SIZE = Vector2(75, 75)
 
 @export var speed: float
 
 func _ready() -> void:
 	scale = SIZE / $Sprite2D.get_rect().size
 
+func _process(_delta: float) -> void:
+	if not Engine.is_editor_hint():
+		return
+
+	scale = SIZE / $Sprite2D.get_rect().size
+
 # NOTE: if we are really being sticklers, we could extract the input handling
 # into its own component.
 func _physics_process(delta: float) -> void:
+	if Engine.is_editor_hint():
+		return
+
 	var velocity = Vector2.ZERO
 
 	if Input.is_action_pressed("ui_right"):
