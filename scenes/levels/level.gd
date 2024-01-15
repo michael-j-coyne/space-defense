@@ -12,6 +12,11 @@ func _ready() -> void:
 
 	player.tree_exited.connect(func(): failed.emit())
 
+	var enemies = get_tree().get_nodes_in_group("enemies")
+
+	for enemy: Grunt in enemies:
+		enemy.reached_bottom.connect(func(): failed.emit())
+
 func _get_configuration_warnings() -> PackedStringArray:
 	var warnings = PackedStringArray()
 	# NOTE: what if there are multiple signals that need to be connected?
