@@ -12,7 +12,8 @@ script = ExtResource("1_ecl7u")
 player = NodePath("Player")
 
 [node name="Player" parent="." instance=ExtResource("2_blig7")]
-position = Vector2(644, 670)
+position = Vector2(644, 682.5)
+scale = Vector2(0.288462, 0.288462)
 
 [node name="Enemies" parent="." instance=ExtResource("3_a7idi")]
 
