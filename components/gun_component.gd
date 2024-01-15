@@ -8,7 +8,7 @@ class_name GunComponent extends Node2D
 ## How fast the projectile fired from the gun moves in pixels / second
 @export var projectile_speed := 0.0
 ## How much damage the projectile fired from the gun will do, before any multipliers
-@export var damage := 0.0
+@export var damage: int = 0
 
 # If the gun is cooling down, it can't fire.
 var cooling_down = false

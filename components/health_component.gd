@@ -1,7 +1,7 @@
 class_name HealthComponent extends Node
 
-@export var MAX_HEALTH := 1.0
-var health = MAX_HEALTH
+@export var MAX_HEALTH: int = 1
+var health: int = MAX_HEALTH
 
 func take_damage(attack: Attack):
 	health -= attack.damage
