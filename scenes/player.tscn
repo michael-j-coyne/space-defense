@@ -22,7 +22,7 @@ position = Vector2(2.08165e-12, -130)
 cooldown = 0.01
 ammo = ExtResource("6_rysiu")
 projectile_speed = 1000.0
-damage = 1.0
+damage = 1
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_frb1s")]
 health_component = NodePath("../HealthComponent")
