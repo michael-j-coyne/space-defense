@@ -13,6 +13,7 @@ var current_level: Level
 func _ready() -> void:
 	var level: Level = levels[current_level_index].instantiate() as Level
 	level.completed.connect(go_next_level)
+	level.failed.connect(_on_level_failed)
 	current_level = level
 	add_child(level)
 
@@ -27,4 +28,7 @@ func go_next_level():
 	level.completed.connect(go_next_level)
 	current_level = level
 	add_child(level)
+
+func _on_level_failed() -> void:
+	print('you failed')
 
