@@ -1,6 +1,11 @@
 class_name Player extends Node2D
 
+const SIZE = Vector2(100, 100)
+
 @export var speed: float
+
+func _ready() -> void:
+	scale = SIZE / $Sprite2D.get_rect().size
 
 # NOTE: if we are really being sticklers, we could extract the input handling
 # into its own component.
