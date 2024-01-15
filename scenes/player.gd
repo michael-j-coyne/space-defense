@@ -2,7 +2,7 @@
 
 class_name Player extends Node2D
 
-const SIZE = Vector2(75, 75)
+const SIZE = Vector2(60, 60)
 
 @export var speed: float
 
