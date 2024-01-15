@@ -1,4 +1,4 @@
-extends Sprite2D
+class_name Shop extends Sprite2D
 
 signal continue_pressed
 
