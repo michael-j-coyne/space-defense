@@ -17,14 +17,15 @@ func _ready() -> void:
 	add_child(level)
 
 func go_next_level():
+	Globals.current_level.queue_free()
+	await Globals.current_level.tree_exited
+
 	if current_level_index == levels.size() - 1:
 		# no more levels
+		add_child(load("res://screens/win.tscn").instantiate())
 		return
 
 	current_level_index += 1
-
-	Globals.current_level.queue_free()
-	await Globals.current_level.tree_exited
 
 	var shop: Shop = load("res://screens/shop.tscn").instantiate()
 	add_child(shop)
