@@ -4,18 +4,19 @@ class_name Level extends Node2D
 signal completed
 signal failed
 
+var level_completed = false
 @export var player: Player
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
 
-	player.tree_exited.connect(func(): failed.emit())
+	player.tree_exiting.connect(emit_level_failed)
 
 	var enemies = get_tree().get_nodes_in_group("enemies")
 
 	for enemy: Grunt in enemies:
-		enemy.reached_bottom.connect(func(): failed.emit())
+		enemy.reached_bottom.connect(emit_level_failed)
 
 func _get_configuration_warnings() -> PackedStringArray:
 	var warnings = PackedStringArray()
@@ -29,5 +30,10 @@ func _get_configuration_warnings() -> PackedStringArray:
 		in the export vars")
 	return warnings
 
+func emit_level_failed() -> void:
+	if not level_completed:
+		failed.emit()
+
 func _on_all_enemies_defeated():
+	level_completed = true
 	completed.emit()
