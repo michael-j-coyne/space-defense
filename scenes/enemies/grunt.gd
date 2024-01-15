@@ -1,5 +1,5 @@
 @tool
-class_name Grunt extends Node2D
+class_name Grunt extends Enemy
 
 # NOTE: This is temporary code, it willl all be tossed later / moved into different
 # places

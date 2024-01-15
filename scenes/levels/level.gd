@@ -15,7 +15,7 @@ func _ready() -> void:
 
 	var enemies = get_tree().get_nodes_in_group("enemies")
 
-	for enemy: Grunt in enemies:
+	for enemy: Enemy in enemies:
 		enemy.reached_bottom.connect(emit_level_failed)
 
 func _get_configuration_warnings() -> PackedStringArray:
