@@ -31,6 +31,9 @@ func _get_configuration_warnings() -> PackedStringArray:
 
 	return message
 
+func _ready() -> void:
+	set_enemy_initial_positions()
+
 # NOTE: I'm not sure this method should actually be exposed, but encapsulating it within another node
 # like "position_calculator" doesn't seem right. I suppose I could create a "library"
 # but why not just let the "library" functions for the EnemyGrid exist within this class?

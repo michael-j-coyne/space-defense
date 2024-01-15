@@ -26,6 +26,7 @@ func _ready():
 	timer.start()
 
 	add_to_group("enemies")
+	scale = SIZE / $Sprite2D.get_rect().size
 
 func _process(_delta: float) -> void:
 	if not Engine.is_editor_hint():
