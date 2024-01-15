@@ -72,6 +72,7 @@ func _process(_delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		return
+
 	if not entity:
 		# NOTE: I'm not sure how this will work if the EntityMover is the child
 		# of an Enemy... What if the EntityMover's parent frees itself?
