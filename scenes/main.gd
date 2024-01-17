@@ -10,6 +10,12 @@ var current_level_index = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var start_screen = load("res://screens/start.tscn").instantiate()
+	add_child(start_screen)
+	await start_screen.start
+	start_screen.queue_free()
+	await start_screen.tree_exited
+
 	var level: Level = levels[current_level_index].instantiate() as Level
 	level.completed.connect(go_next_level)
 	level.failed.connect(_on_level_failed)

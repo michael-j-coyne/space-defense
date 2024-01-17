@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://v5btqcfntl7f"]
+
+[ext_resource type="Texture2D" uid="uid://btva022o2i1tt" path="res://assets/black_background.png" id="1_557s3"]
+[ext_resource type="Script" path="res://screens/start.gd" id="2_al3lh"]
+
+[node name="Start" type="Sprite2D"]
+texture = ExtResource("1_557s3")
+centered = false
+script = ExtResource("2_al3lh")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 247.0
+offset_top = 278.0
+offset_right = 996.0
+offset_bottom = 390.0
+theme_override_font_sizes/normal_font_size = 50
+text = "WASD to move, space to shoot!
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 347.0
+offset_top = 83.0
+offset_right = 892.0
+offset_bottom = 195.0
+theme_override_font_sizes/normal_font_size = 75
+text = "Space Defense
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Button" type="Button" parent="."]
+offset_left = 211.0
+offset_top = 469.0
+offset_right = 1010.0
+offset_bottom = 561.0
+theme_override_font_sizes/font_size = 50
+text = "Click here or press space to start"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
