@@ -41,22 +41,4 @@ offset_bottom = 590.08
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 
-[node name="Button" type="Button" parent="GridContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 45
-text = "Attack speed +50%"
-alignment = 0
-
-[node name="Button2" type="Button" parent="GridContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 45
-text = "Movement speed +25%"
-alignment = 0
-
-[node name="Button3" type="Button" parent="GridContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 45
-text = "Shot piercing +1"
-alignment = 0
-
 [connection signal="pressed" from="Button" to="." method="_on_continue_pressed"]
