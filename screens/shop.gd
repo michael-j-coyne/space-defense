@@ -15,6 +15,7 @@ func get_price(item_name):
 
 		var price = item["base_price"]
 		# Increase price as stock gets lower
+		# NOTE: we probably want to extract the function that calculates item price
 		price *= (1 + (item["max_stock"] - item["stock"]))
 		return price
 	return 0
@@ -42,7 +43,8 @@ func populate_shop():
 			inventory[item]["display_text"] \
 			+ " - Price: $" + str(price) \
 			+ " Stock: " + str(inventory[item]["stock"])
-		item_button.pressed.connect(func(): _on_ItemButton_pressed(item)  )
+		item_button.pressed.connect(func(): _on_ItemButton_pressed(item))
+		# NOTE: magic number for font size here, but its probably fine.
 		item_button.add_theme_font_size_override("font_size", 35)
 		$GridContainer.add_child(item_button)
 
