@@ -1,27 +1,6 @@
 class_name Shop extends Sprite2D
 
-var inventory = {
-	"attack_speed_upgrade": {
-		"display_text": "Attack speed +50%",
-		"base_price": 100,
-		"stock": 2,
-		"max_stock": 2,
-		"upgrade": func(): PlayerVariables.gun_cooldown /= 2
-	},
-	"movement_speed_upgrade": {
-		"display_text": "Movement Speed +50%",
-		"base_price": 100,
-		"stock": 2,
-		"max_stock": 2,
-		"upgrade": func(): PlayerVariables.speed *= 1.5
-	},
-	"piercing_shot_upgrade": {
-		"display_text": "Piercing shots +1",
-		"base_price": 300,
-		"stock": 3,
-		"max_stock": 2
-	}
-}
+var inventory = Globals.shop_inventory
 
 signal continue_pressed
 
