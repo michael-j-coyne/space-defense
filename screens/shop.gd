@@ -29,7 +29,7 @@ func can_purchase(item_name, currency):
 # NOTE: perhaps this should return the purchased item
 func purchase_item(item_name, currency):
 	if can_purchase(item_name, currency):
-		currency -= get_price(item_name)
+		PlayerVariables.money -= get_price(item_name)
 		inventory[item_name]["stock"] -= 1
 
 		return true
