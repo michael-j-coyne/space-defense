@@ -10,6 +10,7 @@ func _ready() -> void:
 	scale = SIZE / $Sprite2D.get_rect().size
 	speed = PlayerVariables.speed
 	$GunComponent.cooldown = PlayerVariables.gun_cooldown
+	$GunComponent.penetrations = PlayerVariables.gun_penetrations
 
 func _process(_delta: float) -> void:
 	if not Engine.is_editor_hint():
