@@ -4,8 +4,8 @@ class_name Projectile extends Node2D
 var attack: Attack
 var speed: float
 var direction: Vector2
+var penetrations: int = 1
 @export var time_alive: float = 2.0
-@export var penetrations: int = 1
 
 func _ready() -> void:
 	get_tree().create_timer(time_alive).connect("timeout", func(): queue_free())

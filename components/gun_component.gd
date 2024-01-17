@@ -9,6 +9,8 @@ class_name GunComponent extends Node2D
 @export var projectile_speed := 0.0
 ## How much damage the projectile fired from the gun will do, before any multipliers
 @export var damage: int = 0
+## How many enemies the gun's projectile will pierce through
+@export var penetrations: int = 1
 
 # If the gun is cooling down, it can't fire.
 var cooling_down = false
@@ -37,6 +39,7 @@ func shoot(direction: Vector2) -> Projectile:
 	projectile.attack = attack
 	projectile.speed = projectile_speed
 	projectile.direction = direction
+	projectile.penetrations = penetrations
 
 	# NOTE: I will also need to rotate the projectile if I decide to make the gun able to shoot
 	# at various angles.
