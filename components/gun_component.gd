@@ -49,7 +49,6 @@ func shoot(direction: Vector2) -> Projectile:
 
 	projectile.global_position = global_position + translation_direction * translation_amount
 
-	# TODO: append projectile to the "level" not the "root"
 	Globals.current_level.add_child(projectile)
 
 	cooling_down = true
