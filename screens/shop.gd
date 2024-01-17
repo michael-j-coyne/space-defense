@@ -46,6 +46,11 @@ func populate_shop():
 		item_button.pressed.connect(func(): _on_ItemButton_pressed(item))
 		# NOTE: magic number for font size here, but its probably fine.
 		item_button.add_theme_font_size_override("font_size", 35)
+
+		# Disable and "grey out" item if out of stock
+		if inventory[item]["stock"] < 1:
+			item_button.disabled = true
+
 		$GridContainer.add_child(item_button)
 
 func _on_ItemButton_pressed(item_name):
