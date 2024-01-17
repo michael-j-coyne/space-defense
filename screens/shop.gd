@@ -54,8 +54,7 @@ func populate_shop():
 		$GridContainer.add_child(item_button)
 
 func _on_ItemButton_pressed(item_name):
-	# TODO: actually use currency
-	var currency_amount = 10000
+	var currency_amount = PlayerVariables.money
 	if purchase_item(item_name, currency_amount):
 
 		# Apply the upgrade
