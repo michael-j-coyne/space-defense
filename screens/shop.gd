@@ -22,6 +22,7 @@ func can_purchase(item_name, currency):
 		return true
 	return false
 
+# NOTE: perhaps this should return the purchased item
 func purchase_item(item_name, currency):
 	if can_purchase(item_name, currency):
 		currency -= get_price(item_name)
@@ -49,7 +50,7 @@ func _on_ItemButton_pressed(item_name):
 	if purchase_item(item_name, currency_amount):
 
 		# Apply the upgrade
-		inventory[item_name]["upgrade"].call()
+		inventory[item_name]["apply_upgrade"].call()
 
 		# Update UI
 		for node in $GridContainer.get_children():
