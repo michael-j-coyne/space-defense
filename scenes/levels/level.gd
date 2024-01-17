@@ -11,6 +11,8 @@ func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
 
+	Globals.current_level = self
+
 	player.tree_exiting.connect(
 		func():
 			var remaining_enemies = get_tree().get_nodes_in_group("enemies")
