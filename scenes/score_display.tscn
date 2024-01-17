@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3vr16v53ni8l"]
+
+[ext_resource type="Script" path="res://scenes/score_display.gd" id="1_7inek"]
+
+[node name="ScoreDisplay" type="RichTextLabel"]
+offset_right = 74.0
+offset_bottom = 42.0
+theme_override_font_sizes/normal_font_size = 30
+text = "Money: $"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+script = ExtResource("1_7inek")
