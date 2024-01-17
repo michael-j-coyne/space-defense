@@ -1,10 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3t6m1i7skeq1"]
+[gd_scene load_steps=3 format=3 uid="uid://d3t6m1i7skeq1"]
 
 [ext_resource type="Texture2D" uid="uid://btva022o2i1tt" path="res://assets/black_background.png" id="1_hkwqn"]
+[ext_resource type="Script" path="res://screens/game_over.gd" id="2_cvs5y"]
 
 [node name="GameOver" type="Sprite2D"]
 texture = ExtResource("1_hkwqn")
 centered = false
+script = ExtResource("2_cvs5y")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 174.25
@@ -16,3 +18,14 @@ text = "Game Over"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
+
+[node name="Button" type="Button" parent="."]
+offset_left = 44.0
+offset_top = 520.0
+offset_right = 1227.0
+offset_bottom = 597.0
+theme_override_font_sizes/font_size = 50
+text = "Click here or press enter to return to title screen
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

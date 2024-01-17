@@ -7,6 +7,7 @@ var levels := [
 ]
 
 var current_level_index = 0
+signal new_game_requested
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -49,4 +50,6 @@ func go_next_level():
 
 func _on_level_failed() -> void:
 	Globals.current_level.queue_free()
-	add_child.call_deferred(load("res://screens/game_over.tscn").instantiate())
+	var game_over_screen = load("res://screens/game_over.tscn").instantiate()
+	game_over_screen.new_game_requested.connect(func(): new_game_requested.emit())
+	add_child(game_over_screen)

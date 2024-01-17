@@ -6,4 +6,10 @@ func _ready() -> void:
 func new_game():
 	Globals.reset()
 	PlayerVariables.reset()
-	add_child(Game.new())
+	var game = Game.new()
+	game.new_game_requested.connect(
+		func():
+			game.queue_free()
+			new_game()
+	)
+	add_child(game)
