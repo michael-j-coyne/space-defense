@@ -99,6 +99,10 @@ func _process(_delta):
 		set_enemy_initial_positions()
 		return
 
+	if Input.is_action_just_pressed("ui_text_backspace"):
+		for enemy in get_children():
+			enemy.queue_free()
+
 	# NOTE: this works for now but I don't know if its good practice. Also, I don't know if
 	# its guaranteed that the EnemyGrid will free itself before something tries to call
 	# boundary()
