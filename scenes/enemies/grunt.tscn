@@ -8,10 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://r7ndw7tqx7xk" path="res://components/hitbox_component.tscn" id="6_p83i0"]
 
 [node name="Grunt" type="Node2D"]
-scale = Vector2(0.288462, 0.288462)
+scale = Vector2(0.230769, 0.230769)
 script = ExtResource("1_v5n1i")
 shot_chance_percentage = 0.5
 shot_interval_seconds = 1.0
+value = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_l53fu")
@@ -30,3 +31,5 @@ health_component = NodePath("../HealthComponent")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitboxComponent"]
 polygon = PackedVector2Array(102, -124.4, 102, -122.9, 120, -107.9, 120, -105.5, 130, -88, 130, 86.6, 119.3, 109, 117.8, 109, 103.8, 123, 101.5, 123, 88.3, 130, -88.6, 130, -105, 122.3, -105, 120.9, -120, 107.9, -120, 105.5, -130, 88, -130, -87.1, -124.4, -102, -122.9, -102, -107.9, -120, -105.8, -120, -100.8, -125, -98.3, -125, -86.7, -130, 87.1, -130)
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
