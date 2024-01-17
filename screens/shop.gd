@@ -10,8 +10,11 @@ func _ready() -> void:
 func get_price(item_name):
 	if item_name in inventory:
 		var item = inventory[item_name]
+		# Fail early!
 		assert(item["max_stock"] >= item["stock"])
+
 		var price = item["base_price"]
+		# Increase price as stock gets lower
 		price *= (1 + (item["max_stock"] - item["stock"]))
 		return price
 	return 0
@@ -44,7 +47,6 @@ func populate_shop():
 		$GridContainer.add_child(item_button)
 
 func _on_ItemButton_pressed(item_name):
-	#var player = get_node("/path/to/player_node")
 	# TODO: actually use currency
 	var currency_amount = 10000
 	if purchase_item(item_name, currency_amount):
