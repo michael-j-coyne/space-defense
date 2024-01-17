@@ -10,6 +10,7 @@ func _ready() -> void:
 func get_price(item_name):
 	if item_name in inventory:
 		var item = inventory[item_name]
+		assert(item["max_stock"] >= item["stock"])
 		var price = item["base_price"]
 		price *= (1 + (item["max_stock"] - item["stock"]))
 		return price
@@ -25,8 +26,7 @@ func purchase_item(item_name, currency):
 	if can_purchase(item_name, currency):
 		currency -= get_price(item_name)
 		inventory[item_name]["stock"] -= 1
-		# TODO: Add logic to give the item to the player
-		inventory[item_name]["upgrade"].call()
+
 		return true
 	return false
 
@@ -47,11 +47,14 @@ func _on_ItemButton_pressed(item_name):
 	# TODO: actually use currency
 	var currency_amount = 10000
 	if purchase_item(item_name, currency_amount):
-		print("Purchase successful!")
+
+		# Apply the upgrade
+		inventory[item_name]["upgrade"].call()
+
+		# Update UI
 		for node in $GridContainer.get_children():
 			node.queue_free()
 		populate_shop()
-		# Update UI and player stats
 	else:
 		print("Cannot purchase item.")
 
