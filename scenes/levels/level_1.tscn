@@ -26,81 +26,97 @@ metadata/_edit_group_ = true
 position = Vector2(30, 30)
 scale = Vector2(0.230769, 0.230769)
 shot_chance_percentage = 0.1
+value = 10
 
 [node name="Grunt2" parent="Enemies/EnemyGrid" instance=ExtResource("1_rkiph")]
 position = Vector2(100, 30)
 scale = Vector2(0.230769, 0.230769)
 shot_chance_percentage = 0.1
+value = 10
 
 [node name="Grunt3" parent="Enemies/EnemyGrid" instance=ExtResource("1_rkiph")]
 position = Vector2(170, 30)
 scale = Vector2(0.230769, 0.230769)
 shot_chance_percentage = 0.1
+value = 10
 
 [node name="Grunt4" parent="Enemies/EnemyGrid" instance=ExtResource("1_rkiph")]
 position = Vector2(240, 30)
 scale = Vector2(0.230769, 0.230769)
 shot_chance_percentage = 0.1
+value = 10
 
 [node name="Grunt5" parent="Enemies/EnemyGrid" instance=ExtResource("1_rkiph")]
 position = Vector2(310, 30)
 scale = Vector2(0.230769, 0.230769)
 shot_chance_percentage = 0.1
+value = 10
 
 [node name="Grunt6" parent="Enemies/EnemyGrid" instance=ExtResource("1_rkiph")]
 position = Vector2(380, 30)
 scale = Vector2(0.230769, 0.230769)
 shot_chance_percentage = 0.1
+value = 10
 
 [node name="Grunt7" parent="Enemies/EnemyGrid" instance=ExtResource("1_rkiph")]
 position = Vector2(450, 30)
 scale = Vector2(0.230769, 0.230769)
 shot_chance_percentage = 0.1
+value = 10
 
 [node name="Grunt8" parent="Enemies/EnemyGrid" instance=ExtResource("1_rkiph")]
 position = Vector2(520, 30)
 scale = Vector2(0.230769, 0.230769)
 shot_chance_percentage = 0.1
+value = 10
 
 [node name="Grunt9" parent="Enemies/EnemyGrid" instance=ExtResource("1_rkiph")]
 position = Vector2(30, 100)
 scale = Vector2(0.230769, 0.230769)
 shot_chance_percentage = 0.1
+value = 10
 
 [node name="Grunt10" parent="Enemies/EnemyGrid" instance=ExtResource("1_rkiph")]
 position = Vector2(100, 100)
 scale = Vector2(0.230769, 0.230769)
 shot_chance_percentage = 0.1
+value = 10
 
 [node name="Grunt11" parent="Enemies/EnemyGrid" instance=ExtResource("1_rkiph")]
 position = Vector2(170, 100)
 scale = Vector2(0.230769, 0.230769)
 shot_chance_percentage = 0.1
+value = 10
 
 [node name="Grunt12" parent="Enemies/EnemyGrid" instance=ExtResource("1_rkiph")]
 position = Vector2(240, 100)
 scale = Vector2(0.230769, 0.230769)
 shot_chance_percentage = 0.1
+value = 10
 
 [node name="Grunt13" parent="Enemies/EnemyGrid" instance=ExtResource("1_rkiph")]
 position = Vector2(310, 100)
 scale = Vector2(0.230769, 0.230769)
 shot_chance_percentage = 0.1
+value = 10
 
 [node name="Grunt14" parent="Enemies/EnemyGrid" instance=ExtResource("1_rkiph")]
 position = Vector2(380, 100)
 scale = Vector2(0.230769, 0.230769)
 shot_chance_percentage = 0.1
+value = 10
 
 [node name="Grunt15" parent="Enemies/EnemyGrid" instance=ExtResource("1_rkiph")]
 position = Vector2(450, 100)
 scale = Vector2(0.230769, 0.230769)
 shot_chance_percentage = 0.1
+value = 10
 
 [node name="Grunt16" parent="Enemies/EnemyGrid" instance=ExtResource("1_rkiph")]
 position = Vector2(520, 100)
 scale = Vector2(0.230769, 0.230769)
 shot_chance_percentage = 0.1
+value = 10
 
 [node name="LeftRightEntityMover" parent="Enemies" node_paths=PackedStringArray("entity") instance=ExtResource("4_crj5m")]
 entity = NodePath("../EnemyGrid")
