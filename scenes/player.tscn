@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dbi0jyorwh27f"]
+[gd_scene load_steps=8 format=3 uid="uid://dbi0jyorwh27f"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_wxi1e"]
 [ext_resource type="Texture2D" uid="uid://cftdp5fyike00" path="res://assets/playerShip1_blue.png" id="2_t37gb"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://r7ndw7tqx7xk" path="res://components/hitbox_component.tscn" id="5_frb1s"]
 [ext_resource type="PackedScene" uid="uid://dq6hexvixj5ul" path="res://scenes/projectiles/player_projectiles/blue_laser.tscn" id="6_rysiu"]
 [ext_resource type="PackedScene" uid="uid://ddvxmqonaaa7d" path="res://components/health_component.tscn" id="6_v3it2"]
+[ext_resource type="PackedScene" uid="uid://sn70lkdemsjc" path="res://components/after_image_component.tscn" id="7_5mev7"]
 
 [node name="Player" type="Node2D"]
 position = Vector2(0, 690)
@@ -30,3 +31,10 @@ health_component = NodePath("../HealthComponent")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitboxComponent"]
 polygon = PackedVector2Array(12.5, -34.9, 16.2, -14.5, 17.1, -14.5, 35.8, -2.7, 42.6, -10.5, 49.3, -10.5, 49.5, 24.7, 46.6, 29.5, 42.7, 29.5, 39.7, 26.5, 16.4, 31.2, 11.9, 37.5, -12.2, 37.5, -18.4, 30.5, -22.8, 30.5, -39.8, 25.5, -45.2, 29.8, -47.5, 28.8, -47.5, 27.3, -49.5, 25.3, -49.5, -9.5, -48.9, -9.5, -41.5, -10.9, -41.5, -8.4, -35.9, -3.5, -17.5, -12.8, -12.5, -34.9, -12.5, -37.5, 12.5, -37.5)
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AfterImageComponent" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("7_5mev7")]
+frequency = 0.05
+fadeout_time = 0.1
+sprite = NodePath("../Sprite2D")
