@@ -90,9 +90,11 @@ func _physics_process(delta: float) -> void:
 
 		if local_pos.x < 0:
 			direction *= -1
+			entity.create_afterimage()
 			entity.position.y += vertical_step
 		elif local_pos.x + entity.boundary().x > box_width_percent * screen_width:
 			direction *= -1
+			entity.create_afterimage()
 			entity.position.y += vertical_step
 	else:
 		# TODO: handle anchor point == center.

@@ -53,6 +53,18 @@ func check_reached_bottom() -> void:
 	if global_position.y + boundary().y * 0.5 >= bottom_coord:
 		reached_bottom.emit()
 
+func create_afterimage():
+	var afterimage = AfterImage.new(
+		$Sprite2D.duplicate(),
+		global_position,
+		scale,
+		0.125
+	)
+
+	if Globals.current_level:
+		Globals.current_level.add_child(afterimage)
+	else:
+		get_node("/root").add_child(afterimage)
 
 func _on_tree_exiting() -> void:
 	PlayerVariables.money += value

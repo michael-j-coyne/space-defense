@@ -90,6 +90,10 @@ func boundary() -> Vector2:
 	var child_boundary = get_child(0).boundary()
 	return EnemyGrid.calculate_grid_size(num_rows, num_cols, child_boundary, gap_size)
 
+func create_afterimage() -> void:
+	for enemy in get_children():
+		enemy.create_afterimage()
+
 func _process(_delta):
 	if Engine.is_editor_hint():
 
