@@ -80,7 +80,7 @@ func _physics_process(delta: float) -> void:
 		return
 
 	# NOTE: Do I want to do this on every loop?
-	var screen_width = get_node('/root').content_scale_size.x
+	var screen_width = get_node("/root").content_scale_size.x
 
 	entity.position.x += direction * speed * delta
 
