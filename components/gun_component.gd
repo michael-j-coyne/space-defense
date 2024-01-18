@@ -49,7 +49,10 @@ func shoot(direction: Vector2) -> Projectile:
 
 	projectile.global_position = global_position + translation_direction * translation_amount
 
-	Globals.current_level.add_child(projectile)
+	if Globals.current_level:
+		Globals.current_level.add_child(projectile)
+	else:
+		get_node("/root").add_child(projectile)
 
 	cooling_down = true
 	get_tree().create_timer(cooldown).connect("timeout", func(): cooling_down = false)
