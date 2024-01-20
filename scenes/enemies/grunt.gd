@@ -58,7 +58,7 @@ func create_afterimage():
 		$Sprite2D.duplicate(),
 		global_position,
 		scale,
-		0.125
+		0.15
 	)
 
 	if Globals.current_level:
