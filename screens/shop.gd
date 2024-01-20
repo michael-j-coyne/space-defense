@@ -7,6 +7,10 @@ signal continue_pressed
 func _ready() -> void:
 	populate_shop()
 
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("ui_accept"):
+		continue_pressed.emit()
+
 func get_price(item_name):
 	if item_name in inventory:
 		var item = inventory[item_name]
