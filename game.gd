@@ -3,7 +3,8 @@ class_name Game extends Node
 var levels := [
 	load("res://scenes/levels/level_1.tscn"),
 	load("res://scenes/levels/level_2.tscn"),
-	load("res://scenes/levels/level_3.tscn")
+	load("res://scenes/levels/level_3.tscn"),
+	load("res://scenes/levels/level_4.tscn")
 ]
 
 var current_level_index = 0
