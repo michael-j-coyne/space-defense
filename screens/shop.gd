@@ -55,7 +55,18 @@ func populate_shop():
 		if inventory[item]["stock"] < 1:
 			item_button.disabled = true
 
-		$GridContainer.add_child(item_button)
+		var description = RichTextLabel.new()
+		description.text = inventory[item]["description"]
+		description.fit_content = true
+		description.custom_minimum_size=Vector2(400, 0)
+		description.add_theme_font_size_override("normal_font_size", 20)
+
+		var panel_container = PanelContainer.new()
+		var container = VBoxContainer.new()
+		container.add_child(item_button)
+		container.add_child(description)
+
+		$GridContainer.add_child(container)
 
 func _on_ItemButton_pressed(item_name):
 	var currency_amount = PlayerVariables.money
