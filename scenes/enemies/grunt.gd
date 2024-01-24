@@ -67,4 +67,6 @@ func create_afterimage():
 		get_node("/root").add_child(afterimage)
 
 func _on_tree_exiting() -> void:
+	if Engine.is_editor_hint():
+		return
 	PlayerVariables.money += value
