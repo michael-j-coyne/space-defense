@@ -29,9 +29,9 @@ text = "Click here to return to title screen
 "
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
-offset_left = 286.0
+offset_left = 250.0
 offset_top = 522.0
-offset_right = 1021.0
+offset_right = 985.0
 offset_bottom = 619.0
 theme_override_font_sizes/normal_font_size = 50
 text = "Press \"enter\" to retry"
