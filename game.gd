@@ -8,6 +8,7 @@ var levels := [
 ]
 
 var current_level_index = 0
+var money_at_level_start = 0
 signal new_game_requested
 
 # Called when the node enters the scene tree for the first time.
@@ -19,14 +20,19 @@ func _ready() -> void:
 	await start_screen.tree_exited
 
 	var level: Level = levels[current_level_index].instantiate() as Level
+	start_level(level)
+
+func start_level(level):
+	money_at_level_start = PlayerVariables.money
 	level.completed.connect(go_next_level)
 	level.failed.connect(_on_level_failed)
 	Globals.current_level = level
 	add_child(level)
 
 func go_next_level():
-	Globals.current_level.queue_free()
-	await Globals.current_level.tree_exited
+	if Globals.current_level:
+		Globals.current_level.queue_free()
+		await Globals.current_level.tree_exited
 
 	if current_level_index == levels.size() - 1:
 		# no more levels
@@ -44,13 +50,22 @@ func go_next_level():
 	await shop.tree_exited
 
 	var level: Level = levels[current_level_index].instantiate() as Level
-	level.completed.connect(go_next_level)
-	level.failed.connect(_on_level_failed)
-	Globals.current_level = level
-	add_child(level)
+	start_level(level)
+
+func restart_level() -> void:
+	PlayerVariables.money = money_at_level_start
+	var level: Level = levels[current_level_index].instantiate() as Level
+	start_level(level)
 
 func _on_level_failed() -> void:
 	Globals.current_level.queue_free()
+	Globals.current_level = null
 	var game_over_screen = load("res://screens/game_over.tscn").instantiate()
 	game_over_screen.new_game_requested.connect(func(): new_game_requested.emit())
+	game_over_screen.retry_requested.connect(
+		func():
+			game_over_screen.queue_free()
+			await game_over_screen.tree_exited
+			restart_level()
+	)
 	add_child(game_over_screen)
