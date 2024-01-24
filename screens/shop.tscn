@@ -10,23 +10,23 @@ centered = false
 script = ExtResource("2_ol8q6")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 312.0
-offset_top = 24.0
-offset_right = 983.0
-offset_bottom = 141.0
+offset_left = 499.0
+offset_top = -15.0
+offset_right = 723.0
+offset_bottom = 98.0
 theme_override_font_sizes/normal_font_size = 75
-text = "This is the shop
+text = "SHOP
 "
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
 [node name="Button" type="Button" parent="."]
-offset_left = 993.0
-offset_top = 596.0
-offset_right = 1257.0
-offset_bottom = 688.0
-theme_override_font_sizes/font_size = 50
+offset_left = 1031.0
+offset_top = 641.0
+offset_right = 1269.0
+offset_bottom = 709.0
+theme_override_font_sizes/font_size = 40
 text = "Continue"
 
 [node name="GridContainer" type="GridContainer" parent="."]
@@ -35,13 +35,23 @@ anchor_left = 0.066
 anchor_top = 0.136
 anchor_right = 0.066
 anchor_bottom = 0.136
-offset_left = -7.48
-offset_top = 93.08
-offset_right = 843.52
-offset_bottom = 590.08
+offset_left = -50.48
+offset_top = 33.08
+offset_right = 917.52
+offset_bottom = 562.08
 theme_override_constants/h_separation = 10
-theme_override_constants/v_separation = 10
+theme_override_constants/v_separation = 20
 
 [node name="ScoreDisplay" parent="." instance=ExtResource("3_d4ukl")]
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 165.0
+offset_bottom = 47.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 140.0
+offset_top = 106.0
+offset_right = 246.0
+offset_bottom = 298.0
 
 [connection signal="pressed" from="Button" to="." method="_on_continue_pressed"]
