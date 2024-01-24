@@ -4,6 +4,7 @@ class_name EnemyGrid extends Node2D
 @export var num_cols: int = 1
 @export var num_rows: int = 1
 @export var gap_size: Vector2 = Vector2(0, 0)
+@export var clone_first_child: bool = false
 
 # COUPLING: requires that children implement boundary()
 
@@ -96,8 +97,13 @@ func create_afterimage() -> void:
 
 func _process(_delta):
 	if Engine.is_editor_hint():
+		if clone_first_child and get_child_count() > 0 and get_child_count() < num_rows * num_cols:
+			var enemy = get_child(0)
+			var new_enemy = enemy.duplicate(DUPLICATE_SCRIPTS)
+			add_child(new_enemy)
+			new_enemy.set_owner(enemy.get_owner())
 
-		if get_child_count() > num_rows * num_cols:
+		if get_child_count() > num_rows * num_cols and get_child_count() > 1:
 			remove_child(get_children()[-1])
 
 		set_enemy_initial_positions()
