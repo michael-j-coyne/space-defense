@@ -13,7 +13,7 @@ func _ready() -> void:
 
 func reset():
 	money = 0
-	speed = 600
+	speed = 400
 
 	# gun variables
 	gun_cooldown = 0.75
