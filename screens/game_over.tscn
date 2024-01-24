@@ -9,10 +9,10 @@ centered = false
 script = ExtResource("2_cvs5y")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 174.25
-offset_top = 238.0
-offset_right = 1043.25
-offset_bottom = 457.0
+offset_left = 132.0
+offset_top = 45.0
+offset_right = 1172.0
+offset_bottom = 285.0
 theme_override_font_sizes/normal_font_size = 160
 text = "Game Over"
 fit_content = true
@@ -21,11 +21,22 @@ autowrap_mode = 0
 
 [node name="Button" type="Button" parent="."]
 offset_left = 44.0
-offset_top = 520.0
+offset_top = 338.0
 offset_right = 1227.0
-offset_bottom = 597.0
+offset_bottom = 415.0
 theme_override_font_sizes/font_size = 50
-text = "Click here or press enter to return to title screen
+text = "Click here to return to title screen
 "
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 286.0
+offset_top = 522.0
+offset_right = 1021.0
+offset_bottom = 619.0
+theme_override_font_sizes/normal_font_size = 50
+text = "Press \"enter\" to retry"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
