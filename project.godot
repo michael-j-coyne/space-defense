@@ -34,6 +34,10 @@ window/stretch/mode="canvas_items"
 
 enabled=PackedStringArray("res://addons/gut/plugin.cfg")
 
+[gui]
+
+theme/custom_font="res://assets/Kenney Pixel Square.ttf"
+
 [input]
 
 ui_accept={
