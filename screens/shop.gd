@@ -43,13 +43,21 @@ func populate_shop():
 	for item in inventory.keys():
 		var item_button := Button.new()
 		var price = get_price(item)
-		item_button.text =  \
-			inventory[item]["display_text"] \
-			+ " - Price: $" + str(price) \
-			+ " Stock: " + str(inventory[item]["stock"])
+
+		var button_text = "{display_text} - ${price}".format(
+			{
+				"display_text": inventory[item]["display_text"],
+			 	"price": str(price)
+			}
+		)
+
+		item_button.text = button_text
+
+
 		item_button.pressed.connect(func(): _on_ItemButton_pressed(item))
 		# NOTE: magic number for font size here, but its probably fine.
 		item_button.add_theme_font_size_override("font_size", 35)
+		item_button.alignment = HORIZONTAL_ALIGNMENT_LEFT
 
 		# Disable and "grey out" item if out of stock
 		if inventory[item]["stock"] < 1:
@@ -57,6 +65,8 @@ func populate_shop():
 
 		var description = RichTextLabel.new()
 		description.text = inventory[item]["description"]
+		description.text += " | Stock: " + str(inventory[item]["stock"])
+
 		description.fit_content = true
 		description.custom_minimum_size=Vector2(400, 0)
 		description.add_theme_font_size_override("normal_font_size", 20)
