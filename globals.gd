@@ -35,7 +35,7 @@ func reset():
 		"gattling_gun_upgrade": {
 			"display_text": "Gattling Gun",
 			"description": "Now that's just plain fun.",
-			"base_price": 5000,
+			"base_price": 2000,
 			"stock": 1,
 			"max_stock": 1,
 			"apply_upgrade": func(): PlayerVariables.gun_cooldown *= .1
