@@ -1,4 +1,4 @@
-extends Node2D
+class_name Main extends Node2D
 
 func _ready() -> void:
 	new_game()
