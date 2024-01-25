@@ -32,13 +32,13 @@ func reset():
 			"max_stock": 3,
 			"apply_upgrade": func(): PlayerVariables.gun_penetrations += 1
 		},
-		"gattling_gun_upgrade": {
-			"display_text": "Gattling Gun",
+		"gatling_gun_upgrade": {
+			"display_text": "Gatling Gun",
 			"description": "Now that's just plain fun.",
 			"base_price": 2000,
 			"stock": 1,
 			"max_stock": 1,
-			"apply_upgrade": func(): PlayerVariables.gun_cooldown *= .2
+			"apply_upgrade": func(): PlayerVariables.has_gatling_gun = true
 		},
 	}
 
