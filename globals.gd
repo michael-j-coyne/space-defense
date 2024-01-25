@@ -38,7 +38,7 @@ func reset():
 			"base_price": 2000,
 			"stock": 1,
 			"max_stock": 1,
-			"apply_upgrade": func(): PlayerVariables.gun_cooldown *= .1
+			"apply_upgrade": func(): PlayerVariables.gun_cooldown *= .2
 		},
 	}
 
