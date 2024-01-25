@@ -44,6 +44,11 @@ var gatling_gun_upgrade = ShopItem.new(
 	func(): PlayerVariables.has_gatling_gun = true)
 
 func reset():
+	attack_speed_upgrade.stock = 2
+	movement_speed_upgrade.stock = 2
+	piercing_shot_upgrade.stock = 3
+	gatling_gun_upgrade.stock = 1
+
 	shop_inventory = {
 		"attack_speed_upgrade": attack_speed_upgrade,
 		"movement_speed_upgrade": movement_speed_upgrade,
