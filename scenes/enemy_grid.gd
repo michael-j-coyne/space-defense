@@ -27,7 +27,7 @@ enum move_direction { left, right }
 
 var row_height = 60
 
-var direction := 1 if initial_direction == move_direction.left else -1
+var direction := 1
 
 var enemy_grid_pos: float
 
@@ -60,6 +60,7 @@ func _get_configuration_warnings() -> PackedStringArray:
 func _ready() -> void:
 	set_enemy_initial_positions()
 	enemy_grid_pos = enemy_start_pos
+	direction = -1 if initial_direction == move_direction.left else 1
 
 # NOTE: I'm not sure this method should actually be exposed, but encapsulating it within another node
 # like "position_calculator" doesn't seem right. I suppose I could create a "library"
