@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bro4ydortrmw6"]
+
+[ext_resource type="Texture2D" uid="uid://ct1vbo7f7rvqw" path="res://assets/enemyBlue5.png" id="1_cborf"]
+[ext_resource type="Script" path="res://scenes/enemies/enemy.gd" id="1_pg8s3"]
+[ext_resource type="PackedScene" uid="uid://ddvxmqonaaa7d" path="res://components/health_component.tscn" id="2_qj86d"]
+[ext_resource type="PackedScene" uid="uid://r7ndw7tqx7xk" path="res://components/hitbox_component.tscn" id="3_g54cx"]
+
+[node name="NonShooter" type="Node2D"]
+scale = Vector2(0.618557, 0.595238)
+script = ExtResource("1_pg8s3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cborf")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_qj86d")]
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_g54cx")]
+collision_layer = 2
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitboxComponent"]
+polygon = PackedVector2Array(46.5, -24.4, 46.5, -4.9, 28.7, 42, 12.1, 42, 6.5, 38, 6.5, 33.7, 10.8, 19, -11.5, 19, -11.5, 19.7, -5.8, 39, -8.8, 39, -12.4, 42, -29.5, 42, -29.5, 41.4, -46.5, -1.5, -46.5, -24.4, -33.5, -41.7, -20.5, -42, -8.5, -37.4, -8.5, -35.3, -5.2, -28, 4.5, -28, 10.3, -39, 13.9, -39, 18.7, -42, 33.5, -42)
