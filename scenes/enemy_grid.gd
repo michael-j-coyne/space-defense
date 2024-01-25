@@ -108,7 +108,6 @@ static func calculate_grid_size(total_num_rows: int, total_num_cols: int, enemy_
 # Should the grid actually resize them?
 func boundary() -> Vector2:
 	if get_child_count() < 1:
-		push_error("boundary() should not be called with no children")
 		return Vector2(0, 0)
 
 	var child_boundary = get_child(0).boundary()
