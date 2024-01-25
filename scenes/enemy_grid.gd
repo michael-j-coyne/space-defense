@@ -23,6 +23,10 @@ enum move_direction { left, right }
 ## The intial x direction that the entity moves
 @export var initial_direction: move_direction = move_direction.left
 
+@export var rows_below_origin: int = 0
+
+var row_height = 60
+
 var direction := 1 if initial_direction == move_direction.left else -1
 
 var enemy_grid_pos: float
@@ -92,6 +96,7 @@ func set_enemy_initial_positions():
 		var pos = EnemyGrid.enemy_position(row_idx, col_idx, enemy.boundary(), gap_size)
 		enemy.position = pos
 		enemy.position.x += enemy_start_pos
+		enemy.position.y += rows_below_origin * row_height
 
 static func calculate_grid_size(total_num_rows: int, total_num_cols: int, enemy_size: Vector2, gap_size: Vector2) -> Vector2:
 	assert(total_num_rows > 0, "num_rows must be positive")
@@ -144,6 +149,8 @@ func _process(_delta):
 		# remove children from grid
 		if get_child_count() > num_rows * num_cols and get_child_count() > 1:
 			remove_child(get_children()[-1])
+
+		position.y = 0
 
 		set_enemy_initial_positions()
 		queue_redraw()
