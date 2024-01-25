@@ -15,3 +15,10 @@ func new_game():
 			new_game()
 	)
 	add_child(game)
+
+func _process(_delta):
+	if OS.is_debug_build():
+		if Input.is_action_just_pressed("ui_focus_next"):
+			Engine.time_scale *= 2
+		if Input.is_action_just_pressed("ui_cancel"):
+			Engine.time_scale *= 0.5

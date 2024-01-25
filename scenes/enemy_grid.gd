@@ -149,7 +149,7 @@ func _process(_delta):
 		queue_redraw()
 		return
 
-	if Input.is_action_just_pressed("ui_text_backspace"):
+	if OS.is_debug_build() and Input.is_action_just_pressed("ui_text_backspace"):
 		for enemy in get_children():
 			enemy.queue_free()
 
