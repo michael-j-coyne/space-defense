@@ -22,7 +22,7 @@ func create_afterimage():
 		fadeout_time
 	)
 
-	if Globals.current_level:
+	if is_instance_valid(Globals.current_level):
 		Globals.current_level.add_child(afterimage)
 	else:
 		get_node("/root").add_child(afterimage)

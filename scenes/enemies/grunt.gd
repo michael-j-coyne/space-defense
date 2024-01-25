@@ -61,7 +61,7 @@ func create_afterimage():
 		0.15
 	)
 
-	if Globals.current_level:
+	if is_instance_valid(Globals.current_level):
 		Globals.current_level.add_child(afterimage)
 	else:
 		get_node("/root").add_child(afterimage)
