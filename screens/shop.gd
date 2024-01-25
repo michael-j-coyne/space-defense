@@ -15,22 +15,22 @@ func get_price(item_name):
 	if item_name in inventory:
 		var item = inventory[item_name]
 		# Fail early!
-		assert(item["max_stock"] >= item["stock"])
+		assert(item.max_stock >= item.stock)
 
-		var price = item["base_price"]
+		var price = item.base_price
 		# Increase price as stock gets lower
 		# NOTE: we probably want to extract the function that calculates item price
 		var price_multiplier = 1
-		if item.has("price_multiplier"):
-			price_multiplier = item["price_multiplier"]
+		if item.price_multiplier:
+			price_multiplier = item.price_multiplier
 
-		price *= (1 + price_multiplier * (item["max_stock"] - item["stock"]))
+		price *= (1 + price_multiplier * (item.max_stock - item.stock))
 		return price
 	return 0
 
 func can_purchase(item_name, currency):
 	# We should grey-out items that we cannot purchase
-	if item_name in inventory and inventory[item_name]["stock"] > 0 and currency >= get_price(item_name):
+	if item_name in inventory and inventory[item_name].stock > 0 and currency >= get_price(item_name):
 		return true
 	return false
 
@@ -38,7 +38,7 @@ func can_purchase(item_name, currency):
 func purchase_item(item_name, currency):
 	if can_purchase(item_name, currency):
 		PlayerVariables.money -= get_price(item_name)
-		inventory[item_name]["stock"] -= 1
+		inventory[item_name].stock -= 1
 
 		return true
 	return false
@@ -51,7 +51,7 @@ func populate_shop():
 
 		var button_text = "{display_text} - ${price}".format(
 			{
-				"display_text": item["display_text"],
+				"display_text": item.display_text,
 			 	"price": str(price)
 			}
 		)
@@ -65,12 +65,12 @@ func populate_shop():
 		item_button.alignment = HORIZONTAL_ALIGNMENT_LEFT
 
 		# Disable and "grey out" item if out of stock
-		if item["stock"] < 1:
+		if item.stock < 1:
 			item_button.disabled = true
 
 		var description = RichTextLabel.new()
-		description.text = item["description"]
-		description.text += " | Stock: " + str(item["stock"])
+		description.text = item.description
+		description.text += " | Stock: " + str(item.stock)
 
 		description.fit_content = true
 		description.custom_minimum_size=Vector2(400, 0)
@@ -87,7 +87,7 @@ func _on_ItemButton_pressed(item_name):
 	if purchase_item(item_name, currency_amount):
 
 		# Apply the upgrade
-		inventory[item_name]["apply_upgrade"].call()
+		inventory[item_name].apply_upgrade.call()
 
 		# Update UI
 		for node in $GridContainer.get_children():
