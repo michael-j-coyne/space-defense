@@ -7,7 +7,7 @@ var levels := [
 	load("res://scenes/levels/level_4.tscn"),
 ]
 
-var current_level_index = 0
+var g = Globals
 var money_at_level_start = 0
 signal new_game_requested
 
@@ -19,27 +19,27 @@ func _ready() -> void:
 	start_screen.queue_free()
 	await start_screen.tree_exited
 
-	var level: Level = levels[current_level_index].instantiate() as Level
+	var level: Level = levels[g.current_level_idx].instantiate() as Level
 	start_level(level)
 
 func start_level(level):
 	money_at_level_start = PlayerVariables.money
 	level.completed.connect(go_next_level)
 	level.failed.connect(_on_level_failed, CONNECT_ONE_SHOT)
-	Globals.current_level = level
+	g.current_level = level
 	add_child(level)
 
 func go_next_level():
-	if Globals.current_level:
-		Globals.current_level.queue_free()
-		await Globals.current_level.tree_exited
+	if g.current_level:
+		g.current_level.queue_free()
+		await g.current_level.tree_exited
 
-	if current_level_index == levels.size() - 1:
+	if g.current_level_idx == levels.size() - 1:
 		# no more levels
 		add_child(load("res://screens/win.tscn").instantiate())
 		return
 
-	current_level_index += 1
+	g.current_level_idx += 1
 
 	var shop: Shop = load("res://screens/shop.tscn").instantiate()
 	add_child(shop)
@@ -49,12 +49,12 @@ func go_next_level():
 	shop.queue_free()
 	await shop.tree_exited
 
-	var level: Level = levels[current_level_index].instantiate() as Level
+	var level: Level = levels[g.current_level_idx].instantiate() as Level
 	start_level(level)
 
 func restart_level() -> void:
 	PlayerVariables.money = money_at_level_start
-	var level: Level = levels[current_level_index].instantiate() as Level
+	var level: Level = levels[g.current_level_idx].instantiate() as Level
 	start_level(level)
 
 func _on_level_failed() -> void:
@@ -69,8 +69,8 @@ func _on_level_failed() -> void:
 		func():
 			game_over_screen.queue_free()
 			await game_over_screen.tree_exited
-			Globals.current_level.queue_free()
-			await Globals.current_level.tree_exited
+			g.current_level.queue_free()
+			await g.current_level.tree_exited
 
 			get_tree().paused = false
 			restart_level()

@@ -1,5 +1,6 @@
 extends Node
 
+var current_level_idx: int
 var current_level: Level
 var shop_inventory
 
@@ -45,3 +46,4 @@ func reset():
 	}
 
 	current_level = null
+	current_level_idx = 0
