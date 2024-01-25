@@ -27,7 +27,7 @@ func _ready() -> void:
 func start_level(level):
 	money_at_level_start = PlayerVariables.money
 	level.completed.connect(go_next_level)
-	level.failed.connect(_on_level_failed)
+	level.failed.connect(_on_level_failed, CONNECT_ONE_SHOT)
 	Globals.current_level = level
 	add_child(level)
 
