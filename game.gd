@@ -22,6 +22,43 @@ func _ready() -> void:
 	var level: Level = levels[g.current_level_idx].instantiate() as Level
 	start_level(level)
 
+func save_game():
+	var save_game = FileAccess.open("user://savegame.save", FileAccess.WRITE)
+	var save_nodes = [PlayerVariables, Globals]
+	for node in save_nodes:
+
+		if !node.has_method("save"):
+			print("persistent node '%s' is missing a save() function, skipped" % node.name)
+			continue
+
+		var node_data = node.call("save")
+
+		save_game.store_var(node_data)
+
+func load_game():
+	if not FileAccess.file_exists("user://savegame.save"):
+		return
+
+	var save_game = FileAccess.open("user://savegame.save", FileAccess.READ)
+
+	while save_game.get_position() < save_game.get_length():
+		var data = save_game.get_var()
+		var singleton = get_node("/root/" + data["singleton_name"])
+
+		if not singleton:
+			push_error("No singleton found with name '%s'" % data["singleton_name"])
+			return
+
+		for key in data.keys():
+			if key == "singleton_name":
+				continue
+			if key == "shop_stock":
+				for item_name in data[key].keys():
+					var saved_stock = data[key][item_name]
+					singleton.shop_inventory[item_name].stock = saved_stock
+				continue
+			singleton.set(key, data[key])
+
 func start_level(level):
 	money_at_level_start = PlayerVariables.money
 	level.completed.connect(go_next_level)

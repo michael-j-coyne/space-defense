@@ -28,3 +28,15 @@ func reset():
 	max_heat = 15
 
 	has_gatling_gun = false
+
+func save() -> Dictionary:
+	return {
+		"singleton_name": "PlayerVariables",
+		"money": money,
+		"speed": speed,
+		"gun_cooldown": gun_cooldown,
+		"gun_projectile_speed": gun_projectile_speed,
+		"gun_penetrations": gun_penetrations,
+		"max_heat": max_heat,
+		"has_gatling_gun": has_gatling_gun,
+	}

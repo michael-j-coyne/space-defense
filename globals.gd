@@ -53,3 +53,17 @@ func reset():
 
 	current_level = null
 	current_level_idx = 0
+
+func save():
+	var save_data = {
+		"singleton_name": "Globals",
+		"current_level_idx": current_level_idx,
+		"shop_stock": {
+			"attack_speed_upgrade": attack_speed_upgrade.stock,
+			"movement_speed_upgrade": movement_speed_upgrade.stock,
+			"piercing_shot_upgrade": piercing_shot_upgrade.stock,
+			"gatling_gun_upgrade": gatling_gun_upgrade.stock,
+		}
+	}
+
+	return save_data
