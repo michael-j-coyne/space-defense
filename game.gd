@@ -63,6 +63,7 @@ func load_game():
 			singleton.set(key, data[key])
 
 func start_level(level):
+	save_game()
 	money_at_level_start = PlayerVariables.money
 	level.completed.connect(go_next_level)
 	level.failed.connect(_on_level_failed, CONNECT_ONE_SHOT)
@@ -70,6 +71,7 @@ func start_level(level):
 	add_child(level)
 
 func go_next_level():
+	save_game()
 	if g.current_level:
 		g.current_level.queue_free()
 		await g.current_level.tree_exited
