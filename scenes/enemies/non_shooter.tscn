@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bro4ydortrmw6"]
 
-[ext_resource type="Texture2D" uid="uid://ct1vbo7f7rvqw" path="res://assets/enemyBlue5.png" id="1_cborf"]
 [ext_resource type="Script" path="res://scenes/enemies/enemy.gd" id="1_pg8s3"]
+[ext_resource type="Texture2D" uid="uid://pb6dirmih233" path="res://assets/enemyBlack5.png" id="2_3b4s3"]
 [ext_resource type="PackedScene" uid="uid://ddvxmqonaaa7d" path="res://components/health_component.tscn" id="2_qj86d"]
 [ext_resource type="PackedScene" uid="uid://r7ndw7tqx7xk" path="res://components/hitbox_component.tscn" id="3_g54cx"]
 
@@ -10,7 +10,7 @@ scale = Vector2(0.618557, 0.595238)
 script = ExtResource("1_pg8s3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_cborf")
+texture = ExtResource("2_3b4s3")
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_qj86d")]
 

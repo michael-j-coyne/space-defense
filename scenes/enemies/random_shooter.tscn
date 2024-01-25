@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://sp4n6hlsqgso"]
 
 [ext_resource type="Script" path="res://scenes/enemies/random_shooter.gd" id="1_v5n1i"]
-[ext_resource type="Texture2D" uid="uid://sogqbe5khoe2" path="res://assets/enemyGreen1.png" id="2_v7gts"]
+[ext_resource type="Texture2D" uid="uid://8cx0ts5vwo05" path="res://assets/enemyRed1.png" id="2_cm3uc"]
 [ext_resource type="PackedScene" uid="uid://ccns2m0ppd7u1" path="res://components/gun_component.tscn" id="3_bxl82"]
 [ext_resource type="PackedScene" uid="uid://ddvxmqonaaa7d" path="res://components/health_component.tscn" id="5_3m56x"]
 [ext_resource type="PackedScene" uid="uid://dsoudow2i0i6r" path="res://scenes/projectiles/enemy_projectiles/basic_red_laser.tscn" id="5_4fkuy"]
@@ -14,7 +14,7 @@ shot_chance_percentage = 0.5
 shot_interval_seconds = 1.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_v7gts")
+texture = ExtResource("2_cm3uc")
 
 [node name="GunComponent" parent="." instance=ExtResource("3_bxl82")]
 position = Vector2(2.08165e-12, 37.8)
