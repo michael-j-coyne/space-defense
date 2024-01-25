@@ -8,6 +8,8 @@ var gun_cooldown: float
 var gun_projectile_speed: float
 var gun_penetrations: int
 var has_gatling_gun: bool
+# NOTE: doesn't make much sense for gun_heat to be stored here.
+# it should be stored in player or gun.
 var gun_heat: float
 var max_heat: float
 
