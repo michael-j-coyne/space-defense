@@ -22,3 +22,5 @@ func _process(_delta):
 			Engine.time_scale *= 2
 		if Input.is_action_just_pressed("ui_cancel"):
 			Engine.time_scale *= 0.5
+		if Input.is_action_just_pressed("add_money"):
+			PlayerVariables.money += 1000
