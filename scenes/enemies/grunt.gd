@@ -7,7 +7,7 @@ class_name Grunt extends Enemy
 @export var shot_chance_percentage: float
 @export var shot_interval_seconds: float
 @export var value := 10
-const SIZE: Vector2 = Vector2(60, 60)
+const SIZE: Vector2 = Vector2(60, 50)
 var rng = RandomNumberGenerator.new()
 
 signal reached_bottom
@@ -46,11 +46,11 @@ func _physics_process(_delta: float) -> void:
 # boundary() is used by nodes that position other nodes.
 func boundary():
 	# NOTE: this implementation is likely to change especially if we use animated sprites.
-	return $Sprite2D.get_rect().size * scale
+	return $Sprite2D.get_rect().size * scale + Vector2(0, 10)
 
 func check_reached_bottom() -> void:
 	var bottom_coord = get_node("/root").content_scale_size.y - Player.SIZE.y
-	if global_position.y + boundary().y * 0.5 >= bottom_coord:
+	if global_position.y + boundary().y * 0.5 > bottom_coord:
 		reached_bottom.emit()
 
 func create_afterimage():
