@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c35mk3dn7hj3l" path="res://scenes/levels/level.tscn" id="1_ng4cq"]
 [ext_resource type="PackedScene" uid="uid://bf0pxxqhe06jr" path="res://scenes/enemy_grid.tscn" id="2_sj8op"]
-[ext_resource type="PackedScene" uid="uid://sp4n6hlsqgso" path="res://scenes/enemies/grunt.tscn" id="3_2i80w"]
+[ext_resource type="PackedScene" uid="uid://bro4ydortrmw6" path="res://scenes/enemies/non_shooter.tscn" id="3_gtggl"]
 
 [node name="Level" instance=ExtResource("1_ng4cq")]
 
@@ -14,40 +14,42 @@ num_cols = 3
 num_rows = 1
 clone_first_child = true
 box_width_percent = 0.5
-speed = 300.0
+speed = 270.0
 initial_direction = 1
+rows_below_origin = 7
 metadata/_edit_group_ = true
 
-[node name="Grunt" parent="Enemies/EnemyGrid" index="0" instance=ExtResource("3_2i80w")]
-position = Vector2(30, 30)
-shot_chance_percentage = 0.1
+[node name="NonShooter" parent="Enemies/EnemyGrid" index="0" instance=ExtResource("3_gtggl")]
+position = Vector2(30, 450)
+scale = Vector2(0.618557, 0.595238)
 
-[node name="Grunt2" parent="Enemies/EnemyGrid" index="1" instance=ExtResource("3_2i80w")]
-position = Vector2(100, 30)
-shot_chance_percentage = 0.1
+[node name="@Node2D@75167" parent="Enemies/EnemyGrid" index="1" instance=ExtResource("3_gtggl")]
+position = Vector2(100, 450)
+scale = Vector2(0.618557, 0.595238)
 
-[node name="@Node2D@35721" parent="Enemies/EnemyGrid" index="2" instance=ExtResource("3_2i80w")]
-position = Vector2(170, 30)
-shot_chance_percentage = 0.1
+[node name="@Node2D@75168" parent="Enemies/EnemyGrid" index="2" instance=ExtResource("3_gtggl")]
+position = Vector2(170, 450)
+scale = Vector2(0.618557, 0.595238)
 
 [node name="EnemyGrid2" parent="Enemies" index="1" instance=ExtResource("2_sj8op")]
-position = Vector2(640, 2.08165e-12)
+position = Vector2(640, 0)
 num_cols = 3
 num_rows = 1
 clone_first_child = true
 box_width_percent = 0.5
-speed = 300.0
+speed = 270.0
 initial_direction = 1
+rows_below_origin = 7
 metadata/_edit_group_ = true
 
-[node name="Grunt" parent="Enemies/EnemyGrid2" index="0" instance=ExtResource("3_2i80w")]
-position = Vector2(30, 30)
-shot_chance_percentage = 0.1
+[node name="NonShooter" parent="Enemies/EnemyGrid2" index="0" instance=ExtResource("3_gtggl")]
+position = Vector2(30, 450)
+scale = Vector2(0.618557, 0.595238)
 
-[node name="Grunt2" parent="Enemies/EnemyGrid2" index="1" instance=ExtResource("3_2i80w")]
-position = Vector2(100, 30)
-shot_chance_percentage = 0.1
+[node name="@Node2D@75933" parent="Enemies/EnemyGrid2" index="1" instance=ExtResource("3_gtggl")]
+position = Vector2(100, 450)
+scale = Vector2(0.618557, 0.595238)
 
-[node name="@Node2D@36119" parent="Enemies/EnemyGrid2" index="2" instance=ExtResource("3_2i80w")]
-position = Vector2(170, 30)
-shot_chance_percentage = 0.1
+[node name="@Node2D@75934" parent="Enemies/EnemyGrid2" index="2" instance=ExtResource("3_gtggl")]
+position = Vector2(170, 450)
+scale = Vector2(0.618557, 0.595238)
