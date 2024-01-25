@@ -7,6 +7,9 @@ var speed: float
 var gun_cooldown: float
 var gun_projectile_speed: float
 var gun_penetrations: int
+var has_gatling_gun: bool
+var gun_heat: float
+var max_heat: float
 
 func _ready() -> void:
 	reset()
@@ -19,3 +22,7 @@ func reset():
 	gun_cooldown = 0.75
 	gun_projectile_speed = 750
 	gun_penetrations = 1
+	gun_heat = 0
+	max_heat = 15
+
+	has_gatling_gun = false
