@@ -1,2025 +1,2016 @@
-[gd_scene load_steps=6 format=3 uid="uid://cy66kxjv10fcn"]
+[gd_scene load_steps=4 format=3 uid="uid://cy66kxjv10fcn"]
 
 [ext_resource type="PackedScene" uid="uid://c35mk3dn7hj3l" path="res://scenes/levels/level.tscn" id="1_ksiib"]
-[ext_resource type="PackedScene" uid="uid://b8jda34rek6pa" path="res://scenes/empty_notifier_container.tscn" id="2_0457o"]
 [ext_resource type="PackedScene" uid="uid://bf0pxxqhe06jr" path="res://scenes/enemy_grid.tscn" id="3_nptqw"]
 [ext_resource type="PackedScene" uid="uid://sp4n6hlsqgso" path="res://scenes/enemies/grunt.tscn" id="4_blqh6"]
-[ext_resource type="PackedScene" uid="uid://c6g8jq43tis0q" path="res://components/left_right_entity_mover.tscn" id="5_roxbn"]
 
 [node name="Level" instance=ExtResource("1_ksiib")]
 
 [node name="Player" parent="." index="0"]
 scale = Vector2(0.606061, 0.8)
 
-[node name="Enemy_Group_1" parent="Enemies" index="0" instance=ExtResource("2_0457o")]
-
-[node name="EnemyGrid" parent="Enemies/Enemy_Group_1" index="0" instance=ExtResource("3_nptqw")]
+[node name="EnemyGrid" parent="Enemies" index="0" instance=ExtResource("3_nptqw")]
 position = Vector2(2.08165e-12, -3300)
 num_cols = 8
 num_rows = 50
+speed = 500.0
 
-[node name="Grunt" parent="Enemies/Enemy_Group_1/EnemyGrid" index="0" instance=ExtResource("4_blqh6")]
+[node name="Grunt" parent="Enemies/EnemyGrid" index="0" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 30)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt2" parent="Enemies/Enemy_Group_1/EnemyGrid" index="1" instance=ExtResource("4_blqh6")]
+[node name="Grunt2" parent="Enemies/EnemyGrid" index="1" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 30)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt3" parent="Enemies/Enemy_Group_1/EnemyGrid" index="2" instance=ExtResource("4_blqh6")]
+[node name="Grunt3" parent="Enemies/EnemyGrid" index="2" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 30)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt4" parent="Enemies/Enemy_Group_1/EnemyGrid" index="3" instance=ExtResource("4_blqh6")]
+[node name="Grunt4" parent="Enemies/EnemyGrid" index="3" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 30)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt5" parent="Enemies/Enemy_Group_1/EnemyGrid" index="4" instance=ExtResource("4_blqh6")]
+[node name="Grunt5" parent="Enemies/EnemyGrid" index="4" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 30)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt6" parent="Enemies/Enemy_Group_1/EnemyGrid" index="5" instance=ExtResource("4_blqh6")]
+[node name="Grunt6" parent="Enemies/EnemyGrid" index="5" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 30)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt7" parent="Enemies/Enemy_Group_1/EnemyGrid" index="6" instance=ExtResource("4_blqh6")]
+[node name="Grunt7" parent="Enemies/EnemyGrid" index="6" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 30)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt8" parent="Enemies/Enemy_Group_1/EnemyGrid" index="7" instance=ExtResource("4_blqh6")]
+[node name="Grunt8" parent="Enemies/EnemyGrid" index="7" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 30)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt9" parent="Enemies/Enemy_Group_1/EnemyGrid" index="8" instance=ExtResource("4_blqh6")]
+[node name="Grunt9" parent="Enemies/EnemyGrid" index="8" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 100)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt10" parent="Enemies/Enemy_Group_1/EnemyGrid" index="9" instance=ExtResource("4_blqh6")]
+[node name="Grunt10" parent="Enemies/EnemyGrid" index="9" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 100)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt11" parent="Enemies/Enemy_Group_1/EnemyGrid" index="10" instance=ExtResource("4_blqh6")]
+[node name="Grunt11" parent="Enemies/EnemyGrid" index="10" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 100)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt12" parent="Enemies/Enemy_Group_1/EnemyGrid" index="11" instance=ExtResource("4_blqh6")]
+[node name="Grunt12" parent="Enemies/EnemyGrid" index="11" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 100)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt13" parent="Enemies/Enemy_Group_1/EnemyGrid" index="12" instance=ExtResource("4_blqh6")]
+[node name="Grunt13" parent="Enemies/EnemyGrid" index="12" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 100)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt14" parent="Enemies/Enemy_Group_1/EnemyGrid" index="13" instance=ExtResource("4_blqh6")]
+[node name="Grunt14" parent="Enemies/EnemyGrid" index="13" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 100)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt15" parent="Enemies/Enemy_Group_1/EnemyGrid" index="14" instance=ExtResource("4_blqh6")]
+[node name="Grunt15" parent="Enemies/EnemyGrid" index="14" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 100)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt16" parent="Enemies/Enemy_Group_1/EnemyGrid" index="15" instance=ExtResource("4_blqh6")]
+[node name="Grunt16" parent="Enemies/EnemyGrid" index="15" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 100)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt17" parent="Enemies/Enemy_Group_1/EnemyGrid" index="16" instance=ExtResource("4_blqh6")]
+[node name="Grunt17" parent="Enemies/EnemyGrid" index="16" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 170)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt18" parent="Enemies/Enemy_Group_1/EnemyGrid" index="17" instance=ExtResource("4_blqh6")]
+[node name="Grunt18" parent="Enemies/EnemyGrid" index="17" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 170)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt19" parent="Enemies/Enemy_Group_1/EnemyGrid" index="18" instance=ExtResource("4_blqh6")]
+[node name="Grunt19" parent="Enemies/EnemyGrid" index="18" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 170)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt20" parent="Enemies/Enemy_Group_1/EnemyGrid" index="19" instance=ExtResource("4_blqh6")]
+[node name="Grunt20" parent="Enemies/EnemyGrid" index="19" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 170)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt21" parent="Enemies/Enemy_Group_1/EnemyGrid" index="20" instance=ExtResource("4_blqh6")]
+[node name="Grunt21" parent="Enemies/EnemyGrid" index="20" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 170)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt22" parent="Enemies/Enemy_Group_1/EnemyGrid" index="21" instance=ExtResource("4_blqh6")]
+[node name="Grunt22" parent="Enemies/EnemyGrid" index="21" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 170)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt23" parent="Enemies/Enemy_Group_1/EnemyGrid" index="22" instance=ExtResource("4_blqh6")]
+[node name="Grunt23" parent="Enemies/EnemyGrid" index="22" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 170)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt24" parent="Enemies/Enemy_Group_1/EnemyGrid" index="23" instance=ExtResource("4_blqh6")]
+[node name="Grunt24" parent="Enemies/EnemyGrid" index="23" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 170)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt25" parent="Enemies/Enemy_Group_1/EnemyGrid" index="24" instance=ExtResource("4_blqh6")]
+[node name="Grunt25" parent="Enemies/EnemyGrid" index="24" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 240)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt26" parent="Enemies/Enemy_Group_1/EnemyGrid" index="25" instance=ExtResource("4_blqh6")]
+[node name="Grunt26" parent="Enemies/EnemyGrid" index="25" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 240)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt27" parent="Enemies/Enemy_Group_1/EnemyGrid" index="26" instance=ExtResource("4_blqh6")]
+[node name="Grunt27" parent="Enemies/EnemyGrid" index="26" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 240)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt28" parent="Enemies/Enemy_Group_1/EnemyGrid" index="27" instance=ExtResource("4_blqh6")]
+[node name="Grunt28" parent="Enemies/EnemyGrid" index="27" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 240)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt29" parent="Enemies/Enemy_Group_1/EnemyGrid" index="28" instance=ExtResource("4_blqh6")]
+[node name="Grunt29" parent="Enemies/EnemyGrid" index="28" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 240)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt30" parent="Enemies/Enemy_Group_1/EnemyGrid" index="29" instance=ExtResource("4_blqh6")]
+[node name="Grunt30" parent="Enemies/EnemyGrid" index="29" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 240)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt31" parent="Enemies/Enemy_Group_1/EnemyGrid" index="30" instance=ExtResource("4_blqh6")]
+[node name="Grunt31" parent="Enemies/EnemyGrid" index="30" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 240)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt32" parent="Enemies/Enemy_Group_1/EnemyGrid" index="31" instance=ExtResource("4_blqh6")]
+[node name="Grunt32" parent="Enemies/EnemyGrid" index="31" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 240)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt33" parent="Enemies/Enemy_Group_1/EnemyGrid" index="32" instance=ExtResource("4_blqh6")]
+[node name="Grunt33" parent="Enemies/EnemyGrid" index="32" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 310)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt34" parent="Enemies/Enemy_Group_1/EnemyGrid" index="33" instance=ExtResource("4_blqh6")]
+[node name="Grunt34" parent="Enemies/EnemyGrid" index="33" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 310)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt35" parent="Enemies/Enemy_Group_1/EnemyGrid" index="34" instance=ExtResource("4_blqh6")]
+[node name="Grunt35" parent="Enemies/EnemyGrid" index="34" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 310)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt36" parent="Enemies/Enemy_Group_1/EnemyGrid" index="35" instance=ExtResource("4_blqh6")]
+[node name="Grunt36" parent="Enemies/EnemyGrid" index="35" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 310)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt37" parent="Enemies/Enemy_Group_1/EnemyGrid" index="36" instance=ExtResource("4_blqh6")]
+[node name="Grunt37" parent="Enemies/EnemyGrid" index="36" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 310)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt38" parent="Enemies/Enemy_Group_1/EnemyGrid" index="37" instance=ExtResource("4_blqh6")]
+[node name="Grunt38" parent="Enemies/EnemyGrid" index="37" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 310)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt39" parent="Enemies/Enemy_Group_1/EnemyGrid" index="38" instance=ExtResource("4_blqh6")]
+[node name="Grunt39" parent="Enemies/EnemyGrid" index="38" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 310)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt40" parent="Enemies/Enemy_Group_1/EnemyGrid" index="39" instance=ExtResource("4_blqh6")]
+[node name="Grunt40" parent="Enemies/EnemyGrid" index="39" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 310)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt41" parent="Enemies/Enemy_Group_1/EnemyGrid" index="40" instance=ExtResource("4_blqh6")]
+[node name="Grunt41" parent="Enemies/EnemyGrid" index="40" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 380)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt42" parent="Enemies/Enemy_Group_1/EnemyGrid" index="41" instance=ExtResource("4_blqh6")]
+[node name="Grunt42" parent="Enemies/EnemyGrid" index="41" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 380)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt43" parent="Enemies/Enemy_Group_1/EnemyGrid" index="42" instance=ExtResource("4_blqh6")]
+[node name="Grunt43" parent="Enemies/EnemyGrid" index="42" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 380)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt44" parent="Enemies/Enemy_Group_1/EnemyGrid" index="43" instance=ExtResource("4_blqh6")]
+[node name="Grunt44" parent="Enemies/EnemyGrid" index="43" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 380)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt45" parent="Enemies/Enemy_Group_1/EnemyGrid" index="44" instance=ExtResource("4_blqh6")]
+[node name="Grunt45" parent="Enemies/EnemyGrid" index="44" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 380)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt46" parent="Enemies/Enemy_Group_1/EnemyGrid" index="45" instance=ExtResource("4_blqh6")]
+[node name="Grunt46" parent="Enemies/EnemyGrid" index="45" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 380)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt47" parent="Enemies/Enemy_Group_1/EnemyGrid" index="46" instance=ExtResource("4_blqh6")]
+[node name="Grunt47" parent="Enemies/EnemyGrid" index="46" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 380)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt48" parent="Enemies/Enemy_Group_1/EnemyGrid" index="47" instance=ExtResource("4_blqh6")]
+[node name="Grunt48" parent="Enemies/EnemyGrid" index="47" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 380)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt49" parent="Enemies/Enemy_Group_1/EnemyGrid" index="48" instance=ExtResource("4_blqh6")]
+[node name="Grunt49" parent="Enemies/EnemyGrid" index="48" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 450)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt50" parent="Enemies/Enemy_Group_1/EnemyGrid" index="49" instance=ExtResource("4_blqh6")]
+[node name="Grunt50" parent="Enemies/EnemyGrid" index="49" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 450)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt51" parent="Enemies/Enemy_Group_1/EnemyGrid" index="50" instance=ExtResource("4_blqh6")]
+[node name="Grunt51" parent="Enemies/EnemyGrid" index="50" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 450)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt52" parent="Enemies/Enemy_Group_1/EnemyGrid" index="51" instance=ExtResource("4_blqh6")]
+[node name="Grunt52" parent="Enemies/EnemyGrid" index="51" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 450)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt53" parent="Enemies/Enemy_Group_1/EnemyGrid" index="52" instance=ExtResource("4_blqh6")]
+[node name="Grunt53" parent="Enemies/EnemyGrid" index="52" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 450)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt54" parent="Enemies/Enemy_Group_1/EnemyGrid" index="53" instance=ExtResource("4_blqh6")]
+[node name="Grunt54" parent="Enemies/EnemyGrid" index="53" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 450)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt55" parent="Enemies/Enemy_Group_1/EnemyGrid" index="54" instance=ExtResource("4_blqh6")]
+[node name="Grunt55" parent="Enemies/EnemyGrid" index="54" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 450)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt56" parent="Enemies/Enemy_Group_1/EnemyGrid" index="55" instance=ExtResource("4_blqh6")]
+[node name="Grunt56" parent="Enemies/EnemyGrid" index="55" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 450)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt57" parent="Enemies/Enemy_Group_1/EnemyGrid" index="56" instance=ExtResource("4_blqh6")]
+[node name="Grunt57" parent="Enemies/EnemyGrid" index="56" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 520)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt58" parent="Enemies/Enemy_Group_1/EnemyGrid" index="57" instance=ExtResource("4_blqh6")]
+[node name="Grunt58" parent="Enemies/EnemyGrid" index="57" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 520)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt59" parent="Enemies/Enemy_Group_1/EnemyGrid" index="58" instance=ExtResource("4_blqh6")]
+[node name="Grunt59" parent="Enemies/EnemyGrid" index="58" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 520)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt60" parent="Enemies/Enemy_Group_1/EnemyGrid" index="59" instance=ExtResource("4_blqh6")]
+[node name="Grunt60" parent="Enemies/EnemyGrid" index="59" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 520)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt61" parent="Enemies/Enemy_Group_1/EnemyGrid" index="60" instance=ExtResource("4_blqh6")]
+[node name="Grunt61" parent="Enemies/EnemyGrid" index="60" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 520)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt62" parent="Enemies/Enemy_Group_1/EnemyGrid" index="61" instance=ExtResource("4_blqh6")]
+[node name="Grunt62" parent="Enemies/EnemyGrid" index="61" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 520)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt63" parent="Enemies/Enemy_Group_1/EnemyGrid" index="62" instance=ExtResource("4_blqh6")]
+[node name="Grunt63" parent="Enemies/EnemyGrid" index="62" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 520)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt64" parent="Enemies/Enemy_Group_1/EnemyGrid" index="63" instance=ExtResource("4_blqh6")]
+[node name="Grunt64" parent="Enemies/EnemyGrid" index="63" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 520)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt65" parent="Enemies/Enemy_Group_1/EnemyGrid" index="64" instance=ExtResource("4_blqh6")]
+[node name="Grunt65" parent="Enemies/EnemyGrid" index="64" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 590)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt66" parent="Enemies/Enemy_Group_1/EnemyGrid" index="65" instance=ExtResource("4_blqh6")]
+[node name="Grunt66" parent="Enemies/EnemyGrid" index="65" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 590)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt67" parent="Enemies/Enemy_Group_1/EnemyGrid" index="66" instance=ExtResource("4_blqh6")]
+[node name="Grunt67" parent="Enemies/EnemyGrid" index="66" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 590)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt68" parent="Enemies/Enemy_Group_1/EnemyGrid" index="67" instance=ExtResource("4_blqh6")]
+[node name="Grunt68" parent="Enemies/EnemyGrid" index="67" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 590)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt69" parent="Enemies/Enemy_Group_1/EnemyGrid" index="68" instance=ExtResource("4_blqh6")]
+[node name="Grunt69" parent="Enemies/EnemyGrid" index="68" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 590)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt70" parent="Enemies/Enemy_Group_1/EnemyGrid" index="69" instance=ExtResource("4_blqh6")]
+[node name="Grunt70" parent="Enemies/EnemyGrid" index="69" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 590)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt71" parent="Enemies/Enemy_Group_1/EnemyGrid" index="70" instance=ExtResource("4_blqh6")]
+[node name="Grunt71" parent="Enemies/EnemyGrid" index="70" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 590)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt72" parent="Enemies/Enemy_Group_1/EnemyGrid" index="71" instance=ExtResource("4_blqh6")]
+[node name="Grunt72" parent="Enemies/EnemyGrid" index="71" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 590)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt73" parent="Enemies/Enemy_Group_1/EnemyGrid" index="72" instance=ExtResource("4_blqh6")]
+[node name="Grunt73" parent="Enemies/EnemyGrid" index="72" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 660)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt74" parent="Enemies/Enemy_Group_1/EnemyGrid" index="73" instance=ExtResource("4_blqh6")]
+[node name="Grunt74" parent="Enemies/EnemyGrid" index="73" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 660)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt75" parent="Enemies/Enemy_Group_1/EnemyGrid" index="74" instance=ExtResource("4_blqh6")]
+[node name="Grunt75" parent="Enemies/EnemyGrid" index="74" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 660)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt76" parent="Enemies/Enemy_Group_1/EnemyGrid" index="75" instance=ExtResource("4_blqh6")]
+[node name="Grunt76" parent="Enemies/EnemyGrid" index="75" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 660)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt77" parent="Enemies/Enemy_Group_1/EnemyGrid" index="76" instance=ExtResource("4_blqh6")]
+[node name="Grunt77" parent="Enemies/EnemyGrid" index="76" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 660)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt78" parent="Enemies/Enemy_Group_1/EnemyGrid" index="77" instance=ExtResource("4_blqh6")]
+[node name="Grunt78" parent="Enemies/EnemyGrid" index="77" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 660)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt79" parent="Enemies/Enemy_Group_1/EnemyGrid" index="78" instance=ExtResource("4_blqh6")]
+[node name="Grunt79" parent="Enemies/EnemyGrid" index="78" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 660)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt80" parent="Enemies/Enemy_Group_1/EnemyGrid" index="79" instance=ExtResource("4_blqh6")]
+[node name="Grunt80" parent="Enemies/EnemyGrid" index="79" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 660)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt81" parent="Enemies/Enemy_Group_1/EnemyGrid" index="80" instance=ExtResource("4_blqh6")]
+[node name="Grunt81" parent="Enemies/EnemyGrid" index="80" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 730)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt82" parent="Enemies/Enemy_Group_1/EnemyGrid" index="81" instance=ExtResource("4_blqh6")]
+[node name="Grunt82" parent="Enemies/EnemyGrid" index="81" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 730)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt83" parent="Enemies/Enemy_Group_1/EnemyGrid" index="82" instance=ExtResource("4_blqh6")]
+[node name="Grunt83" parent="Enemies/EnemyGrid" index="82" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 730)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt84" parent="Enemies/Enemy_Group_1/EnemyGrid" index="83" instance=ExtResource("4_blqh6")]
+[node name="Grunt84" parent="Enemies/EnemyGrid" index="83" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 730)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt85" parent="Enemies/Enemy_Group_1/EnemyGrid" index="84" instance=ExtResource("4_blqh6")]
+[node name="Grunt85" parent="Enemies/EnemyGrid" index="84" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 730)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt86" parent="Enemies/Enemy_Group_1/EnemyGrid" index="85" instance=ExtResource("4_blqh6")]
+[node name="Grunt86" parent="Enemies/EnemyGrid" index="85" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 730)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt87" parent="Enemies/Enemy_Group_1/EnemyGrid" index="86" instance=ExtResource("4_blqh6")]
+[node name="Grunt87" parent="Enemies/EnemyGrid" index="86" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 730)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt88" parent="Enemies/Enemy_Group_1/EnemyGrid" index="87" instance=ExtResource("4_blqh6")]
+[node name="Grunt88" parent="Enemies/EnemyGrid" index="87" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 730)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt89" parent="Enemies/Enemy_Group_1/EnemyGrid" index="88" instance=ExtResource("4_blqh6")]
+[node name="Grunt89" parent="Enemies/EnemyGrid" index="88" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 800)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt90" parent="Enemies/Enemy_Group_1/EnemyGrid" index="89" instance=ExtResource("4_blqh6")]
+[node name="Grunt90" parent="Enemies/EnemyGrid" index="89" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 800)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt91" parent="Enemies/Enemy_Group_1/EnemyGrid" index="90" instance=ExtResource("4_blqh6")]
+[node name="Grunt91" parent="Enemies/EnemyGrid" index="90" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 800)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt92" parent="Enemies/Enemy_Group_1/EnemyGrid" index="91" instance=ExtResource("4_blqh6")]
+[node name="Grunt92" parent="Enemies/EnemyGrid" index="91" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 800)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt93" parent="Enemies/Enemy_Group_1/EnemyGrid" index="92" instance=ExtResource("4_blqh6")]
+[node name="Grunt93" parent="Enemies/EnemyGrid" index="92" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 800)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt94" parent="Enemies/Enemy_Group_1/EnemyGrid" index="93" instance=ExtResource("4_blqh6")]
+[node name="Grunt94" parent="Enemies/EnemyGrid" index="93" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 800)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt95" parent="Enemies/Enemy_Group_1/EnemyGrid" index="94" instance=ExtResource("4_blqh6")]
+[node name="Grunt95" parent="Enemies/EnemyGrid" index="94" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 800)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt96" parent="Enemies/Enemy_Group_1/EnemyGrid" index="95" instance=ExtResource("4_blqh6")]
+[node name="Grunt96" parent="Enemies/EnemyGrid" index="95" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 800)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt97" parent="Enemies/Enemy_Group_1/EnemyGrid" index="96" instance=ExtResource("4_blqh6")]
+[node name="Grunt97" parent="Enemies/EnemyGrid" index="96" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 870)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt98" parent="Enemies/Enemy_Group_1/EnemyGrid" index="97" instance=ExtResource("4_blqh6")]
+[node name="Grunt98" parent="Enemies/EnemyGrid" index="97" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 870)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt99" parent="Enemies/Enemy_Group_1/EnemyGrid" index="98" instance=ExtResource("4_blqh6")]
+[node name="Grunt99" parent="Enemies/EnemyGrid" index="98" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 870)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt100" parent="Enemies/Enemy_Group_1/EnemyGrid" index="99" instance=ExtResource("4_blqh6")]
+[node name="Grunt100" parent="Enemies/EnemyGrid" index="99" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 870)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt101" parent="Enemies/Enemy_Group_1/EnemyGrid" index="100" instance=ExtResource("4_blqh6")]
+[node name="Grunt101" parent="Enemies/EnemyGrid" index="100" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 870)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt102" parent="Enemies/Enemy_Group_1/EnemyGrid" index="101" instance=ExtResource("4_blqh6")]
+[node name="Grunt102" parent="Enemies/EnemyGrid" index="101" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 870)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt103" parent="Enemies/Enemy_Group_1/EnemyGrid" index="102" instance=ExtResource("4_blqh6")]
+[node name="Grunt103" parent="Enemies/EnemyGrid" index="102" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 870)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt104" parent="Enemies/Enemy_Group_1/EnemyGrid" index="103" instance=ExtResource("4_blqh6")]
+[node name="Grunt104" parent="Enemies/EnemyGrid" index="103" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 870)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt105" parent="Enemies/Enemy_Group_1/EnemyGrid" index="104" instance=ExtResource("4_blqh6")]
+[node name="Grunt105" parent="Enemies/EnemyGrid" index="104" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 940)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt106" parent="Enemies/Enemy_Group_1/EnemyGrid" index="105" instance=ExtResource("4_blqh6")]
+[node name="Grunt106" parent="Enemies/EnemyGrid" index="105" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 940)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt107" parent="Enemies/Enemy_Group_1/EnemyGrid" index="106" instance=ExtResource("4_blqh6")]
+[node name="Grunt107" parent="Enemies/EnemyGrid" index="106" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 940)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt108" parent="Enemies/Enemy_Group_1/EnemyGrid" index="107" instance=ExtResource("4_blqh6")]
+[node name="Grunt108" parent="Enemies/EnemyGrid" index="107" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 940)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt109" parent="Enemies/Enemy_Group_1/EnemyGrid" index="108" instance=ExtResource("4_blqh6")]
+[node name="Grunt109" parent="Enemies/EnemyGrid" index="108" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 940)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt110" parent="Enemies/Enemy_Group_1/EnemyGrid" index="109" instance=ExtResource("4_blqh6")]
+[node name="Grunt110" parent="Enemies/EnemyGrid" index="109" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 940)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt111" parent="Enemies/Enemy_Group_1/EnemyGrid" index="110" instance=ExtResource("4_blqh6")]
+[node name="Grunt111" parent="Enemies/EnemyGrid" index="110" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 940)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt112" parent="Enemies/Enemy_Group_1/EnemyGrid" index="111" instance=ExtResource("4_blqh6")]
+[node name="Grunt112" parent="Enemies/EnemyGrid" index="111" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 940)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt113" parent="Enemies/Enemy_Group_1/EnemyGrid" index="112" instance=ExtResource("4_blqh6")]
+[node name="Grunt113" parent="Enemies/EnemyGrid" index="112" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 1010)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt114" parent="Enemies/Enemy_Group_1/EnemyGrid" index="113" instance=ExtResource("4_blqh6")]
+[node name="Grunt114" parent="Enemies/EnemyGrid" index="113" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 1010)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt115" parent="Enemies/Enemy_Group_1/EnemyGrid" index="114" instance=ExtResource("4_blqh6")]
+[node name="Grunt115" parent="Enemies/EnemyGrid" index="114" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 1010)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt116" parent="Enemies/Enemy_Group_1/EnemyGrid" index="115" instance=ExtResource("4_blqh6")]
+[node name="Grunt116" parent="Enemies/EnemyGrid" index="115" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 1010)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt117" parent="Enemies/Enemy_Group_1/EnemyGrid" index="116" instance=ExtResource("4_blqh6")]
+[node name="Grunt117" parent="Enemies/EnemyGrid" index="116" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 1010)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt118" parent="Enemies/Enemy_Group_1/EnemyGrid" index="117" instance=ExtResource("4_blqh6")]
+[node name="Grunt118" parent="Enemies/EnemyGrid" index="117" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 1010)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt119" parent="Enemies/Enemy_Group_1/EnemyGrid" index="118" instance=ExtResource("4_blqh6")]
+[node name="Grunt119" parent="Enemies/EnemyGrid" index="118" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 1010)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt120" parent="Enemies/Enemy_Group_1/EnemyGrid" index="119" instance=ExtResource("4_blqh6")]
+[node name="Grunt120" parent="Enemies/EnemyGrid" index="119" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 1010)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt121" parent="Enemies/Enemy_Group_1/EnemyGrid" index="120" instance=ExtResource("4_blqh6")]
+[node name="Grunt121" parent="Enemies/EnemyGrid" index="120" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 1080)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt122" parent="Enemies/Enemy_Group_1/EnemyGrid" index="121" instance=ExtResource("4_blqh6")]
+[node name="Grunt122" parent="Enemies/EnemyGrid" index="121" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 1080)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt123" parent="Enemies/Enemy_Group_1/EnemyGrid" index="122" instance=ExtResource("4_blqh6")]
+[node name="Grunt123" parent="Enemies/EnemyGrid" index="122" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 1080)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt124" parent="Enemies/Enemy_Group_1/EnemyGrid" index="123" instance=ExtResource("4_blqh6")]
+[node name="Grunt124" parent="Enemies/EnemyGrid" index="123" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 1080)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt125" parent="Enemies/Enemy_Group_1/EnemyGrid" index="124" instance=ExtResource("4_blqh6")]
+[node name="Grunt125" parent="Enemies/EnemyGrid" index="124" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 1080)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt126" parent="Enemies/Enemy_Group_1/EnemyGrid" index="125" instance=ExtResource("4_blqh6")]
+[node name="Grunt126" parent="Enemies/EnemyGrid" index="125" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 1080)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt127" parent="Enemies/Enemy_Group_1/EnemyGrid" index="126" instance=ExtResource("4_blqh6")]
+[node name="Grunt127" parent="Enemies/EnemyGrid" index="126" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 1080)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt128" parent="Enemies/Enemy_Group_1/EnemyGrid" index="127" instance=ExtResource("4_blqh6")]
+[node name="Grunt128" parent="Enemies/EnemyGrid" index="127" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 1080)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt129" parent="Enemies/Enemy_Group_1/EnemyGrid" index="128" instance=ExtResource("4_blqh6")]
+[node name="Grunt129" parent="Enemies/EnemyGrid" index="128" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 1150)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt130" parent="Enemies/Enemy_Group_1/EnemyGrid" index="129" instance=ExtResource("4_blqh6")]
+[node name="Grunt130" parent="Enemies/EnemyGrid" index="129" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 1150)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt131" parent="Enemies/Enemy_Group_1/EnemyGrid" index="130" instance=ExtResource("4_blqh6")]
+[node name="Grunt131" parent="Enemies/EnemyGrid" index="130" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 1150)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt132" parent="Enemies/Enemy_Group_1/EnemyGrid" index="131" instance=ExtResource("4_blqh6")]
+[node name="Grunt132" parent="Enemies/EnemyGrid" index="131" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 1150)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt133" parent="Enemies/Enemy_Group_1/EnemyGrid" index="132" instance=ExtResource("4_blqh6")]
+[node name="Grunt133" parent="Enemies/EnemyGrid" index="132" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 1150)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt134" parent="Enemies/Enemy_Group_1/EnemyGrid" index="133" instance=ExtResource("4_blqh6")]
+[node name="Grunt134" parent="Enemies/EnemyGrid" index="133" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 1150)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt135" parent="Enemies/Enemy_Group_1/EnemyGrid" index="134" instance=ExtResource("4_blqh6")]
+[node name="Grunt135" parent="Enemies/EnemyGrid" index="134" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 1150)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt136" parent="Enemies/Enemy_Group_1/EnemyGrid" index="135" instance=ExtResource("4_blqh6")]
+[node name="Grunt136" parent="Enemies/EnemyGrid" index="135" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 1150)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt137" parent="Enemies/Enemy_Group_1/EnemyGrid" index="136" instance=ExtResource("4_blqh6")]
+[node name="Grunt137" parent="Enemies/EnemyGrid" index="136" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 1220)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt138" parent="Enemies/Enemy_Group_1/EnemyGrid" index="137" instance=ExtResource("4_blqh6")]
+[node name="Grunt138" parent="Enemies/EnemyGrid" index="137" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 1220)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt139" parent="Enemies/Enemy_Group_1/EnemyGrid" index="138" instance=ExtResource("4_blqh6")]
+[node name="Grunt139" parent="Enemies/EnemyGrid" index="138" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 1220)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt140" parent="Enemies/Enemy_Group_1/EnemyGrid" index="139" instance=ExtResource("4_blqh6")]
+[node name="Grunt140" parent="Enemies/EnemyGrid" index="139" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 1220)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt141" parent="Enemies/Enemy_Group_1/EnemyGrid" index="140" instance=ExtResource("4_blqh6")]
+[node name="Grunt141" parent="Enemies/EnemyGrid" index="140" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 1220)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt142" parent="Enemies/Enemy_Group_1/EnemyGrid" index="141" instance=ExtResource("4_blqh6")]
+[node name="Grunt142" parent="Enemies/EnemyGrid" index="141" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 1220)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt143" parent="Enemies/Enemy_Group_1/EnemyGrid" index="142" instance=ExtResource("4_blqh6")]
+[node name="Grunt143" parent="Enemies/EnemyGrid" index="142" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 1220)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt144" parent="Enemies/Enemy_Group_1/EnemyGrid" index="143" instance=ExtResource("4_blqh6")]
+[node name="Grunt144" parent="Enemies/EnemyGrid" index="143" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 1220)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt145" parent="Enemies/Enemy_Group_1/EnemyGrid" index="144" instance=ExtResource("4_blqh6")]
+[node name="Grunt145" parent="Enemies/EnemyGrid" index="144" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 1290)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt146" parent="Enemies/Enemy_Group_1/EnemyGrid" index="145" instance=ExtResource("4_blqh6")]
+[node name="Grunt146" parent="Enemies/EnemyGrid" index="145" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 1290)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt147" parent="Enemies/Enemy_Group_1/EnemyGrid" index="146" instance=ExtResource("4_blqh6")]
+[node name="Grunt147" parent="Enemies/EnemyGrid" index="146" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 1290)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt148" parent="Enemies/Enemy_Group_1/EnemyGrid" index="147" instance=ExtResource("4_blqh6")]
+[node name="Grunt148" parent="Enemies/EnemyGrid" index="147" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 1290)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt149" parent="Enemies/Enemy_Group_1/EnemyGrid" index="148" instance=ExtResource("4_blqh6")]
+[node name="Grunt149" parent="Enemies/EnemyGrid" index="148" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 1290)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt150" parent="Enemies/Enemy_Group_1/EnemyGrid" index="149" instance=ExtResource("4_blqh6")]
+[node name="Grunt150" parent="Enemies/EnemyGrid" index="149" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 1290)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt151" parent="Enemies/Enemy_Group_1/EnemyGrid" index="150" instance=ExtResource("4_blqh6")]
+[node name="Grunt151" parent="Enemies/EnemyGrid" index="150" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 1290)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt152" parent="Enemies/Enemy_Group_1/EnemyGrid" index="151" instance=ExtResource("4_blqh6")]
+[node name="Grunt152" parent="Enemies/EnemyGrid" index="151" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 1290)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt153" parent="Enemies/Enemy_Group_1/EnemyGrid" index="152" instance=ExtResource("4_blqh6")]
+[node name="Grunt153" parent="Enemies/EnemyGrid" index="152" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 1360)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt154" parent="Enemies/Enemy_Group_1/EnemyGrid" index="153" instance=ExtResource("4_blqh6")]
+[node name="Grunt154" parent="Enemies/EnemyGrid" index="153" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 1360)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt155" parent="Enemies/Enemy_Group_1/EnemyGrid" index="154" instance=ExtResource("4_blqh6")]
+[node name="Grunt155" parent="Enemies/EnemyGrid" index="154" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 1360)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt156" parent="Enemies/Enemy_Group_1/EnemyGrid" index="155" instance=ExtResource("4_blqh6")]
+[node name="Grunt156" parent="Enemies/EnemyGrid" index="155" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 1360)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt157" parent="Enemies/Enemy_Group_1/EnemyGrid" index="156" instance=ExtResource("4_blqh6")]
+[node name="Grunt157" parent="Enemies/EnemyGrid" index="156" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 1360)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt158" parent="Enemies/Enemy_Group_1/EnemyGrid" index="157" instance=ExtResource("4_blqh6")]
+[node name="Grunt158" parent="Enemies/EnemyGrid" index="157" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 1360)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt159" parent="Enemies/Enemy_Group_1/EnemyGrid" index="158" instance=ExtResource("4_blqh6")]
+[node name="Grunt159" parent="Enemies/EnemyGrid" index="158" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 1360)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt160" parent="Enemies/Enemy_Group_1/EnemyGrid" index="159" instance=ExtResource("4_blqh6")]
+[node name="Grunt160" parent="Enemies/EnemyGrid" index="159" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 1360)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt161" parent="Enemies/Enemy_Group_1/EnemyGrid" index="160" instance=ExtResource("4_blqh6")]
+[node name="Grunt161" parent="Enemies/EnemyGrid" index="160" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 1430)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt162" parent="Enemies/Enemy_Group_1/EnemyGrid" index="161" instance=ExtResource("4_blqh6")]
+[node name="Grunt162" parent="Enemies/EnemyGrid" index="161" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 1430)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt163" parent="Enemies/Enemy_Group_1/EnemyGrid" index="162" instance=ExtResource("4_blqh6")]
+[node name="Grunt163" parent="Enemies/EnemyGrid" index="162" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 1430)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt164" parent="Enemies/Enemy_Group_1/EnemyGrid" index="163" instance=ExtResource("4_blqh6")]
+[node name="Grunt164" parent="Enemies/EnemyGrid" index="163" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 1430)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt165" parent="Enemies/Enemy_Group_1/EnemyGrid" index="164" instance=ExtResource("4_blqh6")]
+[node name="Grunt165" parent="Enemies/EnemyGrid" index="164" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 1430)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt166" parent="Enemies/Enemy_Group_1/EnemyGrid" index="165" instance=ExtResource("4_blqh6")]
+[node name="Grunt166" parent="Enemies/EnemyGrid" index="165" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 1430)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt167" parent="Enemies/Enemy_Group_1/EnemyGrid" index="166" instance=ExtResource("4_blqh6")]
+[node name="Grunt167" parent="Enemies/EnemyGrid" index="166" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 1430)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt168" parent="Enemies/Enemy_Group_1/EnemyGrid" index="167" instance=ExtResource("4_blqh6")]
+[node name="Grunt168" parent="Enemies/EnemyGrid" index="167" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 1430)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt169" parent="Enemies/Enemy_Group_1/EnemyGrid" index="168" instance=ExtResource("4_blqh6")]
+[node name="Grunt169" parent="Enemies/EnemyGrid" index="168" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 1500)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt170" parent="Enemies/Enemy_Group_1/EnemyGrid" index="169" instance=ExtResource("4_blqh6")]
+[node name="Grunt170" parent="Enemies/EnemyGrid" index="169" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 1500)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt171" parent="Enemies/Enemy_Group_1/EnemyGrid" index="170" instance=ExtResource("4_blqh6")]
+[node name="Grunt171" parent="Enemies/EnemyGrid" index="170" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 1500)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt172" parent="Enemies/Enemy_Group_1/EnemyGrid" index="171" instance=ExtResource("4_blqh6")]
+[node name="Grunt172" parent="Enemies/EnemyGrid" index="171" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 1500)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt173" parent="Enemies/Enemy_Group_1/EnemyGrid" index="172" instance=ExtResource("4_blqh6")]
+[node name="Grunt173" parent="Enemies/EnemyGrid" index="172" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 1500)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt174" parent="Enemies/Enemy_Group_1/EnemyGrid" index="173" instance=ExtResource("4_blqh6")]
+[node name="Grunt174" parent="Enemies/EnemyGrid" index="173" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 1500)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt175" parent="Enemies/Enemy_Group_1/EnemyGrid" index="174" instance=ExtResource("4_blqh6")]
+[node name="Grunt175" parent="Enemies/EnemyGrid" index="174" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 1500)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt176" parent="Enemies/Enemy_Group_1/EnemyGrid" index="175" instance=ExtResource("4_blqh6")]
+[node name="Grunt176" parent="Enemies/EnemyGrid" index="175" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 1500)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt177" parent="Enemies/Enemy_Group_1/EnemyGrid" index="176" instance=ExtResource("4_blqh6")]
+[node name="Grunt177" parent="Enemies/EnemyGrid" index="176" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 1570)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt178" parent="Enemies/Enemy_Group_1/EnemyGrid" index="177" instance=ExtResource("4_blqh6")]
+[node name="Grunt178" parent="Enemies/EnemyGrid" index="177" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 1570)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt179" parent="Enemies/Enemy_Group_1/EnemyGrid" index="178" instance=ExtResource("4_blqh6")]
+[node name="Grunt179" parent="Enemies/EnemyGrid" index="178" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 1570)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt180" parent="Enemies/Enemy_Group_1/EnemyGrid" index="179" instance=ExtResource("4_blqh6")]
+[node name="Grunt180" parent="Enemies/EnemyGrid" index="179" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 1570)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt181" parent="Enemies/Enemy_Group_1/EnemyGrid" index="180" instance=ExtResource("4_blqh6")]
+[node name="Grunt181" parent="Enemies/EnemyGrid" index="180" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 1570)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt182" parent="Enemies/Enemy_Group_1/EnemyGrid" index="181" instance=ExtResource("4_blqh6")]
+[node name="Grunt182" parent="Enemies/EnemyGrid" index="181" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 1570)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt183" parent="Enemies/Enemy_Group_1/EnemyGrid" index="182" instance=ExtResource("4_blqh6")]
+[node name="Grunt183" parent="Enemies/EnemyGrid" index="182" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 1570)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt184" parent="Enemies/Enemy_Group_1/EnemyGrid" index="183" instance=ExtResource("4_blqh6")]
+[node name="Grunt184" parent="Enemies/EnemyGrid" index="183" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 1570)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt185" parent="Enemies/Enemy_Group_1/EnemyGrid" index="184" instance=ExtResource("4_blqh6")]
+[node name="Grunt185" parent="Enemies/EnemyGrid" index="184" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 1640)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt186" parent="Enemies/Enemy_Group_1/EnemyGrid" index="185" instance=ExtResource("4_blqh6")]
+[node name="Grunt186" parent="Enemies/EnemyGrid" index="185" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 1640)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt187" parent="Enemies/Enemy_Group_1/EnemyGrid" index="186" instance=ExtResource("4_blqh6")]
+[node name="Grunt187" parent="Enemies/EnemyGrid" index="186" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 1640)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt188" parent="Enemies/Enemy_Group_1/EnemyGrid" index="187" instance=ExtResource("4_blqh6")]
+[node name="Grunt188" parent="Enemies/EnemyGrid" index="187" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 1640)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt189" parent="Enemies/Enemy_Group_1/EnemyGrid" index="188" instance=ExtResource("4_blqh6")]
+[node name="Grunt189" parent="Enemies/EnemyGrid" index="188" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 1640)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt190" parent="Enemies/Enemy_Group_1/EnemyGrid" index="189" instance=ExtResource("4_blqh6")]
+[node name="Grunt190" parent="Enemies/EnemyGrid" index="189" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 1640)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt191" parent="Enemies/Enemy_Group_1/EnemyGrid" index="190" instance=ExtResource("4_blqh6")]
+[node name="Grunt191" parent="Enemies/EnemyGrid" index="190" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 1640)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt192" parent="Enemies/Enemy_Group_1/EnemyGrid" index="191" instance=ExtResource("4_blqh6")]
+[node name="Grunt192" parent="Enemies/EnemyGrid" index="191" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 1640)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt193" parent="Enemies/Enemy_Group_1/EnemyGrid" index="192" instance=ExtResource("4_blqh6")]
+[node name="Grunt193" parent="Enemies/EnemyGrid" index="192" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 1710)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt194" parent="Enemies/Enemy_Group_1/EnemyGrid" index="193" instance=ExtResource("4_blqh6")]
+[node name="Grunt194" parent="Enemies/EnemyGrid" index="193" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 1710)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt195" parent="Enemies/Enemy_Group_1/EnemyGrid" index="194" instance=ExtResource("4_blqh6")]
+[node name="Grunt195" parent="Enemies/EnemyGrid" index="194" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 1710)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt196" parent="Enemies/Enemy_Group_1/EnemyGrid" index="195" instance=ExtResource("4_blqh6")]
+[node name="Grunt196" parent="Enemies/EnemyGrid" index="195" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 1710)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt197" parent="Enemies/Enemy_Group_1/EnemyGrid" index="196" instance=ExtResource("4_blqh6")]
+[node name="Grunt197" parent="Enemies/EnemyGrid" index="196" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 1710)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt198" parent="Enemies/Enemy_Group_1/EnemyGrid" index="197" instance=ExtResource("4_blqh6")]
+[node name="Grunt198" parent="Enemies/EnemyGrid" index="197" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 1710)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt199" parent="Enemies/Enemy_Group_1/EnemyGrid" index="198" instance=ExtResource("4_blqh6")]
+[node name="Grunt199" parent="Enemies/EnemyGrid" index="198" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 1710)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt200" parent="Enemies/Enemy_Group_1/EnemyGrid" index="199" instance=ExtResource("4_blqh6")]
+[node name="Grunt200" parent="Enemies/EnemyGrid" index="199" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 1710)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt201" parent="Enemies/Enemy_Group_1/EnemyGrid" index="200" instance=ExtResource("4_blqh6")]
+[node name="Grunt201" parent="Enemies/EnemyGrid" index="200" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 1780)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt202" parent="Enemies/Enemy_Group_1/EnemyGrid" index="201" instance=ExtResource("4_blqh6")]
+[node name="Grunt202" parent="Enemies/EnemyGrid" index="201" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 1780)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt203" parent="Enemies/Enemy_Group_1/EnemyGrid" index="202" instance=ExtResource("4_blqh6")]
+[node name="Grunt203" parent="Enemies/EnemyGrid" index="202" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 1780)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt204" parent="Enemies/Enemy_Group_1/EnemyGrid" index="203" instance=ExtResource("4_blqh6")]
+[node name="Grunt204" parent="Enemies/EnemyGrid" index="203" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 1780)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt205" parent="Enemies/Enemy_Group_1/EnemyGrid" index="204" instance=ExtResource("4_blqh6")]
+[node name="Grunt205" parent="Enemies/EnemyGrid" index="204" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 1780)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt206" parent="Enemies/Enemy_Group_1/EnemyGrid" index="205" instance=ExtResource("4_blqh6")]
+[node name="Grunt206" parent="Enemies/EnemyGrid" index="205" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 1780)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt207" parent="Enemies/Enemy_Group_1/EnemyGrid" index="206" instance=ExtResource("4_blqh6")]
+[node name="Grunt207" parent="Enemies/EnemyGrid" index="206" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 1780)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt208" parent="Enemies/Enemy_Group_1/EnemyGrid" index="207" instance=ExtResource("4_blqh6")]
+[node name="Grunt208" parent="Enemies/EnemyGrid" index="207" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 1780)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt209" parent="Enemies/Enemy_Group_1/EnemyGrid" index="208" instance=ExtResource("4_blqh6")]
+[node name="Grunt209" parent="Enemies/EnemyGrid" index="208" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 1850)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt210" parent="Enemies/Enemy_Group_1/EnemyGrid" index="209" instance=ExtResource("4_blqh6")]
+[node name="Grunt210" parent="Enemies/EnemyGrid" index="209" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 1850)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt211" parent="Enemies/Enemy_Group_1/EnemyGrid" index="210" instance=ExtResource("4_blqh6")]
+[node name="Grunt211" parent="Enemies/EnemyGrid" index="210" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 1850)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt212" parent="Enemies/Enemy_Group_1/EnemyGrid" index="211" instance=ExtResource("4_blqh6")]
+[node name="Grunt212" parent="Enemies/EnemyGrid" index="211" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 1850)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt213" parent="Enemies/Enemy_Group_1/EnemyGrid" index="212" instance=ExtResource("4_blqh6")]
+[node name="Grunt213" parent="Enemies/EnemyGrid" index="212" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 1850)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt214" parent="Enemies/Enemy_Group_1/EnemyGrid" index="213" instance=ExtResource("4_blqh6")]
+[node name="Grunt214" parent="Enemies/EnemyGrid" index="213" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 1850)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt215" parent="Enemies/Enemy_Group_1/EnemyGrid" index="214" instance=ExtResource("4_blqh6")]
+[node name="Grunt215" parent="Enemies/EnemyGrid" index="214" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 1850)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt216" parent="Enemies/Enemy_Group_1/EnemyGrid" index="215" instance=ExtResource("4_blqh6")]
+[node name="Grunt216" parent="Enemies/EnemyGrid" index="215" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 1850)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt217" parent="Enemies/Enemy_Group_1/EnemyGrid" index="216" instance=ExtResource("4_blqh6")]
+[node name="Grunt217" parent="Enemies/EnemyGrid" index="216" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 1920)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt218" parent="Enemies/Enemy_Group_1/EnemyGrid" index="217" instance=ExtResource("4_blqh6")]
+[node name="Grunt218" parent="Enemies/EnemyGrid" index="217" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 1920)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt219" parent="Enemies/Enemy_Group_1/EnemyGrid" index="218" instance=ExtResource("4_blqh6")]
+[node name="Grunt219" parent="Enemies/EnemyGrid" index="218" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 1920)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt220" parent="Enemies/Enemy_Group_1/EnemyGrid" index="219" instance=ExtResource("4_blqh6")]
+[node name="Grunt220" parent="Enemies/EnemyGrid" index="219" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 1920)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt221" parent="Enemies/Enemy_Group_1/EnemyGrid" index="220" instance=ExtResource("4_blqh6")]
+[node name="Grunt221" parent="Enemies/EnemyGrid" index="220" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 1920)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt222" parent="Enemies/Enemy_Group_1/EnemyGrid" index="221" instance=ExtResource("4_blqh6")]
+[node name="Grunt222" parent="Enemies/EnemyGrid" index="221" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 1920)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt223" parent="Enemies/Enemy_Group_1/EnemyGrid" index="222" instance=ExtResource("4_blqh6")]
+[node name="Grunt223" parent="Enemies/EnemyGrid" index="222" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 1920)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt224" parent="Enemies/Enemy_Group_1/EnemyGrid" index="223" instance=ExtResource("4_blqh6")]
+[node name="Grunt224" parent="Enemies/EnemyGrid" index="223" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 1920)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt225" parent="Enemies/Enemy_Group_1/EnemyGrid" index="224" instance=ExtResource("4_blqh6")]
+[node name="Grunt225" parent="Enemies/EnemyGrid" index="224" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 1990)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt226" parent="Enemies/Enemy_Group_1/EnemyGrid" index="225" instance=ExtResource("4_blqh6")]
+[node name="Grunt226" parent="Enemies/EnemyGrid" index="225" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 1990)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt227" parent="Enemies/Enemy_Group_1/EnemyGrid" index="226" instance=ExtResource("4_blqh6")]
+[node name="Grunt227" parent="Enemies/EnemyGrid" index="226" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 1990)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt228" parent="Enemies/Enemy_Group_1/EnemyGrid" index="227" instance=ExtResource("4_blqh6")]
+[node name="Grunt228" parent="Enemies/EnemyGrid" index="227" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 1990)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt229" parent="Enemies/Enemy_Group_1/EnemyGrid" index="228" instance=ExtResource("4_blqh6")]
+[node name="Grunt229" parent="Enemies/EnemyGrid" index="228" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 1990)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt230" parent="Enemies/Enemy_Group_1/EnemyGrid" index="229" instance=ExtResource("4_blqh6")]
+[node name="Grunt230" parent="Enemies/EnemyGrid" index="229" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 1990)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt231" parent="Enemies/Enemy_Group_1/EnemyGrid" index="230" instance=ExtResource("4_blqh6")]
+[node name="Grunt231" parent="Enemies/EnemyGrid" index="230" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 1990)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt232" parent="Enemies/Enemy_Group_1/EnemyGrid" index="231" instance=ExtResource("4_blqh6")]
+[node name="Grunt232" parent="Enemies/EnemyGrid" index="231" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 1990)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt233" parent="Enemies/Enemy_Group_1/EnemyGrid" index="232" instance=ExtResource("4_blqh6")]
+[node name="Grunt233" parent="Enemies/EnemyGrid" index="232" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 2060)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt234" parent="Enemies/Enemy_Group_1/EnemyGrid" index="233" instance=ExtResource("4_blqh6")]
+[node name="Grunt234" parent="Enemies/EnemyGrid" index="233" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 2060)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt235" parent="Enemies/Enemy_Group_1/EnemyGrid" index="234" instance=ExtResource("4_blqh6")]
+[node name="Grunt235" parent="Enemies/EnemyGrid" index="234" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 2060)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt236" parent="Enemies/Enemy_Group_1/EnemyGrid" index="235" instance=ExtResource("4_blqh6")]
+[node name="Grunt236" parent="Enemies/EnemyGrid" index="235" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 2060)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt237" parent="Enemies/Enemy_Group_1/EnemyGrid" index="236" instance=ExtResource("4_blqh6")]
+[node name="Grunt237" parent="Enemies/EnemyGrid" index="236" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 2060)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt238" parent="Enemies/Enemy_Group_1/EnemyGrid" index="237" instance=ExtResource("4_blqh6")]
+[node name="Grunt238" parent="Enemies/EnemyGrid" index="237" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 2060)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt239" parent="Enemies/Enemy_Group_1/EnemyGrid" index="238" instance=ExtResource("4_blqh6")]
+[node name="Grunt239" parent="Enemies/EnemyGrid" index="238" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 2060)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt240" parent="Enemies/Enemy_Group_1/EnemyGrid" index="239" instance=ExtResource("4_blqh6")]
+[node name="Grunt240" parent="Enemies/EnemyGrid" index="239" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 2060)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt241" parent="Enemies/Enemy_Group_1/EnemyGrid" index="240" instance=ExtResource("4_blqh6")]
+[node name="Grunt241" parent="Enemies/EnemyGrid" index="240" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 2130)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt242" parent="Enemies/Enemy_Group_1/EnemyGrid" index="241" instance=ExtResource("4_blqh6")]
+[node name="Grunt242" parent="Enemies/EnemyGrid" index="241" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 2130)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt243" parent="Enemies/Enemy_Group_1/EnemyGrid" index="242" instance=ExtResource("4_blqh6")]
+[node name="Grunt243" parent="Enemies/EnemyGrid" index="242" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 2130)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt244" parent="Enemies/Enemy_Group_1/EnemyGrid" index="243" instance=ExtResource("4_blqh6")]
+[node name="Grunt244" parent="Enemies/EnemyGrid" index="243" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 2130)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt245" parent="Enemies/Enemy_Group_1/EnemyGrid" index="244" instance=ExtResource("4_blqh6")]
+[node name="Grunt245" parent="Enemies/EnemyGrid" index="244" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 2130)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt246" parent="Enemies/Enemy_Group_1/EnemyGrid" index="245" instance=ExtResource("4_blqh6")]
+[node name="Grunt246" parent="Enemies/EnemyGrid" index="245" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 2130)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt247" parent="Enemies/Enemy_Group_1/EnemyGrid" index="246" instance=ExtResource("4_blqh6")]
+[node name="Grunt247" parent="Enemies/EnemyGrid" index="246" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 2130)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt248" parent="Enemies/Enemy_Group_1/EnemyGrid" index="247" instance=ExtResource("4_blqh6")]
+[node name="Grunt248" parent="Enemies/EnemyGrid" index="247" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 2130)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt249" parent="Enemies/Enemy_Group_1/EnemyGrid" index="248" instance=ExtResource("4_blqh6")]
+[node name="Grunt249" parent="Enemies/EnemyGrid" index="248" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 2200)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt250" parent="Enemies/Enemy_Group_1/EnemyGrid" index="249" instance=ExtResource("4_blqh6")]
+[node name="Grunt250" parent="Enemies/EnemyGrid" index="249" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 2200)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt251" parent="Enemies/Enemy_Group_1/EnemyGrid" index="250" instance=ExtResource("4_blqh6")]
+[node name="Grunt251" parent="Enemies/EnemyGrid" index="250" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 2200)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt252" parent="Enemies/Enemy_Group_1/EnemyGrid" index="251" instance=ExtResource("4_blqh6")]
+[node name="Grunt252" parent="Enemies/EnemyGrid" index="251" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 2200)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt253" parent="Enemies/Enemy_Group_1/EnemyGrid" index="252" instance=ExtResource("4_blqh6")]
+[node name="Grunt253" parent="Enemies/EnemyGrid" index="252" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 2200)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt254" parent="Enemies/Enemy_Group_1/EnemyGrid" index="253" instance=ExtResource("4_blqh6")]
+[node name="Grunt254" parent="Enemies/EnemyGrid" index="253" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 2200)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt255" parent="Enemies/Enemy_Group_1/EnemyGrid" index="254" instance=ExtResource("4_blqh6")]
+[node name="Grunt255" parent="Enemies/EnemyGrid" index="254" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 2200)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt256" parent="Enemies/Enemy_Group_1/EnemyGrid" index="255" instance=ExtResource("4_blqh6")]
+[node name="Grunt256" parent="Enemies/EnemyGrid" index="255" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 2200)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt257" parent="Enemies/Enemy_Group_1/EnemyGrid" index="256" instance=ExtResource("4_blqh6")]
+[node name="Grunt257" parent="Enemies/EnemyGrid" index="256" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 2270)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt258" parent="Enemies/Enemy_Group_1/EnemyGrid" index="257" instance=ExtResource("4_blqh6")]
+[node name="Grunt258" parent="Enemies/EnemyGrid" index="257" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 2270)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt259" parent="Enemies/Enemy_Group_1/EnemyGrid" index="258" instance=ExtResource("4_blqh6")]
+[node name="Grunt259" parent="Enemies/EnemyGrid" index="258" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 2270)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt260" parent="Enemies/Enemy_Group_1/EnemyGrid" index="259" instance=ExtResource("4_blqh6")]
+[node name="Grunt260" parent="Enemies/EnemyGrid" index="259" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 2270)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt261" parent="Enemies/Enemy_Group_1/EnemyGrid" index="260" instance=ExtResource("4_blqh6")]
+[node name="Grunt261" parent="Enemies/EnemyGrid" index="260" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 2270)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt262" parent="Enemies/Enemy_Group_1/EnemyGrid" index="261" instance=ExtResource("4_blqh6")]
+[node name="Grunt262" parent="Enemies/EnemyGrid" index="261" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 2270)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt263" parent="Enemies/Enemy_Group_1/EnemyGrid" index="262" instance=ExtResource("4_blqh6")]
+[node name="Grunt263" parent="Enemies/EnemyGrid" index="262" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 2270)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt264" parent="Enemies/Enemy_Group_1/EnemyGrid" index="263" instance=ExtResource("4_blqh6")]
+[node name="Grunt264" parent="Enemies/EnemyGrid" index="263" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 2270)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt265" parent="Enemies/Enemy_Group_1/EnemyGrid" index="264" instance=ExtResource("4_blqh6")]
+[node name="Grunt265" parent="Enemies/EnemyGrid" index="264" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 2340)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt266" parent="Enemies/Enemy_Group_1/EnemyGrid" index="265" instance=ExtResource("4_blqh6")]
+[node name="Grunt266" parent="Enemies/EnemyGrid" index="265" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 2340)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt267" parent="Enemies/Enemy_Group_1/EnemyGrid" index="266" instance=ExtResource("4_blqh6")]
+[node name="Grunt267" parent="Enemies/EnemyGrid" index="266" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 2340)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt268" parent="Enemies/Enemy_Group_1/EnemyGrid" index="267" instance=ExtResource("4_blqh6")]
+[node name="Grunt268" parent="Enemies/EnemyGrid" index="267" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 2340)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt269" parent="Enemies/Enemy_Group_1/EnemyGrid" index="268" instance=ExtResource("4_blqh6")]
+[node name="Grunt269" parent="Enemies/EnemyGrid" index="268" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 2340)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt270" parent="Enemies/Enemy_Group_1/EnemyGrid" index="269" instance=ExtResource("4_blqh6")]
+[node name="Grunt270" parent="Enemies/EnemyGrid" index="269" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 2340)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt271" parent="Enemies/Enemy_Group_1/EnemyGrid" index="270" instance=ExtResource("4_blqh6")]
+[node name="Grunt271" parent="Enemies/EnemyGrid" index="270" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 2340)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt272" parent="Enemies/Enemy_Group_1/EnemyGrid" index="271" instance=ExtResource("4_blqh6")]
+[node name="Grunt272" parent="Enemies/EnemyGrid" index="271" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 2340)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt273" parent="Enemies/Enemy_Group_1/EnemyGrid" index="272" instance=ExtResource("4_blqh6")]
+[node name="Grunt273" parent="Enemies/EnemyGrid" index="272" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 2410)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt274" parent="Enemies/Enemy_Group_1/EnemyGrid" index="273" instance=ExtResource("4_blqh6")]
+[node name="Grunt274" parent="Enemies/EnemyGrid" index="273" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 2410)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt275" parent="Enemies/Enemy_Group_1/EnemyGrid" index="274" instance=ExtResource("4_blqh6")]
+[node name="Grunt275" parent="Enemies/EnemyGrid" index="274" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 2410)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt276" parent="Enemies/Enemy_Group_1/EnemyGrid" index="275" instance=ExtResource("4_blqh6")]
+[node name="Grunt276" parent="Enemies/EnemyGrid" index="275" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 2410)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt277" parent="Enemies/Enemy_Group_1/EnemyGrid" index="276" instance=ExtResource("4_blqh6")]
+[node name="Grunt277" parent="Enemies/EnemyGrid" index="276" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 2410)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt278" parent="Enemies/Enemy_Group_1/EnemyGrid" index="277" instance=ExtResource("4_blqh6")]
+[node name="Grunt278" parent="Enemies/EnemyGrid" index="277" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 2410)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt279" parent="Enemies/Enemy_Group_1/EnemyGrid" index="278" instance=ExtResource("4_blqh6")]
+[node name="Grunt279" parent="Enemies/EnemyGrid" index="278" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 2410)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt280" parent="Enemies/Enemy_Group_1/EnemyGrid" index="279" instance=ExtResource("4_blqh6")]
+[node name="Grunt280" parent="Enemies/EnemyGrid" index="279" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 2410)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt281" parent="Enemies/Enemy_Group_1/EnemyGrid" index="280" instance=ExtResource("4_blqh6")]
+[node name="Grunt281" parent="Enemies/EnemyGrid" index="280" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 2480)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt282" parent="Enemies/Enemy_Group_1/EnemyGrid" index="281" instance=ExtResource("4_blqh6")]
+[node name="Grunt282" parent="Enemies/EnemyGrid" index="281" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 2480)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt283" parent="Enemies/Enemy_Group_1/EnemyGrid" index="282" instance=ExtResource("4_blqh6")]
+[node name="Grunt283" parent="Enemies/EnemyGrid" index="282" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 2480)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt284" parent="Enemies/Enemy_Group_1/EnemyGrid" index="283" instance=ExtResource("4_blqh6")]
+[node name="Grunt284" parent="Enemies/EnemyGrid" index="283" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 2480)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt285" parent="Enemies/Enemy_Group_1/EnemyGrid" index="284" instance=ExtResource("4_blqh6")]
+[node name="Grunt285" parent="Enemies/EnemyGrid" index="284" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 2480)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt286" parent="Enemies/Enemy_Group_1/EnemyGrid" index="285" instance=ExtResource("4_blqh6")]
+[node name="Grunt286" parent="Enemies/EnemyGrid" index="285" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 2480)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt287" parent="Enemies/Enemy_Group_1/EnemyGrid" index="286" instance=ExtResource("4_blqh6")]
+[node name="Grunt287" parent="Enemies/EnemyGrid" index="286" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 2480)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt288" parent="Enemies/Enemy_Group_1/EnemyGrid" index="287" instance=ExtResource("4_blqh6")]
+[node name="Grunt288" parent="Enemies/EnemyGrid" index="287" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 2480)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt289" parent="Enemies/Enemy_Group_1/EnemyGrid" index="288" instance=ExtResource("4_blqh6")]
+[node name="Grunt289" parent="Enemies/EnemyGrid" index="288" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 2550)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt290" parent="Enemies/Enemy_Group_1/EnemyGrid" index="289" instance=ExtResource("4_blqh6")]
+[node name="Grunt290" parent="Enemies/EnemyGrid" index="289" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 2550)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt291" parent="Enemies/Enemy_Group_1/EnemyGrid" index="290" instance=ExtResource("4_blqh6")]
+[node name="Grunt291" parent="Enemies/EnemyGrid" index="290" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 2550)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt292" parent="Enemies/Enemy_Group_1/EnemyGrid" index="291" instance=ExtResource("4_blqh6")]
+[node name="Grunt292" parent="Enemies/EnemyGrid" index="291" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 2550)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt293" parent="Enemies/Enemy_Group_1/EnemyGrid" index="292" instance=ExtResource("4_blqh6")]
+[node name="Grunt293" parent="Enemies/EnemyGrid" index="292" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 2550)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt294" parent="Enemies/Enemy_Group_1/EnemyGrid" index="293" instance=ExtResource("4_blqh6")]
+[node name="Grunt294" parent="Enemies/EnemyGrid" index="293" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 2550)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt295" parent="Enemies/Enemy_Group_1/EnemyGrid" index="294" instance=ExtResource("4_blqh6")]
+[node name="Grunt295" parent="Enemies/EnemyGrid" index="294" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 2550)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt296" parent="Enemies/Enemy_Group_1/EnemyGrid" index="295" instance=ExtResource("4_blqh6")]
+[node name="Grunt296" parent="Enemies/EnemyGrid" index="295" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 2550)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt297" parent="Enemies/Enemy_Group_1/EnemyGrid" index="296" instance=ExtResource("4_blqh6")]
+[node name="Grunt297" parent="Enemies/EnemyGrid" index="296" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 2620)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt298" parent="Enemies/Enemy_Group_1/EnemyGrid" index="297" instance=ExtResource("4_blqh6")]
+[node name="Grunt298" parent="Enemies/EnemyGrid" index="297" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 2620)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt299" parent="Enemies/Enemy_Group_1/EnemyGrid" index="298" instance=ExtResource("4_blqh6")]
+[node name="Grunt299" parent="Enemies/EnemyGrid" index="298" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 2620)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt300" parent="Enemies/Enemy_Group_1/EnemyGrid" index="299" instance=ExtResource("4_blqh6")]
+[node name="Grunt300" parent="Enemies/EnemyGrid" index="299" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 2620)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt301" parent="Enemies/Enemy_Group_1/EnemyGrid" index="300" instance=ExtResource("4_blqh6")]
+[node name="Grunt301" parent="Enemies/EnemyGrid" index="300" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 2620)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt302" parent="Enemies/Enemy_Group_1/EnemyGrid" index="301" instance=ExtResource("4_blqh6")]
+[node name="Grunt302" parent="Enemies/EnemyGrid" index="301" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 2620)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt303" parent="Enemies/Enemy_Group_1/EnemyGrid" index="302" instance=ExtResource("4_blqh6")]
+[node name="Grunt303" parent="Enemies/EnemyGrid" index="302" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 2620)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt304" parent="Enemies/Enemy_Group_1/EnemyGrid" index="303" instance=ExtResource("4_blqh6")]
+[node name="Grunt304" parent="Enemies/EnemyGrid" index="303" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 2620)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt305" parent="Enemies/Enemy_Group_1/EnemyGrid" index="304" instance=ExtResource("4_blqh6")]
+[node name="Grunt305" parent="Enemies/EnemyGrid" index="304" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 2690)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt306" parent="Enemies/Enemy_Group_1/EnemyGrid" index="305" instance=ExtResource("4_blqh6")]
+[node name="Grunt306" parent="Enemies/EnemyGrid" index="305" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 2690)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt307" parent="Enemies/Enemy_Group_1/EnemyGrid" index="306" instance=ExtResource("4_blqh6")]
+[node name="Grunt307" parent="Enemies/EnemyGrid" index="306" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 2690)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt308" parent="Enemies/Enemy_Group_1/EnemyGrid" index="307" instance=ExtResource("4_blqh6")]
+[node name="Grunt308" parent="Enemies/EnemyGrid" index="307" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 2690)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt309" parent="Enemies/Enemy_Group_1/EnemyGrid" index="308" instance=ExtResource("4_blqh6")]
+[node name="Grunt309" parent="Enemies/EnemyGrid" index="308" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 2690)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt310" parent="Enemies/Enemy_Group_1/EnemyGrid" index="309" instance=ExtResource("4_blqh6")]
+[node name="Grunt310" parent="Enemies/EnemyGrid" index="309" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 2690)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt311" parent="Enemies/Enemy_Group_1/EnemyGrid" index="310" instance=ExtResource("4_blqh6")]
+[node name="Grunt311" parent="Enemies/EnemyGrid" index="310" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 2690)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt312" parent="Enemies/Enemy_Group_1/EnemyGrid" index="311" instance=ExtResource("4_blqh6")]
+[node name="Grunt312" parent="Enemies/EnemyGrid" index="311" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 2690)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt313" parent="Enemies/Enemy_Group_1/EnemyGrid" index="312" instance=ExtResource("4_blqh6")]
+[node name="Grunt313" parent="Enemies/EnemyGrid" index="312" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 2760)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt314" parent="Enemies/Enemy_Group_1/EnemyGrid" index="313" instance=ExtResource("4_blqh6")]
+[node name="Grunt314" parent="Enemies/EnemyGrid" index="313" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 2760)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt315" parent="Enemies/Enemy_Group_1/EnemyGrid" index="314" instance=ExtResource("4_blqh6")]
+[node name="Grunt315" parent="Enemies/EnemyGrid" index="314" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 2760)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt316" parent="Enemies/Enemy_Group_1/EnemyGrid" index="315" instance=ExtResource("4_blqh6")]
+[node name="Grunt316" parent="Enemies/EnemyGrid" index="315" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 2760)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt317" parent="Enemies/Enemy_Group_1/EnemyGrid" index="316" instance=ExtResource("4_blqh6")]
+[node name="Grunt317" parent="Enemies/EnemyGrid" index="316" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 2760)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt318" parent="Enemies/Enemy_Group_1/EnemyGrid" index="317" instance=ExtResource("4_blqh6")]
+[node name="Grunt318" parent="Enemies/EnemyGrid" index="317" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 2760)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt319" parent="Enemies/Enemy_Group_1/EnemyGrid" index="318" instance=ExtResource("4_blqh6")]
+[node name="Grunt319" parent="Enemies/EnemyGrid" index="318" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 2760)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt320" parent="Enemies/Enemy_Group_1/EnemyGrid" index="319" instance=ExtResource("4_blqh6")]
+[node name="Grunt320" parent="Enemies/EnemyGrid" index="319" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 2760)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt321" parent="Enemies/Enemy_Group_1/EnemyGrid" index="320" instance=ExtResource("4_blqh6")]
+[node name="Grunt321" parent="Enemies/EnemyGrid" index="320" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 2830)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt322" parent="Enemies/Enemy_Group_1/EnemyGrid" index="321" instance=ExtResource("4_blqh6")]
+[node name="Grunt322" parent="Enemies/EnemyGrid" index="321" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 2830)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt323" parent="Enemies/Enemy_Group_1/EnemyGrid" index="322" instance=ExtResource("4_blqh6")]
+[node name="Grunt323" parent="Enemies/EnemyGrid" index="322" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 2830)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt324" parent="Enemies/Enemy_Group_1/EnemyGrid" index="323" instance=ExtResource("4_blqh6")]
+[node name="Grunt324" parent="Enemies/EnemyGrid" index="323" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 2830)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt325" parent="Enemies/Enemy_Group_1/EnemyGrid" index="324" instance=ExtResource("4_blqh6")]
+[node name="Grunt325" parent="Enemies/EnemyGrid" index="324" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 2830)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt326" parent="Enemies/Enemy_Group_1/EnemyGrid" index="325" instance=ExtResource("4_blqh6")]
+[node name="Grunt326" parent="Enemies/EnemyGrid" index="325" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 2830)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt327" parent="Enemies/Enemy_Group_1/EnemyGrid" index="326" instance=ExtResource("4_blqh6")]
+[node name="Grunt327" parent="Enemies/EnemyGrid" index="326" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 2830)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt328" parent="Enemies/Enemy_Group_1/EnemyGrid" index="327" instance=ExtResource("4_blqh6")]
+[node name="Grunt328" parent="Enemies/EnemyGrid" index="327" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 2830)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt329" parent="Enemies/Enemy_Group_1/EnemyGrid" index="328" instance=ExtResource("4_blqh6")]
+[node name="Grunt329" parent="Enemies/EnemyGrid" index="328" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 2900)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt330" parent="Enemies/Enemy_Group_1/EnemyGrid" index="329" instance=ExtResource("4_blqh6")]
+[node name="Grunt330" parent="Enemies/EnemyGrid" index="329" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 2900)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt331" parent="Enemies/Enemy_Group_1/EnemyGrid" index="330" instance=ExtResource("4_blqh6")]
+[node name="Grunt331" parent="Enemies/EnemyGrid" index="330" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 2900)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt332" parent="Enemies/Enemy_Group_1/EnemyGrid" index="331" instance=ExtResource("4_blqh6")]
+[node name="Grunt332" parent="Enemies/EnemyGrid" index="331" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 2900)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt333" parent="Enemies/Enemy_Group_1/EnemyGrid" index="332" instance=ExtResource("4_blqh6")]
+[node name="Grunt333" parent="Enemies/EnemyGrid" index="332" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 2900)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt334" parent="Enemies/Enemy_Group_1/EnemyGrid" index="333" instance=ExtResource("4_blqh6")]
+[node name="Grunt334" parent="Enemies/EnemyGrid" index="333" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 2900)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt335" parent="Enemies/Enemy_Group_1/EnemyGrid" index="334" instance=ExtResource("4_blqh6")]
+[node name="Grunt335" parent="Enemies/EnemyGrid" index="334" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 2900)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt336" parent="Enemies/Enemy_Group_1/EnemyGrid" index="335" instance=ExtResource("4_blqh6")]
+[node name="Grunt336" parent="Enemies/EnemyGrid" index="335" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 2900)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt337" parent="Enemies/Enemy_Group_1/EnemyGrid" index="336" instance=ExtResource("4_blqh6")]
+[node name="Grunt337" parent="Enemies/EnemyGrid" index="336" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 2970)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt338" parent="Enemies/Enemy_Group_1/EnemyGrid" index="337" instance=ExtResource("4_blqh6")]
+[node name="Grunt338" parent="Enemies/EnemyGrid" index="337" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 2970)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt339" parent="Enemies/Enemy_Group_1/EnemyGrid" index="338" instance=ExtResource("4_blqh6")]
+[node name="Grunt339" parent="Enemies/EnemyGrid" index="338" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 2970)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt340" parent="Enemies/Enemy_Group_1/EnemyGrid" index="339" instance=ExtResource("4_blqh6")]
+[node name="Grunt340" parent="Enemies/EnemyGrid" index="339" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 2970)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt341" parent="Enemies/Enemy_Group_1/EnemyGrid" index="340" instance=ExtResource("4_blqh6")]
+[node name="Grunt341" parent="Enemies/EnemyGrid" index="340" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 2970)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt342" parent="Enemies/Enemy_Group_1/EnemyGrid" index="341" instance=ExtResource("4_blqh6")]
+[node name="Grunt342" parent="Enemies/EnemyGrid" index="341" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 2970)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt343" parent="Enemies/Enemy_Group_1/EnemyGrid" index="342" instance=ExtResource("4_blqh6")]
+[node name="Grunt343" parent="Enemies/EnemyGrid" index="342" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 2970)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt344" parent="Enemies/Enemy_Group_1/EnemyGrid" index="343" instance=ExtResource("4_blqh6")]
+[node name="Grunt344" parent="Enemies/EnemyGrid" index="343" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 2970)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt345" parent="Enemies/Enemy_Group_1/EnemyGrid" index="344" instance=ExtResource("4_blqh6")]
+[node name="Grunt345" parent="Enemies/EnemyGrid" index="344" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 3040)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt346" parent="Enemies/Enemy_Group_1/EnemyGrid" index="345" instance=ExtResource("4_blqh6")]
+[node name="Grunt346" parent="Enemies/EnemyGrid" index="345" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 3040)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt347" parent="Enemies/Enemy_Group_1/EnemyGrid" index="346" instance=ExtResource("4_blqh6")]
+[node name="Grunt347" parent="Enemies/EnemyGrid" index="346" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 3040)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt348" parent="Enemies/Enemy_Group_1/EnemyGrid" index="347" instance=ExtResource("4_blqh6")]
+[node name="Grunt348" parent="Enemies/EnemyGrid" index="347" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 3040)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt349" parent="Enemies/Enemy_Group_1/EnemyGrid" index="348" instance=ExtResource("4_blqh6")]
+[node name="Grunt349" parent="Enemies/EnemyGrid" index="348" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 3040)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt350" parent="Enemies/Enemy_Group_1/EnemyGrid" index="349" instance=ExtResource("4_blqh6")]
+[node name="Grunt350" parent="Enemies/EnemyGrid" index="349" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 3040)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt351" parent="Enemies/Enemy_Group_1/EnemyGrid" index="350" instance=ExtResource("4_blqh6")]
+[node name="Grunt351" parent="Enemies/EnemyGrid" index="350" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 3040)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt352" parent="Enemies/Enemy_Group_1/EnemyGrid" index="351" instance=ExtResource("4_blqh6")]
+[node name="Grunt352" parent="Enemies/EnemyGrid" index="351" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 3040)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt353" parent="Enemies/Enemy_Group_1/EnemyGrid" index="352" instance=ExtResource("4_blqh6")]
+[node name="Grunt353" parent="Enemies/EnemyGrid" index="352" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 3110)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt354" parent="Enemies/Enemy_Group_1/EnemyGrid" index="353" instance=ExtResource("4_blqh6")]
+[node name="Grunt354" parent="Enemies/EnemyGrid" index="353" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 3110)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt355" parent="Enemies/Enemy_Group_1/EnemyGrid" index="354" instance=ExtResource("4_blqh6")]
+[node name="Grunt355" parent="Enemies/EnemyGrid" index="354" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 3110)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt356" parent="Enemies/Enemy_Group_1/EnemyGrid" index="355" instance=ExtResource("4_blqh6")]
+[node name="Grunt356" parent="Enemies/EnemyGrid" index="355" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 3110)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt357" parent="Enemies/Enemy_Group_1/EnemyGrid" index="356" instance=ExtResource("4_blqh6")]
+[node name="Grunt357" parent="Enemies/EnemyGrid" index="356" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 3110)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt358" parent="Enemies/Enemy_Group_1/EnemyGrid" index="357" instance=ExtResource("4_blqh6")]
+[node name="Grunt358" parent="Enemies/EnemyGrid" index="357" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 3110)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt359" parent="Enemies/Enemy_Group_1/EnemyGrid" index="358" instance=ExtResource("4_blqh6")]
+[node name="Grunt359" parent="Enemies/EnemyGrid" index="358" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 3110)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt360" parent="Enemies/Enemy_Group_1/EnemyGrid" index="359" instance=ExtResource("4_blqh6")]
+[node name="Grunt360" parent="Enemies/EnemyGrid" index="359" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 3110)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt361" parent="Enemies/Enemy_Group_1/EnemyGrid" index="360" instance=ExtResource("4_blqh6")]
+[node name="Grunt361" parent="Enemies/EnemyGrid" index="360" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 3180)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt362" parent="Enemies/Enemy_Group_1/EnemyGrid" index="361" instance=ExtResource("4_blqh6")]
+[node name="Grunt362" parent="Enemies/EnemyGrid" index="361" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 3180)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt363" parent="Enemies/Enemy_Group_1/EnemyGrid" index="362" instance=ExtResource("4_blqh6")]
+[node name="Grunt363" parent="Enemies/EnemyGrid" index="362" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 3180)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt364" parent="Enemies/Enemy_Group_1/EnemyGrid" index="363" instance=ExtResource("4_blqh6")]
+[node name="Grunt364" parent="Enemies/EnemyGrid" index="363" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 3180)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt365" parent="Enemies/Enemy_Group_1/EnemyGrid" index="364" instance=ExtResource("4_blqh6")]
+[node name="Grunt365" parent="Enemies/EnemyGrid" index="364" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 3180)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt366" parent="Enemies/Enemy_Group_1/EnemyGrid" index="365" instance=ExtResource("4_blqh6")]
+[node name="Grunt366" parent="Enemies/EnemyGrid" index="365" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 3180)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt367" parent="Enemies/Enemy_Group_1/EnemyGrid" index="366" instance=ExtResource("4_blqh6")]
+[node name="Grunt367" parent="Enemies/EnemyGrid" index="366" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 3180)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt368" parent="Enemies/Enemy_Group_1/EnemyGrid" index="367" instance=ExtResource("4_blqh6")]
+[node name="Grunt368" parent="Enemies/EnemyGrid" index="367" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 3180)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt369" parent="Enemies/Enemy_Group_1/EnemyGrid" index="368" instance=ExtResource("4_blqh6")]
+[node name="Grunt369" parent="Enemies/EnemyGrid" index="368" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 3250)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt370" parent="Enemies/Enemy_Group_1/EnemyGrid" index="369" instance=ExtResource("4_blqh6")]
+[node name="Grunt370" parent="Enemies/EnemyGrid" index="369" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 3250)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt371" parent="Enemies/Enemy_Group_1/EnemyGrid" index="370" instance=ExtResource("4_blqh6")]
+[node name="Grunt371" parent="Enemies/EnemyGrid" index="370" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 3250)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt372" parent="Enemies/Enemy_Group_1/EnemyGrid" index="371" instance=ExtResource("4_blqh6")]
+[node name="Grunt372" parent="Enemies/EnemyGrid" index="371" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 3250)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt373" parent="Enemies/Enemy_Group_1/EnemyGrid" index="372" instance=ExtResource("4_blqh6")]
+[node name="Grunt373" parent="Enemies/EnemyGrid" index="372" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 3250)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt374" parent="Enemies/Enemy_Group_1/EnemyGrid" index="373" instance=ExtResource("4_blqh6")]
+[node name="Grunt374" parent="Enemies/EnemyGrid" index="373" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 3250)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt375" parent="Enemies/Enemy_Group_1/EnemyGrid" index="374" instance=ExtResource("4_blqh6")]
+[node name="Grunt375" parent="Enemies/EnemyGrid" index="374" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 3250)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt376" parent="Enemies/Enemy_Group_1/EnemyGrid" index="375" instance=ExtResource("4_blqh6")]
+[node name="Grunt376" parent="Enemies/EnemyGrid" index="375" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 3250)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt377" parent="Enemies/Enemy_Group_1/EnemyGrid" index="376" instance=ExtResource("4_blqh6")]
+[node name="Grunt377" parent="Enemies/EnemyGrid" index="376" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 3320)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt378" parent="Enemies/Enemy_Group_1/EnemyGrid" index="377" instance=ExtResource("4_blqh6")]
+[node name="Grunt378" parent="Enemies/EnemyGrid" index="377" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 3320)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt379" parent="Enemies/Enemy_Group_1/EnemyGrid" index="378" instance=ExtResource("4_blqh6")]
+[node name="Grunt379" parent="Enemies/EnemyGrid" index="378" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 3320)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt380" parent="Enemies/Enemy_Group_1/EnemyGrid" index="379" instance=ExtResource("4_blqh6")]
+[node name="Grunt380" parent="Enemies/EnemyGrid" index="379" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 3320)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt381" parent="Enemies/Enemy_Group_1/EnemyGrid" index="380" instance=ExtResource("4_blqh6")]
+[node name="Grunt381" parent="Enemies/EnemyGrid" index="380" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 3320)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt382" parent="Enemies/Enemy_Group_1/EnemyGrid" index="381" instance=ExtResource("4_blqh6")]
+[node name="Grunt382" parent="Enemies/EnemyGrid" index="381" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 3320)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt383" parent="Enemies/Enemy_Group_1/EnemyGrid" index="382" instance=ExtResource("4_blqh6")]
+[node name="Grunt383" parent="Enemies/EnemyGrid" index="382" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 3320)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt384" parent="Enemies/Enemy_Group_1/EnemyGrid" index="383" instance=ExtResource("4_blqh6")]
+[node name="Grunt384" parent="Enemies/EnemyGrid" index="383" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 3320)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt385" parent="Enemies/Enemy_Group_1/EnemyGrid" index="384" instance=ExtResource("4_blqh6")]
+[node name="Grunt385" parent="Enemies/EnemyGrid" index="384" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 3390)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt386" parent="Enemies/Enemy_Group_1/EnemyGrid" index="385" instance=ExtResource("4_blqh6")]
+[node name="Grunt386" parent="Enemies/EnemyGrid" index="385" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 3390)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt387" parent="Enemies/Enemy_Group_1/EnemyGrid" index="386" instance=ExtResource("4_blqh6")]
+[node name="Grunt387" parent="Enemies/EnemyGrid" index="386" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 3390)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt388" parent="Enemies/Enemy_Group_1/EnemyGrid" index="387" instance=ExtResource("4_blqh6")]
+[node name="Grunt388" parent="Enemies/EnemyGrid" index="387" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 3390)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt389" parent="Enemies/Enemy_Group_1/EnemyGrid" index="388" instance=ExtResource("4_blqh6")]
+[node name="Grunt389" parent="Enemies/EnemyGrid" index="388" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 3390)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt390" parent="Enemies/Enemy_Group_1/EnemyGrid" index="389" instance=ExtResource("4_blqh6")]
+[node name="Grunt390" parent="Enemies/EnemyGrid" index="389" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 3390)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt391" parent="Enemies/Enemy_Group_1/EnemyGrid" index="390" instance=ExtResource("4_blqh6")]
+[node name="Grunt391" parent="Enemies/EnemyGrid" index="390" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 3390)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt392" parent="Enemies/Enemy_Group_1/EnemyGrid" index="391" instance=ExtResource("4_blqh6")]
+[node name="Grunt392" parent="Enemies/EnemyGrid" index="391" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 3390)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt393" parent="Enemies/Enemy_Group_1/EnemyGrid" index="392" instance=ExtResource("4_blqh6")]
+[node name="Grunt393" parent="Enemies/EnemyGrid" index="392" instance=ExtResource("4_blqh6")]
 position = Vector2(30, 3460)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt394" parent="Enemies/Enemy_Group_1/EnemyGrid" index="393" instance=ExtResource("4_blqh6")]
+[node name="Grunt394" parent="Enemies/EnemyGrid" index="393" instance=ExtResource("4_blqh6")]
 position = Vector2(100, 3460)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt395" parent="Enemies/Enemy_Group_1/EnemyGrid" index="394" instance=ExtResource("4_blqh6")]
+[node name="Grunt395" parent="Enemies/EnemyGrid" index="394" instance=ExtResource("4_blqh6")]
 position = Vector2(170, 3460)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt396" parent="Enemies/Enemy_Group_1/EnemyGrid" index="395" instance=ExtResource("4_blqh6")]
+[node name="Grunt396" parent="Enemies/EnemyGrid" index="395" instance=ExtResource("4_blqh6")]
 position = Vector2(240, 3460)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt397" parent="Enemies/Enemy_Group_1/EnemyGrid" index="396" instance=ExtResource("4_blqh6")]
+[node name="Grunt397" parent="Enemies/EnemyGrid" index="396" instance=ExtResource("4_blqh6")]
 position = Vector2(310, 3460)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt398" parent="Enemies/Enemy_Group_1/EnemyGrid" index="397" instance=ExtResource("4_blqh6")]
+[node name="Grunt398" parent="Enemies/EnemyGrid" index="397" instance=ExtResource("4_blqh6")]
 position = Vector2(380, 3460)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt399" parent="Enemies/Enemy_Group_1/EnemyGrid" index="398" instance=ExtResource("4_blqh6")]
+[node name="Grunt399" parent="Enemies/EnemyGrid" index="398" instance=ExtResource("4_blqh6")]
 position = Vector2(450, 3460)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
 
-[node name="Grunt400" parent="Enemies/Enemy_Group_1/EnemyGrid" index="399" instance=ExtResource("4_blqh6")]
+[node name="Grunt400" parent="Enemies/EnemyGrid" index="399" instance=ExtResource("4_blqh6")]
 position = Vector2(520, 3460)
 scale = Vector2(0.645161, 0.714286)
 shot_chance_percentage = 0.1
-
-[node name="LeftRightEntityMover" parent="Enemies/Enemy_Group_1" index="1" node_paths=PackedStringArray("entity") instance=ExtResource("5_roxbn")]
-entity = NodePath("../EnemyGrid")
-box_width_percent = 1.0
-vertical_step = 100.0
-speed = 200.0
