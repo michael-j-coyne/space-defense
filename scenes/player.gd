@@ -7,6 +7,9 @@ const SIZE = Vector2(60, 60)
 @export var speed: float
 
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		return
+
 	scale = SIZE / $Sprite2D.get_rect().size
 	speed = PlayerVariables.speed
 	$GunComponent.cooldown = PlayerVariables.gun_cooldown
