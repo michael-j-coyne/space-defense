@@ -20,7 +20,11 @@ func get_price(item_name):
 		var price = item["base_price"]
 		# Increase price as stock gets lower
 		# NOTE: we probably want to extract the function that calculates item price
-		price *= (1 + (item["max_stock"] - item["stock"]))
+		var price_multiplier = 1
+		if item.has("price_multiplier"):
+			price_multiplier = item["price_multiplier"]
+
+		price *= (1 + price_multiplier * (item["max_stock"] - item["stock"]))
 		return price
 	return 0
 

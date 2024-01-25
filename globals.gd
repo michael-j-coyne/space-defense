@@ -9,20 +9,22 @@ func _ready():
 func reset():
 	shop_inventory = {
 		"attack_speed_upgrade": {
-			"display_text": "Attack speed +30%",
+			"display_text": "Attack speed +50%",
 			"description": "Shoot faster. Who can hate that?",
-			"base_price": 100,
+			"base_price": 300,
 			"stock": 2,
 			"max_stock": 2,
-			"apply_upgrade": func(): PlayerVariables.gun_cooldown *= .7
+			"price_multiplier": 5,
+			"apply_upgrade": func(): PlayerVariables.gun_cooldown *= .5
 		},
 		"movement_speed_upgrade": {
-			"display_text": "Movement Speed +20%",
+			"display_text": "Movement Speed +50%",
 			"description": "\"Gotta go fast!\"",
-			"base_price": 500,
+			"base_price": 300,
 			"stock": 2,
 			"max_stock": 2,
-			"apply_upgrade": func(): PlayerVariables.speed *= 1.2
+			"price_multiplier": 5,
+			"apply_upgrade": func(): PlayerVariables.speed *= 1.5
 		},
 		"piercing_shot_upgrade": {
 			"display_text": "Piercing shots +1",
