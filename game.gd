@@ -61,7 +61,6 @@ func restart_level() -> void:
 
 func _on_level_failed() -> void:
 	Globals.current_level.queue_free()
-	Globals.current_level = null
 	var game_over_screen = load("res://screens/game_over.tscn").instantiate()
 	game_over_screen.new_game_requested.connect(func(): new_game_requested.emit())
 	game_over_screen.retry_requested.connect(
