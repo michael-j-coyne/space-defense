@@ -1,5 +1,5 @@
 @tool
-class_name Grunt extends Enemy
+class_name RandomShooter extends Enemy
 
 # NOTE: This is temporary code, it willl all be tossed later / moved into different
 # places
