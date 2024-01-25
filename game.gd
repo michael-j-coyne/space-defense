@@ -60,13 +60,27 @@ func restart_level() -> void:
 	start_level(level)
 
 func _on_level_failed() -> void:
-	Globals.current_level.queue_free()
+
 	var game_over_screen = load("res://screens/game_over.tscn").instantiate()
-	game_over_screen.new_game_requested.connect(func(): new_game_requested.emit())
+	game_over_screen.new_game_requested.connect(
+		func():
+			get_tree().paused = false
+			new_game_requested.emit()
+	)
 	game_over_screen.retry_requested.connect(
 		func():
 			game_over_screen.queue_free()
 			await game_over_screen.tree_exited
+			Globals.current_level.queue_free()
+			await Globals.current_level.tree_exited
+
+			get_tree().paused = false
 			restart_level()
 	)
 	add_child(game_over_screen)
+	get_tree().paused = true
+
+	game_over_screen.process_mode = PROCESS_MODE_ALWAYS
+	game_over_screen.modulate.a = 0
+	var tween = game_over_screen.create_tween()
+	tween.tween_property(game_over_screen, "modulate:a", 1, 3.0)
