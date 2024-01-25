@@ -71,7 +71,6 @@ func populate_shop():
 		description.custom_minimum_size=Vector2(400, 0)
 		description.add_theme_font_size_override("normal_font_size", 20)
 
-		var panel_container = PanelContainer.new()
 		var container = VBoxContainer.new()
 		container.add_child(item_button)
 		container.add_child(description)

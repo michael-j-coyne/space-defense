@@ -25,8 +25,6 @@ func _physics_process(delta: float) -> void:
 	var velocity = direction * speed
 	position += velocity * delta
 
-	var screen = get_node("/root").content_scale_size
-	var translation_direction = position.normalized()
 	var translation_amount = Vector2(0, get_size().y / 2)
 
 	# If projectile leaves top of screen, despawn it

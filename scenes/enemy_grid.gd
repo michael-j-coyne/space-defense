@@ -84,7 +84,6 @@ static func col_idx(enemy_idx: int, num_cols: int) -> int:
 # This works for positoning the enemies initially but after some enemies are killed their
 # index will change. So we can't re-position the enemies using this method.
 func set_enemy_initial_positions():
-	var screen_width = ProjectSettings.get_setting("display/window/size/viewport_width")
 	var enemies = get_children()
 	for idx in get_child_count():
 		var enemy = enemies[idx]
