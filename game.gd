@@ -14,7 +14,6 @@ var levels := [
 ]
 
 var g = Globals
-var money_at_level_start = 0
 signal new_game_requested
 
 # This function is really getting out of hand
@@ -96,7 +95,6 @@ func load_game():
 func start_level(level):
 	Globals.in_shop = false
 	save_game()
-	money_at_level_start = PlayerVariables.money
 	level.completed.connect(go_next_level)
 	level.failed.connect(_on_level_failed, CONNECT_ONE_SHOT)
 	g.current_level = level
@@ -141,7 +139,6 @@ func go_next_level():
 	start_level(level)
 
 func restart_level() -> void:
-	PlayerVariables.money = money_at_level_start
 	var level: Level = levels[g.current_level_idx].instantiate() as Level
 	start_level(level)
 
@@ -170,7 +167,6 @@ func _on_level_failed() -> void:
 			g.current_level.queue_free()
 			await g.current_level.tree_exited
 			get_tree().paused = false
-			PlayerVariables.money = money_at_level_start
 
 			await show_shop()
 			restart_level()

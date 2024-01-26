@@ -5,6 +5,7 @@ class_name Enemy extends Node2D
 const SIZE: Vector2 = Vector2(60, 50)
 
 signal reached_bottom
+signal died(value: int)
 
 func _ready():
 	if Engine.is_editor_hint():
@@ -52,4 +53,5 @@ func create_afterimage():
 # Will you be able to get money from an enemy multiple times in some cases?
 func die() -> void:
 	PlayerVariables.money += value
+	died.emit(value)
 	queue_free()

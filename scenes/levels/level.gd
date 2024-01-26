@@ -6,6 +6,7 @@ signal failed
 
 var level_completed = false
 @export var player: Player
+var money_earned_in_level = 0
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
@@ -13,17 +14,28 @@ func _ready() -> void:
 
 	Globals.current_level = self
 
+	# TODO: use die() method in player rather than this
 	player.tree_exiting.connect(
 		func():
 			var remaining_enemies = get_tree().get_nodes_in_group("enemies")
 			if remaining_enemies.size() > 0:
-				failed.emit()
+				level_failed()
 	)
 
 	var enemies = get_tree().get_nodes_in_group("enemies")
 
 	for enemy: Enemy in enemies:
-		enemy.reached_bottom.connect(func(): failed.emit())
+		enemy.reached_bottom.connect(level_failed)
+		# NOTE: I am not sure if the money is going to be calculated
+		# in the right order...
+		enemy.died.connect(
+			func(value):
+				money_earned_in_level += value
+		)
+
+func level_failed():
+	PlayerVariables.money -= money_earned_in_level
+	failed.emit()
 
 func _get_configuration_warnings() -> PackedStringArray:
 	var warnings = PackedStringArray()
