@@ -7,12 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://ddvxmqonaaa7d" path="res://components/health_component.tscn" id="5_sq83a"]
 [ext_resource type="PackedScene" uid="uid://r7ndw7tqx7xk" path="res://components/hitbox_component.tscn" id="6_ari53"]
 
-[node name="RandomShooter" type="Node2D"]
+[node name="FastShooter" type="Node2D"]
 scale = Vector2(0.576923, 0.595238)
 script = ExtResource("1_p7fat")
 shot_chance_percentage = 0.5
 shot_interval_seconds = 1.0
-start_shooting_delay = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_u2ixu")
@@ -30,6 +29,6 @@ collision_layer = 2
 health_component = NodePath("../HealthComponent")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitboxComponent"]
-polygon = PackedVector2Array(46.5, -24.4, 46.5, -4.9, 28.7, 42, 12.1, 42, 6.5, 38, 6.5, 33.7, 10.8, 19, -11.5, 19, -11.5, 19.7, -5.8, 39, -8.8, 39, -12.4, 42, -29.5, 42, -29.5, 41.4, -46.5, -1.5, -46.5, -24.4, -33.5, -41.7, -20.5, -42, -8.5, -37.4, -8.5, -35.3, -5.2, -28, 4.5, -28, 10.3, -39, 13.9, -39, 18.7, -42, 33.5, -42)
+polygon = PackedVector2Array(19, -37.3, 19, -35.9, 35.9, -20, 52, -20, 52, -0.799999, 28.3, 42, 3, 42, 3.9, 30, -4, 30, -4, 32, -3, 42, -28, 42, -52, 0.900002, -52, -19, -51.2, -19, -35, -20.8, -22, -31, -22, -33.8, -17.8, -38, -15.5, -38, -7.6, -42, 7.7, -42)
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
