@@ -18,7 +18,8 @@ func _process(_delta: float) -> void:
 	if not Engine.is_editor_hint():
 		return
 
-	scale = SIZE / $Sprite2D.get_rect().size
+	# This was polluting the .tscn files
+	# scale = SIZE / $Sprite2D.get_rect().size
 
 func _physics_process(_delta: float) -> void:
 	if Engine.is_editor_hint():

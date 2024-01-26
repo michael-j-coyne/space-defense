@@ -28,7 +28,8 @@ func _process(_delta: float) -> void:
 	var viewport_height = ProjectSettings.get_setting("display/window/size/viewport_height")
 	position.y = viewport_height - 0.5 * SIZE.y
 
-	scale = SIZE / $Sprite2D.get_rect().size
+	# This is polluting the .tscn files
+	# scale = SIZE / $Sprite2D.get_rect().size
 
 # NOTE: if we are really being sticklers, we could extract the input handling
 # into its own component.
