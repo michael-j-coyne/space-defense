@@ -49,7 +49,7 @@ func create_afterimage():
 	else:
 		get_node("/root").add_child(afterimage)
 
-func _on_tree_exiting() -> void:
-	if Engine.is_editor_hint():
-		return
+# Will you be able to get money from an enemy multiple times in some cases?
+func die() -> void:
 	PlayerVariables.money += value
+	queue_free()

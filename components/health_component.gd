@@ -9,5 +9,10 @@ func _ready() -> void:
 func take_damage(attack: Attack):
 	health -= attack.damage
 
+	var parent = get_parent()
+
 	if health <= 0:
-		get_parent().queue_free()
+		if parent.has_method("die"):
+			parent.die()
+		else:
+			parent.queue_free()
