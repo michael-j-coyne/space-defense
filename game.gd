@@ -14,6 +14,9 @@ signal new_game_requested
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var start_screen = load("res://screens/start.tscn").instantiate()
+	var dir = DirAccess.open("user://")
+	if dir.file_exists("savegame.save"):
+		print("savegame found")
 	add_child(start_screen)
 	await start_screen.start
 	start_screen.queue_free()
@@ -73,6 +76,9 @@ func go_next_level():
 
 	if g.current_level_idx == levels.size() - 1:
 		# no more levels
+		var dir = DirAccess.open("user://")
+		dir.remove("savegame.save")
+
 		add_child(load("res://screens/win.tscn").instantiate())
 		return
 
