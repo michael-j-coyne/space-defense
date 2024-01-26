@@ -11,7 +11,7 @@ func _ready():
 var attack_speed_upgrade = ShopItem.new(
 	"Attack speed +30%",
 	"Shoot faster. Who can hate that?",
-	300,
+	600,
 	2,
 	2,
 	5,
@@ -20,7 +20,7 @@ var attack_speed_upgrade = ShopItem.new(
 var movement_speed_upgrade = ShopItem.new(
 	"Movement Speed +50%",
 	"\"Gotta go fast!\"",
-	300,
+	600,
 	2,
 	2,
 	5,
@@ -29,7 +29,7 @@ var movement_speed_upgrade = ShopItem.new(
 var piercing_shot_upgrade = ShopItem.new(
 	"Piercing shots +1",
 	"Destroy two ships with one laser!",
-	300,
+	600,
 	3,
 	3,
 	5,
