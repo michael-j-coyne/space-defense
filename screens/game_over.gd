@@ -2,6 +2,7 @@ extends Sprite2D
 
 signal new_game_requested
 signal retry_requested
+signal shop_requested
 
 var tween_time = 1.0
 
@@ -32,3 +33,7 @@ func button_fadein():
 	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property($RichTextLabel2, "modulate:a", 1, tween_time)
 	tween.tween_callback(button_fadeout)
+
+
+func _on_shop_button_pressed() -> void:
+	shop_requested.emit()

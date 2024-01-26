@@ -8,6 +8,8 @@ var levels := [
 	load("res://scenes/levels/level_5.tscn"),
 	load("res://scenes/levels/level_6.tscn"),
 	load("res://scenes/levels/level_7.tscn"),
+	load("res://scenes/levels/level_8.tscn"),
+	load("res://scenes/levels/level_9.tscn"),
 
 ]
 
@@ -158,6 +160,19 @@ func _on_level_failed() -> void:
 			get_tree().paused = false
 			restart_level()
 	)
+	game_over_screen.shop_requested.connect(
+		func():
+			game_over_screen.queue_free()
+			await game_over_screen.tree_exited
+			g.current_level.queue_free()
+			await g.current_level.tree_exited
+			get_tree().paused = false
+			PlayerVariables.money = money_at_level_start
+
+			await show_shop()
+			restart_level()
+	)
+
 	add_child(game_over_screen)
 	get_tree().paused = true
 
