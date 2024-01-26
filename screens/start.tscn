@@ -32,13 +32,12 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="Button" type="Button" parent="."]
-offset_left = 52.0
-offset_top = 481.0
-offset_right = 1232.0
-offset_bottom = 573.0
+[node name="StartButton" type="Button" parent="."]
+offset_left = 247.0
+offset_top = 503.0
+offset_right = 990.0
+offset_bottom = 587.0
 theme_override_font_sizes/font_size = 50
-text = "Click here or press \"Enter\" to start
-"
+text = "Press \"Enter\" to start"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="StartButton" to="." method="_on_button_pressed"]
