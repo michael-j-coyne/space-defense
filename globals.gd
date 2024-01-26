@@ -1,6 +1,7 @@
 extends Node
 
 var current_level_idx: int
+var in_shop: bool = false
 var current_level: Level
 var shop_inventory
 
@@ -63,6 +64,7 @@ func save():
 	var save_data = {
 		"singleton_name": "Globals",
 		"current_level_idx": current_level_idx,
+		"in_shop": in_shop,
 		"shop_stock": {
 			"attack_speed_upgrade": attack_speed_upgrade.stock,
 			"movement_speed_upgrade": movement_speed_upgrade.stock,

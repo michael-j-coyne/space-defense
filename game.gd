@@ -23,6 +23,9 @@ func _ready() -> void:
 	await start_screen.tree_exited
 
 	var level: Level = levels[g.current_level_idx].instantiate() as Level
+	if Globals.in_shop:
+		await show_shop()
+
 	start_level(level)
 
 func save_game():
@@ -63,6 +66,7 @@ func load_game():
 			singleton.set(key, data[key])
 
 func start_level(level):
+	Globals.in_shop = false
 	save_game()
 	money_at_level_start = PlayerVariables.money
 	level.completed.connect(go_next_level)
@@ -70,8 +74,18 @@ func start_level(level):
 	g.current_level = level
 	add_child(level)
 
+func show_shop():
+	var shop: Shop = load("res://screens/shop.tscn").instantiate()
+	add_child(shop)
+
+	await shop.continue_pressed
+
+	shop.queue_free()
+	await shop.tree_exited
+
+	Globals.in_shop = false
+
 func go_next_level():
-	save_game()
 	if g.current_level:
 		g.current_level.queue_free()
 		await g.current_level.tree_exited
@@ -86,13 +100,11 @@ func go_next_level():
 
 	g.current_level_idx += 1
 
-	var shop: Shop = load("res://screens/shop.tscn").instantiate()
-	add_child(shop)
 
-	await shop.continue_pressed
+	Globals.in_shop = true
+	save_game()
 
-	shop.queue_free()
-	await shop.tree_exited
+	await show_shop()
 
 	var level: Level = levels[g.current_level_idx].instantiate() as Level
 	start_level(level)
