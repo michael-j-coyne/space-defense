@@ -6,6 +6,9 @@
 
 [node name="Level2" instance=ExtResource("1_ng4cq")]
 
+[node name="Player" parent="." index="0"]
+scale = Vector2(0.606061, 0.8)
+
 [node name="EnemyGrid" parent="Enemies" index="0" instance=ExtResource("2_sj8op")]
 num_cols = 3
 num_rows = 1
@@ -18,12 +21,15 @@ metadata/_edit_group_ = true
 
 [node name="NonShooter" parent="Enemies/EnemyGrid" index="0" instance=ExtResource("3_gtggl")]
 position = Vector2(30, 450)
+scale = Vector2(0.618557, 0.595238)
 
 [node name="@Node2D@75167" parent="Enemies/EnemyGrid" index="1" instance=ExtResource("3_gtggl")]
 position = Vector2(100, 450)
+scale = Vector2(0.618557, 0.595238)
 
 [node name="@Node2D@75168" parent="Enemies/EnemyGrid" index="2" instance=ExtResource("3_gtggl")]
 position = Vector2(170, 450)
+scale = Vector2(0.618557, 0.595238)
 
 [node name="EnemyGrid2" parent="Enemies" index="1" instance=ExtResource("2_sj8op")]
 position = Vector2(640, 0)
@@ -38,9 +44,12 @@ metadata/_edit_group_ = true
 
 [node name="NonShooter" parent="Enemies/EnemyGrid2" index="0" instance=ExtResource("3_gtggl")]
 position = Vector2(30, 450)
+scale = Vector2(0.618557, 0.595238)
 
 [node name="@Node2D@75933" parent="Enemies/EnemyGrid2" index="1" instance=ExtResource("3_gtggl")]
 position = Vector2(100, 450)
+scale = Vector2(0.618557, 0.595238)
 
 [node name="@Node2D@75934" parent="Enemies/EnemyGrid2" index="2" instance=ExtResource("3_gtggl")]
 position = Vector2(170, 450)
+scale = Vector2(0.618557, 0.595238)

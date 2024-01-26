@@ -1,0 +1,192 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxe26nhj5rbb1"]
+
+[ext_resource type="PackedScene" uid="uid://c35mk3dn7hj3l" path="res://scenes/levels/level.tscn" id="1_nrst4"]
+[ext_resource type="PackedScene" uid="uid://bf0pxxqhe06jr" path="res://scenes/enemy_grid.tscn" id="2_nxnu6"]
+[ext_resource type="PackedScene" uid="uid://bro4ydortrmw6" path="res://scenes/enemies/non_shooter.tscn" id="3_eqimh"]
+[ext_resource type="PackedScene" uid="uid://sp4n6hlsqgso" path="res://scenes/enemies/random_shooter.tscn" id="4_oqlid"]
+
+[node name="Level4" instance=ExtResource("1_nrst4")]
+
+[node name="Player" parent="." index="0"]
+scale = Vector2(0.606061, 0.8)
+
+[node name="ScoreDisplay" parent="." index="1"]
+offset_right = 161.0
+offset_bottom = 46.0
+
+[node name="EnemyGrid6" parent="Enemies" index="0" instance=ExtResource("2_nxnu6")]
+position = Vector2(69, 0)
+num_cols = 1
+num_rows = 1
+clone_first_child = true
+box_width_percent = 0.2
+enemy_start_pos = 120.0
+speed = 275.0
+rows_below_origin = -2
+metadata/_edit_group_ = true
+
+[node name="NonShooter" parent="Enemies/EnemyGrid6" index="0" instance=ExtResource("3_eqimh")]
+position = Vector2(150, -90)
+scale = Vector2(0.618557, 0.595238)
+
+[node name="EnemyGrid5" parent="Enemies" index="1" instance=ExtResource("2_nxnu6")]
+position = Vector2(1024, 0)
+num_cols = 1
+num_rows = 1
+clone_first_child = true
+box_width_percent = 0.2
+enemy_start_pos = 120.0
+speed = 275.0
+initial_direction = 1
+metadata/_edit_group_ = true
+
+[node name="NonShooter" parent="Enemies/EnemyGrid5" index="0" instance=ExtResource("3_eqimh")]
+position = Vector2(150, 30)
+scale = Vector2(0.618557, 0.595238)
+
+[node name="EnemyGrid8" parent="Enemies" index="2" instance=ExtResource("2_nxnu6")]
+num_cols = 1
+num_rows = 1
+clone_first_child = true
+box_width_percent = 0.2
+speed = 275.0
+initial_direction = 1
+rows_below_origin = -1
+metadata/_edit_group_ = true
+
+[node name="NonShooter" parent="Enemies/EnemyGrid8" index="0" instance=ExtResource("3_eqimh")]
+position = Vector2(30, -30)
+scale = Vector2(0.618557, 0.595238)
+
+[node name="EnemyGrid10" parent="Enemies" index="3" instance=ExtResource("2_nxnu6")]
+num_cols = 1
+num_rows = 1
+clone_first_child = true
+box_width_percent = 0.2
+enemy_start_pos = 80.0
+speed = 275.0
+initial_direction = 1
+rows_below_origin = -3
+metadata/_edit_group_ = true
+
+[node name="NonShooter" parent="Enemies/EnemyGrid10" index="0" instance=ExtResource("3_eqimh")]
+position = Vector2(110, -150)
+scale = Vector2(0.618557, 0.595238)
+
+[node name="EnemyGrid9" parent="Enemies" index="4" instance=ExtResource("2_nxnu6")]
+position = Vector2(986, 0)
+num_cols = 1
+num_rows = 1
+clone_first_child = true
+box_width_percent = 0.2
+enemy_start_pos = 40.0
+speed = 275.0
+rows_below_origin = 1
+metadata/_edit_group_ = true
+
+[node name="NonShooter" parent="Enemies/EnemyGrid9" index="0" instance=ExtResource("3_eqimh")]
+position = Vector2(70, 90)
+scale = Vector2(0.618557, 0.595238)
+
+[node name="EnemyGrid" parent="Enemies" index="5" instance=ExtResource("2_nxnu6")]
+position = Vector2(325, 0)
+num_cols = 8
+clone_first_child = true
+box_width_percent = 0.515
+speed = 10.0
+
+[node name="RandomShooter" parent="Enemies/EnemyGrid" index="0" instance=ExtResource("4_oqlid")]
+position = Vector2(30, 30)
+scale = Vector2(0.645161, 0.595238)
+shot_chance_percentage = 1.0
+shot_interval_seconds = 0.5
+
+[node name="@Node2D@29964" parent="Enemies/EnemyGrid" index="1" instance=ExtResource("4_oqlid")]
+position = Vector2(100, 30)
+scale = Vector2(0.645161, 0.595238)
+shot_chance_percentage = 1.0
+shot_interval_seconds = 0.5
+
+[node name="@Node2D@29965" parent="Enemies/EnemyGrid" index="2" instance=ExtResource("4_oqlid")]
+position = Vector2(170, 30)
+scale = Vector2(0.645161, 0.595238)
+shot_chance_percentage = 1.0
+shot_interval_seconds = 0.5
+
+[node name="@Node2D@29966" parent="Enemies/EnemyGrid" index="3" instance=ExtResource("4_oqlid")]
+position = Vector2(240, 30)
+scale = Vector2(0.645161, 0.595238)
+shot_chance_percentage = 1.0
+shot_interval_seconds = 0.5
+
+[node name="_Node2D_29967" parent="Enemies/EnemyGrid" index="4" instance=ExtResource("4_oqlid")]
+position = Vector2(310, 30)
+scale = Vector2(0.645161, 0.595238)
+shot_chance_percentage = 1.0
+shot_interval_seconds = 0.5
+
+[node name="@Node2D@29968" parent="Enemies/EnemyGrid" index="5" instance=ExtResource("4_oqlid")]
+position = Vector2(380, 30)
+scale = Vector2(0.645161, 0.595238)
+shot_chance_percentage = 1.0
+shot_interval_seconds = 0.5
+
+[node name="@Node2D@35606" parent="Enemies/EnemyGrid" index="6" instance=ExtResource("4_oqlid")]
+position = Vector2(450, 30)
+scale = Vector2(0.645161, 0.595238)
+shot_chance_percentage = 1.0
+shot_interval_seconds = 0.5
+
+[node name="@Node2D@35607" parent="Enemies/EnemyGrid" index="7" instance=ExtResource("4_oqlid")]
+position = Vector2(520, 30)
+scale = Vector2(0.645161, 0.595238)
+shot_chance_percentage = 1.0
+shot_interval_seconds = 0.5
+
+[node name="@Node2D@36408" parent="Enemies/EnemyGrid" index="8" instance=ExtResource("4_oqlid")]
+position = Vector2(30, 90)
+scale = Vector2(0.645161, 0.595238)
+shot_chance_percentage = 1.0
+shot_interval_seconds = 0.5
+
+[node name="@Node2D@37336" parent="Enemies/EnemyGrid" index="9" instance=ExtResource("4_oqlid")]
+position = Vector2(100, 90)
+scale = Vector2(0.645161, 0.595238)
+shot_chance_percentage = 1.0
+shot_interval_seconds = 0.5
+
+[node name="@Node2D@37337" parent="Enemies/EnemyGrid" index="10" instance=ExtResource("4_oqlid")]
+position = Vector2(170, 90)
+scale = Vector2(0.645161, 0.595238)
+shot_chance_percentage = 1.0
+shot_interval_seconds = 0.5
+
+[node name="@Node2D@37338" parent="Enemies/EnemyGrid" index="11" instance=ExtResource("4_oqlid")]
+position = Vector2(240, 90)
+scale = Vector2(0.645161, 0.595238)
+shot_chance_percentage = 1.0
+shot_interval_seconds = 0.5
+
+[node name="@Node2D@37339" parent="Enemies/EnemyGrid" index="12" instance=ExtResource("4_oqlid")]
+position = Vector2(310, 90)
+scale = Vector2(0.645161, 0.595238)
+shot_chance_percentage = 1.0
+shot_interval_seconds = 0.5
+
+[node name="@Node2D@37340" parent="Enemies/EnemyGrid" index="13" instance=ExtResource("4_oqlid")]
+position = Vector2(380, 90)
+scale = Vector2(0.645161, 0.595238)
+shot_chance_percentage = 1.0
+shot_interval_seconds = 0.5
+
+[node name="@Node2D@37341" parent="Enemies/EnemyGrid" index="14" instance=ExtResource("4_oqlid")]
+position = Vector2(450, 90)
+scale = Vector2(0.645161, 0.595238)
+shot_chance_percentage = 1.0
+shot_interval_seconds = 0.5
+
+[node name="@Node2D@37342" parent="Enemies/EnemyGrid" index="15" instance=ExtResource("4_oqlid")]
+position = Vector2(520, 90)
+scale = Vector2(0.645161, 0.595238)
+shot_chance_percentage = 1.0
+shot_interval_seconds = 0.5
