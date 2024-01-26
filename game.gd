@@ -15,21 +15,43 @@ var g = Globals
 var money_at_level_start = 0
 signal new_game_requested
 
-# Called when the node enters the scene tree for the first time.
+# This function is really getting out of hand
 func _ready() -> void:
-	var start_screen = load("res://screens/start.tscn").instantiate()
 	var dir = DirAccess.open("user://")
 	if dir.file_exists("savegame.save"):
-		print("savegame found")
-	add_child(start_screen)
-	await start_screen.start
-	start_screen.queue_free()
-	await start_screen.tree_exited
+		var continue_screen = load("res://screens/continue.tscn").instantiate()
+		add_child(continue_screen)
+		continue_screen.continue_game.connect(
+			func():
+				continue_screen.queue_free()
+				await continue_screen.tree_exited
+				load_game()
+				start_game()
+		)
 
-	var level: Level = levels[g.current_level_idx].instantiate() as Level
+		continue_screen.new_game.connect(
+			func():
+				continue_screen.queue_free()
+				await continue_screen.tree_exited
+				dir.remove("savegame.save")
+				start_game()
+		)
+
+		return
+
+	var start_screen = load("res://screens/start.tscn").instantiate()
+	add_child(start_screen)
+	start_screen.start.connect(
+		func():
+			start_screen.queue_free()
+			await start_screen.tree_exited
+			start_game()
+	)
+
+func start_game():
 	if Globals.in_shop:
 		await show_shop()
-
+	var level: Level = levels[g.current_level_idx].instantiate() as Level
 	start_level(level)
 
 func save_game():

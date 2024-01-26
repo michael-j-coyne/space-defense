@@ -1,7 +1,7 @@
 class_name Main extends Node2D
 
 func _ready() -> void:
-	continue_game()
+	new_game()
 
 func new_game() -> Game:
 	var game = Game.new()
@@ -15,9 +15,6 @@ func new_game() -> Game:
 	)
 	add_child(game)
 	return game
-
-func continue_game():
-	new_game().load_game()
 
 func _process(_delta):
 	if OS.is_debug_build():
