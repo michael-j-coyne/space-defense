@@ -113,6 +113,7 @@ func show_shop():
 
 	Globals.in_shop = false
 
+# TODO: this function is confusing. It is a problem.
 func go_next_level():
 	if g.current_level:
 		g.current_level.queue_free()
@@ -121,6 +122,7 @@ func go_next_level():
 	if g.current_level_idx == levels.size() - 1:
 		# no more levels
 		var dir = DirAccess.open("user://")
+		# TODO: this doesn't actually work in release version
 		dir.remove("savegame.save")
 
 		add_child(load("res://screens/win.tscn").instantiate())
@@ -130,6 +132,7 @@ func go_next_level():
 
 
 	Globals.in_shop = true
+	# NOTE: we are saving here because the level was completed. But this isn't actually very clear.
 	save_game()
 
 	await show_shop()
