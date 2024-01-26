@@ -159,7 +159,7 @@ func _process(_delta):
 
 	if OS.is_debug_build() and Input.is_action_just_pressed("ui_text_backspace"):
 		for enemy in get_children():
-			enemy.queue_free()
+			enemy.die()
 
 	# NOTE: this works for now but I don't know if its good practice. Also, I don't know if
 	# its guaranteed that the EnemyGrid will free itself before something tries to call
