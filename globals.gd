@@ -9,13 +9,13 @@ func _ready():
 	reset()
 
 var attack_speed_upgrade = ShopItem.new(
-	"Attack speed +50%",
+	"Attack speed +30%",
 	"Shoot faster. Who can hate that?",
 	300,
 	2,
 	2,
 	5,
-	func(): PlayerVariables.gun_cooldown *= .5)
+	func(): PlayerVariables.gun_cooldown *= .7)
 
 var movement_speed_upgrade = ShopItem.new(
 	"Movement Speed +50%",
