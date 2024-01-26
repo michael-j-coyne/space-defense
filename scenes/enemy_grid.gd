@@ -137,8 +137,9 @@ func _draw():
 	var screen_height = ProjectSettings.get_setting("display/window/size/viewport_height")
 	var screen_width = ProjectSettings.get_setting("display/window/size/viewport_width")
 
-	var box_start = Vector2(0, 0)
-	var box_end = Vector2(box_width_percent * screen_width, screen_height)
+	var box_offset = 1000
+	var box_start = Vector2(0, -box_offset)
+	var box_end = Vector2(box_width_percent * screen_width, box_offset + screen_height)
 
 	draw_rect(Rect2(box_start, box_end), Color(Color.DARK_OLIVE_GREEN, 0.4))
 
