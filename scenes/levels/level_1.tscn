@@ -11,22 +11,22 @@ position = Vector2(2.08165e-12, 0)
 num_cols = 5
 num_rows = 1
 clone_first_child = true
-speed = 400.0
+speed = 200.0
 initial_direction = 1
-rows_below_origin = 6
+rows_below_origin = 5
 metadata/_edit_group_ = true
 
 [node name="NonShooter" parent="Enemies/EnemyGrid" index="0" instance=ExtResource("3_48l43")]
-position = Vector2(30, 390)
+position = Vector2(30, 330)
 
 [node name="@Node2D@69468" parent="Enemies/EnemyGrid" index="1" instance=ExtResource("3_48l43")]
-position = Vector2(100, 390)
+position = Vector2(100, 330)
 
 [node name="@Node2D@69469" parent="Enemies/EnemyGrid" index="2" instance=ExtResource("3_48l43")]
-position = Vector2(170, 390)
+position = Vector2(170, 330)
 
 [node name="@Node2D@69470" parent="Enemies/EnemyGrid" index="3" instance=ExtResource("3_48l43")]
-position = Vector2(240, 390)
+position = Vector2(240, 330)
 
 [node name="@Node2D@109277" parent="Enemies/EnemyGrid" index="4" instance=ExtResource("3_48l43")]
-position = Vector2(310, 390)
+position = Vector2(310, 330)

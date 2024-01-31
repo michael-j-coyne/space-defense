@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqx66d6gepyty"]
+[gd_scene load_steps=4 format=3 uid="uid://cck4rcup46wcf"]
 
 [ext_resource type="PackedScene" uid="uid://c35mk3dn7hj3l" path="res://scenes/levels/level.tscn" id="1_xfgl6"]
 [ext_resource type="PackedScene" uid="uid://bf0pxxqhe06jr" path="res://scenes/enemy_grid.tscn" id="2_m3nqv"]
@@ -6,15 +6,12 @@
 
 [node name="Level4" instance=ExtResource("1_xfgl6")]
 
-[node name="Player" parent="." index="0"]
-scale = Vector2(0.606061, 0.8)
-
 [node name="ScoreDisplay" parent="." index="1"]
 offset_right = 161.0
 offset_bottom = 46.0
 
 [node name="EnemyGrid6" parent="Enemies" index="0" instance=ExtResource("2_m3nqv")]
-position = Vector2(1, 0)
+position = Vector2(276, 0)
 num_cols = 1
 num_rows = 1
 clone_first_child = true
@@ -25,40 +22,9 @@ metadata/_edit_group_ = true
 
 [node name="NonShooter" parent="Enemies/EnemyGrid6" index="0" instance=ExtResource("3_3perp")]
 position = Vector2(150, 30)
-scale = Vector2(0.618557, 0.595238)
 
-[node name="EnemyGrid7" parent="Enemies" index="1" instance=ExtResource("2_m3nqv")]
-position = Vector2(769, 0)
-num_cols = 1
-num_rows = 1
-clone_first_child = true
-box_width_percent = 0.2
-speed = 275.0
-initial_direction = 1
-rows_below_origin = -2
-metadata/_edit_group_ = true
-
-[node name="NonShooter" parent="Enemies/EnemyGrid7" index="0" instance=ExtResource("3_3perp")]
-position = Vector2(30, -90)
-scale = Vector2(0.618557, 0.595238)
-
-[node name="EnemyGrid3" parent="Enemies" index="2" instance=ExtResource("2_m3nqv")]
-position = Vector2(863, 0)
-num_cols = 1
-num_rows = 1
-clone_first_child = true
-box_width_percent = 0.2
-enemy_start_pos = 180.0
-speed = 275.0
-rows_below_origin = -4
-metadata/_edit_group_ = true
-
-[node name="NonShooter" parent="Enemies/EnemyGrid3" index="0" instance=ExtResource("3_3perp")]
-position = Vector2(210, -210)
-scale = Vector2(0.618557, 0.595238)
-
-[node name="EnemyGrid4" parent="Enemies" index="3" instance=ExtResource("2_m3nqv")]
-position = Vector2(513, 0)
+[node name="EnemyGrid4" parent="Enemies" index="1" instance=ExtResource("2_m3nqv")]
+position = Vector2(788, 0)
 num_cols = 1
 num_rows = 1
 clone_first_child = true
@@ -70,25 +36,9 @@ metadata/_edit_group_ = true
 
 [node name="NonShooter" parent="Enemies/EnemyGrid4" index="0" instance=ExtResource("3_3perp")]
 position = Vector2(90, 30)
-scale = Vector2(0.618557, 0.595238)
 
-[node name="EnemyGrid5" parent="Enemies" index="4" instance=ExtResource("2_m3nqv")]
-position = Vector2(1024, 0)
-num_cols = 1
-num_rows = 1
-clone_first_child = true
-box_width_percent = 0.2
-enemy_start_pos = 120.0
-speed = 275.0
-initial_direction = 1
-metadata/_edit_group_ = true
-
-[node name="NonShooter" parent="Enemies/EnemyGrid5" index="0" instance=ExtResource("3_3perp")]
-position = Vector2(150, 30)
-scale = Vector2(0.618557, 0.595238)
-
-[node name="EnemyGrid8" parent="Enemies" index="5" instance=ExtResource("2_m3nqv")]
-position = Vector2(257, 0)
+[node name="EnemyGrid8" parent="Enemies" index="2" instance=ExtResource("2_m3nqv")]
+position = Vector2(532, 0)
 num_cols = 1
 num_rows = 1
 clone_first_child = true
@@ -100,10 +50,9 @@ metadata/_edit_group_ = true
 
 [node name="NonShooter" parent="Enemies/EnemyGrid8" index="0" instance=ExtResource("3_3perp")]
 position = Vector2(30, 90)
-scale = Vector2(0.618557, 0.595238)
 
-[node name="EnemyGrid9" parent="Enemies" index="6" instance=ExtResource("2_m3nqv")]
-position = Vector2(321, 0)
+[node name="EnemyGrid9" parent="Enemies" index="3" instance=ExtResource("2_m3nqv")]
+position = Vector2(596, 0)
 num_cols = 1
 num_rows = 1
 clone_first_child = true
@@ -115,4 +64,3 @@ metadata/_edit_group_ = true
 
 [node name="NonShooter" parent="Enemies/EnemyGrid9" index="0" instance=ExtResource("3_3perp")]
 position = Vector2(70, -150)
-scale = Vector2(0.618557, 0.595238)

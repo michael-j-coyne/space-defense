@@ -1,70 +1,43 @@
-[gd_scene load_steps=5 format=3 uid="uid://bn0egk74kvdj0"]
+[gd_scene load_steps=6 format=3 uid="uid://bn0egk74kvdj0"]
 
 [ext_resource type="PackedScene" uid="uid://c35mk3dn7hj3l" path="res://scenes/levels/level.tscn" id="1_7wxqt"]
 [ext_resource type="PackedScene" uid="uid://bf0pxxqhe06jr" path="res://scenes/enemy_grid.tscn" id="2_xirjx"]
 [ext_resource type="PackedScene" uid="uid://sp4n6hlsqgso" path="res://scenes/enemies/random_shooter.tscn" id="3_20w37"]
 [ext_resource type="PackedScene" uid="uid://bro4ydortrmw6" path="res://scenes/enemies/non_shooter.tscn" id="4_h6h7l"]
+[ext_resource type="Script" path="res://scenes/enemies/random_shooter.gd" id="4_p5ptj"]
 
 [node name="Level5" instance=ExtResource("1_7wxqt")]
 
-[node name="Player" parent="." index="0"]
-scale = Vector2(0.606061, 0.8)
-
 [node name="EnemyGrid" parent="Enemies" index="0" instance=ExtResource("2_xirjx")]
-num_cols = 4
+num_cols = 3
 num_rows = 1
 clone_first_child = true
-box_width_percent = 0.4
+box_width_percent = 0.8
 speed = 175.0
 initial_direction = 1
 metadata/_edit_group_ = true
 
 [node name="RandomShooter" parent="Enemies/EnemyGrid" index="0" instance=ExtResource("3_20w37")]
 position = Vector2(30, 30)
-scale = Vector2(0.645161, 0.595238)
+shot_chance_percentage = 0.1
+shot_interval_seconds = 0.075
 
 [node name="@Node2D@82519" parent="Enemies/EnemyGrid" index="1" instance=ExtResource("3_20w37")]
 position = Vector2(100, 30)
-scale = Vector2(0.645161, 0.595238)
+shot_chance_percentage = 0.1
+shot_interval_seconds = 0.075
 
-[node name="@Node2D@82520" parent="Enemies/EnemyGrid" index="2" instance=ExtResource("3_20w37")]
+[node name="@Node2D@68449" type="Node2D" parent="Enemies/EnemyGrid" index="2" instance=ExtResource("3_20w37")]
 position = Vector2(170, 30)
 scale = Vector2(0.645161, 0.595238)
+script = ExtResource("4_p5ptj")
+shot_chance_percentage = 0.1
+shot_interval_seconds = 0.075
 
-[node name="@Node2D@83721" parent="Enemies/EnemyGrid" index="3" instance=ExtResource("3_20w37")]
-position = Vector2(240, 30)
-scale = Vector2(0.645161, 0.595238)
-
-[node name="EnemyGrid2" parent="Enemies" index="1" instance=ExtResource("2_xirjx")]
-position = Vector2(512, 0)
-num_cols = 4
-num_rows = 1
-clone_first_child = true
-box_width_percent = 0.4
-speed = 175.0
-initial_direction = 1
-metadata/_edit_group_ = true
-
-[node name="RandomShooter" parent="Enemies/EnemyGrid2" index="0" instance=ExtResource("3_20w37")]
-position = Vector2(30, 30)
-scale = Vector2(0.645161, 0.595238)
-
-[node name="_Node2D_82519" parent="Enemies/EnemyGrid2" index="1" instance=ExtResource("3_20w37")]
-position = Vector2(100, 30)
-scale = Vector2(0.645161, 0.595238)
-
-[node name="_Node2D_82520" parent="Enemies/EnemyGrid2" index="2" instance=ExtResource("3_20w37")]
-position = Vector2(170, 30)
-scale = Vector2(0.645161, 0.595238)
-
-[node name="_Node2D_83721" parent="Enemies/EnemyGrid2" index="3" instance=ExtResource("3_20w37")]
-position = Vector2(240, 30)
-scale = Vector2(0.645161, 0.595238)
-
-[node name="EnemyGrid3" parent="Enemies" index="2" instance=ExtResource("2_xirjx")]
+[node name="EnemyGrid3" parent="Enemies" index="1" instance=ExtResource("2_xirjx")]
 position = Vector2(1024, 0)
 num_cols = 1
-num_rows = 4
+num_rows = 3
 clone_first_child = true
 box_width_percent = 0.2
 enemy_start_pos = 180.0
@@ -73,16 +46,9 @@ metadata/_edit_group_ = true
 
 [node name="NonShooter" parent="Enemies/EnemyGrid3" index="0" instance=ExtResource("4_h6h7l")]
 position = Vector2(210, 30)
-scale = Vector2(0.618557, 0.595238)
 
 [node name="@Node2D@98077" parent="Enemies/EnemyGrid3" index="1" instance=ExtResource("4_h6h7l")]
 position = Vector2(210, 90)
-scale = Vector2(0.618557, 0.595238)
 
 [node name="@Node2D@98078" parent="Enemies/EnemyGrid3" index="2" instance=ExtResource("4_h6h7l")]
 position = Vector2(210, 150)
-scale = Vector2(0.618557, 0.595238)
-
-[node name="@Node2D@112010" parent="Enemies/EnemyGrid3" index="3" instance=ExtResource("4_h6h7l")]
-position = Vector2(210, 210)
-scale = Vector2(0.618557, 0.595238)

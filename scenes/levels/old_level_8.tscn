@@ -1,0 +1,83 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbjvjn3glnoah"]
+
+[ext_resource type="PackedScene" uid="uid://c35mk3dn7hj3l" path="res://scenes/levels/level.tscn" id="1_yt70b"]
+[ext_resource type="PackedScene" uid="uid://bf0pxxqhe06jr" path="res://scenes/enemy_grid.tscn" id="2_xlcgc"]
+[ext_resource type="PackedScene" uid="uid://bro4ydortrmw6" path="res://scenes/enemies/non_shooter.tscn" id="3_2cuih"]
+
+[node name="Level" instance=ExtResource("1_yt70b")]
+
+[node name="EnemyGrid" parent="Enemies" index="0" instance=ExtResource("2_xlcgc")]
+position = Vector2(2.08165e-12, 0)
+num_cols = 5
+num_rows = 1
+clone_first_child = true
+speed = 400.0
+initial_direction = 1
+rows_below_origin = 7
+metadata/_edit_group_ = true
+
+[node name="NonShooter" parent="Enemies/EnemyGrid" index="0" instance=ExtResource("3_2cuih")]
+position = Vector2(30, 450)
+
+[node name="@Node2D@69468" parent="Enemies/EnemyGrid" index="1" instance=ExtResource("3_2cuih")]
+position = Vector2(100, 450)
+
+[node name="@Node2D@69469" parent="Enemies/EnemyGrid" index="2" instance=ExtResource("3_2cuih")]
+position = Vector2(170, 450)
+
+[node name="@Node2D@69470" parent="Enemies/EnemyGrid" index="3" instance=ExtResource("3_2cuih")]
+position = Vector2(240, 450)
+
+[node name="@Node2D@109277" parent="Enemies/EnemyGrid" index="4" instance=ExtResource("3_2cuih")]
+position = Vector2(310, 450)
+
+[node name="EnemyGrid3" parent="Enemies" index="1" instance=ExtResource("2_xlcgc")]
+position = Vector2(2.08165e-12, 0)
+num_cols = 5
+num_rows = 1
+clone_first_child = true
+enemy_start_pos = 480.0
+speed = 400.0
+initial_direction = 1
+rows_below_origin = 5
+metadata/_edit_group_ = true
+
+[node name="NonShooter" parent="Enemies/EnemyGrid3" index="0" instance=ExtResource("3_2cuih")]
+position = Vector2(510, 330)
+
+[node name="_Node2D_69468" parent="Enemies/EnemyGrid3" index="1" instance=ExtResource("3_2cuih")]
+position = Vector2(580, 330)
+
+[node name="_Node2D_69469" parent="Enemies/EnemyGrid3" index="2" instance=ExtResource("3_2cuih")]
+position = Vector2(650, 330)
+
+[node name="_Node2D_69470" parent="Enemies/EnemyGrid3" index="3" instance=ExtResource("3_2cuih")]
+position = Vector2(720, 330)
+
+[node name="_Node2D_109277" parent="Enemies/EnemyGrid3" index="4" instance=ExtResource("3_2cuih")]
+position = Vector2(790, 330)
+
+[node name="EnemyGrid2" parent="Enemies" index="2" instance=ExtResource("2_xlcgc")]
+position = Vector2(2.08165e-12, 0)
+num_cols = 5
+num_rows = 1
+clone_first_child = true
+enemy_start_pos = 940.0
+speed = 400.0
+rows_below_origin = 6
+metadata/_edit_group_ = true
+
+[node name="NonShooter" parent="Enemies/EnemyGrid2" index="0" instance=ExtResource("3_2cuih")]
+position = Vector2(970, 390)
+
+[node name="_Node2D_69468" parent="Enemies/EnemyGrid2" index="1" instance=ExtResource("3_2cuih")]
+position = Vector2(1040, 390)
+
+[node name="_Node2D_69469" parent="Enemies/EnemyGrid2" index="2" instance=ExtResource("3_2cuih")]
+position = Vector2(1110, 390)
+
+[node name="_Node2D_69470" parent="Enemies/EnemyGrid2" index="3" instance=ExtResource("3_2cuih")]
+position = Vector2(1180, 390)
+
+[node name="_Node2D_109277" parent="Enemies/EnemyGrid2" index="4" instance=ExtResource("3_2cuih")]
+position = Vector2(1250, 390)
