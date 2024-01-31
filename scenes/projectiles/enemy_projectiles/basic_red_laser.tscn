@@ -4,8 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://t1m28gtj0sb" path="res://components/attack_hitbox_component.tscn" id="2_6gl4r"]
 [ext_resource type="Texture2D" uid="uid://btdab576340r2" path="res://assets/laserRed04.png" id="3_palpu"]
 
-[node name="BasicRedLaser" type="Node2D"]
+[node name="BasicRedLaser" type="Node2D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_j8jdu")
+hitbox = NodePath("AttackHitboxComponent")
 
 [node name="AttackHitboxComponent" parent="." instance=ExtResource("2_6gl4r")]
 

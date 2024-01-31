@@ -1,19 +1,31 @@
+@tool
 class_name Projectile extends Node2D
 
-# NOTE: What exactly is the consequence of not setting defaults? What is the benefit?
 var attack: Attack
 var speed: float
 var direction: Vector2
 var penetrations: int = 1
+@export var hitbox: AttackHitboxComponent
 @export var time_alive: float = 2.0
 
+func _get_configuration_warnings() -> PackedStringArray:
+	var warnings = PackedStringArray()
+
+	if not hitbox:
+		warnings.push_back("Projectile has no hitbox")
+
+	return warnings
+
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		return
+
 	get_tree().create_timer(time_alive).connect("timeout", func(): queue_free())
 
 func _physics_process(delta: float) -> void:
-	# for development, the direction should always be a normalized vector
-	# NOTE: it may be better to assert this in the "setter" for direction,
-	# but I haven't decided if I want to use properties yet.
+	if Engine.is_editor_hint():
+		return
+
 	assert(
 		direction == Vector2(0, 0) or direction.is_normalized(),
 		"direction must be a normalized vector or the vector (0, 0)")
@@ -35,6 +47,7 @@ func _on_attack_landed():
 	penetrations -= 1
 
 	if penetrations < 1:
+		hitbox.enabled = false
 		queue_free()
 
 func get_size():
