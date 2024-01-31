@@ -24,37 +24,31 @@ metadata/_edit_group_ = true
 position = Vector2(270, 30)
 shot_chance_percentage = 0.01
 shot_interval_seconds = 0.05
-value = 5
 
 [node name="@Node2D@82519" parent="Enemies/EnemyGrid" index="1" instance=ExtResource("3_xehr5")]
 position = Vector2(340, 30)
 shot_chance_percentage = 0.01
 shot_interval_seconds = 0.05
-value = 5
 
 [node name="@Node2D@166807" parent="Enemies/EnemyGrid" index="2" instance=ExtResource("3_xehr5")]
 position = Vector2(410, 30)
 shot_chance_percentage = 0.01
 shot_interval_seconds = 0.05
-value = 5
 
 [node name="@Node2D@166808" parent="Enemies/EnemyGrid" index="3" instance=ExtResource("3_xehr5")]
 position = Vector2(270, 90)
 shot_chance_percentage = 0.01
 shot_interval_seconds = 0.05
-value = 5
 
 [node name="@Node2D@183363" parent="Enemies/EnemyGrid" index="4" instance=ExtResource("3_xehr5")]
 position = Vector2(340, 90)
 shot_chance_percentage = 0.01
 shot_interval_seconds = 0.05
-value = 5
 
 [node name="@Node2D@183364" parent="Enemies/EnemyGrid" index="5" instance=ExtResource("3_xehr5")]
 position = Vector2(410, 90)
 shot_chance_percentage = 0.01
 shot_interval_seconds = 0.05
-value = 5
 
 [node name="EnemyGrid3" parent="Enemies" index="1" instance=ExtResource("2_c0twg")]
 position = Vector2(1024, 0)

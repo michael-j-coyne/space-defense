@@ -29,16 +29,17 @@ num_cols = 1
 num_rows = 1
 clone_first_child = true
 box_width_percent = 0.2
-enemy_start_pos = 60.0
+enemy_start_pos = 120.0
 speed = 275.0
 initial_direction = 1
+rows_below_origin = -1
 metadata/_edit_group_ = true
 
 [node name="NonShooter" parent="Enemies/EnemyGrid4" index="0" instance=ExtResource("3_3perp")]
-position = Vector2(90, 30)
+position = Vector2(150, -30)
 
 [node name="EnemyGrid8" parent="Enemies" index="2" instance=ExtResource("2_m3nqv")]
-position = Vector2(532, 0)
+position = Vector2(605, 0)
 num_cols = 1
 num_rows = 1
 clone_first_child = true
@@ -52,15 +53,15 @@ metadata/_edit_group_ = true
 position = Vector2(30, 90)
 
 [node name="EnemyGrid9" parent="Enemies" index="3" instance=ExtResource("2_m3nqv")]
-position = Vector2(596, 0)
+position = Vector2(477, 0)
 num_cols = 1
 num_rows = 1
 clone_first_child = true
 box_width_percent = 0.2
-enemy_start_pos = 40.0
+enemy_start_pos = 80.0
 speed = 275.0
 rows_below_origin = -3
 metadata/_edit_group_ = true
 
 [node name="NonShooter" parent="Enemies/EnemyGrid9" index="0" instance=ExtResource("3_3perp")]
-position = Vector2(70, -150)
+position = Vector2(110, -150)
