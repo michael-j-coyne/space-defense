@@ -90,7 +90,8 @@ func load_game():
 			if key == "shop_stock":
 				for item_name in data[key].keys():
 					var saved_stock = data[key][item_name]
-					singleton.shop_inventory[item_name].stock = saved_stock
+					if singleton.shop_inventory.has(item_name):
+						singleton.shop_inventory[item_name].stock = saved_stock
 				continue
 			singleton.set(key, data[key])
 

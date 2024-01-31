@@ -49,7 +49,7 @@ func reset():
 	shop_inventory = {
 		"attack_speed_upgrade": attack_speed_upgrade,
 		"movement_speed_upgrade": movement_speed_upgrade,
-		"piercing_shot_upgrade": piercing_shot_upgrade,
+		# "piercing_shot_upgrade": piercing_shot_upgrade,
 		# "gatling_gun_upgrade": gatling_gun_upgrade,
 	}
 
@@ -64,7 +64,7 @@ func save():
 		"shop_stock": {
 			"attack_speed_upgrade": shop_inventory["attack_speed_upgrade"].stock,
 			"movement_speed_upgrade": shop_inventory["movement_speed_upgrade"].stock,
-			"piercing_shot_upgrade": shop_inventory["piercing_shot_upgrade"].stock,
+			#"piercing_shot_upgrade": shop_inventory["piercing_shot_upgrade"].stock,
 			# "gatling_gun_upgrade": gatling_gun_upgrade.stock,
 		}
 	}
