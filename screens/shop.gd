@@ -46,6 +46,10 @@ func purchase_item(item_name, currency):
 func populate_shop():
 	for item_name in inventory.keys():
 		var item = inventory[item_name]
+
+		if item.stock < 1:
+			continue
+
 		var item_button := Button.new()
 		var price = get_price(item_name)
 
@@ -65,12 +69,11 @@ func populate_shop():
 		item_button.alignment = HORIZONTAL_ALIGNMENT_LEFT
 
 		# Disable and "grey out" item if out of stock
-		if item.stock < 1:
+		if not can_purchase(item_name, PlayerVariables.money):
 			item_button.disabled = true
 
 		var description = RichTextLabel.new()
 		description.text = item.description
-		description.text += " | Stock: " + str(item.stock)
 
 		description.fit_content = true
 		description.custom_minimum_size=Vector2(400, 0)
