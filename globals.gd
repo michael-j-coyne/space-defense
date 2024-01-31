@@ -12,7 +12,7 @@ func reset():
 	var attack_speed_upgrade = ShopItem.new()
 	attack_speed_upgrade.display_text = "Attack speed +30%"
 	attack_speed_upgrade.description = "Shoot faster. Who can hate that?"
-	attack_speed_upgrade.base_price = 100
+	attack_speed_upgrade.base_price = 1000
 	attack_speed_upgrade.stock = 1
 	attack_speed_upgrade.max_stock = 1
 	attack_speed_upgrade.price_multiplier = 5
@@ -22,7 +22,7 @@ func reset():
 	var movement_speed_upgrade = ShopItem.new()
 	movement_speed_upgrade.display_text = "Movement speed +50%"
 	movement_speed_upgrade.description = "Gotta go fast!"
-	movement_speed_upgrade.base_price = 100
+	movement_speed_upgrade.base_price = 400
 	movement_speed_upgrade.stock = 1
 	movement_speed_upgrade.max_stock = 1
 	movement_speed_upgrade.price_multiplier = 5
