@@ -6,9 +6,6 @@
 
 [node name="Level4" instance=ExtResource("1_p21hx")]
 
-[node name="Player" parent="." index="0"]
-scale = Vector2(0.606061, 0.8)
-
 [node name="ScoreDisplay" parent="." index="1"]
 offset_right = 161.0
 offset_bottom = 46.0
@@ -25,7 +22,6 @@ metadata/_edit_group_ = true
 
 [node name="NonShooter" parent="Enemies/EnemyGrid6" index="0" instance=ExtResource("3_sndyd")]
 position = Vector2(150, 30)
-scale = Vector2(0.618557, 0.595238)
 
 [node name="EnemyGrid7" parent="Enemies" index="1" instance=ExtResource("2_w2ohk")]
 position = Vector2(769, 0)
@@ -40,7 +36,6 @@ metadata/_edit_group_ = true
 
 [node name="NonShooter" parent="Enemies/EnemyGrid7" index="0" instance=ExtResource("3_sndyd")]
 position = Vector2(30, -90)
-scale = Vector2(0.618557, 0.595238)
 
 [node name="EnemyGrid11" parent="Enemies" index="2" instance=ExtResource("2_w2ohk")]
 position = Vector2(769, 0)
@@ -55,7 +50,6 @@ metadata/_edit_group_ = true
 
 [node name="NonShooter" parent="Enemies/EnemyGrid11" index="0" instance=ExtResource("3_sndyd")]
 position = Vector2(150, -510)
-scale = Vector2(0.618557, 0.595238)
 
 [node name="EnemyGrid15" parent="Enemies" index="3" instance=ExtResource("2_w2ohk")]
 position = Vector2(539, 0)
@@ -71,7 +65,6 @@ metadata/_edit_group_ = true
 
 [node name="NonShooter" parent="Enemies/EnemyGrid15" index="0" instance=ExtResource("3_sndyd")]
 position = Vector2(80, -330)
-scale = Vector2(0.618557, 0.595238)
 
 [node name="EnemyGrid3" parent="Enemies" index="4" instance=ExtResource("2_w2ohk")]
 position = Vector2(863, 0)
@@ -86,7 +79,6 @@ metadata/_edit_group_ = true
 
 [node name="NonShooter" parent="Enemies/EnemyGrid3" index="0" instance=ExtResource("3_sndyd")]
 position = Vector2(210, -210)
-scale = Vector2(0.618557, 0.595238)
 
 [node name="EnemyGrid4" parent="Enemies" index="5" instance=ExtResource("2_w2ohk")]
 position = Vector2(513, 0)
@@ -101,7 +93,6 @@ metadata/_edit_group_ = true
 
 [node name="NonShooter" parent="Enemies/EnemyGrid4" index="0" instance=ExtResource("3_sndyd")]
 position = Vector2(90, 30)
-scale = Vector2(0.618557, 0.595238)
 
 [node name="EnemyGrid12" parent="Enemies" index="6" instance=ExtResource("2_w2ohk")]
 position = Vector2(513, 0)
@@ -116,7 +107,6 @@ metadata/_edit_group_ = true
 
 [node name="NonShooter" parent="Enemies/EnemyGrid12" index="0" instance=ExtResource("3_sndyd")]
 position = Vector2(30, -570)
-scale = Vector2(0.618557, 0.595238)
 
 [node name="EnemyGrid16" parent="Enemies" index="7" instance=ExtResource("2_w2ohk")]
 position = Vector2(144, 0)
@@ -131,7 +121,6 @@ metadata/_edit_group_ = true
 
 [node name="NonShooter" parent="Enemies/EnemyGrid16" index="0" instance=ExtResource("3_sndyd")]
 position = Vector2(180, -510)
-scale = Vector2(0.618557, 0.595238)
 
 [node name="EnemyGrid13" parent="Enemies" index="8" instance=ExtResource("2_w2ohk")]
 position = Vector2(2.08165e-12, 0)
@@ -147,7 +136,6 @@ metadata/_edit_group_ = true
 
 [node name="NonShooter" parent="Enemies/EnemyGrid13" index="0" instance=ExtResource("3_sndyd")]
 position = Vector2(100, -450)
-scale = Vector2(0.618557, 0.595238)
 
 [node name="EnemyGrid14" parent="Enemies" index="9" instance=ExtResource("2_w2ohk")]
 position = Vector2(1023, 0)
@@ -163,7 +151,6 @@ metadata/_edit_group_ = true
 
 [node name="NonShooter" parent="Enemies/EnemyGrid14" index="0" instance=ExtResource("3_sndyd")]
 position = Vector2(130, -810)
-scale = Vector2(0.618557, 0.595238)
 
 [node name="EnemyGrid5" parent="Enemies" index="10" instance=ExtResource("2_w2ohk")]
 position = Vector2(1024, 0)
@@ -178,7 +165,6 @@ metadata/_edit_group_ = true
 
 [node name="NonShooter" parent="Enemies/EnemyGrid5" index="0" instance=ExtResource("3_sndyd")]
 position = Vector2(150, 30)
-scale = Vector2(0.618557, 0.595238)
 
 [node name="EnemyGrid8" parent="Enemies" index="11" instance=ExtResource("2_w2ohk")]
 position = Vector2(257, 0)
@@ -193,7 +179,6 @@ metadata/_edit_group_ = true
 
 [node name="NonShooter" parent="Enemies/EnemyGrid8" index="0" instance=ExtResource("3_sndyd")]
 position = Vector2(30, 90)
-scale = Vector2(0.618557, 0.595238)
 
 [node name="EnemyGrid10" parent="Enemies" index="12" instance=ExtResource("2_w2ohk")]
 position = Vector2(257, 0)
@@ -208,7 +193,6 @@ metadata/_edit_group_ = true
 
 [node name="NonShooter" parent="Enemies/EnemyGrid10" index="0" instance=ExtResource("3_sndyd")]
 position = Vector2(50, -390)
-scale = Vector2(0.618557, 0.595238)
 
 [node name="EnemyGrid9" parent="Enemies" index="13" instance=ExtResource("2_w2ohk")]
 position = Vector2(321, 0)
@@ -223,4 +207,3 @@ metadata/_edit_group_ = true
 
 [node name="NonShooter" parent="Enemies/EnemyGrid9" index="0" instance=ExtResource("3_sndyd")]
 position = Vector2(70, -150)
-scale = Vector2(0.618557, 0.595238)
