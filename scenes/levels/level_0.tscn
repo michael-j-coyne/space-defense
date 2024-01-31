@@ -1,22 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://cu7ugqxxnysv6"]
+[gd_scene load_steps=5 format=3 uid="uid://cu7ugqxxnysv6"]
 
 [ext_resource type="PackedScene" uid="uid://c35mk3dn7hj3l" path="res://scenes/levels/level.tscn" id="1_waedl"]
 [ext_resource type="PackedScene" uid="uid://bf0pxxqhe06jr" path="res://scenes/enemy_grid.tscn" id="2_dkw26"]
 [ext_resource type="PackedScene" uid="uid://bro4ydortrmw6" path="res://scenes/enemies/non_shooter.tscn" id="3_8tylw"]
+[ext_resource type="Script" path="res://scenes/enemies/enemy.gd" id="4_5emee"]
 
 [node name="Level" instance=ExtResource("1_waedl")]
 
 [node name="EnemyGrid" parent="Enemies" index="0" instance=ExtResource("2_dkw26")]
-position = Vector2(2.08165e-12, 0)
-num_cols = 1
+position = Vector2(575, 0)
 num_rows = 1
 clone_first_child = true
 box_width_percent = 0.3
-speed = 2000.0
 initial_direction = 1
 rows_below_origin = 4
 metadata/_edit_group_ = true
 
 [node name="NonShooter" parent="Enemies/EnemyGrid" index="0" instance=ExtResource("3_8tylw")]
 position = Vector2(30, 270)
+value = 0
+
+[node name="@Node2D@21228" type="Node2D" parent="Enemies/EnemyGrid" index="1" instance=ExtResource("3_8tylw")]
+position = Vector2(100, 270)
+scale = Vector2(0.618557, 0.595238)
+script = ExtResource("4_5emee")
 value = 0
