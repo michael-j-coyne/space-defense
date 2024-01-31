@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c35mk3dn7hj3l"]
+[gd_scene load_steps=7 format=3 uid="uid://c35mk3dn7hj3l"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_7wpmc"]
 [ext_resource type="PackedScene" uid="uid://dbi0jyorwh27f" path="res://scenes/player.tscn" id="2_f30q6"]
 [ext_resource type="PackedScene" uid="uid://b3vr16v53ni8l" path="res://scenes/score_display.tscn" id="3_887cy"]
 [ext_resource type="PackedScene" uid="uid://b8jda34rek6pa" path="res://scenes/empty_notifier_container.tscn" id="4_ampm4"]
 [ext_resource type="PackedScene" uid="uid://du2d671j6pdtq" path="res://components/heat_meter.tscn" id="5_7yyj0"]
+[ext_resource type="PackedScene" uid="uid://d0cga5pixauj" path="res://components/level_display.tscn" id="6_866ni"]
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_7wpmc")
@@ -13,7 +14,6 @@ metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_f30q6")]
 position = Vector2(640, 690)
-scale = Vector2(0.606061, 0.8)
 
 [node name="ScoreDisplay" parent="." instance=ExtResource("3_887cy")]
 z_index = -1
@@ -23,10 +23,17 @@ metadata/_edit_lock_ = true
 metadata/_edit_lock_ = true
 
 [node name="HeatMeter" parent="." instance=ExtResource("5_7yyj0")]
-offset_left = 1113.0
-offset_top = 12.0
-offset_right = 1263.0
-offset_bottom = 43.0
+offset_left = 561.0
+offset_top = 6.0
+offset_right = 711.0
+offset_bottom = 37.0
+metadata/_edit_lock_ = true
+
+[node name="LevelDisplay" parent="." instance=ExtResource("6_866ni")]
+offset_left = 1112.0
+offset_top = 4.0
+offset_right = 1275.0
+offset_bottom = 50.0
 metadata/_edit_lock_ = true
 
 [connection signal="all_children_freed" from="Enemies" to="." method="_on_all_enemies_defeated"]
