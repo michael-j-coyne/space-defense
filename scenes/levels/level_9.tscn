@@ -47,7 +47,7 @@ position = Vector2(150, 30)
 [node name="@Node2D@98077" parent="Enemies/EnemyGrid3" index="1" instance=ExtResource("3_7ppjp")]
 position = Vector2(150, 90)
 
-[node name="EnemyGrid4" parent="." index="4" instance=ExtResource("2_iyp0e")]
+[node name="EnemyGrid4" parent="Enemies" index="2" instance=ExtResource("2_iyp0e")]
 position = Vector2(256, 0)
 num_cols = 1
 num_rows = 1
@@ -59,10 +59,10 @@ initial_direction = 1
 rows_below_origin = -1
 metadata/_edit_group_ = true
 
-[node name="NonShooter" parent="EnemyGrid4" index="0" instance=ExtResource("3_7ppjp")]
+[node name="NonShooter" parent="Enemies/EnemyGrid4" index="0" instance=ExtResource("3_7ppjp")]
 position = Vector2(90, -30)
 
-[node name="EnemyGrid9" parent="." index="5" instance=ExtResource("2_iyp0e")]
+[node name="EnemyGrid9" parent="Enemies" index="3" instance=ExtResource("2_iyp0e")]
 position = Vector2(80, 0)
 num_cols = 1
 num_rows = 1
@@ -73,5 +73,5 @@ speed = 275.0
 rows_below_origin = -2
 metadata/_edit_group_ = true
 
-[node name="NonShooter" parent="EnemyGrid9" index="0" instance=ExtResource("3_7ppjp")]
+[node name="NonShooter" parent="Enemies/EnemyGrid9" index="0" instance=ExtResource("3_7ppjp")]
 position = Vector2(70, -90)
