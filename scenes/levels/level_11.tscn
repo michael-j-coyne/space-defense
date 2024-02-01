@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://m2rje8ehjmro"]
+[gd_scene load_steps=5 format=3 uid="uid://m2rje8ehjmro"]
 
 [ext_resource type="PackedScene" uid="uid://c35mk3dn7hj3l" path="res://scenes/levels/level.tscn" id="1_nrst4"]
 [ext_resource type="PackedScene" uid="uid://bf0pxxqhe06jr" path="res://scenes/enemy_grid.tscn" id="2_nxnu6"]
 [ext_resource type="PackedScene" uid="uid://bro4ydortrmw6" path="res://scenes/enemies/non_shooter.tscn" id="3_eqimh"]
 [ext_resource type="PackedScene" uid="uid://sp4n6hlsqgso" path="res://scenes/enemies/random_shooter.tscn" id="4_oqlid"]
-[ext_resource type="Script" path="res://scenes/enemies/random_shooter.gd" id="5_ioacq"]
 
 [node name="Level4" instance=ExtResource("1_nrst4")]
 
@@ -129,9 +128,7 @@ position = Vector2(520, 30)
 shot_chance_percentage = 1.0
 shot_interval_seconds = 0.5
 
-[node name="@Node2D@38019" type="Node2D" parent="Enemies/EnemyGrid" index="8" instance=ExtResource("4_oqlid")]
+[node name="@Node2D@38019" parent="Enemies/EnemyGrid" index="8" instance=ExtResource("4_oqlid")]
 position = Vector2(590, 30)
-scale = Vector2(0.645161, 0.595238)
-script = ExtResource("5_ioacq")
 shot_chance_percentage = 1.0
 shot_interval_seconds = 0.5
