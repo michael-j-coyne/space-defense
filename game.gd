@@ -12,6 +12,7 @@ var levels := [
 	load("res://scenes/levels/level_9.tscn"),
 	load("res://scenes/levels/level_10.tscn"),
 	load("res://scenes/levels/level_11.tscn"),
+	load("res://scenes/levels/level_12.tscn"),
 
 ]
 
