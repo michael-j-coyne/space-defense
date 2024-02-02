@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bf0pxxqhe06jr"]
 
-[ext_resource type="Script" path="res://scenes/enemy_grid.gd" id="1_kgnvm"]
+[ext_resource type="Script" path="res://scenes/enemies/enemy_grid.gd" id="1_kgnvm"]
 
 [node name="EnemyGrid" type="Node2D"]
 script = ExtResource("1_kgnvm")
