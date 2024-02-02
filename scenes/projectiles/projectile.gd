@@ -20,6 +20,11 @@ func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
 
+	# these variables must be set by the Gun
+	assert(attack != null)
+	assert(speed != null)
+	assert(direction != null)
+
 	get_tree().create_timer(time_alive).connect("timeout", func(): queue_free())
 
 func _physics_process(delta: float) -> void:
