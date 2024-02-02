@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_wxi1e"]
 [ext_resource type="Texture2D" uid="uid://cftdp5fyike00" path="res://assets/playerShip1_blue.png" id="2_t37gb"]
-[ext_resource type="PackedScene" uid="uid://ccns2m0ppd7u1" path="res://components/gun_component.tscn" id="4_imcly"]
-[ext_resource type="PackedScene" uid="uid://r7ndw7tqx7xk" path="res://components/hitbox_component.tscn" id="5_frb1s"]
+[ext_resource type="PackedScene" uid="uid://ccns2m0ppd7u1" path="res://scenes/components/gun_component.tscn" id="4_imcly"]
+[ext_resource type="PackedScene" uid="uid://r7ndw7tqx7xk" path="res://scenes/components/hitbox_component.tscn" id="5_frb1s"]
 [ext_resource type="PackedScene" uid="uid://dq6hexvixj5ul" path="res://scenes/projectiles/player_projectiles/blue_laser.tscn" id="6_rysiu"]
-[ext_resource type="PackedScene" uid="uid://ddvxmqonaaa7d" path="res://components/health_component.tscn" id="6_v3it2"]
-[ext_resource type="PackedScene" uid="uid://sn70lkdemsjc" path="res://components/after_image_component.tscn" id="7_5mev7"]
+[ext_resource type="PackedScene" uid="uid://ddvxmqonaaa7d" path="res://scenes/components/health_component.tscn" id="6_v3it2"]
+[ext_resource type="PackedScene" uid="uid://sn70lkdemsjc" path="res://scenes/components/after_image_component.tscn" id="7_5mev7"]
 
 [node name="Player" type="Node2D"]
 position = Vector2(0, 690)

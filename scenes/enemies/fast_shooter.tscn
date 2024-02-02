@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://scenes/enemies/random_shooter.gd" id="1_p7fat"]
 [ext_resource type="Texture2D" uid="uid://dffyl4tnkp1rv" path="res://assets/enemyRed2.png" id="2_u2ixu"]
-[ext_resource type="PackedScene" uid="uid://ccns2m0ppd7u1" path="res://components/gun_component.tscn" id="3_hu2cf"]
+[ext_resource type="PackedScene" uid="uid://ccns2m0ppd7u1" path="res://scenes/components/gun_component.tscn" id="3_hu2cf"]
 [ext_resource type="PackedScene" uid="uid://dsoudow2i0i6r" path="res://scenes/projectiles/enemy_projectiles/basic_red_laser.tscn" id="4_64hpk"]
-[ext_resource type="PackedScene" uid="uid://ddvxmqonaaa7d" path="res://components/health_component.tscn" id="5_sq83a"]
-[ext_resource type="PackedScene" uid="uid://r7ndw7tqx7xk" path="res://components/hitbox_component.tscn" id="6_ari53"]
+[ext_resource type="PackedScene" uid="uid://ddvxmqonaaa7d" path="res://scenes/components/health_component.tscn" id="5_sq83a"]
+[ext_resource type="PackedScene" uid="uid://r7ndw7tqx7xk" path="res://scenes/components/hitbox_component.tscn" id="6_ari53"]
 
 [node name="FastShooter" type="Node2D"]
 scale = Vector2(0.576923, 0.595238)

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scenes/enemies/enemy.gd" id="1_pg8s3"]
 [ext_resource type="Texture2D" uid="uid://pb6dirmih233" path="res://assets/enemyBlack5.png" id="2_3b4s3"]
-[ext_resource type="PackedScene" uid="uid://ddvxmqonaaa7d" path="res://components/health_component.tscn" id="2_qj86d"]
-[ext_resource type="PackedScene" uid="uid://r7ndw7tqx7xk" path="res://components/hitbox_component.tscn" id="3_g54cx"]
+[ext_resource type="PackedScene" uid="uid://ddvxmqonaaa7d" path="res://scenes/components/health_component.tscn" id="2_qj86d"]
+[ext_resource type="PackedScene" uid="uid://r7ndw7tqx7xk" path="res://scenes/components/hitbox_component.tscn" id="3_g54cx"]
 
 [node name="NonShooter" type="Node2D"]
 scale = Vector2(0.618557, 0.595238)
