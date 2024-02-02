@@ -5,6 +5,7 @@ class_name RandomShooter extends Enemy
 @export var shot_interval_seconds: float
 @export var start_shooting_delay := 0.0
 var rng = RandomNumberGenerator.new()
+@onready var gun := $GunComponent as GunComponent
 
 func _ready():
 	if Engine.is_editor_hint():
@@ -17,7 +18,7 @@ func _ready():
 	timer.connect("timeout",
 		func():
 			if rng.randf() <= shot_chance_percentage:
-				$GunComponent.shoot(Vector2(0, 1))
+				gun.shoot(Vector2(0, 1))
 	)
 	add_child(timer)
 	get_tree().create_timer(start_shooting_delay).timeout.connect(timer.start)

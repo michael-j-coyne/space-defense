@@ -7,6 +7,7 @@ const SIZE = Vector2(60, 60)
 @export var speed: float
 var has_gatling_gun = false
 var gat_in_recovery_mode := false
+@onready var gun := $GunComponent as GunComponent
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
@@ -18,8 +19,8 @@ func _ready() -> void:
 	scale = SIZE / $Sprite2D.get_rect().size
 	speed = PlayerVariables.speed
 	has_gatling_gun = PlayerVariables.has_gatling_gun
-	$GunComponent.cooldown = PlayerVariables.gun_cooldown
-	$GunComponent.penetrations = PlayerVariables.gun_penetrations
+	gun.cooldown = PlayerVariables.gun_cooldown
+	gun.penetrations = PlayerVariables.gun_penetrations
 
 func _process(_delta: float) -> void:
 	if not Engine.is_editor_hint():
@@ -74,15 +75,15 @@ func handle_shooting(delta):
 
 	if not has_gatling_gun:
 		if Input.is_action_pressed("shoot"):
-			$GunComponent.shoot(direction)
+			gun.shoot(direction)
 		return
 
 	if gat_in_recovery_mode:
-		$GunComponent.cooldown = PlayerVariables.gun_cooldown
+		gun.cooldown = PlayerVariables.gun_cooldown
 		if Input.is_action_pressed("shoot"):
-			$GunComponent.shoot(direction)
+			gun.shoot(direction)
 		elif Input.is_action_pressed("shoot_gatling_gun"):
-			$GunComponent.shoot(direction)
+			gun.shoot(direction)
 		return
 
 	var overheated = PlayerVariables.gun_heat > PlayerVariables.max_heat
@@ -96,17 +97,17 @@ func handle_shooting(delta):
 		return
 
 	if Input.is_action_pressed("shoot_gatling_gun"):
-		$GunComponent.cooldown = PlayerVariables.gun_cooldown * GAT_MULTIPLIER
+		gun.cooldown = PlayerVariables.gun_cooldown * GAT_MULTIPLIER
 
-		var proj = $GunComponent.shoot(direction)
+		var proj = gun.shoot(direction)
 		if proj: PlayerVariables.gun_heat += HEAT_GAIN_AMOUNT
 	else:
-		$GunComponent.cooldown = PlayerVariables.gun_cooldown
+		gun.cooldown = PlayerVariables.gun_cooldown
 		PlayerVariables.gun_heat -= COOLOFF_RATE * delta
 		if PlayerVariables.gun_heat < 0: PlayerVariables.gun_heat = 0
 
 		if Input.is_action_pressed("shoot"):
-			$GunComponent.shoot(direction)
+			gun.shoot(direction)
 
 func get_current_health():
 	return $HealthComponent.health
