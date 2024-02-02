@@ -4,7 +4,7 @@ class_name Projectile extends Node2D
 var attack: Attack
 var speed: float
 var direction: Vector2
-var penetrations: int = 1
+var penetrations: int
 @export var hitbox: AttackHitboxComponent
 @export var time_alive: float = 2.0
 
@@ -24,6 +24,7 @@ func _ready() -> void:
 	assert(attack != null)
 	assert(speed != null)
 	assert(direction != null)
+	assert(penetrations != null)
 
 	get_tree().create_timer(time_alive).connect("timeout", func(): queue_free())
 
