@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cxe26nhj5rbb1"]
 
 [ext_resource type="PackedScene" uid="uid://c35mk3dn7hj3l" path="res://scenes/levels/level.tscn" id="1_p21hx"]
-[ext_resource type="PackedScene" uid="uid://bf0pxxqhe06jr" path="res://scenes/enemies/enemy_grid.tscn" id="2_w2ohk"]
-[ext_resource type="PackedScene" uid="uid://bro4ydortrmw6" path="res://scenes/enemies/non_shooter.tscn" id="3_sndyd"]
+[ext_resource type="PackedScene" uid="uid://bf0pxxqhe06jr" path="res://scenes/entities/enemies/enemy_grid.tscn" id="2_w2ohk"]
+[ext_resource type="PackedScene" uid="uid://bro4ydortrmw6" path="res://scenes/entities/enemies/non_shooter.tscn" id="3_sndyd"]
 
 [node name="Level4" instance=ExtResource("1_p21hx")]
 

@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bn0egk74kvdj0"]
 
 [ext_resource type="PackedScene" uid="uid://c35mk3dn7hj3l" path="res://scenes/levels/level.tscn" id="1_7wxqt"]
-[ext_resource type="PackedScene" uid="uid://bf0pxxqhe06jr" path="res://scenes/enemies/enemy_grid.tscn" id="2_xirjx"]
-[ext_resource type="PackedScene" uid="uid://sp4n6hlsqgso" path="res://scenes/enemies/random_shooter.tscn" id="3_20w37"]
-[ext_resource type="PackedScene" uid="uid://bro4ydortrmw6" path="res://scenes/enemies/non_shooter.tscn" id="4_h6h7l"]
+[ext_resource type="PackedScene" uid="uid://bf0pxxqhe06jr" path="res://scenes/entities/enemies/enemy_grid.tscn" id="2_xirjx"]
+[ext_resource type="PackedScene" uid="uid://sp4n6hlsqgso" path="res://scenes/entities/enemies/random_shooter.tscn" id="3_20w37"]
+[ext_resource type="PackedScene" uid="uid://bro4ydortrmw6" path="res://scenes/entities/enemies/non_shooter.tscn" id="4_h6h7l"]
 
 [node name="Level5" instance=ExtResource("1_7wxqt")]
 

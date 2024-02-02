@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://sp4n6hlsqgso"]
 
-[ext_resource type="Script" path="res://scenes/enemies/random_shooter.gd" id="1_v5n1i"]
+[ext_resource type="Script" path="res://scenes/entities/enemies/random_shooter.gd" id="1_v5n1i"]
 [ext_resource type="Texture2D" uid="uid://8cx0ts5vwo05" path="res://assets/enemyRed1.png" id="2_cm3uc"]
 [ext_resource type="PackedScene" uid="uid://ccns2m0ppd7u1" path="res://scenes/components/gun_component.tscn" id="3_bxl82"]
 [ext_resource type="PackedScene" uid="uid://ddvxmqonaaa7d" path="res://scenes/components/health_component.tscn" id="5_3m56x"]
