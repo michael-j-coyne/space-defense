@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dw1pyd2vavb8j"]
+[gd_scene load_steps=5 format=3 uid="uid://dw1pyd2vavb8j"]
 
 [ext_resource type="PackedScene" uid="uid://c35mk3dn7hj3l" path="res://scenes/levels/level.tscn" id="1_3cwsv"]
 [ext_resource type="PackedScene" uid="uid://bf0pxxqhe06jr" path="res://scenes/enemy_grid.tscn" id="2_2cuva"]
 [ext_resource type="PackedScene" uid="uid://bro4ydortrmw6" path="res://scenes/enemies/non_shooter.tscn" id="3_3jljq"]
 [ext_resource type="PackedScene" uid="uid://sp4n6hlsqgso" path="res://scenes/enemies/random_shooter.tscn" id="3_75wma"]
-[ext_resource type="Script" path="res://scenes/enemies/random_shooter.gd" id="5_ftkvw"]
 
 [node name="Level5" instance=ExtResource("1_3cwsv")]
 
@@ -42,10 +41,8 @@ position = Vector2(100, 30)
 shot_chance_percentage = 1.0
 shot_interval_seconds = 0.25
 
-[node name="@Node2D@70639" type="Node2D" parent="Enemies/EnemyGrid2" index="2" instance=ExtResource("3_75wma")]
+[node name="@Node2D@70639" parent="Enemies/EnemyGrid2" index="2" instance=ExtResource("3_75wma")]
 position = Vector2(170, 30)
-scale = Vector2(0.645161, 0.595238)
-script = ExtResource("5_ftkvw")
 shot_chance_percentage = 1.0
 shot_interval_seconds = 0.25
 
@@ -83,10 +80,8 @@ position = Vector2(100, 30)
 shot_chance_percentage = 1.0
 shot_interval_seconds = 0.25
 
-[node name="@Node2D@70640" type="Node2D" parent="Enemies/EnemyGrid4" index="2" instance=ExtResource("3_75wma")]
+[node name="@Node2D@70640" parent="Enemies/EnemyGrid4" index="2" instance=ExtResource("3_75wma")]
 position = Vector2(170, 30)
-scale = Vector2(0.645161, 0.595238)
-script = ExtResource("5_ftkvw")
 shot_chance_percentage = 1.0
 shot_interval_seconds = 0.25
 
