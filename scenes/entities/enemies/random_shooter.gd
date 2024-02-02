@@ -1,9 +1,6 @@
 @tool
 class_name RandomShooter extends Enemy
 
-# NOTE: This is temporary code, it willl all be tossed later / moved into different
-# places
-
 @export var shot_chance_percentage: float
 @export var shot_interval_seconds: float
 @export var start_shooting_delay := 0.0
