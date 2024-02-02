@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b8jda34rek6pa"]
 
-[ext_resource type="Script" path="res://scenes/empty_notifier_container.gd" id="1_up1l5"]
+[ext_resource type="Script" path="res://scenes/components/empty_notifier_container.gd" id="1_up1l5"]
 
 [node name="EmptyNotifierContainer" type="Node2D"]
 script = ExtResource("1_up1l5")
