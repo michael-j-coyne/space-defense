@@ -1,17 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwsoioad5i46e"]
+[gd_scene load_steps=3 format=3 uid="uid://bwsoioad5i46e"]
 
 [ext_resource type="Texture2D" uid="uid://btva022o2i1tt" path="res://assets/black_background.png" id="1_btl3l"]
 [ext_resource type="Script" path="res://screens/continue.gd" id="2_1c2cu"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1i4v0"]
-bg_color = Color(0.780392, 0.780392, 0.780392, 1)
-
-[node name="ContinueScreen" type="Sprite2D"]
+[node name="ContinueScreen" type="TextureRect"]
 texture = ExtResource("1_btl3l")
-centered = false
 script = ExtResource("2_1c2cu")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 76.0
 offset_top = 35.0
 offset_right = 1186.0
@@ -23,24 +20,30 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="NewGameButton" type="Button" parent="."]
-offset_left = 409.0
-offset_top = 393.0
-offset_right = 772.0
-offset_bottom = 469.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_1i4v0")
-text = "New game"
-
 [node name="ContinueButton" type="Button" parent="."]
-offset_left = 411.0
-offset_top = 563.0
-offset_right = 771.0
-offset_bottom = 647.0
+layout_mode = 0
+offset_left = 460.0
+offset_top = 526.0
+offset_right = 820.0
+offset_bottom = 610.0
+theme_override_colors/font_hover_color = Color(0.364706, 0.462745, 0.905882, 1)
+theme_override_colors/font_focus_color = Color(0.364706, 0.462745, 0.905882, 1)
 theme_override_font_sizes/font_size = 50
 text = "Continue"
+
+[node name="NewGameButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 460.0
+offset_top = 400.0
+offset_right = 820.0
+offset_bottom = 484.0
+focus_neighbor_bottom = NodePath("../ContinueButton")
+focus_next = NodePath("../ContinueButton")
+focus_previous = NodePath("../ContinueButton")
+theme_override_colors/font_hover_color = Color(0.364706, 0.462745, 0.905882, 1)
+theme_override_colors/font_focus_color = Color(0.364706, 0.462745, 0.905882, 1)
+theme_override_font_sizes/font_size = 50
+text = "New game"
 
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
 initial_position = 2
@@ -48,5 +51,7 @@ size = Vector2i(578, 100)
 ok_button_text = "Yes, start a new game anyway"
 dialog_text = "Are you sure? This will erase your saved game"
 
-[connection signal="pressed" from="NewGameButton" to="." method="_on_new_game_pressed"]
+[connection signal="mouse_entered" from="ContinueButton" to="." method="_on_continue_button_mouse_entered"]
 [connection signal="pressed" from="ContinueButton" to="." method="_on_continue_pressed"]
+[connection signal="mouse_entered" from="NewGameButton" to="." method="_on_new_game_button_mouse_entered"]
+[connection signal="pressed" from="NewGameButton" to="." method="_on_new_game_pressed"]
