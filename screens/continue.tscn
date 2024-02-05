@@ -26,8 +26,6 @@ offset_left = 460.0
 offset_top = 526.0
 offset_right = 820.0
 offset_bottom = 610.0
-theme_override_colors/font_hover_color = Color(0.364706, 0.462745, 0.905882, 1)
-theme_override_colors/font_focus_color = Color(0.364706, 0.462745, 0.905882, 1)
 theme_override_font_sizes/font_size = 50
 text = "Continue"
 
@@ -40,8 +38,6 @@ offset_bottom = 484.0
 focus_neighbor_bottom = NodePath("../ContinueButton")
 focus_next = NodePath("../ContinueButton")
 focus_previous = NodePath("../ContinueButton")
-theme_override_colors/font_hover_color = Color(0.364706, 0.462745, 0.905882, 1)
-theme_override_colors/font_focus_color = Color(0.364706, 0.462745, 0.905882, 1)
 theme_override_font_sizes/font_size = 50
 text = "New game"
 
