@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://brehrasdkr54o"]
+[gd_scene load_steps=4 format=3 uid="uid://brehrasdkr54o"]
 
 [ext_resource type="Texture2D" uid="uid://btva022o2i1tt" path="res://assets/black_background.png" id="1_wj78m"]
 [ext_resource type="Script" path="res://screens/shop.gd" id="2_ol8q6"]
 [ext_resource type="PackedScene" uid="uid://b3vr16v53ni8l" path="res://scenes/components/score_display.tscn" id="3_d4ukl"]
-[ext_resource type="PackedScene" uid="uid://dew73wrw0b14q" path="res://scenes/components/shop_item_button.tscn" id="3_e38s5"]
 
 [node name="Shop" type="Sprite2D"]
 texture = ExtResource("1_wj78m")
@@ -11,10 +10,10 @@ centered = false
 script = ExtResource("2_ol8q6")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 499.0
-offset_top = -15.0
-offset_right = 723.0
-offset_bottom = 98.0
+offset_left = 495.0
+offset_top = -8.0
+offset_right = 719.0
+offset_bottom = 105.0
 theme_override_font_sizes/normal_font_size = 75
 text = "SHOP
 "
@@ -43,42 +42,11 @@ offset_bottom = 562.08
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 20
 
-[node name="Button" type="Button" parent="GridContainer"]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="HBoxContainer" type="HBoxContainer" parent="GridContainer/Button"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="GridContainer/Button/HBoxContainer"]
-layout_mode = 2
-text = " Gun"
-
-[node name="Control" type="Control" parent="GridContainer/Button/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label2" type="Label" parent="GridContainer/Button/HBoxContainer"]
-layout_mode = 2
-text = "$100 "
-
-[node name="ShopItemButton" parent="GridContainer" instance=ExtResource("3_e38s5")]
-visible = false
-clip_contents = true
-layout_mode = 2
-size_flags_horizontal = 3
-
 [node name="ScoreDisplay" parent="." instance=ExtResource("3_d4ukl")]
-offset_left = 4.0
-offset_top = 1.0
-offset_right = 165.0
-offset_bottom = 47.0
+offset_left = 34.0
+offset_top = 10.0
+offset_right = 195.0
+offset_bottom = 56.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 offset_left = 140.0
