@@ -44,3 +44,8 @@ text = "$100 "
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Placeholder description"
+
+[connection signal="focus_entered" from="ShopItemButton" to="." method="_on_shop_item_button_focus_entered"]
+[connection signal="focus_exited" from="ShopItemButton" to="." method="_on_shop_item_button_focus_exited"]
+[connection signal="mouse_entered" from="ShopItemButton" to="." method="_on_shop_item_button_mouse_entered"]
+[connection signal="mouse_exited" from="ShopItemButton" to="." method="_on_shop_item_button_mouse_exited"]
