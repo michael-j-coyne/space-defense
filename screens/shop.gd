@@ -50,33 +50,20 @@ func populate_shop():
 		if item.stock < 1:
 			continue
 
-		var item_button := load("res://scenes/components/shop_item_button.tscn").instantiate() as ShopItemButton
+		var shop_item = load("res://scenes/components/shop_item_button.tscn").instantiate()
 		var price = get_price(item_name)
 
-
-		item_button.pressed.connect(func(): _on_ItemButton_pressed(item_name))
-		# item_button.add_theme_font_size_override("font_size", 35)
-		# item_button.alignment = HORIZONTAL_ALIGNMENT_LEFT
+		shop_item.get_button().pressed.connect(func(): _on_ItemButton_pressed(item_name))
 
 		# Disable and "grey out" item if out of stock
 		if not can_purchase(item_name, PlayerVariables.money):
-			item_button.disabled = true
+			shop_item.get_button().disabled = true
 
-		item_button.set_item_name(item_name)
-		item_button.set_price(price)
+		shop_item.set_item_name(item.display_text)
+		shop_item.set_price(price)
+		shop_item.set_description(item.description)
 
-		var description = RichTextLabel.new()
-		description.text = item.description
-
-		description.fit_content = true
-		description.custom_minimum_size=Vector2(400, 0)
-		description.add_theme_font_size_override("normal_font_size", 20)
-
-		var container = VBoxContainer.new()
-		container.add_child(item_button)
-		container.add_child(description)
-
-		$GridContainer.add_child(container)
+		$GridContainer.add_child(shop_item)
 
 func _on_ItemButton_pressed(item_name):
 	var currency_amount = PlayerVariables.money
