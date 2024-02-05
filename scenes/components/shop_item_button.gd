@@ -28,7 +28,6 @@ func set_price(price: int):
 func set_description(description: String):
 	description_label.text = "  " + description
 
-
 func _on_shop_item_button_focus_entered() -> void:
 	price_label.add_theme_color_override("font_color", focus_color)
 	item_label.add_theme_color_override("font_color", focus_color)
