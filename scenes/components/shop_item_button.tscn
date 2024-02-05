@@ -2,15 +2,22 @@
 
 [ext_resource type="Script" path="res://scenes/components/shop_item_button.gd" id="1_uo3j6"]
 
-[node name="ShopItemButton" type="Button"]
-clip_contents = true
-custom_minimum_size = Vector2(500, 60)
-offset_right = 8.0
-offset_bottom = 60.0
+[node name="ButtonContainer" type="VBoxContainer" node_paths=PackedStringArray("price_label", "item_label", "description_label")]
+offset_right = 40.0
+offset_bottom = 40.0
 size_flags_horizontal = 3
 script = ExtResource("1_uo3j6")
+price_label = NodePath("ShopItemButton/HBoxContainer/PriceLabel")
+item_label = NodePath("ShopItemButton/HBoxContainer/ItemLabel")
+description_label = NodePath("ItemDescription")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="ShopItemButton" type="Button" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(2.08165e-12, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ShopItemButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,16 +25,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ItemLabel" type="Label" parent="HBoxContainer"]
+[node name="ItemLabel" type="Label" parent="ShopItemButton/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
-text = " Gun"
+text = "gun"
 
-[node name="Control" type="Control" parent="HBoxContainer"]
+[node name="Control" type="Control" parent="ShopItemButton/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 2
 
-[node name="PriceLabel" type="Label" parent="HBoxContainer"]
+[node name="PriceLabel" type="Label" parent="ShopItemButton/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "$100 "
+
+[node name="ItemDescription" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Placeholder description"

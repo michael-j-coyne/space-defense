@@ -1,12 +1,22 @@
-class_name ShopItemButton extends Button
+extends VBoxContainer
+
+@export var price_label: Label
+@export var item_label: Label
+@export var description_label: Label
 
 func _ready():
-	if disabled:
-		$HBoxContainer/ItemLabel.modulate = (Color(0.5, 0.5, 0.5))
-		$HBoxContainer/PriceLabel.modulate = (Color(0.5, 0.5, 0.5))
+	if $ShopItemButton.disabled:
+		item_label.modulate = (Color(0.5, 0.5, 0.5))
+		price_label.modulate = (Color(0.5, 0.5, 0.5))
 
-func set_item_name(name: String):
-	$HBoxContainer/ItemLabel.text = " " + name
+func get_button() -> Button:
+	return $ShopItemButton
+
+func set_item_name(item_name: String):
+	item_label.text = " " + item_name
 
 func set_price(price: int):
-	$HBoxContainer/PriceLabel.text = "$" + str(price) + " "
+	price_label.text = "$" + str(price) + " "
+
+func set_description(description: String):
+	description_label.text = "  " + description
