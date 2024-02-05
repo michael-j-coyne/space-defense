@@ -50,27 +50,20 @@ func populate_shop():
 		if item.stock < 1:
 			continue
 
-		var item_button := Button.new()
+		var item_button := load("res://scenes/components/shop_item_button.tscn").instantiate() as ShopItemButton
 		var price = get_price(item_name)
-
-		var button_text = "{display_text} - ${price}".format(
-			{
-				"display_text": item.display_text,
-			 	"price": str(price)
-			}
-		)
-
-		item_button.text = button_text
 
 
 		item_button.pressed.connect(func(): _on_ItemButton_pressed(item_name))
-		# NOTE: magic number for font size here, but its probably fine.
-		item_button.add_theme_font_size_override("font_size", 35)
-		item_button.alignment = HORIZONTAL_ALIGNMENT_LEFT
+		# item_button.add_theme_font_size_override("font_size", 35)
+		# item_button.alignment = HORIZONTAL_ALIGNMENT_LEFT
 
 		# Disable and "grey out" item if out of stock
 		if not can_purchase(item_name, PlayerVariables.money):
 			item_button.disabled = true
+
+		item_button.set_item_name(item_name)
+		item_button.set_price(price)
 
 		var description = RichTextLabel.new()
 		description.text = item.description
