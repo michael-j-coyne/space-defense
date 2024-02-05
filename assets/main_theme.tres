@@ -1,0 +1,5 @@
+[gd_resource type="Theme" format=3 uid="uid://dokatw221go3v"]
+
+[resource]
+Button/colors/font_focus_color = Color(0.364706, 0.462745, 0.905882, 1)
+Button/colors/font_hover_color = Color(0.364706, 0.462745, 0.905882, 1)

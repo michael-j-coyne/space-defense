@@ -36,6 +36,7 @@ enabled=PackedStringArray("res://addons/gut/plugin.cfg")
 
 [gui]
 
+theme/custom="res://assets/main_theme.tres"
 theme/custom_font="res://assets/Kenney Pixel Square.ttf"
 
 [input]
