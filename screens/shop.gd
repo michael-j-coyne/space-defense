@@ -6,7 +6,7 @@ signal continue_pressed
 
 func _ready() -> void:
 	populate_shop()
-	$Button.grab_focus()
+	$ContinueButton.grab_focus()
 
 func get_price(item_name):
 	if item_name in inventory:
