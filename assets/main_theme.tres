@@ -9,6 +9,6 @@ border_width_bottom = 1
 corner_detail = 15
 
 [resource]
-Button/colors/font_focus_color = Color(0.364706, 0.462745, 0.905882, 1)
-Button/colors/font_hover_color = Color(0.364706, 0.462745, 0.905882, 1)
+Button/colors/font_focus_color = Color(0, 0.580392, 0.976471, 1)
+Button/colors/font_hover_color = Color(0, 0.580392, 0.976471, 1)
 Button/styles/focus = SubResource("StyleBoxFlat_1sash")
