@@ -20,13 +20,13 @@ func get_button() -> Button:
 	return $ShopItemButton
 
 func set_item_name(item_name: String):
-	item_label.text = " " + item_name
+	item_label.text = item_name
 
 func set_price(price: int):
-	price_label.text = "$" + str(price) + " "
+	price_label.text = "$" + str(price)
 
 func set_description(description: String):
-	description_label.text = "  " + description
+	description_label.text = description
 
 func _on_shop_item_button_focus_entered() -> void:
 	price_label.add_theme_color_override("font_color", focus_color)
