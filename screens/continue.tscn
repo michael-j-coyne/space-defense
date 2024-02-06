@@ -3,9 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://btva022o2i1tt" path="res://assets/black_background.png" id="1_btl3l"]
 [ext_resource type="Script" path="res://screens/continue.gd" id="2_1c2cu"]
 
-[node name="ContinueScreen" type="TextureRect"]
+[node name="ContinueScreen" type="TextureRect" node_paths=PackedStringArray("continue_button", "new_game_button", "confirmation_dialog")]
 texture = ExtResource("1_btl3l")
 script = ExtResource("2_1c2cu")
+continue_button = NodePath("ContinueButton")
+new_game_button = NodePath("NewGameButton")
+confirmation_dialog = NodePath("ConfirmationDialog")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 layout_mode = 0
