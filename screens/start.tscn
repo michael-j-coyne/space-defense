@@ -8,19 +8,7 @@ texture = ExtResource("1_557s3")
 centered = false
 script = ExtResource("2_al3lh")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 154.0
-offset_top = 264.0
-offset_right = 1105.0
-offset_bottom = 376.0
-theme_override_font_sizes/normal_font_size = 50
-text = "WASD to move, space to shoot!
-"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+[node name="GameTitle" type="RichTextLabel" parent="."]
 offset_left = 77.0
 offset_top = 58.0
 offset_right = 1187.0
