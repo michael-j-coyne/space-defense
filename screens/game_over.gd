@@ -5,7 +5,7 @@ signal retry_requested
 signal shop_requested
 
 var tween_time = 1.0
-@onready var retry_button = get_node("VBoxContainer/RetryButton")
+@onready var retry_button = get_node("CenterContainer/VBoxContainer/RetryButton")
 
 func _ready():
 	retry_button.grab_focus()
