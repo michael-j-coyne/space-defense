@@ -6,8 +6,8 @@
 [node name="ContinueScreen" type="TextureRect" node_paths=PackedStringArray("continue_button", "new_game_button", "confirmation_dialog")]
 texture = ExtResource("1_btl3l")
 script = ExtResource("2_1c2cu")
-continue_button = NodePath("ContinueButton")
-new_game_button = NodePath("NewGameButton")
+continue_button = NodePath("CenterContainer/VBoxContainer/ContinueButton")
+new_game_button = NodePath("CenterContainer/VBoxContainer/NewGameButton")
 confirmation_dialog = NodePath("ConfirmationDialog")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
@@ -23,27 +23,6 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="ContinueButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 460.0
-offset_top = 526.0
-offset_right = 820.0
-offset_bottom = 610.0
-theme_override_font_sizes/font_size = 50
-text = "Continue"
-
-[node name="NewGameButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 460.0
-offset_top = 400.0
-offset_right = 820.0
-offset_bottom = 484.0
-focus_neighbor_bottom = NodePath("../ContinueButton")
-focus_next = NodePath("../ContinueButton")
-focus_previous = NodePath("../ContinueButton")
-theme_override_font_sizes/font_size = 50
-text = "New game"
-
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
 title = ""
 initial_position = 1
@@ -51,7 +30,33 @@ size = Vector2i(891, 200)
 ok_button_text = "Yes, start a new game"
 dialog_text = "Are you sure? This will erase your progress."
 
-[connection signal="mouse_entered" from="ContinueButton" to="." method="_on_continue_button_mouse_entered"]
-[connection signal="pressed" from="ContinueButton" to="." method="_on_continue_pressed"]
-[connection signal="mouse_entered" from="NewGameButton" to="." method="_on_new_game_button_mouse_entered"]
-[connection signal="pressed" from="NewGameButton" to="." method="_on_new_game_pressed"]
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.265
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="NewGameButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../ContinueButton")
+focus_next = NodePath("../ContinueButton")
+focus_previous = NodePath("../ContinueButton")
+theme_override_font_sizes/font_size = 50
+text = "New game"
+
+[node name="ContinueButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Continue"
+
+[connection signal="mouse_entered" from="CenterContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_button_mouse_entered"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_pressed"]
+[connection signal="mouse_entered" from="CenterContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_button_mouse_entered"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_pressed"]
