@@ -40,11 +40,6 @@ func purchase_item(item_name, currency):
 		return true
 	return false
 
-# extract loop into its own function
-# return a list of shop buttons from that func
-
-# in populate_shop, add each button from the list to the grid
-
 func generate_item_buttons() -> Array[VBoxContainer]:
 	var result: Array[VBoxContainer] = []
 
@@ -71,9 +66,30 @@ func generate_item_buttons() -> Array[VBoxContainer]:
 
 	return result
 
+func connect_focus(item_buttons: Array):
+	var focusable_items = item_buttons.filter(func(i_btn): return not i_btn.get_button().disabled)
+
+	if not focusable_items or focusable_items.size() == 0:
+		$ContinueButton.focus_next = $ContinueButton.get_path()
+		$ContinueButton.focus_previous = $ContinueButton.get_path()
+		return
+
+	for i in range(0, focusable_items.size() - 1):
+		var item = focusable_items[i]
+		var next_item = focusable_items[i + 1]
+		item.get_button().focus_next = next_item.get_button().get_path()
+		next_item.get_button().focus_previous = item.get_button().get_path()
+
+	$ContinueButton.focus_next = focusable_items[0].get_button().get_path()
+	$ContinueButton.focus_previous = focusable_items[-1].get_button().get_path()
+	focusable_items[-1].get_button().focus_next = $ContinueButton.get_path()
+	focusable_items[0].get_button().focus_previous = $ContinueButton.get_path()
+
 func populate_shop():
 	var shop_items := generate_item_buttons()
 	shop_items.map(func(item): $GridContainer.add_child(item))
+	connect_focus(shop_items)
+	$ContinueButton.grab_focus()
 
 func _on_ItemButton_pressed(item_name):
 	var currency_amount = PlayerVariables.money
