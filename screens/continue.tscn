@@ -42,10 +42,11 @@ theme_override_font_sizes/font_size = 50
 text = "New game"
 
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+title = ""
 initial_position = 2
 size = Vector2i(578, 100)
-ok_button_text = "Yes, start a new game anyway"
-dialog_text = "Are you sure? This will erase your saved game"
+ok_button_text = "Yes, start a new game"
+dialog_text = "Starting a new game will erase your current progress. Are you sure you want to proceed?"
 
 [connection signal="mouse_entered" from="ContinueButton" to="." method="_on_continue_button_mouse_entered"]
 [connection signal="pressed" from="ContinueButton" to="." method="_on_continue_pressed"]
