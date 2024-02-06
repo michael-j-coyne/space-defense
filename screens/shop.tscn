@@ -22,10 +22,10 @@ scroll_active = false
 autowrap_mode = 0
 
 [node name="ContinueButton" type="Button" parent="."]
-offset_left = 1031.0
-offset_top = 641.0
-offset_right = 1269.0
-offset_bottom = 709.0
+offset_left = 1018.0
+offset_top = 642.0
+offset_right = 1272.0
+offset_bottom = 710.0
 theme_override_font_sizes/font_size = 40
 text = "Continue"
 
