@@ -6,10 +6,7 @@ signal continue_pressed
 
 func _ready() -> void:
 	populate_shop()
-
-func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("ui_accept"):
-		continue_pressed.emit()
+	$Button.grab_focus()
 
 func get_price(item_name):
 	if item_name in inventory:
@@ -58,6 +55,7 @@ func populate_shop():
 		# Disable and "grey out" item if out of stock
 		if not can_purchase(item_name, PlayerVariables.money):
 			shop_item.get_button().disabled = true
+			shop_item.get_button().focus_mode = Control.FOCUS_NONE
 
 		shop_item.set_item_name(item.display_text)
 		shop_item.set_price(price)
@@ -76,6 +74,7 @@ func _on_ItemButton_pressed(item_name):
 		for node in $GridContainer.get_children():
 			node.queue_free()
 		populate_shop()
+
 	else:
 		print("Cannot purchase item.")
 
