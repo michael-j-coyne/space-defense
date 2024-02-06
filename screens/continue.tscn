@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwsoioad5i46e"]
+[gd_scene load_steps=4 format=3 uid="uid://bwsoioad5i46e"]
 
 [ext_resource type="Texture2D" uid="uid://btva022o2i1tt" path="res://assets/black_background.png" id="1_btl3l"]
 [ext_resource type="Script" path="res://screens/continue.gd" id="2_1c2cu"]
+[ext_resource type="Script" path="res://screens/ConfirmationDialog.gd" id="3_yna2u"]
 
 [node name="ContinueScreen" type="TextureRect"]
 texture = ExtResource("1_btl3l")
@@ -43,10 +44,11 @@ text = "New game"
 
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
 title = ""
-initial_position = 2
-size = Vector2i(578, 100)
+initial_position = 1
+size = Vector2i(900, 150)
 ok_button_text = "Yes, start a new game"
-dialog_text = "Starting a new game will erase your current progress. Are you sure you want to proceed?"
+dialog_text = "Are you sure? This will erase your progress."
+script = ExtResource("3_yna2u")
 
 [connection signal="mouse_entered" from="ContinueButton" to="." method="_on_continue_button_mouse_entered"]
 [connection signal="pressed" from="ContinueButton" to="." method="_on_continue_pressed"]
