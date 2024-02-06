@@ -8,7 +8,7 @@ texture = ExtResource("1_hkwqn")
 centered = false
 script = ExtResource("2_cvs5y")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="GameOverLabel" type="RichTextLabel" parent="."]
 offset_left = 132.0
 offset_top = 45.0
 offset_right = 1172.0
@@ -19,34 +19,28 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="Button" type="Button" parent="."]
-offset_left = 51.0
-offset_top = 298.0
-offset_right = 1237.0
-offset_bottom = 382.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 380.0
+offset_top = 350.0
+offset_right = 900.0
+offset_bottom = 642.0
+theme_override_constants/separation = 20
+
+[node name="TitleButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "Click here to return to title screen
-"
+text = "Return to title"
 
-[node name="ShopButton" type="Button" parent="."]
-offset_left = 50.0
-offset_top = 442.0
-offset_right = 1236.0
-offset_bottom = 526.0
+[node name="ShopButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "Click here to go back to the shop
-"
+text = "Go back to shop"
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
-offset_left = 247.0
-offset_top = 594.0
-offset_right = 982.0
-offset_bottom = 691.0
-theme_override_font_sizes/normal_font_size = 50
-text = "Press \"enter\" to retry"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
+[node name="RetryButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Retry level"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="ShopButton" to="." method="_on_shop_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/TitleButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ShopButton" to="." method="_on_shop_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
