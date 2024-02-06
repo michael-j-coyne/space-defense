@@ -16,11 +16,13 @@ func new_game() -> Game:
 	add_child(game)
 	return game
 
-# func _process(_delta):
-# 	if OS.is_debug_build():
-# 		if Input.is_action_just_pressed("ui_focus_next"):
-# 			Engine.time_scale *= 2
-# 		if Input.is_action_just_pressed("ui_cancel"):
-# 			Engine.time_scale *= 0.5
-# 		if Input.is_action_just_pressed("add_money"):
-# 			PlayerVariables.money += 1000
+func _process(_delta):
+	if OS.is_debug_build():
+		# F1
+		if Input.is_action_just_pressed("add_money"):
+			PlayerVariables.money += 500
+	#if Input.is_action_just_pressed("ui_focus_next"):
+	#Engine.time_scale *= 2
+	#if Input.is_action_just_pressed("ui_cancel"):
+	#Engine.time_scale *= 0.5
+
