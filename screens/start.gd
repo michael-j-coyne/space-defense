@@ -3,10 +3,11 @@ extends Sprite2D
 signal start
 
 var tween_time = 1.0
+@export var start_button: Button
 
 func _ready():
-	$StartButton.grab_focus()
-	NodeFlasher.node_flash($StartButton, tween_time)
+	start_button.grab_focus()
+	NodeFlasher.node_flash(start_button, tween_time)
 
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept"):
