@@ -51,13 +51,14 @@ func generate_item_buttons() -> Array[VBoxContainer]:
 
 		var shop_item = load("res://scenes/components/shop_item_button.tscn").instantiate()
 		var price = get_price(item_name)
+		var btn = shop_item.get_button()
 
-		shop_item.get_button().pressed.connect(func(): _on_ItemButton_pressed(item_name))
+		btn.pressed.connect(func(): _on_ItemButton_pressed(item_name))
 
 		# Disable and "grey out" item if out of stock
 		if not can_purchase(item_name, PlayerVariables.money):
-			shop_item.get_button().disabled = true
-			shop_item.get_button().focus_mode = Control.FOCUS_NONE
+			btn.disabled = true
+			btn.focus_mode = Control.FOCUS_NONE
 
 		shop_item.set_item_name(item.display_text)
 		shop_item.set_price(price)
