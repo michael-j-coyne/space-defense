@@ -40,7 +40,14 @@ func purchase_item(item_name, currency):
 		return true
 	return false
 
-func populate_shop():
+# extract loop into its own function
+# return a list of shop buttons from that func
+
+# in populate_shop, add each button from the list to the grid
+
+func generate_item_buttons() -> Array[VBoxContainer]:
+	var result: Array[VBoxContainer] = []
+
 	for item_name in inventory.keys():
 		var item = inventory[item_name]
 
@@ -60,8 +67,13 @@ func populate_shop():
 		shop_item.set_item_name(item.display_text)
 		shop_item.set_price(price)
 		shop_item.set_description(item.description)
+		result.append(shop_item)
 
-		$GridContainer.add_child(shop_item)
+	return result
+
+func populate_shop():
+	var shop_items := generate_item_buttons()
+	shop_items.map(func(item): $GridContainer.add_child(item))
 
 func _on_ItemButton_pressed(item_name):
 	var currency_amount = PlayerVariables.money
