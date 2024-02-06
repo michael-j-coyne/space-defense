@@ -5,6 +5,7 @@ signal start
 var tween_time = 1.0
 
 func _ready():
+	$StartButton.grab_focus()
 	NodeFlasher.node_flash($StartButton, tween_time)
 
 func _process(_delta):
