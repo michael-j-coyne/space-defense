@@ -11,9 +11,9 @@ script = ExtResource("2_ol8q6")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 495.0
-offset_top = -8.0
-offset_right = 719.0
-offset_bottom = 105.0
+offset_top = -1.0
+offset_right = 743.0
+offset_bottom = 112.0
 theme_override_font_sizes/normal_font_size = 75
 text = "SHOP
 "
@@ -22,10 +22,10 @@ scroll_active = false
 autowrap_mode = 0
 
 [node name="ContinueButton" type="Button" parent="."]
-offset_left = 1018.0
-offset_top = 642.0
-offset_right = 1272.0
-offset_bottom = 710.0
+offset_left = 990.0
+offset_top = 635.0
+offset_right = 1268.0
+offset_bottom = 703.0
 theme_override_font_sizes/font_size = 40
 text = "Continue"
 
@@ -37,8 +37,8 @@ anchor_right = 0.066
 anchor_bottom = 0.136
 offset_left = -50.48
 offset_top = 33.08
-offset_right = 917.52
-offset_bottom = 562.08
+offset_right = 888.52
+offset_bottom = 565.08
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 20
 
