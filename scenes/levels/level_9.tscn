@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bro4ydortrmw6" path="res://scenes/entities/enemies/non_shooter.tscn" id="3_7ppjp"]
 [ext_resource type="PackedScene" uid="uid://sp4n6hlsqgso" path="res://scenes/entities/enemies/random_shooter.tscn" id="4_vq6bi"]
 
-[node name="Level5" instance=ExtResource("1_cs50c")]
+[node name="Level" instance=ExtResource("1_cs50c")]
 
 [node name="EnemyGrid2" parent="Enemies" index="0" instance=ExtResource("2_iyp0e")]
 position = Vector2(512, 0)

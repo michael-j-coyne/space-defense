@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bf0pxxqhe06jr" path="res://scenes/entities/enemies/enemy_grid.tscn" id="2_sj8op"]
 [ext_resource type="PackedScene" uid="uid://bro4ydortrmw6" path="res://scenes/entities/enemies/non_shooter.tscn" id="3_gtggl"]
 
-[node name="Level2" instance=ExtResource("1_ng4cq")]
+[node name="Level" instance=ExtResource("1_ng4cq")]
 
 [node name="EnemyGrid" parent="Enemies" index="0" instance=ExtResource("2_sj8op")]
 num_cols = 3

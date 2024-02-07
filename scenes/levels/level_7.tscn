@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bf0pxxqhe06jr" path="res://scenes/entities/enemies/enemy_grid.tscn" id="2_m3nqv"]
 [ext_resource type="PackedScene" uid="uid://bro4ydortrmw6" path="res://scenes/entities/enemies/non_shooter.tscn" id="3_3perp"]
 
-[node name="Level4" instance=ExtResource("1_xfgl6")]
+[node name="Level" instance=ExtResource("1_xfgl6")]
 
 [node name="ScoreDisplay" parent="." index="1"]
 offset_right = 161.0
