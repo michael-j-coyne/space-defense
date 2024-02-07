@@ -57,6 +57,9 @@ func show_title_screen():
 func start_game():
 	if Globals.in_shop:
 		await show_shop()
+	if g.current_level:
+		g.current_level.queue_free()
+		await g.current_level.tree_exited
 	var level: Level = levels[g.current_level_idx].instantiate() as Level
 	start_level(level)
 
