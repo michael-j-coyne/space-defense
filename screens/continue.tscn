@@ -14,7 +14,7 @@ confirmation_dialog = NodePath("ConfirmationDialog")
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
 title = ""
 initial_position = 1
-size = Vector2i(891, 200)
+size = Vector2i(959, 104)
 ok_button_text = "Yes, start a new game"
 dialog_text = "Are you sure? This will erase your progress."
 
