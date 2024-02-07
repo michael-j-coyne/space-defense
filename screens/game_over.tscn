@@ -8,16 +8,17 @@ texture = ExtResource("1_hkwqn")
 centered = false
 script = ExtResource("2_cvs5y")
 
-[node name="GameOverLabel" type="RichTextLabel" parent="."]
-offset_left = 132.0
-offset_top = 45.0
-offset_right = 1172.0
-offset_bottom = 285.0
-theme_override_font_sizes/normal_font_size = 160
-text = "Game Over"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 309.0
+grow_horizontal = 2
+
+[node name="GameOverLabel" type="Label" parent="CenterContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 160
+text = "you died"
+horizontal_alignment = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchors_preset = -1
