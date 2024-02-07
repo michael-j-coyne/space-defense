@@ -1,6 +1,6 @@
 extends Sprite2D
 
-signal new_game_requested
+signal return_to_title_requested
 signal retry_requested
 signal shop_requested
 
@@ -11,7 +11,7 @@ func _ready():
 	retry_button.grab_focus()
 
 func _on_button_pressed() -> void:
-	new_game_requested.emit()
+	return_to_title_requested.emit()
 
 func _on_shop_button_pressed() -> void:
 	shop_requested.emit()

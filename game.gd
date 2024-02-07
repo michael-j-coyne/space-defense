@@ -17,10 +17,11 @@ var levels := [
 ]
 
 var g = Globals
-signal new_game_requested
 
-# This function is really getting out of hand
 func _ready() -> void:
+	show_title_screen()
+
+func show_title_screen():
 	var dir = DirAccess.open("user://")
 	if dir.file_exists("savegame.save"):
 		var continue_screen = load("res://screens/continue.tscn").instantiate()
@@ -37,7 +38,8 @@ func _ready() -> void:
 			func():
 				continue_screen.queue_free()
 				await continue_screen.tree_exited
-				dir.remove("savegame.save")
+				Globals.reset()
+				PlayerVariables.reset()
 				start_game()
 		)
 
@@ -115,7 +117,6 @@ func show_shop():
 
 	Globals.in_shop = false
 
-# TODO: this function is confusing. It is a problem.
 func go_next_level():
 	if g.current_level:
 		g.current_level.queue_free()
@@ -147,31 +148,28 @@ func restart_level() -> void:
 	start_level(level)
 
 func _on_level_failed() -> void:
-
 	var game_over_screen = load("res://screens/game_over.tscn").instantiate()
-	game_over_screen.new_game_requested.connect(
+
+	var cleanup_game_over_screen = func():
+		game_over_screen.queue_free()
+		await game_over_screen.tree_exited
+		g.current_level.queue_free()
+		await g.current_level.tree_exited
+		get_tree().paused = false
+
+	game_over_screen.return_to_title_requested.connect(
 		func():
-			get_tree().paused = false
-			new_game_requested.emit()
+			await cleanup_game_over_screen.call()
+			show_title_screen()
 	)
 	game_over_screen.retry_requested.connect(
 		func():
-			game_over_screen.queue_free()
-			await game_over_screen.tree_exited
-			g.current_level.queue_free()
-			await g.current_level.tree_exited
-
-			get_tree().paused = false
+			await cleanup_game_over_screen.call()
 			restart_level()
 	)
 	game_over_screen.shop_requested.connect(
 		func():
-			game_over_screen.queue_free()
-			await game_over_screen.tree_exited
-			g.current_level.queue_free()
-			await g.current_level.tree_exited
-			get_tree().paused = false
-
+			await cleanup_game_over_screen.call()
 			await show_shop()
 			restart_level()
 	)
