@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwsoioad5i46e"]
+[gd_scene load_steps=4 format=3 uid="uid://bwsoioad5i46e"]
 
 [ext_resource type="Texture2D" uid="uid://btva022o2i1tt" path="res://assets/black_background.png" id="1_btl3l"]
 [ext_resource type="Script" path="res://screens/continue.gd" id="2_1c2cu"]
+[ext_resource type="FontFile" uid="uid://bkhed0i8r5bfm" path="res://assets/Kenney Blocks.ttf" id="3_3m8c4"]
 
 [node name="ContinueScreen" type="TextureRect" node_paths=PackedStringArray("continue_button", "new_game_button", "confirmation_dialog")]
 texture = ExtResource("1_btl3l")
@@ -10,16 +11,6 @@ continue_button = NodePath("CenterContainer/VBoxContainer/ContinueButton")
 new_game_button = NodePath("CenterContainer/VBoxContainer/NewGameButton")
 confirmation_dialog = NodePath("ConfirmationDialog")
 
-[node name="GameTitle" type="Label" parent="."]
-layout_mode = 0
-offset_left = 76.0
-offset_top = 35.0
-offset_right = 1186.0
-offset_bottom = 215.0
-theme_override_font_sizes/font_size = 120
-text = "Space Defense
-"
-
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
 title = ""
 initial_position = 1
@@ -27,10 +18,26 @@ size = Vector2i(891, 200)
 ok_button_text = "Yes, start a new game"
 dialog_text = "Are you sure? This will erase your progress."
 
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 423.0
+grow_horizontal = 2
+
+[node name="GameTitle" type="Label" parent="CenterContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_3m8c4")
+theme_override_font_sizes/font_size = 140
+text = "Space Defense
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.265
+anchor_top = 0.55
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -45,12 +52,10 @@ layout_mode = 2
 focus_neighbor_bottom = NodePath("../ContinueButton")
 focus_next = NodePath("../ContinueButton")
 focus_previous = NodePath("../ContinueButton")
-theme_override_font_sizes/font_size = 50
 text = " New game "
 
 [node name="ContinueButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
 text = " Continue "
 
 [connection signal="focus_entered" from="CenterContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_button_focus_entered"]
