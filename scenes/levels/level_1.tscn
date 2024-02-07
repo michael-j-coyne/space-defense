@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://j7tg10e2h1l7"]
+[gd_scene load_steps=5 format=3 uid="uid://j7tg10e2h1l7"]
 
 [ext_resource type="PackedScene" uid="uid://c35mk3dn7hj3l" path="res://scenes/levels/level.tscn" id="1_umvlb"]
 [ext_resource type="PackedScene" uid="uid://bf0pxxqhe06jr" path="res://scenes/entities/enemies/enemy_grid.tscn" id="3_3des0"]
 [ext_resource type="PackedScene" uid="uid://bro4ydortrmw6" path="res://scenes/entities/enemies/non_shooter.tscn" id="3_48l43"]
+[ext_resource type="PackedScene" uid="uid://dg66v0f2fd61b" path="res://scenes/components/tutorial.tscn" id="4_5pv0d"]
 
 [node name="Level" instance=ExtResource("1_umvlb")]
 
@@ -30,3 +31,5 @@ position = Vector2(240, 330)
 
 [node name="@Node2D@109277" parent="Enemies/EnemyGrid" index="4" instance=ExtResource("3_48l43")]
 position = Vector2(310, 330)
+
+[node name="Tutorial" parent="." index="5" instance=ExtResource("4_5pv0d")]
