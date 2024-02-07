@@ -10,7 +10,7 @@ continue_button = NodePath("CenterContainer/VBoxContainer/ContinueButton")
 new_game_button = NodePath("CenterContainer/VBoxContainer/NewGameButton")
 confirmation_dialog = NodePath("ConfirmationDialog")
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+[node name="GameTitle" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_left = 76.0
 offset_top = 35.0
