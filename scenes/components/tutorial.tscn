@@ -54,7 +54,7 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="MoveRightPrompt/CenterContainer"]
 layout_mode = 2
-text = "Press D or ➡  to move Right"
+text = "Press 'D' to move Right"
 
 [node name="ShootPrompt" type="Panel" parent="."]
 visible = false
