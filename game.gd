@@ -77,6 +77,7 @@ func save_game():
 		save_game.store_var(node_data)
 
 func load_game():
+	# v0.01 and v0.011 saves have no "version number"
 	if not FileAccess.file_exists("user://savegame.save"):
 		return
 
@@ -92,6 +93,9 @@ func load_game():
 
 		for key in data.keys():
 			if key == "singleton_name":
+				continue
+			if key == "version":
+				# Versioning logic goes here
 				continue
 			if key == "shop_stock":
 				for item_name in data[key].keys():

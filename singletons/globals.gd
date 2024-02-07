@@ -4,6 +4,7 @@ var current_level_idx: int
 var in_shop: bool = false
 var current_level: Level
 var shop_inventory
+const VERSION_NUMBER = "v0.012"
 
 func _ready():
 	reset()
@@ -66,7 +67,8 @@ func save():
 			"movement_speed_upgrade": shop_inventory["movement_speed_upgrade"].stock,
 			#"piercing_shot_upgrade": shop_inventory["piercing_shot_upgrade"].stock,
 			# "gatling_gun_upgrade": gatling_gun_upgrade.stock,
-		}
+		},
+		"version": VERSION_NUMBER,
 	}
 
 	return save_data
