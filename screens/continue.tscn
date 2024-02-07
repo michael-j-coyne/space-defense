@@ -10,18 +10,15 @@ continue_button = NodePath("CenterContainer/VBoxContainer/ContinueButton")
 new_game_button = NodePath("CenterContainer/VBoxContainer/NewGameButton")
 confirmation_dialog = NodePath("ConfirmationDialog")
 
-[node name="GameTitle" type="RichTextLabel" parent="."]
+[node name="GameTitle" type="Label" parent="."]
 layout_mode = 0
 offset_left = 76.0
 offset_top = 35.0
 offset_right = 1186.0
 offset_bottom = 215.0
-theme_override_font_sizes/normal_font_size = 120
+theme_override_font_sizes/font_size = 120
 text = "Space Defense
 "
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
 
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
 title = ""
