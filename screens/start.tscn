@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://v5btqcfntl7f"]
+[gd_scene load_steps=4 format=3 uid="uid://v5btqcfntl7f"]
 
 [ext_resource type="Texture2D" uid="uid://btva022o2i1tt" path="res://assets/black_background.png" id="1_557s3"]
 [ext_resource type="Script" path="res://screens/start.gd" id="2_al3lh"]
+[ext_resource type="FontFile" uid="uid://bkhed0i8r5bfm" path="res://assets/Kenney Blocks.ttf" id="3_r6dos"]
 
 [node name="Start" type="Sprite2D" node_paths=PackedStringArray("start_button")]
 texture = ExtResource("1_557s3")
@@ -9,21 +10,24 @@ centered = false
 script = ExtResource("2_al3lh")
 start_button = NodePath("CenterContainer/StartButton")
 
-[node name="GameTitle" type="RichTextLabel" parent="."]
-offset_left = 77.0
-offset_top = 58.0
-offset_right = 1187.0
-offset_bottom = 238.0
-theme_override_font_sizes/normal_font_size = 120
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 423.0
+grow_horizontal = 2
+
+[node name="GameTitle" type="Label" parent="CenterContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_r6dos")
+theme_override_font_sizes/font_size = 140
 text = "Space Defense
 "
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchors_preset = -1
-anchor_top = 0.3
+anchor_top = 0.55
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -31,7 +35,6 @@ grow_vertical = 2
 
 [node name="StartButton" type="Button" parent="CenterContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
 text = " Press \"Enter\" to start "
 
 [connection signal="pressed" from="CenterContainer/StartButton" to="." method="_on_button_pressed"]
