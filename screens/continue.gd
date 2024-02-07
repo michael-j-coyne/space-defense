@@ -23,3 +23,19 @@ func _on_new_game_button_mouse_entered() -> void:
 
 func _on_continue_button_mouse_entered() -> void:
 	continue_button.grab_focus()
+
+func _on_new_game_button_focus_entered() -> void:
+	var tween = NodeFlasher.node_flash(new_game_button, tween_time)
+	new_game_button.focus_exited.connect(
+		func():
+			new_game_button.modulate.a = 1
+			tween.kill()
+	)
+
+func _on_continue_button_focus_entered() -> void:
+	var tween = NodeFlasher.node_flash(continue_button, tween_time)
+	continue_button.focus_exited.connect(
+		func():
+			continue_button.modulate.a = 1
+			tween.kill()
+	)
