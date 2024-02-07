@@ -34,10 +34,10 @@ offset_bottom = 37.0
 metadata/_edit_lock_ = true
 
 [node name="LevelDisplay" parent="." instance=ExtResource("6_866ni")]
-offset_left = 1112.0
+offset_left = 1095.0
 offset_top = 4.0
 offset_right = 1275.0
-offset_bottom = 50.0
-metadata/_edit_lock_ = true
+offset_bottom = 49.0
+autowrap_mode = 0
 
 [connection signal="all_children_freed" from="Enemies" to="." method="_on_all_enemies_defeated"]
