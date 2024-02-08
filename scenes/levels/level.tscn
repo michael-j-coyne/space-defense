@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c35mk3dn7hj3l"]
+[gd_scene load_steps=8 format=3 uid="uid://c35mk3dn7hj3l"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_7wpmc"]
 [ext_resource type="PackedScene" uid="uid://dbi0jyorwh27f" path="res://scenes/entities/player/player.tscn" id="2_f30q6"]
 [ext_resource type="PackedScene" uid="uid://b3vr16v53ni8l" path="res://scenes/components/score_display.tscn" id="3_887cy"]
 [ext_resource type="PackedScene" uid="uid://b8jda34rek6pa" path="res://scenes/components/empty_notifier_container.tscn" id="4_ampm4"]
+[ext_resource type="FontFile" uid="uid://fxrtlhoatb7i" path="res://assets/Kenney Mini Square.ttf" id="4_ubcxg"]
 [ext_resource type="PackedScene" uid="uid://du2d671j6pdtq" path="res://scenes/components/heat_meter.tscn" id="5_7yyj0"]
 [ext_resource type="PackedScene" uid="uid://d0cga5pixauj" path="res://scenes/components/level_display.tscn" id="6_866ni"]
 
@@ -21,6 +22,7 @@ offset_left = 34.0
 offset_top = 10.0
 offset_right = 195.0
 offset_bottom = 56.0
+theme_override_fonts/normal_font = ExtResource("4_ubcxg")
 metadata/_edit_lock_ = true
 
 [node name="Enemies" parent="." instance=ExtResource("4_ampm4")]
@@ -38,6 +40,7 @@ offset_left = 1095.0
 offset_top = 4.0
 offset_right = 1275.0
 offset_bottom = 49.0
+theme_override_fonts/normal_font = ExtResource("4_ubcxg")
 autowrap_mode = 0
 
 [connection signal="all_children_freed" from="Enemies" to="." method="_on_all_enemies_defeated"]

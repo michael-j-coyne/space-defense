@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://brehrasdkr54o"]
+[gd_scene load_steps=5 format=3 uid="uid://brehrasdkr54o"]
 
 [ext_resource type="Texture2D" uid="uid://btva022o2i1tt" path="res://assets/black_background.png" id="1_wj78m"]
 [ext_resource type="Script" path="res://screens/shop.gd" id="2_ol8q6"]
 [ext_resource type="PackedScene" uid="uid://b3vr16v53ni8l" path="res://scenes/components/score_display.tscn" id="3_d4ukl"]
+[ext_resource type="FontFile" uid="uid://fxrtlhoatb7i" path="res://assets/Kenney Mini Square.ttf" id="4_vnmf4"]
 
 [node name="Shop" type="Sprite2D"]
 texture = ExtResource("1_wj78m")
@@ -47,6 +48,7 @@ offset_left = 34.0
 offset_top = 10.0
 offset_right = 195.0
 offset_bottom = 56.0
+theme_override_fonts/normal_font = ExtResource("4_vnmf4")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 offset_left = 140.0
