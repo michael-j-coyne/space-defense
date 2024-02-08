@@ -13,6 +13,8 @@ func _ready():
 
 	super()
 
+	gun.cooldown = 0
+
 	var timer = Timer.new()
 	timer.wait_time = shot_interval_seconds
 	timer.connect("timeout",
