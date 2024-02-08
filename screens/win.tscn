@@ -13,10 +13,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer"]
+[node name="RichTextLabel" type="Label" parent="CenterContainer"]
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 160
-text = "You win!"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
+theme_override_font_sizes/font_size = 48
+text = "You've driven off the enemy forces.
+
+Our planet is safe.
+
+For now..."
+horizontal_alignment = 1
