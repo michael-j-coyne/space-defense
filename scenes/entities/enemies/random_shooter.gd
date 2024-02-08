@@ -23,4 +23,9 @@ func _ready():
 				gun.shoot(Vector2(0, 1))
 	)
 	add_child(timer)
-	get_tree().create_timer(start_shooting_delay).timeout.connect(timer.start)
+	get_tree().create_timer(start_shooting_delay).timeout.connect(
+		func():
+			if rng.randf() <= shot_chance_percentage:
+				gun.shoot(Vector2(0, 1))
+			timer.start()
+	)
