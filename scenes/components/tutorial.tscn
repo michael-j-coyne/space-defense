@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dg66v0f2fd61b"]
+[gd_scene load_steps=3 format=3 uid="uid://dg66v0f2fd61b"]
 
 [ext_resource type="Script" path="res://scenes/components/tutorial.gd" id="1_usl31"]
+[ext_resource type="FontFile" uid="uid://dskpt8fb6vfvu" path="res://assets/Kenney Pixel Square.ttf" id="2_n8egm"]
 
 [node name="Tutorial" type="Control" node_paths=PackedStringArray("move_left_prompt", "move_right_prompt", "shoot_prompt")]
 process_mode = 3
@@ -33,6 +34,7 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="MoveLeftPrompt/CenterContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_n8egm")
 text = "Press 'A' to move left"
 
 [node name="MoveRightPrompt" type="Panel" parent="."]
@@ -54,6 +56,7 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="MoveRightPrompt/CenterContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_n8egm")
 text = "Press 'D' to move Right"
 
 [node name="ShootPrompt" type="Panel" parent="."]
@@ -75,4 +78,7 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="ShootPrompt/CenterContainer"]
 layout_mode = 2
-text = "Destroy the enemy ships! Press spacebar to shoot"
+theme_override_fonts/font = ExtResource("2_n8egm")
+text = "Destroy the enemy ships
+
+Press spacebar to shoot"
