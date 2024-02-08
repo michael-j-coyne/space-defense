@@ -80,12 +80,25 @@ func save_game():
 
 		save_game.store_var(node_data)
 
+func is_old_save(save_game: FileAccess):
+	while save_game.get_position() < save_game.get_length():
+		var data = save_game.get_var()
+
+		for key in data.keys():
+			if key == "version" and data[key] == Globals.VERSION_NUMBER:
+				return false
+
+	return true
+
 func load_game():
 	# v0.01 and v0.011 saves have no "version number"
 	if not FileAccess.file_exists("user://savegame.save"):
 		return
 
 	var save_game = FileAccess.open("user://savegame.save", FileAccess.READ)
+
+	if is_old_save(save_game):
+		return
 
 	while save_game.get_position() < save_game.get_length():
 		var data = save_game.get_var()
