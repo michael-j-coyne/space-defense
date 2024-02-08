@@ -11,6 +11,9 @@ func take_damage(attack: Attack):
 
 	var parent = get_parent()
 
+	if parent.has_method("flash_red"):
+		parent.flash_red()
+
 	if health <= 0:
 		if parent.has_method("die"):
 			parent.die()

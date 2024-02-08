@@ -44,6 +44,11 @@ func create_afterimage():
 	else:
 		get_node("/root").add_child(afterimage)
 
+func flash_red():
+	$Sprite2D.modulate = Color.RED
+	await get_tree().create_timer(0.075).timeout
+	$Sprite2D.modulate = Color.WHITE
+
 # Will you be able to get money from an enemy multiple times in some cases?
 func die() -> void:
 	PlayerVariables.money += value
