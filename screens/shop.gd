@@ -11,12 +11,10 @@ func _ready() -> void:
 func get_price(item_name):
 	if item_name in inventory:
 		var item = inventory[item_name]
-		# Fail early!
 		assert(item.max_stock >= item.stock)
 
 		var price = item.base_price
 		# Increase price as stock gets lower
-		# NOTE: we probably want to extract the function that calculates item price
 		var price_multiplier = 1
 		if item.price_multiplier:
 			price_multiplier = item.price_multiplier
@@ -26,12 +24,10 @@ func get_price(item_name):
 	return 0
 
 func can_purchase(item_name, currency):
-	# We should grey-out items that we cannot purchase
 	if item_name in inventory and inventory[item_name].stock > 0 and currency >= get_price(item_name):
 		return true
 	return false
 
-# NOTE: perhaps this should return the purchased item
 func purchase_item(item_name, currency):
 	if can_purchase(item_name, currency):
 		PlayerVariables.money -= get_price(item_name)
