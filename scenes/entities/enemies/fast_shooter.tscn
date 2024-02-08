@@ -23,6 +23,7 @@ projectile_speed = 500.0
 damage = 1
 
 [node name="HealthComponent" parent="." instance=ExtResource("5_sq83a")]
+MAX_HEALTH = 2
 
 [node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("6_ari53")]
 collision_layer = 2
