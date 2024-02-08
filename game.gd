@@ -136,7 +136,7 @@ func go_next_level():
 	if g.current_level_idx == levels.size() - 1:
 		# no more levels
 		var dir = DirAccess.open("user://")
-		# TODO: this doesn't actually work in release version
+		# this doesn't actually work in release version
 		dir.remove("savegame.save")
 
 		add_child(load("res://screens/win.tscn").instantiate())

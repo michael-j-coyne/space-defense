@@ -52,7 +52,6 @@ func _get_configuration_warnings() -> PackedStringArray:
 	if get_child_count() == 0:
 		message.append("You should add enemies to the grid")
 	elif get_child_count() != num_cols * num_rows:
-		# TODO: This warning seems a bit buggy. Figure out a fix.
 		message.append("The number of children must equal num_cols * num_rows")
 
 	return message
@@ -75,7 +74,7 @@ static func enemy_position(row_idx: int, col_idx: int, enemy_size: Vector2, gap_
 
 	return Vector2(pos_x, pos_y)
 
-# TODO: problem: we could return a value greater than the number of allowed rows
+# NOTE: we could return a value greater than the number of allowed rows, which is a problem
 static func row_idx(enemy_idx: int, num_cols: int) -> int:
 	assert(num_cols > 0, "num_cols must be positive")
 	assert(enemy_idx >= 0, "enemy_idx must be non-negative")
@@ -109,9 +108,6 @@ static func calculate_grid_size(total_num_rows: int, total_num_cols: int, enemy_
 	var grid_height = total_num_rows * enemy_size.y + (total_num_rows - 1) * gap_size.y
 	return Vector2(grid_width, grid_height)
 
-# TODO: think about this more, do I really want to call get_child(0).boundary()?
-# How can I figure out how big the enemies in the grid are?
-# Should the grid actually resize them?
 func boundary() -> Vector2:
 	if get_child_count() < 1:
 		return Vector2(0, 0)
@@ -130,7 +126,6 @@ func fill_grid():
 	new_enemy.set_owner(enemy.get_owner())
 
 func _draw():
-	# TODO: Only draw the object when it is selected
 	if not Engine.is_editor_hint():
 		return
 

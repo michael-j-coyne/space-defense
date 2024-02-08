@@ -14,7 +14,6 @@ func _ready() -> void:
 
 	Globals.current_level = self
 
-	# TODO: use die() method in player rather than this
 	player.tree_exiting.connect(
 		func():
 			var remaining_enemies = get_tree().get_nodes_in_group("enemies")
