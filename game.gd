@@ -124,10 +124,10 @@ func load_game():
 
 func start_level(level):
 	Globals.in_shop = false
+	g.current_level = level
 	save_game()
 	level.completed.connect(go_next_level)
 	level.failed.connect(_on_level_failed, CONNECT_ONE_SHOT)
-	g.current_level = level
 	add_child(level)
 
 func show_shop():
@@ -142,7 +142,7 @@ func show_shop():
 	Globals.in_shop = false
 
 func go_next_level():
-	if g.current_level:
+	if is_instance_valid(g.current_level):
 		g.current_level.queue_free()
 		await g.current_level.tree_exited
 
