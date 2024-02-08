@@ -24,12 +24,13 @@ scroll_active = false
 autowrap_mode = 0
 
 [node name="ContinueButton" type="Button" parent="."]
-offset_left = 990.0
+offset_left = 1021.0
 offset_top = 635.0
-offset_right = 1268.0
-offset_bottom = 703.0
+offset_right = 1261.0
+offset_bottom = 700.0
 theme_override_font_sizes/font_size = 40
-text = "Continue"
+text = " Continue"
+alignment = 0
 
 [node name="GridContainer" type="GridContainer" parent="."]
 anchors_preset = -1

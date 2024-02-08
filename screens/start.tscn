@@ -34,7 +34,8 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="StartButton" type="Button" parent="CenterContainer"]
+custom_minimum_size = Vector2(500, 50)
 layout_mode = 2
-text = " Press \"Enter\" to start "
+text = "Press \"Enter\" to start"
 
 [connection signal="pressed" from="CenterContainer/StartButton" to="." method="_on_button_pressed"]

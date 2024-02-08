@@ -14,9 +14,10 @@ confirmation_dialog = NodePath("ConfirmationDialog")
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
 title = ""
 initial_position = 1
-size = Vector2i(959, 150)
-ok_button_text = "Yes, start a new game"
-dialog_text = "Are you sure? This will erase your progress."
+size = Vector2i(807, 150)
+ok_button_text = " Yes, start a new game "
+dialog_text = " Are you sure? This will erase your progress."
+cancel_button_text = " Cancel"
 
 [node name="CenterContainer2" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -53,7 +54,7 @@ layout_mode = 2
 focus_neighbor_bottom = NodePath("../ContinueButton")
 focus_next = NodePath("../ContinueButton")
 focus_previous = NodePath("../ContinueButton")
-text = " New game"
+text = "New game"
 
 [node name="ContinueButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
