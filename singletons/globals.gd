@@ -17,7 +17,6 @@ func reset():
 	attack_speed_upgrade.stock = 3
 	attack_speed_upgrade.max_stock = 3
 	attack_speed_upgrade.price_multiplier = 1.5
-	# upgrade.effect is a better name than apply_upgrade
 	attack_speed_upgrade.apply_upgrade = func(): PlayerVariables.gun_cooldown *= .9
 
 	var movement_speed_upgrade = ShopItem.new()
