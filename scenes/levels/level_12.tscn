@@ -34,17 +34,17 @@ metadata/_edit_group_ = true
 [node name="RandomShooter" parent="Enemies/EnemyGrid2" index="0" instance=ExtResource("3_75wma")]
 position = Vector2(30, 30)
 shot_chance_percentage = 1.0
-shot_interval_seconds = 0.25
+start_shooting_delay = 1.0
 
 [node name="@Node2D@82519" parent="Enemies/EnemyGrid2" index="1" instance=ExtResource("3_75wma")]
 position = Vector2(100, 30)
 shot_chance_percentage = 1.0
-shot_interval_seconds = 0.25
+start_shooting_delay = 1.0
 
 [node name="@Node2D@70639" parent="Enemies/EnemyGrid2" index="2" instance=ExtResource("3_75wma")]
 position = Vector2(170, 30)
 shot_chance_percentage = 1.0
-shot_interval_seconds = 0.25
+start_shooting_delay = 1.0
 
 [node name="EnemyGrid3" parent="Enemies" index="2" instance=ExtResource("2_2cuva")]
 position = Vector2(512, 0)
@@ -73,17 +73,17 @@ metadata/_edit_group_ = true
 [node name="RandomShooter" parent="Enemies/EnemyGrid4" index="0" instance=ExtResource("3_75wma")]
 position = Vector2(30, 30)
 shot_chance_percentage = 1.0
-shot_interval_seconds = 0.25
+start_shooting_delay = 1.0
 
 [node name="_Node2D_82519" parent="Enemies/EnemyGrid4" index="1" instance=ExtResource("3_75wma")]
 position = Vector2(100, 30)
 shot_chance_percentage = 1.0
-shot_interval_seconds = 0.25
+start_shooting_delay = 1.0
 
 [node name="@Node2D@70640" parent="Enemies/EnemyGrid4" index="2" instance=ExtResource("3_75wma")]
 position = Vector2(170, 30)
 shot_chance_percentage = 1.0
-shot_interval_seconds = 0.25
+start_shooting_delay = 1.0
 
 [node name="EnemyGrid5" parent="Enemies" index="4" instance=ExtResource("2_2cuva")]
 position = Vector2(1024, 0)

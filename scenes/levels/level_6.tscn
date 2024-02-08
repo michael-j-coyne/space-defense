@@ -14,45 +14,57 @@ offset_bottom = 46.0
 [node name="EnemyGrid" parent="Enemies" index="0" instance=ExtResource("2_c0twg")]
 position = Vector2(2.08165e-12, 0)
 num_cols = 3
+num_rows = 1
 clone_first_child = true
-box_width_percent = 0.8
-enemy_start_pos = 240.0
-speed = 175.0
+box_width_percent = 0.4
+speed = 100.0
+initial_direction = 1
 metadata/_edit_group_ = true
 
 [node name="RandomShooter" parent="Enemies/EnemyGrid" index="0" instance=ExtResource("3_xehr5")]
-position = Vector2(270, 30)
+position = Vector2(30, 30)
 shot_chance_percentage = 0.01
 shot_interval_seconds = 0.05
 
 [node name="@Node2D@82519" parent="Enemies/EnemyGrid" index="1" instance=ExtResource("3_xehr5")]
-position = Vector2(340, 30)
+position = Vector2(100, 30)
 shot_chance_percentage = 0.01
 shot_interval_seconds = 0.05
 
 [node name="@Node2D@166807" parent="Enemies/EnemyGrid" index="2" instance=ExtResource("3_xehr5")]
-position = Vector2(410, 30)
+position = Vector2(170, 30)
 shot_chance_percentage = 0.01
 shot_interval_seconds = 0.05
 
-[node name="@Node2D@166808" parent="Enemies/EnemyGrid" index="3" instance=ExtResource("3_xehr5")]
-position = Vector2(270, 90)
+[node name="EnemyGrid2" parent="Enemies" index="1" instance=ExtResource("2_c0twg")]
+position = Vector2(512, 0)
+num_cols = 3
+num_rows = 1
+clone_first_child = true
+box_width_percent = 0.4
+enemy_start_pos = 312.0
+speed = 100.0
+metadata/_edit_group_ = true
+
+[node name="RandomShooter" parent="Enemies/EnemyGrid2" index="0" instance=ExtResource("3_xehr5")]
+position = Vector2(342, 30)
 shot_chance_percentage = 0.01
 shot_interval_seconds = 0.05
 
-[node name="@Node2D@183363" parent="Enemies/EnemyGrid" index="4" instance=ExtResource("3_xehr5")]
-position = Vector2(340, 90)
+[node name="_Node2D_82519" parent="Enemies/EnemyGrid2" index="1" instance=ExtResource("3_xehr5")]
+position = Vector2(412, 30)
 shot_chance_percentage = 0.01
 shot_interval_seconds = 0.05
 
-[node name="@Node2D@183364" parent="Enemies/EnemyGrid" index="5" instance=ExtResource("3_xehr5")]
-position = Vector2(410, 90)
+[node name="_Node2D_166807" parent="Enemies/EnemyGrid2" index="2" instance=ExtResource("3_xehr5")]
+position = Vector2(482, 30)
 shot_chance_percentage = 0.01
 shot_interval_seconds = 0.05
 
-[node name="EnemyGrid3" parent="Enemies" index="1" instance=ExtResource("2_c0twg")]
+[node name="EnemyGrid3" parent="Enemies" index="2" instance=ExtResource("2_c0twg")]
 position = Vector2(1024, 0)
 num_cols = 1
+num_rows = 1
 clone_first_child = true
 box_width_percent = 0.2
 enemy_start_pos = 180.0
@@ -63,10 +75,21 @@ metadata/_edit_group_ = true
 [node name="NonShooter" parent="Enemies/EnemyGrid3" index="0" instance=ExtResource("4_116ll")]
 position = Vector2(210, -270)
 
-[node name="@Node2D@206561" parent="Enemies/EnemyGrid3" index="1" instance=ExtResource("4_116ll")]
-position = Vector2(210, -210)
+[node name="EnemyGrid5" parent="Enemies" index="3" instance=ExtResource("2_c0twg")]
+position = Vector2(1024, 0)
+num_cols = 1
+num_rows = 1
+clone_first_child = true
+box_width_percent = 0.2
+enemy_start_pos = 100.0
+speed = 275.0
+rows_below_origin = -8
+metadata/_edit_group_ = true
 
-[node name="EnemyGrid4" parent="Enemies" index="2" instance=ExtResource("2_c0twg")]
+[node name="NonShooter" parent="Enemies/EnemyGrid5" index="0" instance=ExtResource("4_116ll")]
+position = Vector2(130, -450)
+
+[node name="EnemyGrid4" parent="Enemies" index="4" instance=ExtResource("2_c0twg")]
 position = Vector2(1024, 0)
 num_cols = 1
 num_rows = 1

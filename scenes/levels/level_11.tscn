@@ -91,44 +91,44 @@ speed = 5.0
 [node name="RandomShooter" parent="Enemies/EnemyGrid" index="0" instance=ExtResource("4_oqlid")]
 position = Vector2(30, 30)
 shot_chance_percentage = 1.0
-shot_interval_seconds = 0.25
+start_shooting_delay = 0.25
 
 [node name="@Node2D@29964" parent="Enemies/EnemyGrid" index="1" instance=ExtResource("4_oqlid")]
 position = Vector2(100, 30)
 shot_chance_percentage = 1.0
-shot_interval_seconds = 0.25
+start_shooting_delay = 0.25
 
 [node name="@Node2D@29965" parent="Enemies/EnemyGrid" index="2" instance=ExtResource("4_oqlid")]
 position = Vector2(170, 30)
 shot_chance_percentage = 1.0
-shot_interval_seconds = 0.25
+start_shooting_delay = 0.25
 
 [node name="@Node2D@29966" parent="Enemies/EnemyGrid" index="3" instance=ExtResource("4_oqlid")]
 position = Vector2(240, 30)
 shot_chance_percentage = 1.0
-shot_interval_seconds = 0.25
+start_shooting_delay = 0.25
 
 [node name="_Node2D_29967" parent="Enemies/EnemyGrid" index="4" instance=ExtResource("4_oqlid")]
 position = Vector2(310, 30)
 shot_chance_percentage = 1.0
-shot_interval_seconds = 0.25
+start_shooting_delay = 0.25
 
 [node name="@Node2D@29968" parent="Enemies/EnemyGrid" index="5" instance=ExtResource("4_oqlid")]
 position = Vector2(380, 30)
 shot_chance_percentage = 1.0
-shot_interval_seconds = 0.25
+start_shooting_delay = 0.25
 
 [node name="@Node2D@35606" parent="Enemies/EnemyGrid" index="6" instance=ExtResource("4_oqlid")]
 position = Vector2(450, 30)
 shot_chance_percentage = 1.0
-shot_interval_seconds = 0.25
+start_shooting_delay = 0.25
 
 [node name="@Node2D@35607" parent="Enemies/EnemyGrid" index="7" instance=ExtResource("4_oqlid")]
 position = Vector2(520, 30)
 shot_chance_percentage = 1.0
-shot_interval_seconds = 0.25
+start_shooting_delay = 0.25
 
 [node name="@Node2D@38019" parent="Enemies/EnemyGrid" index="8" instance=ExtResource("4_oqlid")]
 position = Vector2(590, 30)
 shot_chance_percentage = 1.0
-shot_interval_seconds = 0.25
+start_shooting_delay = 0.25
