@@ -10,28 +10,14 @@
 offset_right = 161.0
 offset_bottom = 46.0
 
-[node name="EnemyGrid2" parent="Enemies" index="0" instance=ExtResource("2_2utx5")]
+[node name="Shooter1" parent="Enemies" index="0" instance=ExtResource("2_2utx5")]
 num_cols = 1
 num_rows = 1
 clone_first_child = true
 speed = 400.0
 initial_direction = 1
 
-[node name="FastShooter" parent="Enemies/EnemyGrid2" index="0" instance=ExtResource("3_et4ha")]
+[node name="FastShooter" parent="Enemies/Shooter1" index="0" instance=ExtResource("3_et4ha")]
 position = Vector2(30, 30)
-shot_chance_percentage = 1.0
-shot_interval_seconds = 0.25
-
-[node name="EnemyGrid3" parent="Enemies" index="1" instance=ExtResource("2_2utx5")]
-num_cols = 1
-num_rows = 1
-clone_first_child = true
-enemy_start_pos = 500.0
-speed = 400.0
-initial_direction = 1
-rows_below_origin = -2
-
-[node name="FastShooter" parent="Enemies/EnemyGrid3" index="0" instance=ExtResource("3_et4ha")]
-position = Vector2(530, -90)
 shot_chance_percentage = 1.0
 shot_interval_seconds = 0.25
