@@ -8,9 +8,15 @@ func _ready() -> void:
 	populate_shop()
 	$ContinueButton.grab_focus()
 
+func has_item(item_name: String):
+	return item_name in inventory
+
+func get_item(item_name: String):
+	return inventory[item_name]
+
 func get_price(item_name):
-	if item_name in inventory:
-		var item = inventory[item_name]
+	if has_item(item_name):
+		var item = get_item(item_name)
 		assert(item.max_stock >= item.stock)
 
 		var price = item.base_price
@@ -24,14 +30,14 @@ func get_price(item_name):
 	return 0
 
 func can_purchase(item_name, currency):
-	if item_name in inventory and inventory[item_name].stock > 0 and currency >= get_price(item_name):
+	if has_item(item_name) and get_item(item_name).stock > 0 and currency >= get_price(item_name):
 		return true
 	return false
 
 func purchase_item(item_name, currency):
 	if can_purchase(item_name, currency):
 		PlayerVariables.money -= get_price(item_name)
-		inventory[item_name].stock -= 1
+		get_item(item_name).stock -= 1
 
 		# TODO: Add the item to the player's inventory here
 
@@ -42,7 +48,7 @@ func generate_item_buttons() -> Array[VBoxContainer]:
 	var result: Array[VBoxContainer] = []
 
 	for item_name in inventory.keys():
-		var item = inventory[item_name]
+		var item = get_item(item_name)
 
 		if item.stock < 1:
 			continue
@@ -96,7 +102,7 @@ func _on_ItemButton_pressed(item_name):
 
 		# TODO: Don't apply upgrade here.
 		# Apply the upgrade
-		inventory[item_name].apply_upgrade.call()
+		get_item(item_name).apply_upgrade.call()
 
 		# Update UI
 		for node in $GridContainer.get_children():
