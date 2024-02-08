@@ -32,6 +32,10 @@ func shoot(direction: Vector2) -> Projectile:
 	if cooling_down:
 		return
 
+	# Prevent the gun from firing unless it is solidly on screen
+	if global_position.y < 30:
+		return
+
 	var attack = Attack.new()
 	attack.damage = damage
 
