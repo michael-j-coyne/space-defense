@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://n0sww6tpccii"]
+
+[ext_resource type="PackedScene" uid="uid://c35mk3dn7hj3l" path="res://scenes/levels/level.tscn" id="1_upchl"]
+[ext_resource type="PackedScene" uid="uid://bf0pxxqhe06jr" path="res://scenes/entities/enemies/enemy_grid.tscn" id="2_peldp"]
+[ext_resource type="PackedScene" uid="uid://pgmee6xdtq21" path="res://scenes/entities/enemies/fast_shooter.tscn" id="3_bls8u"]
+[ext_resource type="PackedScene" uid="uid://bro4ydortrmw6" path="res://scenes/entities/enemies/non_shooter.tscn" id="4_78ogp"]
+
+[node name="Level" instance=ExtResource("1_upchl")]
+
+[node name="ScoreDisplay" parent="." index="1"]
+offset_right = 161.0
+offset_bottom = 46.0
+
+[node name="FastShooterGrid" parent="Enemies" index="0" instance=ExtResource("2_peldp")]
+num_cols = 1
+num_rows = 1
+clone_first_child = true
+speed = 450.0
+initial_direction = 1
+
+[node name="FastShooter" parent="Enemies/FastShooterGrid" index="0" instance=ExtResource("3_bls8u")]
+position = Vector2(30, 30)
+shot_chance_percentage = 1.0
+shot_interval_seconds = 0.25
+
+[node name="EnemyGrid" parent="Enemies" index="1" instance=ExtResource("2_peldp")]
+position = Vector2(500, 0)
+num_cols = 1
+num_rows = 1
+box_width_percent = 0.25
+speed = 300.0
+
+[node name="NonShooter" parent="Enemies/EnemyGrid" index="0" instance=ExtResource("4_78ogp")]
+position = Vector2(30, 30)
+
+[node name="EnemyGrid2" parent="Enemies" index="2" instance=ExtResource("2_peldp")]
+position = Vector2(500, 0)
+num_cols = 1
+num_rows = 1
+box_width_percent = 0.25
+enemy_start_pos = 60.0
+speed = 300.0
+initial_direction = 1
+rows_below_origin = -2
+
+[node name="NonShooter" parent="Enemies/EnemyGrid2" index="0" instance=ExtResource("4_78ogp")]
+position = Vector2(90, -90)
+
+[node name="EnemyGrid3" parent="Enemies" index="3" instance=ExtResource("2_peldp")]
+position = Vector2(500, 0)
+num_cols = 1
+num_rows = 1
+box_width_percent = 0.25
+enemy_start_pos = 120.0
+speed = 300.0
+initial_direction = 1
+rows_below_origin = -4
+
+[node name="NonShooter" parent="Enemies/EnemyGrid3" index="0" instance=ExtResource("4_78ogp")]
+position = Vector2(150, -210)
