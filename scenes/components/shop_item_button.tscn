@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dew73wrw0b14q"]
+[gd_scene load_steps=3 format=3 uid="uid://dew73wrw0b14q"]
 
 [ext_resource type="Script" path="res://scenes/components/shop_item_button.gd" id="1_uo3j6"]
+[ext_resource type="FontFile" uid="uid://dskpt8fb6vfvu" path="res://assets/Kenney Pixel Square.ttf" id="2_6dbyn"]
 
 [node name="ButtonContainer" type="VBoxContainer" node_paths=PackedStringArray("price_label", "item_label", "description_label")]
 offset_right = 40.0
@@ -28,6 +29,7 @@ grow_vertical = 2
 
 [node name="ItemLabel" type="Label" parent="ShopItemButton/HBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_6dbyn")
 theme_override_font_sizes/font_size = 35
 text = "gun"
 
@@ -38,11 +40,13 @@ mouse_filter = 2
 
 [node name="PriceLabel" type="Label" parent="ShopItemButton/HBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_6dbyn")
 theme_override_font_sizes/font_size = 35
 text = "$100 "
 
 [node name="ItemDescription" type="Label" parent="."]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_6dbyn")
 theme_override_font_sizes/font_size = 20
 text = "Placeholder description"
 
