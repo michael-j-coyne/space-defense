@@ -1,6 +1,6 @@
 # Space Defense
 
-A challenging 2D space-shooter game created with the Godot 4.2 engine. Precision is key!
+A 2D space-shooter game created with the Godot 4.2 engine.
 
 ## Where to play:
 
