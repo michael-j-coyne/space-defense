@@ -44,6 +44,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(250, 2.08165e-12)
 layout_mode = 2
 theme_override_constants/separation = 30
 
@@ -52,11 +53,11 @@ layout_mode = 2
 focus_neighbor_bottom = NodePath("../ContinueButton")
 focus_next = NodePath("../ContinueButton")
 focus_previous = NodePath("../ContinueButton")
-text = " New game "
+text = " New game"
 
 [node name="ContinueButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
-text = " Continue "
+text = "Continue"
 
 [connection signal="focus_entered" from="CenterContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_button_focus_entered"]
 [connection signal="mouse_entered" from="CenterContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_button_mouse_entered"]
