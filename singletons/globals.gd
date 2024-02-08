@@ -53,6 +53,8 @@ func reset():
 		# "gatling_gun_upgrade": gatling_gun_upgrade,
 	}
 
+	if is_instance_valid(current_level):
+		current_level.queue_free()
 	current_level = null
 	current_level_idx = 0
 
