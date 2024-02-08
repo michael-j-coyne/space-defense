@@ -5,4 +5,9 @@
 [resource]
 base_font = ExtResource("1_qtst0")
 variation_embolden = -0.5
-spacing_glyph = -2
+variation_transform = Transform2D(1, 2.08165e-12, 2.08165e-12, 1, 2.08165e-12, 2.08165e-12)
+opentype_features = {
+1667329140: 0
+}
+spacing_glyph = -5
+spacing_space = 5
