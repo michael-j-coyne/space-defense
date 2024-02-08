@@ -19,18 +19,22 @@ metadata/_edit_group_ = true
 position = Vector2(30, 210)
 shot_chance_percentage = 1.0
 shot_interval_seconds = 1.75
+start_shooting_delay = 0.5
 
 [node name="@Node2D@82519" parent="Enemies/EnemyGrid" index="1" instance=ExtResource("5_jnalm")]
 position = Vector2(100, 210)
 shot_chance_percentage = 1.0
 shot_interval_seconds = 1.75
+start_shooting_delay = 0.5
 
 [node name="@Node2D@67235" parent="Enemies/EnemyGrid" index="2" instance=ExtResource("5_jnalm")]
 position = Vector2(170, 210)
 shot_chance_percentage = 1.0
 shot_interval_seconds = 1.75
+start_shooting_delay = 0.5
 
 [node name="@Node2D@67236" parent="Enemies/EnemyGrid" index="3" instance=ExtResource("5_jnalm")]
 position = Vector2(240, 210)
 shot_chance_percentage = 1.0
 shot_interval_seconds = 1.75
+start_shooting_delay = 0.5
