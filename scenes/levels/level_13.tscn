@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://xerx1473oe1s"]
+
+[ext_resource type="PackedScene" uid="uid://c35mk3dn7hj3l" path="res://scenes/levels/level.tscn" id="1_2fa3x"]
+[ext_resource type="PackedScene" uid="uid://bf0pxxqhe06jr" path="res://scenes/entities/enemies/enemy_grid.tscn" id="2_2utx5"]
+[ext_resource type="PackedScene" uid="uid://pgmee6xdtq21" path="res://scenes/entities/enemies/fast_shooter.tscn" id="3_et4ha"]
+
+[node name="Level" instance=ExtResource("1_2fa3x")]
+
+[node name="ScoreDisplay" parent="." index="1"]
+offset_right = 161.0
+offset_bottom = 46.0
+
+[node name="EnemyGrid2" parent="Enemies" index="0" instance=ExtResource("2_2utx5")]
+num_cols = 1
+num_rows = 1
+clone_first_child = true
+speed = 400.0
+initial_direction = 1
+
+[node name="FastShooter" parent="Enemies/EnemyGrid2" index="0" instance=ExtResource("3_et4ha")]
+position = Vector2(30, 30)
+shot_chance_percentage = 1.0
+shot_interval_seconds = 0.25
+
+[node name="EnemyGrid3" parent="Enemies" index="1" instance=ExtResource("2_2utx5")]
+num_cols = 1
+num_rows = 1
+clone_first_child = true
+enemy_start_pos = 500.0
+speed = 400.0
+initial_direction = 1
+rows_below_origin = -2
+
+[node name="FastShooter" parent="Enemies/EnemyGrid3" index="0" instance=ExtResource("3_et4ha")]
+position = Vector2(530, -90)
+shot_chance_percentage = 1.0
+shot_interval_seconds = 0.25
