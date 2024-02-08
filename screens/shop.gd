@@ -39,7 +39,8 @@ func purchase_item(item_name, currency):
 		PlayerVariables.money -= get_price(item_name)
 		get_item(item_name).stock -= 1
 
-		# TODO: Add the item to the player's inventory here
+		# Apply the upgrade
+		get_item(item_name).apply_upgrade.call()
 
 		return true
 	return false
@@ -99,10 +100,6 @@ func populate_shop():
 func _on_ItemButton_pressed(item_name):
 	var currency_amount = PlayerVariables.money
 	if purchase_item(item_name, currency_amount):
-
-		# TODO: Don't apply upgrade here.
-		# Apply the upgrade
-		get_item(item_name).apply_upgrade.call()
 
 		# Update UI
 		for node in $GridContainer.get_children():
