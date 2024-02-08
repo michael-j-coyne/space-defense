@@ -33,6 +33,8 @@ func purchase_item(item_name, currency):
 		PlayerVariables.money -= get_price(item_name)
 		inventory[item_name].stock -= 1
 
+		# TODO: Add the item to the player's inventory here
+
 		return true
 	return false
 
@@ -92,6 +94,7 @@ func _on_ItemButton_pressed(item_name):
 	var currency_amount = PlayerVariables.money
 	if purchase_item(item_name, currency_amount):
 
+		# TODO: Don't apply upgrade here.
 		# Apply the upgrade
 		inventory[item_name].apply_upgrade.call()
 
