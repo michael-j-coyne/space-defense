@@ -1,0 +1,8 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://rjmh25imdur4"]
+
+[ext_resource type="FontFile" uid="uid://bby07k4hnhbkx" path="res://assets/Kenney Future.ttf" id="1_qtst0"]
+
+[resource]
+base_font = ExtResource("1_qtst0")
+variation_embolden = -0.5
+spacing_glyph = -2
