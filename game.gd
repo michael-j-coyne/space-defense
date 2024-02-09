@@ -32,6 +32,22 @@ func set_game_to_initial_state():
 	Globals.reset()
 	PlayerVariables.reset()
 
+func instance_current_level() -> Level:
+	return levels[g.current_level_idx].instantiate() as Level
+
+func start_level(level):
+	save_game()
+
+	g.current_level = level
+	level.completed.connect(_on_level_completed, CONNECT_ONE_SHOT)
+	level.failed.connect(_on_level_failed, CONNECT_ONE_SHOT)
+	add_child(level)
+
+func show_shop():
+	var shop: Shop = load("res://screens/shop.tscn").instantiate()
+	shop.setup(func(): start_level(instance_current_level()))
+	add_child(shop)
+
 func show_continue_screen():
 	var continue_screen = load("res://screens/continue.tscn").instantiate()
 
@@ -63,6 +79,26 @@ func show_title_screen():
 		show_start_screen()
 	else:
 		show_continue_screen()
+
+func _on_level_completed():
+	if g.current_level_idx == levels.size() - 1:
+		add_child(load("res://screens/win.tscn").instantiate())
+		return
+
+	g.current_level_idx += 1
+	save_game()
+
+	show_shop()
+
+func _on_level_failed(screenshot: Sprite2D) -> void:
+	var game_over_screen = load("res://screens/game_over.tscn").instantiate()
+	game_over_screen.add_level_screenshot(screenshot)
+
+	game_over_screen.return_to_title_requested.connect(show_title_screen)
+	game_over_screen.retry_requested.connect(func(): start_level(instance_current_level()))
+	game_over_screen.shop_requested.connect(show_shop)
+
+	add_child(game_over_screen)
 
 # Currently, we only save game when a level is started or completed
 func save_game():
@@ -119,39 +155,3 @@ func load_game():
 						singleton.shop_inventory[item_name].stock = saved_stock
 				continue
 			singleton.set(key, data[key])
-
-func instance_current_level() -> Level:
-	return levels[g.current_level_idx].instantiate() as Level
-
-func start_level(level):
-	save_game()
-
-	g.current_level = level
-	level.completed.connect(_on_level_completed, CONNECT_ONE_SHOT)
-	level.failed.connect(_on_level_failed, CONNECT_ONE_SHOT)
-	add_child(level)
-
-func show_shop():
-	var shop: Shop = load("res://screens/shop.tscn").instantiate()
-	shop.setup(func(): start_level(instance_current_level()))
-	add_child(shop)
-
-func _on_level_completed():
-	if g.current_level_idx == levels.size() - 1:
-		add_child(load("res://screens/win.tscn").instantiate())
-		return
-
-	g.current_level_idx += 1
-	save_game()
-
-	show_shop()
-
-func _on_level_failed(screenshot: Sprite2D) -> void:
-	var game_over_screen = load("res://screens/game_over.tscn").instantiate()
-	game_over_screen.add_level_screenshot(screenshot)
-
-	game_over_screen.return_to_title_requested.connect(show_title_screen)
-	game_over_screen.retry_requested.connect(func(): start_level(instance_current_level()))
-	game_over_screen.shop_requested.connect(show_shop)
-
-	add_child(game_over_screen)
