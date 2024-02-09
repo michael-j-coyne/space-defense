@@ -1,12 +1,14 @@
 class_name Shop extends Sprite2D
 
 var inventory = Globals.shop_inventory
-
-signal continue_pressed
+var start_level_callback: Callable
 
 func _ready() -> void:
 	populate_shop()
 	$ContinueButton.grab_focus()
+
+func setup(start_level_callback: Callable) -> void:
+	self.start_level_callback = start_level_callback
 
 func has_item(item_name: String):
 	return item_name in inventory
@@ -114,4 +116,5 @@ func _on_ItemButton_pressed(item_name):
 		print("Cannot purchase item.")
 
 func _on_continue_pressed() -> void:
-	continue_pressed.emit()
+	start_level_callback.call()
+	queue_free()
