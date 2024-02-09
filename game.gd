@@ -34,19 +34,13 @@ func set_game_to_initial_state():
 
 func show_continue_screen():
 	var continue_screen = load("res://screens/continue.tscn").instantiate()
-	# TODO: remove this function and use a lambda
-	var cleanup_and_start_game = func():
-		if g.current_level_idx > 0:
-			show_shop()
-		else:
-			start_level(instance_current_level())
 
-	continue_screen.continue_game.connect(cleanup_and_start_game)
+	continue_screen.continue_game.connect(show_shop)
 
 	continue_screen.new_game.connect(
 		func():
 			set_game_to_initial_state()
-			cleanup_and_start_game.call()
+			start_level(instance_current_level())
 	)
 
 	add_child(continue_screen)
