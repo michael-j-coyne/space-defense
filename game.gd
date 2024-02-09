@@ -159,16 +159,10 @@ func go_next_level():
 		await g.current_level.tree_exited
 
 	if g.current_level_idx == levels.size() - 1:
-		# no more levels
-		var dir = DirAccess.open("user://")
-		# this doesn't actually work in release version
-		dir.remove("savegame.save")
-
 		add_child(load("res://screens/win.tscn").instantiate())
 		return
 
 	g.current_level_idx += 1
-
 
 	Globals.in_shop = true
 	# NOTE: we are saving here because the level was completed. But this isn't actually very clear.
