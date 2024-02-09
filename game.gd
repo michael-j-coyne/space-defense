@@ -166,8 +166,9 @@ func restart_level() -> void:
 	start_level(level)
 
 # TODO: split up function
-func _on_level_failed(_screenshot: Sprite2D) -> void:
+func _on_level_failed(screenshot: Sprite2D) -> void:
 	var game_over_screen = load("res://screens/game_over.tscn").instantiate()
+	game_over_screen.add_level_screenshot(screenshot)
 
 	var cleanup_game_over_screen = func():
 		game_over_screen.queue_free()
@@ -191,7 +192,3 @@ func _on_level_failed(_screenshot: Sprite2D) -> void:
 	)
 
 	add_child(game_over_screen)
-
-	game_over_screen.modulate.a = 0
-	var tween = game_over_screen.create_tween()
-	tween.tween_property(game_over_screen, "modulate:a", 1, 3.0)
