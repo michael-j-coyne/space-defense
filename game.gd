@@ -57,8 +57,6 @@ func show_start_screen():
 	start_screen.start.connect(
 		func():
 			set_game_to_initial_state()
-			start_screen.queue_free()
-			await start_screen.tree_exited
 			start_level(instance_current_level())
 	)
 	add_child(start_screen)
