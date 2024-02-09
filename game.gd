@@ -35,8 +35,6 @@ func set_game_to_initial_state():
 func show_continue_screen():
 	var continue_screen = load("res://screens/continue.tscn").instantiate()
 	var cleanup_and_start_game = func():
-		continue_screen.queue_free()
-		await continue_screen.tree_exited
 		if g.current_level_idx > 0:
 			show_shop()
 		else:

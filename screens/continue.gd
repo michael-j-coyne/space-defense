@@ -16,6 +16,7 @@ func _on_new_game_pressed() -> void:
 
 func _on_continue_pressed() -> void:
 	continue_game.emit()
+	queue_free()
 
 func _on_new_game_button_mouse_entered() -> void:
 	new_game_button.grab_focus()
@@ -41,3 +42,4 @@ func _on_continue_button_focus_entered() -> void:
 
 func _on_confirmation_dialog_confirmed() -> void:
 	new_game.emit()
+	queue_free()
