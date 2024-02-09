@@ -64,6 +64,7 @@ func show_title_screen():
 	else:
 		show_continue_screen()
 
+# Currently, we only save game when a level is started or completed
 func save_game():
 	var save_game = FileAccess.open("user://savegame.save", FileAccess.WRITE)
 	var save_nodes = [PlayerVariables, Globals]
@@ -126,7 +127,7 @@ func start_level(level):
 	save_game()
 
 	g.current_level = level
-	level.completed.connect(go_next_level)
+	level.completed.connect(_on_level_completed, CONNECT_ONE_SHOT)
 	level.failed.connect(_on_level_failed, CONNECT_ONE_SHOT)
 	add_child(level)
 
@@ -135,13 +136,11 @@ func show_shop():
 	shop.setup(func(): start_level(instance_current_level()))
 	add_child(shop)
 
-func go_next_level():
+func _on_level_completed():
 	if g.current_level_idx == levels.size() - 1:
 		add_child(load("res://screens/win.tscn").instantiate())
 		return
 
-	# Save the level index
-	# TODO: This is a crucial operation but its just kind of hidden here
 	g.current_level_idx += 1
 	save_game()
 
