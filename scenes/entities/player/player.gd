@@ -2,6 +2,8 @@
 
 class_name Player extends Node2D
 
+signal died
+
 const SIZE = Vector2(60, 60)
 
 @export var speed: float
@@ -111,3 +113,7 @@ func handle_shooting(delta):
 
 func get_current_health():
 	return $HealthComponent.health
+
+func die():
+	died.emit()
+	queue_free()

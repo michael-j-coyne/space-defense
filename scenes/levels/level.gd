@@ -5,6 +5,7 @@ signal completed
 signal failed
 
 var level_completed = false
+var level_failed_emitted = false
 @export var player: Player
 var money_earned_in_level = 0
 
@@ -14,12 +15,7 @@ func _ready() -> void:
 
 	Globals.current_level = self
 
-	player.tree_exiting.connect(
-		func():
-			var remaining_enemies = get_tree().get_nodes_in_group("enemies")
-			if remaining_enemies.size() > 0:
-				level_failed()
-	)
+	player.died.connect(level_failed)
 
 	var enemies = get_tree().get_nodes_in_group("enemies")
 
@@ -33,8 +29,10 @@ func _ready() -> void:
 		)
 
 func level_failed():
-	PlayerVariables.money -= money_earned_in_level
-	failed.emit()
+	if not level_failed_emitted:
+		PlayerVariables.money -= money_earned_in_level
+		failed.emit()
+	level_failed_emitted = true
 
 func _get_configuration_warnings() -> PackedStringArray:
 	var warnings = PackedStringArray()
