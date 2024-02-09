@@ -48,6 +48,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Retry level"
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/TitleButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/TitleButton" to="." method="_on_title_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/ShopButton" to="." method="_on_shop_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
