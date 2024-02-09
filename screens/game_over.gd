@@ -14,6 +14,7 @@ func _ready():
 		var tween = level_screenshot.create_tween()
 		tween.tween_property(level_screenshot, "modulate:a", 0, tween_time)
 
+# TODO: rename this
 func _on_button_pressed() -> void:
 	return_to_title_requested.emit()
 
