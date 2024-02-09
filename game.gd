@@ -18,6 +18,11 @@ var levels := [
 	load("res://scenes/levels/level_15.tscn"),
 	load("res://scenes/levels/level_16.tscn"),
 	load("res://scenes/levels/level_17.tscn"),
+	load("res://scenes/levels/level_18.tscn"),
+	load("res://scenes/levels/level_19.tscn"),
+	load("res://scenes/levels/level_20.tscn"),
+	load("res://scenes/levels/level_21.tscn"),
+	load("res://scenes/levels/level_22.tscn"),
 ]
 
 var g = Globals
