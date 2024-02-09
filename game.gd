@@ -170,23 +170,19 @@ func _on_level_failed(screenshot: Sprite2D) -> void:
 	var game_over_screen = load("res://screens/game_over.tscn").instantiate()
 	game_over_screen.add_level_screenshot(screenshot)
 
-	var cleanup_game_over_screen = func():
-		game_over_screen.queue_free()
-		await game_over_screen.tree_exited
-
 	game_over_screen.return_to_title_requested.connect(
 		func():
-			await cleanup_game_over_screen.call()
+			game_over_screen.queue_free()
 			show_title_screen()
 	)
 	game_over_screen.retry_requested.connect(
 		func():
-			await cleanup_game_over_screen.call()
+			game_over_screen.queue_free()
 			restart_level()
 	)
 	game_over_screen.shop_requested.connect(
 		func():
-			await cleanup_game_over_screen.call()
+			game_over_screen.queue_free()
 			await show_shop()
 			restart_level()
 	)
