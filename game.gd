@@ -154,6 +154,7 @@ func show_shop():
 	Globals.in_shop = false
 
 func go_next_level():
+	# TODO: The fact that I'm double checking the cleanup is a bad sign. I should probably just make sure that the cleanup is always done.
 	if is_instance_valid(g.current_level):
 		g.current_level.queue_free()
 		await g.current_level.tree_exited
