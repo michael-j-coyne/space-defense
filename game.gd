@@ -166,7 +166,7 @@ func restart_level() -> void:
 	start_level(level)
 
 # TODO: split up function
-func _on_level_failed() -> void:
+func _on_level_failed(_screenshot: Sprite2D) -> void:
 	var game_over_screen = load("res://screens/game_over.tscn").instantiate()
 
 	var cleanup_game_over_screen = func():

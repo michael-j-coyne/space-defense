@@ -2,7 +2,7 @@
 class_name Level extends Node2D
 
 signal completed
-signal failed
+signal failed(screenshot: Sprite2D)
 
 var level_failed_emitted = false
 @export var player: Player
@@ -25,10 +25,18 @@ func _ready() -> void:
 				money_earned_in_level += value
 		)
 
+func take_screenshot():
+	var image: Image = get_viewport().get_texture().get_image()
+	var sprite = Sprite2D.new()
+	var texture = ImageTexture.create_from_image(image)
+	sprite.texture = texture
+	sprite.centered = false
+	return sprite
+
 func level_failed():
 	if not level_failed_emitted:
 		PlayerVariables.money -= money_earned_in_level
-		failed.emit()
+		failed.emit(take_screenshot())
 	level_failed_emitted = true
 	queue_free()
 
