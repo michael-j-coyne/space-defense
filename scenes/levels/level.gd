@@ -4,7 +4,6 @@ class_name Level extends Node2D
 signal completed
 signal failed
 
-var level_completed = false
 var level_failed_emitted = false
 @export var player: Player
 var money_earned_in_level = 0
@@ -43,5 +42,4 @@ func _get_configuration_warnings() -> PackedStringArray:
 	return warnings
 
 func _on_all_enemies_defeated():
-	level_completed = true
 	completed.emit()
