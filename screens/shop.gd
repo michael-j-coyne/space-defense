@@ -97,6 +97,10 @@ func populate_shop():
 	connect_focus(shop_items)
 	$ContinueButton.grab_focus()
 
+	if shop_items.size() == 0:
+		$BoughtAll.show()
+		$TitleContainer.hide()
+
 func _on_ItemButton_pressed(item_name):
 	var currency_amount = PlayerVariables.money
 	if purchase_item(item_name, currency_amount):
