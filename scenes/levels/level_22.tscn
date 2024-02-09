@@ -219,8 +219,6 @@ initial_direction = 1
 
 [node name="FastShooter" parent="Enemies/FastShooterGrid" index="0" instance=ExtResource("4_xhnau")]
 position = Vector2(30, 30)
-shot_chance_percentage = 1.0
-shot_interval_seconds = 0.25
 
 [node name="Shooter2" parent="Enemies" index="15" instance=ExtResource("2_c6sih")]
 num_cols = 1
@@ -232,5 +230,3 @@ rows_below_origin = 1
 
 [node name="FastShooter" parent="Enemies/Shooter2" index="0" instance=ExtResource("4_xhnau")]
 position = Vector2(1250, 90)
-shot_chance_percentage = 1.0
-shot_interval_seconds = 0.25

@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=3 uid="uid://bshu0d2amcqp8"]
+
+[ext_resource type="PackedScene" uid="uid://c35mk3dn7hj3l" path="res://scenes/levels/level.tscn" id="1_whxud"]
+[ext_resource type="PackedScene" uid="uid://bf0pxxqhe06jr" path="res://scenes/entities/enemies/enemy_grid.tscn" id="2_efhib"]
+[ext_resource type="PackedScene" uid="uid://pgmee6xdtq21" path="res://scenes/entities/enemies/fast_shooter.tscn" id="3_ryyir"]
+[ext_resource type="PackedScene" uid="uid://bro4ydortrmw6" path="res://scenes/entities/enemies/non_shooter.tscn" id="4_usoe6"]
+
+[node name="Level" instance=ExtResource("1_whxud")]
+
+[node name="ScoreDisplay" parent="." index="1"]
+offset_right = 161.0
+offset_bottom = 46.0
+
+[node name="FastShooterGrid" parent="Enemies" index="0" instance=ExtResource("2_efhib")]
+num_cols = 1
+num_rows = 1
+clone_first_child = true
+enemy_start_pos = 1220.0
+speed = 450.0
+
+[node name="FastShooter" parent="Enemies/FastShooterGrid" index="0" instance=ExtResource("3_ryyir")]
+position = Vector2(1250, 30)
+shot_interval_seconds = 0.01
+
+[node name="EnemyGrid6" parent="Enemies" index="1" instance=ExtResource("2_efhib")]
+position = Vector2(152, 0)
+num_cols = 1
+num_rows = 1
+clone_first_child = true
+box_width_percent = 0.2
+enemy_start_pos = 120.0
+speed = 275.0
+rows_below_origin = 4
+metadata/_edit_group_ = true
+
+[node name="NonShooter" parent="Enemies/EnemyGrid6" index="0" instance=ExtResource("4_usoe6")]
+position = Vector2(150, 270)
+
+[node name="EnemyGrid4" parent="Enemies" index="2" instance=ExtResource("2_efhib")]
+position = Vector2(100, 0)
+num_cols = 1
+num_rows = 1
+clone_first_child = true
+box_width_percent = 0.2
+enemy_start_pos = 120.0
+speed = 275.0
+initial_direction = 1
+rows_below_origin = 3
+metadata/_edit_group_ = true
+
+[node name="NonShooter" parent="Enemies/EnemyGrid4" index="0" instance=ExtResource("4_usoe6")]
+position = Vector2(150, 210)
+
+[node name="EnemyGrid8" parent="Enemies" index="3" instance=ExtResource("2_efhib")]
+position = Vector2(23, 0)
+num_cols = 1
+num_rows = 1
+clone_first_child = true
+box_width_percent = 0.2
+enemy_start_pos = 100.0
+speed = 275.0
+rows_below_origin = 5
+metadata/_edit_group_ = true
+
+[node name="NonShooter" parent="Enemies/EnemyGrid8" index="0" instance=ExtResource("4_usoe6")]
+position = Vector2(130, 330)
+
+[node name="EnemyGrid9" parent="Enemies" index="4" instance=ExtResource("2_efhib")]
+position = Vector2(61, 0)
+num_cols = 1
+num_rows = 1
+clone_first_child = true
+box_width_percent = 0.2
+enemy_start_pos = 80.0
+speed = 275.0
+rows_below_origin = 2
+metadata/_edit_group_ = true
+
+[node name="NonShooter" parent="Enemies/EnemyGrid9" index="0" instance=ExtResource("4_usoe6")]
+position = Vector2(110, 150)

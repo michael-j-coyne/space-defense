@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://o7voujki745"]
+
+[ext_resource type="PackedScene" uid="uid://c35mk3dn7hj3l" path="res://scenes/levels/level.tscn" id="1_hrjse"]
+[ext_resource type="PackedScene" uid="uid://bf0pxxqhe06jr" path="res://scenes/entities/enemies/enemy_grid.tscn" id="2_n82sf"]
+[ext_resource type="PackedScene" uid="uid://pgmee6xdtq21" path="res://scenes/entities/enemies/fast_shooter.tscn" id="3_pdqjn"]
+
+[node name="Level" instance=ExtResource("1_hrjse")]
+
+[node name="ScoreDisplay" parent="." index="1"]
+offset_right = 161.0
+offset_bottom = 46.0
+
+[node name="FastShooterGrid" parent="Enemies" index="0" instance=ExtResource("2_n82sf")]
+num_cols = 1
+num_rows = 1
+clone_first_child = true
+enemy_start_pos = 1220.0
+speed = 450.0
+
+[node name="FastShooter" parent="Enemies/FastShooterGrid" index="0" instance=ExtResource("3_pdqjn")]
+position = Vector2(1250, 30)
+shot_interval_seconds = 0.01
