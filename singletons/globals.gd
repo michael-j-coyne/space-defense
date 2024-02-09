@@ -1,7 +1,7 @@
 extends Node
 
 var current_level_idx: int
-var in_shop: bool = false
+var in_shop: bool
 var current_level: Level
 var shop_inventory
 const VERSION_NUMBER = "v0.012"
@@ -57,6 +57,7 @@ func reset():
 		current_level.queue_free()
 	current_level = null
 	current_level_idx = 0
+	in_shop = false
 
 func save():
 	var save_data = {
