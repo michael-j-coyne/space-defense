@@ -73,9 +73,6 @@ func show_title_screen():
 func start_game():
 	if g.current_level_idx > 1:
 		await show_shop()
-	if is_instance_valid(g.current_level):
-		g.current_level.queue_free()
-		await g.current_level.tree_exited
 	var level: Level = levels[g.current_level_idx].instantiate() as Level
 	start_level(level)
 
@@ -151,11 +148,6 @@ func show_shop():
 	await shop.tree_exited
 
 func go_next_level():
-	# TODO: The fact that I'm double checking the cleanup is a bad sign. I should probably just make sure that the cleanup is always done.
-	if is_instance_valid(g.current_level):
-		g.current_level.queue_free()
-		await g.current_level.tree_exited
-
 	if g.current_level_idx == levels.size() - 1:
 		add_child(load("res://screens/win.tscn").instantiate())
 		return
@@ -170,7 +162,6 @@ func go_next_level():
 	start_level(level)
 
 func restart_level() -> void:
-	# TODO: how do we know the level was cleaned up properly?
 	var level: Level = levels[g.current_level_idx].instantiate() as Level
 	start_level(level)
 
@@ -181,8 +172,6 @@ func _on_level_failed() -> void:
 	var cleanup_game_over_screen = func():
 		game_over_screen.queue_free()
 		await game_over_screen.tree_exited
-		g.current_level.queue_free()
-		await g.current_level.tree_exited
 		get_tree().paused = false
 
 	game_over_screen.return_to_title_requested.connect(
