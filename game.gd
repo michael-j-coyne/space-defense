@@ -102,8 +102,8 @@ func load_game():
 
 	var save_game = FileAccess.open("user://savegame.save", FileAccess.READ)
 
-	if is_old_save(save_game):
-		return
+	# if is_old_save(save_game):
+	# 	return
 
 	while save_game.get_position() < save_game.get_length():
 		var data = save_game.get_var()
