@@ -135,8 +135,9 @@ func load_game():
 			singleton.set(key, data[key])
 
 func start_level(level):
-	g.current_level = level
 	save_game()
+
+	g.current_level = level
 	level.completed.connect(go_next_level)
 	level.failed.connect(_on_level_failed, CONNECT_ONE_SHOT)
 	add_child(level)
