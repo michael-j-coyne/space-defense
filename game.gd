@@ -165,10 +165,6 @@ func go_next_level():
 	var level = instance_current_level()
 	start_level(level)
 
-func restart_level() -> void:
-	var level: Level = instance_current_level()
-	start_level(level)
-
 # TODO: split up function
 func _on_level_failed(screenshot: Sprite2D) -> void:
 	var game_over_screen = load("res://screens/game_over.tscn").instantiate()
@@ -182,14 +178,14 @@ func _on_level_failed(screenshot: Sprite2D) -> void:
 	game_over_screen.retry_requested.connect(
 		func():
 			game_over_screen.queue_free()
-			restart_level()
+			start_level(instance_current_level())
 	)
 	game_over_screen.shop_requested.connect(
 		func():
 			game_over_screen.queue_free()
 			await show_shop()
 			# TODO: the shop screen itself should handle starting the level
-			restart_level()
+			start_level(instance_current_level())
 	)
 
 	add_child(game_over_screen)
