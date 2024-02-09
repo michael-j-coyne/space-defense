@@ -38,8 +38,7 @@ func show_continue_screen():
 		continue_screen.queue_free()
 		await continue_screen.tree_exited
 		if g.current_level_idx > 0:
-			await show_shop()
-			start_level(instance_current_level())
+			show_shop()
 		else:
 			start_level(instance_current_level())
 
@@ -145,11 +144,8 @@ func start_level(level):
 
 func show_shop():
 	var shop: Shop = load("res://screens/shop.tscn").instantiate()
+	shop.setup(func(): start_level(instance_current_level()))
 	add_child(shop)
-
-	await shop.continue_pressed
-	shop.queue_free()
-	await shop.tree_exited
 
 func go_next_level():
 	if g.current_level_idx == levels.size() - 1:
@@ -160,10 +156,7 @@ func go_next_level():
 	g.current_level_idx += 1
 	save_game()
 
-	await show_shop()
-
-	var level = instance_current_level()
-	start_level(level)
+	show_shop()
 
 # TODO: split up function
 func _on_level_failed(screenshot: Sprite2D) -> void:
@@ -183,9 +176,7 @@ func _on_level_failed(screenshot: Sprite2D) -> void:
 	game_over_screen.shop_requested.connect(
 		func():
 			game_over_screen.queue_free()
-			await show_shop()
-			# TODO: the shop screen itself should handle starting the level
-			start_level(instance_current_level())
+			show_shop()
 	)
 
 	add_child(game_over_screen)
