@@ -28,38 +28,47 @@ var g = Globals
 func _ready() -> void:
 	show_title_screen()
 
-func show_title_screen():
-	var dir = DirAccess.open("user://")
-	if dir.file_exists("savegame.save"):
-		var continue_screen = load("res://screens/continue.tscn").instantiate()
-		add_child(continue_screen)
-		continue_screen.continue_game.connect(
-			func():
-				continue_screen.queue_free()
-				await continue_screen.tree_exited
-				load_game()
-				start_game()
-		)
+func set_game_to_initial_state():
+	Globals.reset()
+	PlayerVariables.reset()
 
-		continue_screen.new_game.connect(
-			func():
-				continue_screen.queue_free()
-				await continue_screen.tree_exited
-				Globals.reset()
-				PlayerVariables.reset()
-				start_game()
-		)
+func show_continue_screen():
+	var continue_screen = load("res://screens/continue.tscn").instantiate()
+	var cleanup_and_start_game = func():
+		continue_screen.queue_free()
+		await continue_screen.tree_exited
+		start_game()
 
-		return
+	continue_screen.continue_game.connect(cleanup_and_start_game)
 
+	continue_screen.new_game.connect(
+		func():
+			set_game_to_initial_state()
+			cleanup_and_start_game.call()
+	)
+
+	add_child(continue_screen)
+
+func show_start_screen():
 	var start_screen = load("res://screens/start.tscn").instantiate()
-	add_child(start_screen)
+
 	start_screen.start.connect(
 		func():
+			set_game_to_initial_state()
 			start_screen.queue_free()
 			await start_screen.tree_exited
 			start_game()
 	)
+	add_child(start_screen)
+
+func show_title_screen():
+	# We must load the game to get the correct state of g.current_level_idx
+	load_game()
+
+	if g.current_level_idx == 0 or g.current_level_idx == levels.size() - 1:
+		show_start_screen()
+	else:
+		show_continue_screen()
 
 func start_game():
 	if Globals.in_shop:
