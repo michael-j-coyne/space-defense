@@ -30,6 +30,7 @@ func level_failed():
 		PlayerVariables.money -= money_earned_in_level
 		failed.emit()
 	level_failed_emitted = true
+	queue_free()
 
 func _get_configuration_warnings() -> PackedStringArray:
 	var warnings = PackedStringArray()
@@ -43,3 +44,4 @@ func _get_configuration_warnings() -> PackedStringArray:
 
 func _on_all_enemies_defeated():
 	completed.emit()
+	queue_free()
