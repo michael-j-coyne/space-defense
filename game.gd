@@ -70,9 +70,6 @@ func show_title_screen():
 	else:
 		show_continue_screen()
 
-# TODO: this name is confusing, we are just starting a level
-# and showing a shop screen
-
 func save_game():
 	var save_game = FileAccess.open("user://savegame.save", FileAccess.WRITE)
 	var save_nodes = [PlayerVariables, Globals]
@@ -156,7 +153,6 @@ func go_next_level():
 
 	show_shop()
 
-# TODO: split up function
 func _on_level_failed(screenshot: Sprite2D) -> void:
 	var game_over_screen = load("res://screens/game_over.tscn").instantiate()
 	game_over_screen.add_level_screenshot(screenshot)
