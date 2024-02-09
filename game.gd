@@ -172,7 +172,6 @@ func _on_level_failed(_screenshot: Sprite2D) -> void:
 	var cleanup_game_over_screen = func():
 		game_over_screen.queue_free()
 		await game_over_screen.tree_exited
-		get_tree().paused = false
 
 	game_over_screen.return_to_title_requested.connect(
 		func():
@@ -192,9 +191,7 @@ func _on_level_failed(_screenshot: Sprite2D) -> void:
 	)
 
 	add_child(game_over_screen)
-	get_tree().paused = true
 
-	game_over_screen.process_mode = PROCESS_MODE_ALWAYS
 	game_over_screen.modulate.a = 0
 	var tween = game_over_screen.create_tween()
 	tween.tween_property(game_over_screen, "modulate:a", 1, 3.0)
