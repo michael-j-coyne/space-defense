@@ -13,7 +13,6 @@ func _ready():
 
 func _on_new_game_pressed() -> void:
 	confirmation_dialog.visible = true
-	confirmation_dialog.confirmed.connect(func(): new_game.emit())
 
 func _on_continue_pressed() -> void:
 	continue_game.emit()
@@ -39,3 +38,6 @@ func _on_continue_button_focus_entered() -> void:
 			continue_button.modulate.a = 1
 			tween.kill()
 	)
+
+func _on_confirmation_dialog_confirmed() -> void:
+	new_game.emit()

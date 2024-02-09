@@ -60,6 +60,7 @@ text = "New game"
 layout_mode = 2
 text = "Continue"
 
+[connection signal="confirmed" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_confirmed"]
 [connection signal="focus_entered" from="CenterContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_button_focus_entered"]
 [connection signal="mouse_entered" from="CenterContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_button_mouse_entered"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_pressed"]
