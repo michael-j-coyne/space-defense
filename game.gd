@@ -71,7 +71,7 @@ func show_title_screen():
 		show_continue_screen()
 
 func start_game():
-	if Globals.in_shop:
+	if g.current_level_idx > 1:
 		await show_shop()
 	if is_instance_valid(g.current_level):
 		g.current_level.queue_free()
@@ -135,7 +135,6 @@ func load_game():
 			singleton.set(key, data[key])
 
 func start_level(level):
-	Globals.in_shop = false
 	g.current_level = level
 	save_game()
 	level.completed.connect(go_next_level)
@@ -151,8 +150,6 @@ func show_shop():
 	shop.queue_free()
 	await shop.tree_exited
 
-	Globals.in_shop = false
-
 func go_next_level():
 	# TODO: The fact that I'm double checking the cleanup is a bad sign. I should probably just make sure that the cleanup is always done.
 	if is_instance_valid(g.current_level):
@@ -165,7 +162,6 @@ func go_next_level():
 
 	g.current_level_idx += 1
 
-	Globals.in_shop = true
 	# NOTE: we are saving here because the level was completed. But this isn't actually very clear.
 	save_game()
 

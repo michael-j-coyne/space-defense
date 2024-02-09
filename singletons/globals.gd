@@ -1,7 +1,6 @@
 extends Node
 
 var current_level_idx: int
-var in_shop: bool
 var current_level: Level
 var shop_inventory
 const VERSION_NUMBER = "v0.012"
@@ -57,13 +56,11 @@ func reset():
 		current_level.queue_free()
 	current_level = null
 	current_level_idx = 0
-	in_shop = false
 
 func save():
 	var save_data = {
 		"singleton_name": "Globals",
 		"current_level_idx": current_level_idx,
-		"in_shop": in_shop,
 		"shop_stock": {
 			"attack_speed_upgrade": shop_inventory["attack_speed_upgrade"].stock,
 			"movement_speed_upgrade": shop_inventory["movement_speed_upgrade"].stock,
