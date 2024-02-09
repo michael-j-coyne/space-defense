@@ -17,12 +17,15 @@ func _ready():
 # TODO: rename this
 func _on_button_pressed() -> void:
 	return_to_title_requested.emit()
+	queue_free()
 
 func _on_shop_button_pressed() -> void:
 	shop_requested.emit()
+	queue_free()
 
 func _on_retry_button_pressed() -> void:
 	retry_requested.emit()
+	queue_free()
 
 func add_level_screenshot(screenshot: Sprite2D):
 	level_screenshot = screenshot
