@@ -133,6 +133,9 @@ func load_game():
 				continue
 			singleton.set(key, data[key])
 
+func instance_current_level() -> Level:
+	return levels[g.current_level_idx].instantiate() as Level
+
 func start_level(level):
 	save_game()
 
@@ -160,11 +163,11 @@ func go_next_level():
 
 	await show_shop()
 
-	var level: Level = levels[g.current_level_idx].instantiate() as Level
+	var level = instance_current_level()
 	start_level(level)
 
 func restart_level() -> void:
-	var level: Level = levels[g.current_level_idx].instantiate() as Level
+	var level: Level = instance_current_level()
 	start_level(level)
 
 # TODO: split up function
