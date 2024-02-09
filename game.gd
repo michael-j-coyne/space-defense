@@ -70,6 +70,8 @@ func show_title_screen():
 	else:
 		show_continue_screen()
 
+# TODO: this name is confusing, we are just starting a level
+# and showing a shop screen
 func start_game():
 	if g.current_level_idx > 1:
 		await show_shop()
@@ -184,6 +186,7 @@ func _on_level_failed(screenshot: Sprite2D) -> void:
 		func():
 			game_over_screen.queue_free()
 			await show_shop()
+			# TODO: the shop screen itself should handle starting the level
 			restart_level()
 	)
 
