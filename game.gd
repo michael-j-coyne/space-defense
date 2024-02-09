@@ -147,7 +147,6 @@ func show_shop():
 	add_child(shop)
 
 	await shop.continue_pressed
-
 	shop.queue_free()
 	await shop.tree_exited
 
@@ -161,9 +160,8 @@ func go_next_level():
 		add_child(load("res://screens/win.tscn").instantiate())
 		return
 
+	# Save the level index
 	g.current_level_idx += 1
-
-	# NOTE: we are saving here because the level was completed. But this isn't actually very clear.
 	save_game()
 
 	await show_shop()
