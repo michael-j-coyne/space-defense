@@ -170,9 +170,11 @@ func go_next_level():
 	start_level(level)
 
 func restart_level() -> void:
+	# TODO: how do we know the level was cleaned up properly?
 	var level: Level = levels[g.current_level_idx].instantiate() as Level
 	start_level(level)
 
+# TODO: split up function
 func _on_level_failed() -> void:
 	var game_over_screen = load("res://screens/game_over.tscn").instantiate()
 
