@@ -37,7 +37,11 @@ func show_continue_screen():
 	var cleanup_and_start_game = func():
 		continue_screen.queue_free()
 		await continue_screen.tree_exited
-		start_game()
+		if g.current_level_idx > 0:
+			await show_shop()
+			start_level(instance_current_level())
+		else:
+			start_level(instance_current_level())
 
 	continue_screen.continue_game.connect(cleanup_and_start_game)
 
@@ -57,7 +61,7 @@ func show_start_screen():
 			set_game_to_initial_state()
 			start_screen.queue_free()
 			await start_screen.tree_exited
-			start_game()
+			start_level(instance_current_level())
 	)
 	add_child(start_screen)
 
@@ -72,11 +76,6 @@ func show_title_screen():
 
 # TODO: this name is confusing, we are just starting a level
 # and showing a shop screen
-func start_game():
-	if g.current_level_idx > 1:
-		await show_shop()
-	var level: Level = levels[g.current_level_idx].instantiate() as Level
-	start_level(level)
 
 func save_game():
 	var save_game = FileAccess.open("user://savegame.save", FileAccess.WRITE)
