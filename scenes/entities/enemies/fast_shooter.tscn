@@ -10,8 +10,8 @@
 [node name="FastShooter" type="Node2D"]
 scale = Vector2(0.576923, 0.595238)
 script = ExtResource("1_p7fat")
-shot_chance_percentage = 0.5
-shot_interval_seconds = 1.0
+shot_chance_percentage = 1.0
+shot_interval_seconds = 0.35
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_u2ixu")

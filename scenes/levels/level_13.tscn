@@ -19,5 +19,3 @@ initial_direction = 1
 
 [node name="FastShooter" parent="Enemies/Shooter1" index="0" instance=ExtResource("3_et4ha")]
 position = Vector2(30, 30)
-shot_chance_percentage = 1.0
-shot_interval_seconds = 0.25

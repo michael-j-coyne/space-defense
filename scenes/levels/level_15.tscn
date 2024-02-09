@@ -20,8 +20,6 @@ initial_direction = 1
 
 [node name="FastShooter" parent="Enemies/FastShooterGrid" index="0" instance=ExtResource("3_wrohi")]
 position = Vector2(30, 30)
-shot_chance_percentage = 1.0
-shot_interval_seconds = 0.25
 
 [node name="EnemyGrid" parent="Enemies" index="1" instance=ExtResource("2_b2nmk")]
 position = Vector2(500, 0)
