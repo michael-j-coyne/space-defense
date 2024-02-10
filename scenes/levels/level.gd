@@ -27,8 +27,12 @@ func _ready() -> void:
 
 func take_screenshot():
 	var image: Image = get_viewport().get_texture().get_image()
+	var screen_size = get_node("/root").content_scale_size
+	image.resize(screen_size.x, screen_size.y)
+
 	var sprite = Sprite2D.new()
 	var texture = ImageTexture.create_from_image(image)
+
 	sprite.texture = texture
 	sprite.centered = false
 	return sprite
