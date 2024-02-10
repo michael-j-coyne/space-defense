@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://brehrasdkr54o"]
+[gd_scene load_steps=8 format=3 uid="uid://brehrasdkr54o"]
 
 [ext_resource type="Texture2D" uid="uid://btva022o2i1tt" path="res://assets/black_background.png" id="1_wj78m"]
 [ext_resource type="Script" path="res://screens/shop.gd" id="2_ol8q6"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://fxrtlhoatb7i" path="res://assets/Kenney Mini Square.ttf" id="4_vnmf4"]
 [ext_resource type="PackedScene" uid="uid://d0cga5pixauj" path="res://scenes/components/level_display.tscn" id="5_8c80w"]
 [ext_resource type="FontFile" uid="uid://dskpt8fb6vfvu" path="res://assets/Kenney Pixel Square.ttf" id="6_lwwib"]
+[ext_resource type="PackedScene" uid="uid://dcmp7r8xp71ve" path="res://scenes/components/stat_display.tscn" id="7_a28hy"]
 
 [node name="Shop" type="Sprite2D"]
 texture = ExtResource("1_wj78m")
@@ -86,4 +87,8 @@ text = "You bought everything.
 Must be nice."
 horizontal_alignment = 1
 
+[node name="StatDisplay" parent="." instance=ExtResource("7_a28hy")]
+position = Vector2(30, 584)
+
+[connection signal="item_purchased" from="." to="StatDisplay" method="_on_shop_item_purchased"]
 [connection signal="pressed" from="ContinueButton" to="." method="_on_continue_pressed"]
