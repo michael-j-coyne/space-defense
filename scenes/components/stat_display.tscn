@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcmp7r8xp71ve"]
+
+[ext_resource type="Script" path="res://scenes/components/stat_display.gd" id="1_54bcj"]
+[ext_resource type="FontFile" uid="uid://dskpt8fb6vfvu" path="res://assets/Kenney Pixel Square.ttf" id="2_wlkss"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_blwqa"]
+bg_color = Color(0.615686, 0.615686, 0.615686, 0.145098)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="StatDisplay" type="PanelContainer" node_paths=PackedStringArray("attack_speed_val", "move_speed_val")]
+custom_minimum_size = Vector2(450, 2.08165e-12)
+offset_right = 397.0
+offset_bottom = 78.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_blwqa")
+script = ExtResource("1_54bcj")
+attack_speed_val = NodePath("MarginContainer/VBoxContainer/AttackSpeedContainer/AttackSpeedVal")
+move_speed_val = NodePath("MarginContainer/VBoxContainer/MoveSpeedContainer/MoveSpeedVal")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="AttackSpeedContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="AttackSpeedDesc" type="Label" parent="MarginContainer/VBoxContainer/AttackSpeedContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wlkss")
+theme_override_font_sizes/font_size = 20
+text = "Attack Speed"
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/AttackSpeedContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AttackSpeedVal" type="Label" parent="MarginContainer/VBoxContainer/AttackSpeedContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wlkss")
+theme_override_font_sizes/font_size = 20
+text = "1.0 shots / sec"
+
+[node name="MoveSpeedContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MoveSpeedDesc" type="Label" parent="MarginContainer/VBoxContainer/MoveSpeedContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wlkss")
+theme_override_font_sizes/font_size = 20
+text = "Velocity"
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/MoveSpeedContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MoveSpeedVal" type="Label" parent="MarginContainer/VBoxContainer/MoveSpeedContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wlkss")
+theme_override_font_sizes/font_size = 20
+text = "400 px / sec"
