@@ -75,7 +75,7 @@ func show_title_screen():
 	# We must load the game to get the correct state of g.current_level_idx
 	load_game()
 
-	if g.current_level_idx == 0 or g.current_level_idx == levels.size() - 1:
+	if g.current_level_idx == 0:
 		show_start_screen()
 	else:
 		show_continue_screen()
@@ -83,6 +83,8 @@ func show_title_screen():
 func _on_level_completed():
 	if g.current_level_idx == levels.size() - 1:
 		add_child(load("res://screens/win.tscn").instantiate())
+		set_game_to_initial_state()
+		save_game()
 		return
 
 	g.current_level_idx += 1
