@@ -3,6 +3,8 @@ class_name Shop extends Sprite2D
 var inventory = Globals.shop_inventory
 var start_level_callback: Callable
 
+signal item_purchased(item: ShopItem)
+
 func _ready() -> void:
 	populate_shop()
 	$ContinueButton.grab_focus()
@@ -43,6 +45,7 @@ func purchase_item(item_name, currency):
 
 		# Apply the upgrade
 		get_item(item_name).apply_upgrade.call()
+		item_purchased.emit(get_item(item_name))
 
 		return true
 	return false
