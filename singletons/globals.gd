@@ -10,6 +10,7 @@ func _ready():
 
 func reset():
 	var attack_speed_upgrade = ShopItem.new()
+	attack_speed_upgrade.name = "attack_speed_upgrade"
 	attack_speed_upgrade.display_text = "Attack speed +10%"
 	attack_speed_upgrade.description = "Shoot faster. Who can hate that?"
 	attack_speed_upgrade.base_price = 100
@@ -19,6 +20,7 @@ func reset():
 	attack_speed_upgrade.apply_upgrade = func(): PlayerVariables.gun_cooldown *= .9
 
 	var movement_speed_upgrade = ShopItem.new()
+	movement_speed_upgrade.name = "movement_speed_upgrade"
 	movement_speed_upgrade.display_text = "Movement speed +20%"
 	movement_speed_upgrade.description = "Gotta go fast!"
 	movement_speed_upgrade.base_price = 100
@@ -28,6 +30,7 @@ func reset():
 	movement_speed_upgrade.apply_upgrade = func(): PlayerVariables.speed *= 1.20
 
 	var piercing_shot_upgrade = ShopItem.new()
+	piercing_shot_upgrade.name = "piercing_shot_upgrade"
 	piercing_shot_upgrade.display_text = "Piercing shots +1"
 	piercing_shot_upgrade.description = "Destroy two ships with one laser!"
 	piercing_shot_upgrade.base_price = 100
@@ -37,6 +40,7 @@ func reset():
 	piercing_shot_upgrade.apply_upgrade = func(): PlayerVariables.gun_penetrations += 1
 
 	# var gatling_gun_upgrade = ShopItem.new()
+	# gatling_gun_upgrade.name = "gatling_gun_upgrade"
 	# gatling_gun_upgrade.display_text = "Gatling Gun"
 	# gatling_gun_upgrade.description = "Now that's just plain fun."
 	# gatling_gun_upgrade.base_price = 2000

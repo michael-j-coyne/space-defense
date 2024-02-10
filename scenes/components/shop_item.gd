@@ -1,5 +1,6 @@
 class_name ShopItem extends RefCounted
 
+var name: String = ""
 var display_text: String = ""
 var description: String = ""
 var base_price: int = 0
