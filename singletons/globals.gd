@@ -3,7 +3,7 @@ extends Node
 var current_level_idx: int
 var current_level: Level
 var shop_inventory
-const VERSION_NUMBER = "v0.1"
+const VERSION_NUMBER = "v0.101"
 
 func _ready():
 	reset()
