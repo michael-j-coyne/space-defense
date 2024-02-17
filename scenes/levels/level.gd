@@ -26,6 +26,7 @@ func _ready() -> void:
 		)
 
 func take_screenshot():
+	await RenderingServer.frame_post_draw
 	var image: Image = get_viewport().get_texture().get_image()
 	var screen_size = get_node("/root").content_scale_size
 	image.resize(screen_size.x, screen_size.y)
@@ -40,7 +41,7 @@ func take_screenshot():
 func level_failed():
 	if not level_failed_emitted:
 		PlayerVariables.money -= money_earned_in_level
-		failed.emit(take_screenshot())
+		failed.emit(await take_screenshot())
 	level_failed_emitted = true
 	queue_free()
 
